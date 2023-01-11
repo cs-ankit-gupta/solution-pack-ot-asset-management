@@ -24,10 +24,8 @@ Refer to the section `OT - Asset Management` to understand how this solution pac
 
 The simulation mode has some sample data that helps you get a better understanding of how the solution pack functions. Following steps help you use the solution pack with some included sample data.
 
-Please set Demo_mode **true**
-
 > **1. OT - Stuxnet Attack Scenario**
--   Make sure the global variable **Demo mode** is set to `true`. 
+- Make sure the global variable **Demo mode** is set to `true`. 
 - Browse to `Simulations` > `OT - Stuxnet Attack Scenario` scenario and click **Simulate Scenario**.
 - Four Alerts are created each at an interval of 2 seconds:
     - Stuxnet peer to peer communication attempt
@@ -54,4 +52,6 @@ Please set Demo_mode **true**
 - Once the record has been created, execute the **Add Task From Templates** to assign different tasks to different people. 
 - New tasks get created after the previous task is completed.
 - Once all task get completed record get closed.
+- New task can be added by using **Add New Task** playbook.
+- To generate the report, execute **Generate Compliance Report** and report get attached to particular record.
 
