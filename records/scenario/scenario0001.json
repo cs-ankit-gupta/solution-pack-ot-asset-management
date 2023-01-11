@@ -1,0 +1,64 @@
+[
+    {
+        "@type": "Scenario",
+        "configuration": null,
+        "title": "OT - Stuxnet Attack Scenario",
+        "description": "This scenario demonstrates the OT specific Alert and Asset record creation process, which generates an Alert and an Asset for an Industrial PLC.",
+        "steps": {
+            "Steps": [
+                {
+                    "name": "OT - Stuxnet Attack Scenario",
+                    "type": "executePlaybook",
+                    "playbookIRI": "\/api\/3\/workflows\/fc6ade35-4b83-492d-8592-7aa1f95588e6",
+                    "preCreateMessage": "Creating Alert and Asset demo record for Stuxnet Alert",
+                    "postCreateMessage": "",
+                    "waitTimeforNextStep": "0"
+                }
+            ]
+        },
+        "createdAlertsID": null,
+        "uuid": "6b0a2a31-fd74-4239-9383-708c50e1625f",
+        "createUser": "\/api\/3\/people\/3451141c-bac6-467c-8d72-85e0fab569ce",
+        "createDate": 1672816950.14907,
+        "modifyUser": "\/api\/3\/appliances\/57545210-2adc-472b-a24f-2df6ee8dfe63",
+        "modifyDate": 1673432342.022267,
+        "id": 2,
+        "recordTags": [
+            "Alerts",
+            "OT - Specific",
+            "Assets"
+        ]
+    },
+    {
+        "@type": "Scenario",
+        "configuration": null,
+        "title": "OT - Asset Change Activity",
+        "description": "This scenario demonstrates the OT specific Asset Change Activity and Asset record creation process, which generates an Asset Change Activity and an Asset for type \"Add New Asset\" and \"Medium Impact Baseline Change\"\n",
+        "steps": {
+            "Steps": [
+                {
+                    "name": "OT - Asset Change Activity",
+                    "type": "executePlaybook",
+                    "playbookIRI": "\/api\/3\/workflows\/4961c806-88bf-42f7-b3cd-150a1f2713d2",
+                    "preCreateMessage": "Creating Asset Change Activity And Assets demo record for OT",
+                    "postCreateMessage": "",
+                    "waitTimeforNextStep": "0"
+                }
+            ]
+        },
+        "createdAlertsID": null,
+        "uuid": "c185dfe7-0ced-40a4-b4ca-64062c8d7fe3",
+        "createUser": "\/api\/3\/people\/3451141c-bac6-467c-8d72-85e0fab569ce",
+        "createDate": 1672378366.980324,
+        "modifyUser": "\/api\/3\/appliances\/57545210-2adc-472b-a24f-2df6ee8dfe63",
+        "modifyDate": 1673432331.130864,
+        "id": 3,
+        "recordTags": [
+            "OT - Specific",
+            "Asset Change Activity",
+            "Medium Impact Baseline Change",
+            "Add Cyber Asset",
+            "Assets"
+        ]
+    }
+]

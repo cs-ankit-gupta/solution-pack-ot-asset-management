@@ -1,0 +1,60 @@
+{
+    "@context": "\/api\/3\/contexts\/PicklistName",
+    "@id": "\/api\/3\/picklist_names\/64d9a98a-c258-4ac5-9cb7-319853942bea",
+    "@type": "PicklistName",
+    "name": "ActivityStatus",
+    "system": false,
+    "picklists": [
+        {
+            "@id": "\/api\/3\/picklists\/5f43696e-b2ad-4f03-8092-8fcdef2ef76d",
+            "@type": "Picklist",
+            "itemValue": "Open",
+            "orderIndex": 0,
+            "color": "#05bb49",
+            "icon": null,
+            "listName": "\/api\/3\/picklist_names\/64d9a98a-c258-4ac5-9cb7-319853942bea",
+            "uuid": "5f43696e-b2ad-4f03-8092-8fcdef2ef76d"
+        },
+        {
+            "@id": "\/api\/3\/picklists\/d50aff78-a2c1-4cf3-8f65-fb8b8238f9cc",
+            "@type": "Picklist",
+            "itemValue": "In Process",
+            "orderIndex": 1,
+            "color": "#f8ba0b",
+            "icon": null,
+            "listName": "\/api\/3\/picklist_names\/64d9a98a-c258-4ac5-9cb7-319853942bea",
+            "uuid": "d50aff78-a2c1-4cf3-8f65-fb8b8238f9cc"
+        },
+        {
+            "@id": "\/api\/3\/picklists\/e8183959-fd21-4bdf-87ae-840c8c30ce9a",
+            "@type": "Picklist",
+            "itemValue": "On Hold\/Blocked",
+            "orderIndex": 2,
+            "color": "#f32424",
+            "icon": null,
+            "listName": "\/api\/3\/picklist_names\/64d9a98a-c258-4ac5-9cb7-319853942bea",
+            "uuid": "e8183959-fd21-4bdf-87ae-840c8c30ce9a"
+        },
+        {
+            "@id": "\/api\/3\/picklists\/f79c90bc-0c2d-4848-8138-0266cc13ffe6",
+            "@type": "Picklist",
+            "itemValue": "Closed",
+            "orderIndex": 3,
+            "color": "#d2d0d0",
+            "icon": null,
+            "listName": "\/api\/3\/picklist_names\/64d9a98a-c258-4ac5-9cb7-319853942bea",
+            "uuid": "f79c90bc-0c2d-4848-8138-0266cc13ffe6"
+        },
+        {
+            "@id": "\/api\/3\/picklists\/c04f4b7f-a150-463c-ad0d-f81eb4479e04",
+            "@type": "Picklist",
+            "itemValue": "Re-Open",
+            "orderIndex": 4,
+            "color": "#e18e24",
+            "icon": null,
+            "listName": "\/api\/3\/picklist_names\/64d9a98a-c258-4ac5-9cb7-319853942bea",
+            "uuid": "c04f4b7f-a150-463c-ad0d-f81eb4479e04"
+        }
+    ],
+    "uuid": "64d9a98a-c258-4ac5-9cb7-319853942bea"
+}

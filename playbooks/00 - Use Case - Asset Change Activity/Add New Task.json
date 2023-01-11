@@ -1,0 +1,263 @@
+{
+    "@type": "Workflow",
+    "triggerLimit": null,
+    "name": "Add New Task",
+    "aliasName": null,
+    "tag": null,
+    "description": "New task for Asset Change Activity",
+    "isActive": true,
+    "debug": false,
+    "singleRecordExecution": false,
+    "remoteExecutableFlag": false,
+    "parameters": [],
+    "synchronous": false,
+    "collection": "\/api\/3\/workflow_collections\/0dc98705-9053-4d76-8a44-b73cf7f06666",
+    "versions": [],
+    "triggerStep": "\/api\/3\/workflow_steps\/86c5564e-a361-40e5-a68d-563ccb1e14bf",
+    "steps": [
+        {
+            "@type": "WorkflowStep",
+            "name": "Get Relationship",
+            "description": null,
+            "arguments": {
+                "params": {
+                    "iri": "{{vars.input.records[0]['@id']}}?$relationships=true",
+                    "body": "",
+                    "method": "GET"
+                },
+                "version": "3.2.1",
+                "connector": "cyops_utilities",
+                "operation": "make_cyops_request",
+                "operationTitle": "FSR: Make FortiSOAR API Call",
+                "step_variables": []
+            },
+            "status": null,
+            "top": "165",
+            "left": "125",
+            "stepType": "\/api\/3\/workflow_step_types\/0109f35d-090b-4a2b-bd8a-94cbc3508562",
+            "group": null,
+            "uuid": "6324b1e9-3c18-46bb-94df-d0983a71f2be"
+        },
+        {
+            "@type": "WorkflowStep",
+            "name": "Add Task Details",
+            "description": null,
+            "arguments": {
+                "type": "InputBased",
+                "input": {
+                    "schema": {
+                        "title": "Add Task Details",
+                        "description": "Please specify task details.",
+                        "inputVariables": [
+                            {
+                                "name": "name",
+                                "type": "string",
+                                "label": "Name",
+                                "tooltip": "",
+                                "dataType": "text",
+                                "formType": "text",
+                                "required": true,
+                                "_expanded": false,
+                                "defaultValue": null,
+                                "_previousName": "title",
+                                "useRecordFieldDefault": false
+                            },
+                            {
+                                "name": "description",
+                                "type": "string",
+                                "label": "Description",
+                                "title": "Rich Text (Markdown)",
+                                "usable": true,
+                                "tooltip": "",
+                                "dataType": "text",
+                                "formType": "richtext",
+                                "required": false,
+                                "_expanded": false,
+                                "mmdUpdate": true,
+                                "collection": false,
+                                "searchable": true,
+                                "templateUrl": "app\/components\/form\/fields\/markdownEditor.html",
+                                "defaultValue": null,
+                                "_previousName": "descrip",
+                                "lengthConstraint": true,
+                                "allowedEncryption": true,
+                                "allowedGridColumn": true,
+                                "useRecordFieldDefault": false
+                            },
+                            {
+                                "name": "assignedPerson",
+                                "type": "people",
+                                "label": "Assigned Person",
+                                "title": "Lookup (One to Many or One to One)",
+                                "usable": true,
+                                "tooltip": "",
+                                "dataType": "lookup",
+                                "formType": "lookup",
+                                "required": true,
+                                "_expanded": false,
+                                "mmdUpdate": true,
+                                "collection": false,
+                                "dataSource": {
+                                    "model": "people"
+                                },
+                                "searchable": false,
+                                "templateUrl": "app\/components\/form\/fields\/typeahead.html",
+                                "defaultValue": null,
+                                "_previousName": "assignedPerso",
+                                "displayTemplate": "%7B%7B%20firstname%20%7D%7D%20%7B%7B%20lastname%20%7D%7D",
+                                "lengthConstraint": false,
+                                "allowedEncryption": false,
+                                "allowedGridColumn": true,
+                                "useRecordFieldDefault": false
+                            }
+                        ]
+                    }
+                },
+                "record": "{{ vars.input.records[0][\"@id\"] }}",
+                "resources": "asset_change_activities",
+                "owner_detail": {
+                    "isAssigned": false
+                },
+                "isRecordLinked": true,
+                "step_variables": [],
+                "response_mapping": {
+                    "options": [
+                        {
+                            "option": "Add Task",
+                            "primary": true,
+                            "step_iri": "\/api\/3\/workflow_steps\/ce6a8334-31e4-4247-83cb-6cf113be8abc"
+                        }
+                    ],
+                    "duplicateOption": false
+                },
+                "email_notification": {
+                    "enabled": false,
+                    "smtpParameters": []
+                }
+            },
+            "status": null,
+            "top": "300",
+            "left": "125",
+            "stepType": "\/api\/3\/workflow_step_types\/fc04082a-d7dc-4299-96fb-6837b1baa0fe",
+            "group": null,
+            "uuid": "77697478-e3a1-42a2-a88f-ea6e3f6fe86c"
+        },
+        {
+            "@type": "WorkflowStep",
+            "name": "Start",
+            "description": null,
+            "arguments": {
+                "route": "c7179660-edcb-4f29-87de-f76d377bbed8",
+                "resources": [
+                    "asset_change_activities"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                    "input": {
+                        "params": [],
+                        "records": "{{vars.input.records}}"
+                    }
+                },
+                "displayConditions": {
+                    "asset_activities": {
+                        "sort": [],
+                        "limit": 30,
+                        "logic": "AND",
+                        "filters": []
+                    },
+                    "asset_change_activities": {
+                        "sort": [],
+                        "limit": 30,
+                        "logic": "AND",
+                        "filters": []
+                    }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": false,
+                "singleRecordExecution": true
+            },
+            "status": null,
+            "top": "30",
+            "left": "125",
+            "stepType": "\/api\/3\/workflow_step_types\/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+            "group": null,
+            "uuid": "86c5564e-a361-40e5-a68d-563ccb1e14bf"
+        },
+        {
+            "@type": "WorkflowStep",
+            "name": "Create Task and Correlate",
+            "description": null,
+            "arguments": {
+                "message": {
+                    "tags": [],
+                    "type": "\/api\/3\/picklists\/ff599189-3eeb-4c86-acb0-a7915e85ac3b",
+                    "tenant": "",
+                    "content": "<p>Added Task <span style=\"background: green; color: #fff;\" class=\"badge badge-pill badge-danger\">{{vars.steps.Add_Task_Details.input.name}} - {{vars.input.records[0].title}}<\/span><\/p>",
+                    "records": "{{vars.input.records[0]['@id']}}"
+                },
+                "resource": {
+                    "name": "{{vars.steps.Add_Task_Details.input.name}} - {{vars.input.records[0].title}}",
+                    "dueBy": "{{vars.input.records[0].dueDate}}",
+                    "assets": "{{vars.steps.Get_Relationship.data.assets[0]['@id']}}",
+                    "status": "\/api\/3\/picklists\/7669725a-28cc-4b19-98a3-9ca71e0f88f4",
+                    "__replace": "",
+                    "description": "{{vars.steps.Add_Task_Details.input.description}}",
+                    "assignedToPerson": "{{vars.steps.Add_Task_Details.input.assignedPerson}}",
+                    "assetChangeActivities": "{{vars.input.records[0]['@id']}}"
+                },
+                "operation": "Overwrite",
+                "collection": "\/api\/3\/tasks",
+                "__recommend": [],
+                "fieldOperation": {
+                    "recordTags": "Overwrite"
+                },
+                "step_variables": []
+            },
+            "status": null,
+            "top": "435",
+            "left": "125",
+            "stepType": "\/api\/3\/workflow_step_types\/2597053c-e718-44b4-8394-4d40fe26d357",
+            "group": null,
+            "uuid": "ce6a8334-31e4-4247-83cb-6cf113be8abc"
+        }
+    ],
+    "routes": [
+        {
+            "@type": "WorkflowRoute",
+            "name": "Start -> Get Relationship",
+            "targetStep": "\/api\/3\/workflow_steps\/6324b1e9-3c18-46bb-94df-d0983a71f2be",
+            "sourceStep": "\/api\/3\/workflow_steps\/86c5564e-a361-40e5-a68d-563ccb1e14bf",
+            "label": null,
+            "isExecuted": false,
+            "uuid": "431e63d9-da01-4a46-9a8e-2d921e02e2db"
+        },
+        {
+            "@type": "WorkflowRoute",
+            "name": "Add Task Details -> Create Task",
+            "targetStep": "\/api\/3\/workflow_steps\/ce6a8334-31e4-4247-83cb-6cf113be8abc",
+            "sourceStep": "\/api\/3\/workflow_steps\/77697478-e3a1-42a2-a88f-ea6e3f6fe86c",
+            "label": "Add Task",
+            "isExecuted": false,
+            "uuid": "6cb1e7ea-4a57-452b-95ab-1b2b984bbfcc"
+        },
+        {
+            "@type": "WorkflowRoute",
+            "name": "Get Relationship -> Add Task Details",
+            "targetStep": "\/api\/3\/workflow_steps\/77697478-e3a1-42a2-a88f-ea6e3f6fe86c",
+            "sourceStep": "\/api\/3\/workflow_steps\/6324b1e9-3c18-46bb-94df-d0983a71f2be",
+            "label": null,
+            "isExecuted": false,
+            "uuid": "ed55e399-a6f8-4c44-a852-27c92c5ef99b"
+        }
+    ],
+    "groups": [],
+    "priority": "\/api\/3\/picklists\/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+    "uuid": "6f0fbfd8-71be-4df6-8d76-705f4fc2ae3d",
+    "owners": [],
+    "isPrivate": false,
+    "deletedAt": null,
+    "recordTags": [
+        "OT - Specific",
+        "AssetChangeActivity"
+    ]
+}

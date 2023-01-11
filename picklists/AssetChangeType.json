@@ -1,0 +1,70 @@
+{
+    "@context": "\/api\/3\/contexts\/PicklistName",
+    "@id": "\/api\/3\/picklist_names\/f6728500-ea14-491f-8f42-5d0e13023b81",
+    "@type": "PicklistName",
+    "name": "AssetChangeType",
+    "system": false,
+    "picklists": [
+        {
+            "@id": "\/api\/3\/picklists\/8f9befab-a614-489f-9344-a6f960b6b05c",
+            "@type": "Picklist",
+            "itemValue": "High Impact Baseline Change",
+            "orderIndex": 0,
+            "color": null,
+            "icon": null,
+            "listName": "\/api\/3\/picklist_names\/f6728500-ea14-491f-8f42-5d0e13023b81",
+            "uuid": "8f9befab-a614-489f-9344-a6f960b6b05c"
+        },
+        {
+            "@id": "\/api\/3\/picklists\/94965daf-7707-4b41-8fc5-302d5db4ee6c",
+            "@type": "Picklist",
+            "itemValue": "Medium Impact Baseline Change",
+            "orderIndex": 1,
+            "color": null,
+            "icon": null,
+            "listName": "\/api\/3\/picklist_names\/f6728500-ea14-491f-8f42-5d0e13023b81",
+            "uuid": "94965daf-7707-4b41-8fc5-302d5db4ee6c"
+        },
+        {
+            "@id": "\/api\/3\/picklists\/8aaa06ca-9b13-405a-96d2-29381246d748",
+            "@type": "Picklist",
+            "itemValue": "Add Cyber Asset",
+            "orderIndex": 2,
+            "color": null,
+            "icon": null,
+            "listName": "\/api\/3\/picklist_names\/f6728500-ea14-491f-8f42-5d0e13023b81",
+            "uuid": "8aaa06ca-9b13-405a-96d2-29381246d748"
+        },
+        {
+            "@id": "\/api\/3\/picklists\/8c457a4c-a326-43cb-b391-e0946472f647",
+            "@type": "Picklist",
+            "itemValue": "Remove Cyber Asset",
+            "orderIndex": 3,
+            "color": null,
+            "icon": null,
+            "listName": "\/api\/3\/picklist_names\/f6728500-ea14-491f-8f42-5d0e13023b81",
+            "uuid": "8c457a4c-a326-43cb-b391-e0946472f647"
+        },
+        {
+            "@id": "\/api\/3\/picklists\/2b3be5df-868b-43c7-8ba2-f70d50107c46",
+            "@type": "Picklist",
+            "itemValue": "Replace Cyber Asset",
+            "orderIndex": 4,
+            "color": null,
+            "icon": null,
+            "listName": "\/api\/3\/picklist_names\/f6728500-ea14-491f-8f42-5d0e13023b81",
+            "uuid": "2b3be5df-868b-43c7-8ba2-f70d50107c46"
+        },
+        {
+            "@id": "\/api\/3\/picklists\/8b3d86cb-dc37-4fc7-b45c-a2981eaba6f6",
+            "@type": "Picklist",
+            "itemValue": "Modify Cyber Asset",
+            "orderIndex": 5,
+            "color": null,
+            "icon": null,
+            "listName": "\/api\/3\/picklist_names\/f6728500-ea14-491f-8f42-5d0e13023b81",
+            "uuid": "8b3d86cb-dc37-4fc7-b45c-a2981eaba6f6"
+        }
+    ],
+    "uuid": "f6728500-ea14-491f-8f42-5d0e13023b81"
+}
