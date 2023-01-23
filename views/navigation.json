@@ -1,0 +1,107 @@
+{
+    "@context": "\/api\/3\/contexts\/SystemViewTemplate",
+    "@type": "SystemViewTemplate",
+    "type": "app",
+    "config": {
+        "navigation": [
+            {
+                "icon": "icon icon-resources",
+                "items": [
+                    {
+                        "icon": "icon icon-attachments",
+                        "state": {
+                            "name": "main.modules.list",
+                            "parameters": {
+                                "module": "attachments"
+                            }
+                        },
+                        "title": "Attachments",
+                        "require": {
+                            "action": "read",
+                            "module": "attachments"
+                        },
+                        "editMode": false
+                    },
+                    {
+                        "icon": "icon icon-email-templates",
+                        "state": {
+                            "name": "main.modules.list",
+                            "parameters": {
+                                "module": "email_templates"
+                            }
+                        },
+                        "title": "Email Templates",
+                        "require": {
+                            "action": "read",
+                            "module": "email_templates"
+                        },
+                        "editMode": false
+                    },
+                    {
+                        "icon": "icon icon-assets",
+                        "state": {
+                            "name": "main.modules.list",
+                            "parameters": {
+                                "module": "assets"
+                            }
+                        },
+                        "title": "Assets",
+                        "require": {
+                            "action": "read",
+                            "module": "assets"
+                        },
+                        "editMode": false
+                    },
+                    {
+                        "title": "System Requirements",
+                        "require": {
+                            "module": "system_requirements",
+                            "action": "read"
+                        },
+                        "state": {
+                            "name": "main.modules.list",
+                            "parameters": {
+                                "module": "system_requirements"
+                            }
+                        },
+                        "icon": "icon icon-system-monitoring",
+                        "editMode": false
+                    },
+                    {
+                        "icon": "icon icon-change-severity",
+                        "state": {
+                            "name": "main.modules.list",
+                            "parameters": {
+                                "module": "asset_change_activities"
+                            }
+                        },
+                        "title": "Asset Change Activities",
+                        "require": {
+                            "action": "read",
+                            "module": "asset_change_activities"
+                        },
+                        "editMode": false
+                    },
+                    {
+                        "icon": "icon icon-important-flag",
+                        "state": {
+                            "name": "main.modules.list",
+                            "parameters": {
+                                "module": "ports_and_services"
+                            }
+                        },
+                        "title": "Ports and Services",
+                        "require": {
+                            "action": "read",
+                            "module": "ports_and_services"
+                        },
+                        "editMode": false
+                    }
+                ],
+                "title": "Resources",
+                "editMode": false
+            }
+        ]
+    },
+    "uuid": "navigation"
+}

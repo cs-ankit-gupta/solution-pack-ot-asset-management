@@ -1,0 +1,13 @@
+{
+    "@context": "\/api\/3\/contexts\/File",
+    "@type": "File",
+    "uuid": "076e9a0a-5179-4518-8a46-f06d50ae456e",
+    "assignee": "",
+    "id": "076e9a0a-5179-4518-8a46-f06d50ae456e",
+    "filename": "Alert_Record.csv",
+    "mimeType": "text\/csv",
+    "uploadDate": 1673333503,
+    "size": 17732,
+    "thumbnail": null,
+    "metadata": []
+}

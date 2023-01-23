@@ -1,0 +1,221 @@
+{
+    "@type": "Workflow",
+    "triggerLimit": null,
+    "name": "Read CSV File",
+    "aliasName": null,
+    "tag": null,
+    "description": "Playbook will read a CSV file and create records based on the record type.",
+    "isActive": true,
+    "debug": false,
+    "singleRecordExecution": false,
+    "remoteExecutableFlag": false,
+    "parameters": [],
+    "synchronous": false,
+    "collection": "\/api\/3\/workflow_collections\/fb4aa534-4bfc-4196-b509-96ef02fb9270",
+    "versions": [],
+    "triggerStep": "\/api\/3\/workflow_steps\/9bb24c9c-a358-4f7f-9f68-9af354f1b726",
+    "steps": [
+        {
+            "@type": "WorkflowStep",
+            "name": "Create Assets Record",
+            "description": null,
+            "arguments": {
+                "for_each": {
+                    "item": "{{vars.data}}",
+                    "parallel": false,
+                    "condition": ""
+                },
+                "arguments": {
+                    "assetRecord": "{{vars.item}}"
+                },
+                "apply_async": false,
+                "step_variables": [],
+                "pass_input_record": false,
+                "workflowReference": "\/api\/3\/workflows\/d6017f29-92f5-464f-b41b-e55f0f4d0298"
+            },
+            "status": null,
+            "top": "435",
+            "left": "475",
+            "stepType": "\/api\/3\/workflow_step_types\/74932bdc-b8b6-4d24-88c4-1a4dfbc524f3",
+            "group": null,
+            "uuid": "6c1c16bb-8ae7-4978-90c0-0fcb5c82509d"
+        },
+        {
+            "@type": "WorkflowStep",
+            "name": "Create Alerts Record",
+            "description": null,
+            "arguments": {
+                "for_each": {
+                    "item": "{{vars.data}}",
+                    "parallel": false,
+                    "condition": ""
+                },
+                "arguments": {
+                    "alertRecord": "{{vars.item}}"
+                },
+                "apply_async": false,
+                "step_variables": [],
+                "pass_input_record": false,
+                "workflowReference": "\/api\/3\/workflows\/50bf3bf4-1280-4b86-be7d-d78dd3a56ce1"
+            },
+            "status": null,
+            "top": "435",
+            "left": "125",
+            "stepType": "\/api\/3\/workflow_step_types\/74932bdc-b8b6-4d24-88c4-1a4dfbc524f3",
+            "group": null,
+            "uuid": "7d07778d-931c-4672-9447-a0550d38da21"
+        },
+        {
+            "@type": "WorkflowStep",
+            "name": "Get Data From CSV File",
+            "description": null,
+            "arguments": {
+                "name": "CSV Data Management",
+                "params": {
+                    "input": "Attachment IRI",
+                    "value": "{{vars.input.records[0]['@id']}}",
+                    "columnNames": "",
+                    "filterInput": "",
+                    "recordBatch": false,
+                    "deDupValuesOn": "",
+                    "saveAsAttachment": "",
+                    "numberOfRowsToSkip": ""
+                },
+                "version": "1.1.0",
+                "connector": "csv-data-management",
+                "operation": "extract_data_from_csv",
+                "operationTitle": "Extract Data from Single CSV",
+                "pickFromTenant": false,
+                "step_variables": {
+                    "data": "{{vars.result.data['records'] | replace('N\/A', None)}}"
+                }
+            },
+            "status": null,
+            "top": "165",
+            "left": "300",
+            "stepType": "\/api\/3\/workflow_step_types\/0bfed618-0316-11e7-93ae-92361f002671",
+            "group": null,
+            "uuid": "81dc8aa8-275b-4bf4-b68c-a66738215f0f"
+        },
+        {
+            "@type": "WorkflowStep",
+            "name": "Check Record Type",
+            "description": null,
+            "arguments": {
+                "conditions": [
+                    {
+                        "option": "Alerts",
+                        "step_iri": "\/api\/3\/workflow_steps\/7d07778d-931c-4672-9447-a0550d38da21",
+                        "condition": "{{ vars.steps.Get_Data_From_CSV_File.data.records[0]['@type'] == \"Alert\" }}",
+                        "step_name": "Create Alerts Record"
+                    },
+                    {
+                        "option": "Assets",
+                        "step_iri": "\/api\/3\/workflow_steps\/6c1c16bb-8ae7-4978-90c0-0fcb5c82509d",
+                        "condition": "{{ vars.steps.Get_Data_From_CSV_File.data.records[0]['@type'] == \"Asset\" }}",
+                        "step_name": "Create Assets Record"
+                    }
+                ]
+            },
+            "status": null,
+            "top": "300",
+            "left": "300",
+            "stepType": "\/api\/3\/workflow_step_types\/12254cf5-5db7-4b1a-8cb1-3af081924b28",
+            "group": null,
+            "uuid": "94f4d850-4b1d-4015-b129-38bc8791e06d"
+        },
+        {
+            "@type": "WorkflowStep",
+            "name": "Start",
+            "description": null,
+            "arguments": {
+                "route": "6dc32662-b065-4f9c-b60f-90659ea468b6",
+                "title": "Import CSV File",
+                "resources": [
+                    "attachments"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                    "input": {
+                        "params": [],
+                        "records": "{{vars.input.records}}"
+                    }
+                },
+                "_promptexpanded": true,
+                "displayConditions": {
+                    "violation": {
+                        "sort": [],
+                        "limit": 30,
+                        "logic": "AND",
+                        "filters": []
+                    },
+                    "attachments": {
+                        "sort": [],
+                        "limit": 30,
+                        "logic": "AND",
+                        "filters": []
+                    }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": false,
+                "singleRecordExecution": true
+            },
+            "status": null,
+            "top": "30",
+            "left": "300",
+            "stepType": "\/api\/3\/workflow_step_types\/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+            "group": null,
+            "uuid": "9bb24c9c-a358-4f7f-9f68-9af354f1b726"
+        }
+    ],
+    "routes": [
+        {
+            "@type": "WorkflowRoute",
+            "name": "Start -> Get Data From CSV File",
+            "targetStep": "\/api\/3\/workflow_steps\/81dc8aa8-275b-4bf4-b68c-a66738215f0f",
+            "sourceStep": "\/api\/3\/workflow_steps\/9bb24c9c-a358-4f7f-9f68-9af354f1b726",
+            "label": null,
+            "isExecuted": false,
+            "uuid": "2f2bfcf0-3084-46e7-a204-92667813e33d"
+        },
+        {
+            "@type": "WorkflowRoute",
+            "name": "Check Record Type -> Create Alerts",
+            "targetStep": "\/api\/3\/workflow_steps\/7d07778d-931c-4672-9447-a0550d38da21",
+            "sourceStep": "\/api\/3\/workflow_steps\/94f4d850-4b1d-4015-b129-38bc8791e06d",
+            "label": "Alerts",
+            "isExecuted": false,
+            "uuid": "44b34ad1-7b3e-4499-9de6-aa4658e675f3"
+        },
+        {
+            "@type": "WorkflowRoute",
+            "name": "Check Record Type -> Create Record",
+            "targetStep": "\/api\/3\/workflow_steps\/6c1c16bb-8ae7-4978-90c0-0fcb5c82509d",
+            "sourceStep": "\/api\/3\/workflow_steps\/94f4d850-4b1d-4015-b129-38bc8791e06d",
+            "label": "Assets",
+            "isExecuted": false,
+            "uuid": "8441c684-6964-47b2-a679-a5a53e9e1108"
+        },
+        {
+            "@type": "WorkflowRoute",
+            "name": "Get Data From CSV File -> Check Record Type",
+            "targetStep": "\/api\/3\/workflow_steps\/94f4d850-4b1d-4015-b129-38bc8791e06d",
+            "sourceStep": "\/api\/3\/workflow_steps\/81dc8aa8-275b-4bf4-b68c-a66738215f0f",
+            "label": null,
+            "isExecuted": false,
+            "uuid": "8d25b0de-840f-45c2-8b4b-a5b952dfded2"
+        }
+    ],
+    "groups": [],
+    "priority": null,
+    "uuid": "cfa2021b-379d-4b62-b388-5260652fe7b1",
+    "owners": [],
+    "isPrivate": false,
+    "deletedAt": null,
+    "recordTags": [
+        "Alerts",
+        "OT - Specific",
+        "Assets",
+        "Import CSV"
+    ]
+}
