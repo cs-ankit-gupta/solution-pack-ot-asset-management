@@ -25,20 +25,23 @@ The `OT - Asset Management` solution pack contains the following resources.
 
 |**Name**|**Description**|
 | :- | :- |
-| Asset | New Fields has been added. Such as: Network, Subnet, Firmware, ESPZone, Facility, Zone, Level, Vendor, Asset Type, Protocol, Assets, Asset Change Activity|
+| Asset | New Fields has been added. Such as: Network, Subnet, Firmware, ESPZone, Facility, Zone, Level, Vendor, Asset Type, Protocol, Assets, Vulnerability Risk Status, Asset Change Activity, Asset Icon. Change In List View, Details View |
+| Asset Resources | A Module that contain the Icons of Assets |
 | Asset Change Activity | A module that monitors asset changes on various baselines. |
+| Alert | Change in Details View |
+| Incident | Change in Details View |
 
 ## Picklist
 |**Name**|
 | :- |
 | ActivityStatus |
-| AlertType |
 | AssetChangeType |
 | AssetCategory |
 | AssetLevel |
 | AssetProtocol |
 | AssetType |
 | AssetZone |
+| VulnerabilityRiskStatus |
 
 ## Report
 |**Name**|**Description**|
@@ -56,8 +59,8 @@ The `OT - Asset Management` solution pack contains the following resources.
 
 |**Name**|**Description**|
 | :- | :- |
-|  OT - Stuxnet Attack Scenario  |  This will create the alerts and related assets for STUXNET attack |
-| OT - Asset Change Activity | This will create scenario for different baseline of asset change |
+|  OT - Stuxnet Attack Scenario  |  This scenario recreates the Stuxnet attack in form of series of point alerts received by FortiSOAR from FortISIEM. |
+| OT - Asset Change Activity | This scenario demonstrates the OT specific Asset Change Activity and Asset record creation process, which generates an Asset Change Activity and an Asset for type "Add New Asset" and "Medium Impact Baseline Change" activities. |
 
 ## Playbook Collection
 

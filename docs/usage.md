@@ -14,11 +14,11 @@ Refer to the section `OT - Asset Management` to understand how this solution pac
 
 ### Steps to be followed after installing SP:
 
-1. Use Playbook - **MITRE ATT&CK > Fetch Latest Data** from MITRE Connector Sample Playbook to get the Tactics, Techniques, Sub-techniques, Mitigations, Groups and Software.
-2. Import sample Assets by excuting Playbook **Read CSV File** over Attachment record `Asset_Record`
-3. Import sample Alerts by excuting Playbook **Read CSV File** over Attachment record `Alert_Record`
+1. Use Playbook - **MITRE ATT&CK > Fetch Latest Data** of MITRE Connector Sample Playbook to get the Tactics, Techniques, Sub-techniques, Mitigations, Groups and Software.
+2. Import sample Assets by excuting Playbook **Read CSV File** over Attachment record `OT Sample Asset`
+3. Import sample Alerts by excuting Playbook **Read CSV File** over Attachment record `OT Sample Alert`
 
-> Note: On alert creation, IOCs are enriched, and the alert is correlated with Techniques, Mitigation, and all other records for the MITRE ATT&CK Id that is present in the alert.
+> Note: On alert creation, IOCs get enriched, and the alert get correlated with Techniques, Mitigation, and all other records for the MITRE ATT&CK Id available in the alert.
 
 ## Simulation mode
 
@@ -34,7 +34,7 @@ The simulation mode has some sample data that helps you get a better understandi
     - STEP7 configuration download command
 - Each alert get associated with assets based on the Source and Destination IP.
 - **Technique**, **Mitigation** and **Software** get linked to alerts under the **Recommended Mitigation** tab.
-- Once the alert has been enriched, open the "Stuxnet peer to peer communication attempt" alert and look for a similar alert in the Workspace Recommendations tab. 
+- Once the alert has been enriched, open the "Stuxnet peer to peer communication attempt" alert and look for a similar alert in the Workspace `Recommendations` tab. 
 - Escalate the alert to an incident by checking "Select All" and "Include this record," then running the playbook **Escalate To Incident**. Please provide all incident details. (An incident is created with the link available in the alert's comment)
 - Incident get correlated with all the IOCs, Alerts, Assets, Technique, Mitigation and Software.
 - Click on **Quarantine Asset and Raise Ticket** to quarantine assets and raise ticket for assets.
