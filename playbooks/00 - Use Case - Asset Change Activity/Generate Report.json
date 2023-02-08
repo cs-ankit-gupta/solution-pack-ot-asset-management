@@ -4,7 +4,7 @@
     "name": "Generate Report",
     "aliasName": null,
     "tag": "#CyOPs-Utilities",
-    "description": "Generated Report and Link to Incidents",
+    "description": "Generates Report and Link to Incidents",
     "isActive": true,
     "debug": false,
     "singleRecordExecution": false,
@@ -127,6 +127,6 @@
     "recordTags": [
         "SystemWaitForCompletion",
         "Report",
-        "OT - Specific"
+        "OT IT"
     ]
 }

@@ -72,7 +72,23 @@
                                                                                                         "name": "description",
                                                                                                         "readOnly": false
                                                                                                     }
-                                                                                                ]
+                                                                                                ],
+                                                                                                "style": "col-lg-6"
+                                                                                            },
+                                                                                            {
+                                                                                                "fields": [
+                                                                                                    {
+                                                                                                        "name": "vulnerabilityRiskStatus",
+                                                                                                        "highlightMode": true,
+                                                                                                        "readOnly": false
+                                                                                                    },
+                                                                                                    {
+                                                                                                        "name": "criticality",
+                                                                                                        "highlightMode": true,
+                                                                                                        "readOnly": false
+                                                                                                    }
+                                                                                                ],
+                                                                                                "style": "col-lg-6"
                                                                                             }
                                                                                         ],
                                                                                         "style": ""
@@ -108,6 +124,11 @@
                                                                                                     },
                                                                                                     {
                                                                                                         "name": "vendor",
+                                                                                                        "highlightMode": true,
+                                                                                                        "readOnly": false
+                                                                                                    },
+                                                                                                    {
+                                                                                                        "name": "assetIcon",
                                                                                                         "highlightMode": true,
                                                                                                         "readOnly": false
                                                                                                     }
@@ -181,11 +202,6 @@
                                                                                                 "fields": [
                                                                                                     {
                                                                                                         "name": "registrationDate",
-                                                                                                        "highlightMode": true,
-                                                                                                        "readOnly": false
-                                                                                                    },
-                                                                                                    {
-                                                                                                        "name": "criticality",
                                                                                                         "highlightMode": true,
                                                                                                         "readOnly": false
                                                                                                     },
@@ -385,7 +401,7 @@
                                                                                             }
                                                                                         },
                                                                                         "icon": "icon icon-assets",
-                                                                                        "show": true,
+                                                                                        "show": false,
                                                                                         "visible": true
                                                                                     },
                                                                                     {
@@ -417,7 +433,7 @@
                                                                                             }
                                                                                         },
                                                                                         "icon": "icon icon-change-severity",
-                                                                                        "show": false,
+                                                                                        "show": true,
                                                                                         "visible": true
                                                                                     },
                                                                                     {
@@ -501,10 +517,12 @@
                                                                             },
                                                                             "type": "timeline"
                                                                         }
-                                                                    ]
+                                                                    ],
+                                                                    "style": "col-lg-12"
                                                                 }
                                                             ],
-                                                            "wid": "ee88f939-645e-4480-b698-a6c22e7e1f55"
+                                                            "wid": "ee88f939-645e-4480-b698-a6c22e7e1f55",
+                                                            "_collapsed": false
                                                         }
                                                     ],
                                                     "wid": "f6c1af0d-1903-4994-98fa-80f53c79c68b"

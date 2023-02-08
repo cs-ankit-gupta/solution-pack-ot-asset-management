@@ -53,18 +53,18 @@
                         "editMode": false
                     },
                     {
-                        "title": "System Requirements",
+                        "title": "Asset Resources",
                         "require": {
-                            "module": "system_requirements",
+                            "module": "asset_resources",
                             "action": "read"
                         },
                         "state": {
                             "name": "main.modules.list",
                             "parameters": {
-                                "module": "system_requirements"
+                                "module": "asset_resources"
                             }
                         },
-                        "icon": "icon icon-system-monitoring",
+                        "icon": "icon icon-insert-edit-image",
                         "editMode": false
                     },
                     {
@@ -79,21 +79,6 @@
                         "require": {
                             "action": "read",
                             "module": "asset_change_activities"
-                        },
-                        "editMode": false
-                    },
-                    {
-                        "icon": "icon icon-important-flag",
-                        "state": {
-                            "name": "main.modules.list",
-                            "parameters": {
-                                "module": "ports_and_services"
-                            }
-                        },
-                        "title": "Ports and Services",
-                        "require": {
-                            "action": "read",
-                            "module": "ports_and_services"
                         },
                         "editMode": false
                     }

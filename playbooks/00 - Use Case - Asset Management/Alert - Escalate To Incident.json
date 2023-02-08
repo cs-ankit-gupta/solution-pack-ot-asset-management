@@ -101,7 +101,7 @@
                         "dataType": "picklist",
                         "formType": "picklist",
                         "required": true,
-                        "_expanded": false,
+                        "_expanded": true,
                         "collection": false,
                         "dataSource": {
                             "model": "picklists",
@@ -138,7 +138,15 @@
                                     "conditions": null,
                                     "visibility": "visible"
                                 },
+                                "876c1483-416b-4d2f-8138-15769ae16d5c": {
+                                    "conditions": null,
+                                    "visibility": "visible"
+                                },
                                 "b3c20a3a-ecfd-4adc-a225-0205968e6793": {
+                                    "conditions": null,
+                                    "visibility": "visible"
+                                },
+                                "bcebcab1-3f93-468a-9f3f-91e5c511a0b5": {
                                     "conditions": null,
                                     "visibility": "visible"
                                 }
@@ -147,7 +155,7 @@
                         "searchable": false,
                         "moduleField": "severity",
                         "templateUrl": "app\/components\/form\/fields\/typeahead.html",
-                        "defaultValue": "\/api\/3\/picklists\/b3c20a3a-ecfd-4adc-a225-0205968e6793",
+                        "defaultValue": null,
                         "useModuleField": false,
                         "allowedEncryption": false,
                         "allowedGridColumn": true,
@@ -495,6 +503,9 @@
     "isPrivate": false,
     "deletedAt": null,
     "recordTags": [
-        "SystemWaitForCompletion"
+        "SystemWaitForCompletion",
+        "Incidents",
+        "Alerts",
+        "OT IT"
     ]
 }

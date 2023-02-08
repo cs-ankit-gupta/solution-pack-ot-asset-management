@@ -143,6 +143,12 @@
                 },
                 "_promptexpanded": true,
                 "displayConditions": {
+                    "assets": {
+                        "sort": [],
+                        "limit": 30,
+                        "logic": "AND",
+                        "filters": []
+                    },
                     "violation": {
                         "sort": [],
                         "limit": 30,
@@ -214,8 +220,8 @@
     "deletedAt": null,
     "recordTags": [
         "Alerts",
-        "OT - Specific",
         "Assets",
-        "Import CSV"
+        "Import CSV",
+        "OT IT"
     ]
 }

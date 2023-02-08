@@ -40,7 +40,7 @@
             "arguments": {
                 "resource": {
                     "name": "Stuxnet peer to peer communication attempt",
-                    "type": "\/api\/3\/picklists\/6bdeedd7-fb20-4b20-9717-f06520f0f788",
+                    "type": "\/api\/3\/picklists\/0cbc2c31-c360-4770-b1e7-3653a8c24ead",
                     "state": "\/api\/3\/picklists\/a1bac09b-1441-45aa-ad1b-c88744e48e72",
                     "source": "FortiSIEM",
                     "status": "\/api\/3\/picklists\/7de816ff-7140-4ee5-bd05-93ce22002146",
@@ -896,7 +896,7 @@
     "deletedAt": null,
     "recordTags": [
         "Alerts",
-        "OT - Specific",
-        "Assets"
+        "Assets",
+        "OT IT"
     ]
 }

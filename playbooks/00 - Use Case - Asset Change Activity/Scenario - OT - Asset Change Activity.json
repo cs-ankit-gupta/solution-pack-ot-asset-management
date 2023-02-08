@@ -28,7 +28,7 @@
                     "assignedTo": "\/api\/3\/people\/3451141c-bac6-467c-8d72-85e0fab569ce",
                     "recordTags": [
                         "\/api\/3\/tags\/Medium Impact Baseline Change",
-                        "\/api\/3\/tags\/OT - Specific"
+                        "\/api\/3\/tags\/OT IT"
                     ],
                     "description": "Apache Log4j2 versions 2.0-beta7 through 2.17.0 (excluding security fix releases 2.3.2 and 2.12.4) are vulnerable to a remote code execution (RCE) attack where an attacker with permission to modify the logging configuration file can construct a malicious configuration using a JDBC Appender with a data source referencing a JNDI URI which can execute remote code. This issue is fixed by limiting JNDI data source names to the java protocol in Log4j2 versions 2.17.1, 2.12.4, and 2.3.2.",
                     "justification": "Log4Shell, also known as CVE-2021-44228, was first reported privately to Apache on November 24 and was patched on December 9. It affects Apache Struts, Apache Solr, Apache Druid, Elasticsearch, Apache Dubbo, and VMware vCenter.",
@@ -90,7 +90,7 @@
                     "assignedTo": "\/api\/3\/people\/3451141c-bac6-467c-8d72-85e0fab569ce",
                     "recordTags": [
                         "\/api\/3\/tags\/Add Cyber Asset",
-                        "\/api\/3\/tags\/OT - Specific"
+                        "\/api\/3\/tags\/OT IT"
                     ],
                     "description": "Power up your productivity, and content creation with the Intel Core i7-13700K 3.4 GHz 16-Core LGA 1700 Processor. This 13th generation desktop processor builds upon the Hybrid Core architecture and Intel 7 process by fitting 16 cores\u2014 four more than the previous generation\u2014 onto a single processor while still supporting the LGA 1700 socket. Designed to provide high performance, the Core i7-13700K features eight low-voltage Efficient-cores that handle background tasks for multitasking while the eight 3.4 GHz Performance-cores provide speed for demanding applications and games. The built-in Intel Thread Director ensures that the two work seamlessly together by dynamically and intelligently assigning workloads to the right core at the right time.",
                     "justification": "The latest i7 chips offer up to six cores and 12 threads, making them better suited for advanced multitasking. Core i7 processors are considered ideal for multimedia consumption, high-end gaming, demanding applications such as Adobe's Creative Suite, and scientific work.",
@@ -361,10 +361,10 @@
     "isPrivate": false,
     "deletedAt": null,
     "recordTags": [
-        "OT - Specific",
+        "Add Cyber Asset",
         "Asset Change Activity",
         "Medium Impact Baseline Change",
-        "Add Cyber Asset",
-        "Assets"
+        "Assets",
+        "OT IT"
     ]
 }

@@ -1,0 +1,159 @@
+{
+    "@type": "Workflow",
+    "triggerLimit": null,
+    "name": "On Alert Creation Link MITRE Record",
+    "aliasName": null,
+    "tag": null,
+    "description": "Based on the MITRE Technique used for Alert, link the Sub Technique, Mitigation, Software, and Group.",
+    "isActive": true,
+    "debug": false,
+    "singleRecordExecution": false,
+    "remoteExecutableFlag": false,
+    "parameters": [],
+    "synchronous": false,
+    "collection": "\/api\/3\/workflow_collections\/fb4aa534-4bfc-4196-b509-96ef02fb9270",
+    "versions": [],
+    "triggerStep": "\/api\/3\/workflow_steps\/6c29b7f0-bc5c-4a5f-a11c-59fe67128595",
+    "steps": [
+        {
+            "@type": "WorkflowStep",
+            "name": "Get Technique",
+            "description": null,
+            "arguments": {
+                "query": {
+                    "sort": [],
+                    "limit": 30,
+                    "logic": "OR",
+                    "filters": [
+                        {
+                            "type": "primitive",
+                            "field": "mitreId",
+                            "value": "{{vars.input.records[0].mitreattackid}}",
+                            "operator": "eq",
+                            "_operator": "eq"
+                        }
+                    ]
+                },
+                "module": "mitre_techniques?$limit=30&$relationships=true&$fsr_max_relation_count=100",
+                "step_variables": {
+                    "groupIRIs": "{{vars.result[0].groups | json_query('[*][\"@id\"][]')}}",
+                    "softwaresIRIs": "{{vars.result[0].software | json_query('[*][\"@id\"][]')}}",
+                    "mitigationsIRIs": "{{vars.result[0].mitigations | json_query('[*][\"@id\"][]')}}",
+                    "subTechniqueIRIs": "{{vars.result[0].techniques | json_query('[*][\"@id\"][]')}}"
+                }
+            },
+            "status": null,
+            "top": "165",
+            "left": "125",
+            "stepType": "\/api\/3\/workflow_step_types\/b593663d-7d13-40ce-a3a3-96dece928770",
+            "group": null,
+            "uuid": "12c30ba9-b3cc-4e5d-a133-7465ff486eb8"
+        },
+        {
+            "@type": "WorkflowStep",
+            "name": "Update Alert",
+            "description": null,
+            "arguments": {
+                "message": {
+                    "tags": [],
+                    "type": "\/api\/3\/picklists\/ff599189-3eeb-4c86-acb0-a7915e85ac3b",
+                    "tenant": "",
+                    "content": "<p>Correlated Recommended <span class=\"badge badge-pill badge-danger\" style=\"background: #009d00; color: #fff;\">Techniques<\/span> <span class=\"badge badge-pill badge-danger\" style=\"background: #009d00; color: #fff;\">Sub Techniques<\/span> <span class=\"badge badge-pill badge-danger\" style=\"background: #009d00; color: #fff;\">Mitigations<\/span> <span class=\"badge badge-pill badge-danger\" style=\"background: #009d00; color: #fff;\">Software<\/span><\/p>",
+                    "records": ""
+                },
+                "resource": {
+                    "__link": {
+                        "mitresoftware": "{{vars.softwaresIRIs}}",
+                        "mitre_techniques": "{{vars.steps.Get_Technique[0]['@id']}}",
+                        "mitremitigations": "{{vars.mitigationsIRIs}}",
+                        "mitre_sub_techniques": "{{vars.subTechniqueIRIs}}"
+                    }
+                },
+                "operation": "Append",
+                "collection": "{{vars.input.records[0]['@id']}}",
+                "__recommend": [],
+                "collectionType": "\/api\/3\/alerts",
+                "fieldOperation": {
+                    "recordTags": "Append"
+                },
+                "step_variables": []
+            },
+            "status": null,
+            "top": "300",
+            "left": "125",
+            "stepType": "\/api\/3\/workflow_step_types\/b593663d-7d13-40ce-a3a3-96dece928722",
+            "group": null,
+            "uuid": "21be74e2-762e-4991-9ee1-ad9c5667c5a6"
+        },
+        {
+            "@type": "WorkflowStep",
+            "name": "Start",
+            "description": null,
+            "arguments": {
+                "resource": "alerts",
+                "resources": [
+                    "alerts"
+                ],
+                "step_variables": {
+                    "input": {
+                        "params": [],
+                        "records": [
+                            "{{vars.input.records[0]}}"
+                        ]
+                    }
+                },
+                "fieldbasedtrigger": {
+                    "sort": [],
+                    "limit": 30,
+                    "logic": "AND",
+                    "filters": [
+                        {
+                            "type": "primitive",
+                            "field": "mitreattackid",
+                            "value": "false",
+                            "operator": "isnull",
+                            "_operator": "isnull"
+                        }
+                    ]
+                }
+            },
+            "status": null,
+            "top": "30",
+            "left": "125",
+            "stepType": "\/api\/3\/workflow_step_types\/ea155646-3821-4542-9702-b246da430a8d",
+            "group": null,
+            "uuid": "6c29b7f0-bc5c-4a5f-a11c-59fe67128595"
+        }
+    ],
+    "routes": [
+        {
+            "@type": "WorkflowRoute",
+            "name": "Start -> Get Technique",
+            "targetStep": "\/api\/3\/workflow_steps\/12c30ba9-b3cc-4e5d-a133-7465ff486eb8",
+            "sourceStep": "\/api\/3\/workflow_steps\/6c29b7f0-bc5c-4a5f-a11c-59fe67128595",
+            "label": null,
+            "isExecuted": false,
+            "uuid": "659a470a-25f5-4ff3-97ca-3ed5b18d64ff"
+        },
+        {
+            "@type": "WorkflowRoute",
+            "name": "Get Technique -> Update Alert",
+            "targetStep": "\/api\/3\/workflow_steps\/21be74e2-762e-4991-9ee1-ad9c5667c5a6",
+            "sourceStep": "\/api\/3\/workflow_steps\/12c30ba9-b3cc-4e5d-a133-7465ff486eb8",
+            "label": null,
+            "isExecuted": false,
+            "uuid": "de6fa393-d04c-4015-93df-570ffbec4464"
+        }
+    ],
+    "groups": [],
+    "priority": "\/api\/3\/picklists\/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+    "uuid": "7e71283d-4d73-46ca-98de-21bb738a0148",
+    "owners": [],
+    "isPrivate": false,
+    "deletedAt": null,
+    "recordTags": [
+        "Alerts",
+        "Mitre ATTACK",
+        "OT IT"
+    ]
+}
