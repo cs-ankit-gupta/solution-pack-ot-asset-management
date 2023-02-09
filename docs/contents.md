@@ -21,6 +21,13 @@ The `OT - Asset Management` solution pack contains the following resources.
 | Fortinet FortiEDR | 1.3.0 or later | FortiEDR protects endpoints pre and post infection, stopping data breaches in real-time and automatically orchestrating incident investigation and response. This connector facilitates the automated operations related to events, forensics and collectors. |
 | ServiceNow | 3.2.0 or later | ServiceNow connector provides functionality to create, read, update and delete records of Table and Catalog type |
 
+## Widgets
+
+|**Name**|**Description**|
+| :- | :- |
+| Record Distribution | Ability to visualise items/records and their correlations in different levels based on a given grouping context. A very good example of the widget's utility is the OT view, where assets are visualised across different Purdue Levels and highlight any existing relations with other assets at different levels. | 
+| MITRE ATT&CK ||
+ 
 ## Module Schema
 
 |**Name**|**Description**|

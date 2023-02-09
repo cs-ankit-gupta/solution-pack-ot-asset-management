@@ -14,7 +14,7 @@ Refer to the section `OT - Asset Management` to understand how this solution pac
 
 ### Steps to be followed after installing SP:
 
-1. Use Playbook - **MITRE ATT&CK > Fetch Latest Data** of MITRE Connector Sample Playbook to get the Tactics, Techniques, Sub-techniques, Mitigations, Groups and Software.
+1. Use Playbook on ICS Configuration - **MITRE ATT&CK > Fetch Latest Data** of MITRE Connector Sample Playbook to get the Tactics, Techniques, Sub-techniques, Mitigations, Groups and Software.
 2. Import sample Assets by excuting Playbook **Read CSV File** over Attachment record `OT Sample Asset`
 3. Import sample Alerts by excuting Playbook **Read CSV File** over Attachment record `OT Sample Alert`
 
