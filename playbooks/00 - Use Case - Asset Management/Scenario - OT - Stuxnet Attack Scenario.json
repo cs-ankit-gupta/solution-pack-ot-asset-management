@@ -17,193 +17,27 @@
     "steps": [
         {
             "@type": "WorkflowStep",
-            "name": "Start",
+            "name": "Update T0847 Alert",
             "description": null,
             "arguments": {
-                "step_variables": {
-                    "input": {
-                        "params": []
+                "resource": {
+                    "__link": {
+                        "assets": "{{vars.sourceAsset, vars.destinationAsset}}"
                     }
-                }
+                },
+                "operation": "Append",
+                "collection": "{{vars.steps.Create_a_Replication_Through_Removable_Media_T0847_Alert['@id']}}",
+                "__recommend": [],
+                "collectionType": "\/api\/3\/alerts",
+                "fieldOperation": [],
+                "step_variables": []
             },
             "status": null,
-            "top": "30",
+            "top": "840",
             "left": "125",
-            "stepType": "\/api\/3\/workflow_step_types\/b348f017-9a94-471f-87f8-ce88b6a7ad62",
+            "stepType": "\/api\/3\/workflow_step_types\/b593663d-7d13-40ce-a3a3-96dece928722",
             "group": null,
-            "uuid": "b5d2c66a-c38e-4e07-8485-52afd0ac3cc0"
-        },
-        {
-            "@type": "WorkflowStep",
-            "name": "Create a Replication Through Removable Media_T0847 Alert",
-            "description": null,
-            "arguments": {
-                "resource": {
-                    "name": "Stuxnet peer to peer communication attempt",
-                    "type": "\/api\/3\/picklists\/0cbc2c31-c360-4770-b1e7-3653a8c24ead",
-                    "state": "\/api\/3\/picklists\/a1bac09b-1441-45aa-ad1b-c88744e48e72",
-                    "source": "FortiSIEM",
-                    "status": "\/api\/3\/picklists\/7de816ff-7140-4ee5-bd05-93ce22002146",
-                    "severity": "\/api\/3\/picklists\/58d0753f-f7e4-403b-953c-b0f521eab759",
-                    "sourceIp": "110.132.30.51",
-                    "__replace": "",
-                    "sourcePort": "1434",
-                    "description": "A machine infected by Stuxnet has attempted to establish a communication with other potentially stuxnet infected machine via a malware-specific RPC-based peer to peer control. If the protocol negotiation is successful, also the other machine is infected by Stuxnet. It is advised to immediately quarantine and clean the Stuxnet infected machine.",
-                    "ackSlaStatus": "\/api\/3\/picklists\/72979f64-e8b9-4888-a965-957e0ec24818",
-                    "mitretactics": "\/api\/3\/mitre_tactics\/69da72d2-f550-41c5-ab9e-e8255707f28a",
-                    "destinationIp": "110.132.30.63",
-                    "mitreattackid": "T0847",
-                    "respSlaStatus": "\/api\/3\/picklists\/72979f64-e8b9-4888-a965-957e0ec24818",
-                    "priorityWeight": 1,
-                    "destinationPort": "423",
-                    "escalatedtoincident": "\/api\/3\/picklists\/2128a09c-153d-4db3-985d-de6be33deae5",
-                    "alertRemainingAckSLA": 0
-                },
-                "operation": "Overwrite",
-                "collection": "\/api\/3\/alerts",
-                "__recommend": [],
-                "fieldOperation": {
-                    "recordTags": "Overwrite"
-                },
-                "step_variables": {
-                    "__dummy": "{{vars.recordIRI.append(vars.result['@id'])}}",
-                    "sourceDestinationIP": "{% set ip = [] %}{% set _ = ip.append(vars.result.sourceIp) %}{% set _ = ip.append(vars.result.destinationIp) %}{{ip}}"
-                }
-            },
-            "status": null,
-            "top": "300",
-            "left": "120",
-            "stepType": "\/api\/3\/workflow_step_types\/2597053c-e718-44b4-8394-4d40fe26d357",
-            "group": null,
-            "uuid": "8853063e-66d6-4fc0-a990-a1cbe659f6f8"
-        },
-        {
-            "@type": "WorkflowStep",
-            "name": "Create Remote System Discovery_T0846 Alert",
-            "description": null,
-            "arguments": {
-                "resource": {
-                    "name": "Anomalous communication between two Windows XP machines",
-                    "type": "\/api\/3\/picklists\/d282a627-a16e-4a8e-9b80-fce1636dfcfc",
-                    "state": "\/api\/3\/picklists\/a1bac09b-1441-45aa-ad1b-c88744e48e72",
-                    "source": "FortiSIEM",
-                    "status": "\/api\/3\/picklists\/7de816ff-7140-4ee5-bd05-93ce22002146",
-                    "severity": "\/api\/3\/picklists\/58d0753f-f7e4-403b-953c-b0f521eab759",
-                    "sourceIp": "110.132.30.72",
-                    "__replace": "",
-                    "sourcePort": "4912",
-                    "ackSlaStatus": "\/api\/3\/picklists\/72979f64-e8b9-4888-a965-957e0ec24818",
-                    "mitretactics": "\/api\/3\/mitre_tactics\/696af733-728e-49d7-8261-75fdc590f453",
-                    "destinationIp": "110.132.30.51",
-                    "mitreattackid": "T0846",
-                    "respSlaStatus": "\/api\/3\/picklists\/72979f64-e8b9-4888-a965-957e0ec24818",
-                    "priorityWeight": 1,
-                    "destinationPort": "1141",
-                    "escalatedtoincident": "\/api\/3\/picklists\/2128a09c-153d-4db3-985d-de6be33deae5",
-                    "alertRemainingAckSLA": 0
-                },
-                "operation": "Overwrite",
-                "collection": "\/api\/3\/alerts",
-                "__recommend": [],
-                "fieldOperation": {
-                    "recordTags": "Overwrite"
-                },
-                "step_variables": {
-                    "__dummy": "{{vars.recordIRI.append(vars.result['@id'])}}"
-                }
-            },
-            "status": null,
-            "top": "300",
-            "left": "620",
-            "stepType": "\/api\/3\/workflow_step_types\/2597053c-e718-44b4-8394-4d40fe26d357",
-            "group": null,
-            "uuid": "3fe9bf8d-26b1-45ca-a619-fbb4e2842e0f"
-        },
-        {
-            "@type": "WorkflowStep",
-            "name": "Create Commonly Used Port_T0885 Alert",
-            "description": null,
-            "arguments": {
-                "resource": {
-                    "name": "Communication between public and private networks",
-                    "type": "\/api\/3\/picklists\/382b0435-e517-4760-867a-d662048fe292",
-                    "state": "\/api\/3\/picklists\/a1bac09b-1441-45aa-ad1b-c88744e48e72",
-                    "source": "FortiSIEM",
-                    "status": "\/api\/3\/picklists\/7de816ff-7140-4ee5-bd05-93ce22002146",
-                    "severity": "\/api\/3\/picklists\/58d0753f-f7e4-403b-953c-b0f521eab759",
-                    "sourceIp": "110.132.30.63",
-                    "__replace": "",
-                    "sourcePort": "5234",
-                    "description": "A host with a public IP address has communicated with a host with a private IP address, and vice versa. Public IP addresses are typically used by devices that can be accessed via the internet and are not expected to communicate with private networks. Please confirm that this is a legitimate communication.",
-                    "ackSlaStatus": "\/api\/3\/picklists\/72979f64-e8b9-4888-a965-957e0ec24818",
-                    "mitretactics": "\/api\/3\/mitre_tactics\/97c8ff73-bd14-4b6c-ac32-3d91d2c41e3f",
-                    "destinationIp": "103.224.182.249",
-                    "mitreattackid": "T0885",
-                    "respSlaStatus": "\/api\/3\/picklists\/72979f64-e8b9-4888-a965-957e0ec24818",
-                    "priorityWeight": 1,
-                    "destinationPort": "73",
-                    "escalatedtoincident": "\/api\/3\/picklists\/2128a09c-153d-4db3-985d-de6be33deae5",
-                    "alertRemainingAckSLA": 0
-                },
-                "operation": "Overwrite",
-                "collection": "\/api\/3\/alerts",
-                "__recommend": [],
-                "fieldOperation": {
-                    "recordTags": "Overwrite"
-                },
-                "step_variables": {
-                    "__dummy": "{{vars.recordIRI.append(vars.result['@id'])}}"
-                }
-            },
-            "status": null,
-            "top": "300",
-            "left": "1040",
-            "stepType": "\/api\/3\/workflow_step_types\/2597053c-e718-44b4-8394-4d40fe26d357",
-            "group": null,
-            "uuid": "939b1127-5d69-4cac-85c8-5288c0fda7c4"
-        },
-        {
-            "@type": "WorkflowStep",
-            "name": "Create Program Download_T0843 Alert",
-            "description": null,
-            "arguments": {
-                "resource": {
-                    "name": "STEP7 configuration download command",
-                    "type": "\/api\/3\/picklists\/574a6ee2-7265-4701-815e-cff83b053bce",
-                    "state": "\/api\/3\/picklists\/a1bac09b-1441-45aa-ad1b-c88744e48e72",
-                    "source": "FortiSIEM",
-                    "status": "\/api\/3\/picklists\/7de816ff-7140-4ee5-bd05-93ce22002146",
-                    "severity": "\/api\/3\/picklists\/58d0753f-f7e4-403b-953c-b0f521eab759",
-                    "sourceIp": "110.132.30.51",
-                    "__replace": "",
-                    "sourcePort": "5213",
-                    "description": "Potentially dangerous STEP7 operation: the STEP7 master or an operator is downloading the software and\/or hardware configuration into a PLC. This operation may be part of regular maintance, but can also be used in a cyber attack.",
-                    "ackSlaStatus": "\/api\/3\/picklists\/72979f64-e8b9-4888-a965-957e0ec24818",
-                    "mitretactics": "\/api\/3\/mitre_tactics\/ff048b6c-b872-4218-b68c-3735ebd1f024",
-                    "destinationIp": "110.132.25.43",
-                    "mitreattackid": "T0843",
-                    "respSlaStatus": "\/api\/3\/picklists\/72979f64-e8b9-4888-a965-957e0ec24818",
-                    "priorityWeight": 1,
-                    "destinationPort": "124",
-                    "escalatedtoincident": "\/api\/3\/picklists\/2128a09c-153d-4db3-985d-de6be33deae5",
-                    "alertRemainingAckSLA": 0
-                },
-                "operation": "Overwrite",
-                "collection": "\/api\/3\/alerts",
-                "__recommend": [],
-                "fieldOperation": {
-                    "recordTags": "Overwrite"
-                },
-                "step_variables": {
-                    "__dummy": "{{vars.recordIRI.append(vars.result['@id'])}}"
-                }
-            },
-            "status": null,
-            "top": "300",
-            "left": "1420",
-            "stepType": "\/api\/3\/workflow_step_types\/2597053c-e718-44b4-8394-4d40fe26d357",
-            "group": null,
-            "uuid": "a80eb6c0-906f-4811-98ab-f21d801346cc"
+            "uuid": "250aea00-eb13-4f9f-92fd-4276407d1149"
         },
         {
             "@type": "WorkflowStep",
@@ -224,14 +58,18 @@
                     "protocol": [
                         "\/api\/3\/picklists\/24a46b26-3ca3-4455-a5d1-cee4a79d3a59"
                     ],
-                    "__replace": "",
+                    "__replace": "false",
                     "assetType": "\/api\/3\/picklists\/7630b182-4930-4f97-beec-3c3a5372cb3b",
                     "macAddress": "08:00:27:85:C5:CD",
+                    "recordTags": [
+                        "\/api\/3\/tags\/OT IT",
+                        "\/api\/3\/tags\/sampleAsset"
+                    ],
                     "criticality": "\/api\/3\/picklists\/f734dfbb-fd61-425e-8a14-ebd560289fac",
                     "operatingSystem": "\/api\/3\/picklists\/f0fc6b95-965f-4b65-9b3c-bb3c7f790c1d"
                 },
                 "operation": "Overwrite",
-                "collection": "\/api\/3\/assets",
+                "collection": "\/api\/3\/upsert\/assets",
                 "__recommend": [],
                 "fieldOperation": {
                     "protocol": "Overwrite",
@@ -251,258 +89,27 @@
         },
         {
             "@type": "WorkflowStep",
-            "name": "Create EWS 01Q3 Asset",
+            "name": "Update T0885 Alert",
             "description": null,
             "arguments": {
-                "when": "{{vars.steps.Get_T0847_Assets['sourceAsset'] == \"\"}}",
                 "resource": {
-                    "ip": "110.132.30.51",
-                    "name": "EWS-01Q3",
-                    "zone": "\/api\/3\/picklists\/1f6a2248-0d8d-4233-9764-5d641a257ba7",
-                    "level": "\/api\/3\/picklists\/3eb967b4-ceca-473b-9a05-f3b8b5dac837",
-                    "state": "\/api\/3\/picklists\/b31da3b9-6f87-469e-a1bf-2517c48a7001",
-                    "status": "\/api\/3\/picklists\/421c20cd-e63d-4e32-9a25-774b2155cd24",
-                    "category": "\/api\/3\/picklists\/20fe5586-6c9e-4a4f-ac1a-15df7bbafe0e",
-                    "hostname": "EWS-01Q3",
-                    "protocol": [
-                        "\/api\/3\/picklists\/24a46b26-3ca3-4455-a5d1-cee4a79d3a59"
-                    ],
-                    "__replace": "",
-                    "assetType": "\/api\/3\/picklists\/7630b182-4930-4f97-beec-3c3a5372cb3b",
-                    "macAddress": "00:A0:24:E7:B8:A3",
-                    "criticality": "\/api\/3\/picklists\/f734dfbb-fd61-425e-8a14-ebd560289fac",
-                    "operatingSystem": "\/api\/3\/picklists\/f0fc6b95-965f-4b65-9b3c-bb3c7f790c1d"
+                    "__link": {
+                        "assets": "{{vars.sourceAsset}}"
+                    }
                 },
-                "operation": "Overwrite",
-                "collection": "\/api\/3\/assets",
+                "operation": "Append",
+                "collection": "{{vars.steps.Create_Commonly_Used_Port_T0885_Alert['@id']}}",
                 "__recommend": [],
-                "fieldOperation": {
-                    "protocol": "Overwrite",
-                    "recordTags": "Overwrite"
-                },
-                "step_variables": {
-                    "__dummy": "{{vars.recordIRI.append(vars.result['@id'])}}",
-                    "sourceAsset": "{{vars.result['@id']}}"
-                }
+                "collectionType": "\/api\/3\/alerts",
+                "fieldOperation": [],
+                "step_variables": []
             },
             "status": null,
-            "top": "570",
-            "left": "125",
-            "stepType": "\/api\/3\/workflow_step_types\/2597053c-e718-44b4-8394-4d40fe26d357",
+            "top": "500",
+            "left": "920",
+            "stepType": "\/api\/3\/workflow_step_types\/b593663d-7d13-40ce-a3a3-96dece928722",
             "group": null,
-            "uuid": "57b1ce70-c34b-4463-ac23-4fe5d99aedea"
-        },
-        {
-            "@type": "WorkflowStep",
-            "name": "Create PLC 04 S7 400",
-            "description": null,
-            "arguments": {
-                "when": "{{vars.steps.Get_T0843_Assets['destinationAsset'] == \"\"}}",
-                "resource": {
-                    "ip": "110.132.25.43",
-                    "name": "PLC-04-S7-400",
-                    "zone": "\/api\/3\/picklists\/66dc774d-1f2b-44c7-b1d3-d17eda9febba",
-                    "level": "\/api\/3\/picklists\/adc8d997-3da5-4516-b112-42c6fdb74c3b",
-                    "state": "\/api\/3\/picklists\/b31da3b9-6f87-469e-a1bf-2517c48a7001",
-                    "status": "\/api\/3\/picklists\/421c20cd-e63d-4e32-9a25-774b2155cd24",
-                    "vendor": "Siemens",
-                    "category": "\/api\/3\/picklists\/b7a653a4-4840-44cc-b116-fa618d8ddcd5",
-                    "firmware": "V4.5.2",
-                    "hostname": "PLC-04-S7-400",
-                    "__replace": "",
-                    "assetType": "\/api\/3\/picklists\/f36137a5-aa8f-4532-aab5-e57a8d7420a1",
-                    "assetClass": "\/api\/3\/picklists\/3864918a-79b9-412d-a09e-3f6f13aae2f9",
-                    "macAddress": "08:00:06:94:D3:01",
-                    "criticality": "\/api\/3\/picklists\/873268b5-6751-4eac-a61c-0295f68baa9e"
-                },
-                "operation": "Overwrite",
-                "collection": "\/api\/3\/assets",
-                "__recommend": [],
-                "fieldOperation": {
-                    "protocol": "Overwrite",
-                    "recordTags": "Overwrite"
-                },
-                "step_variables": {
-                    "__dummy": "{{vars.recordIRI.append(vars.result['@id'])}}",
-                    "destinationAsset": "{{vars.result['@id']}}"
-                }
-            },
-            "status": null,
-            "top": "580",
-            "left": "1420",
-            "stepType": "\/api\/3\/workflow_step_types\/2597053c-e718-44b4-8394-4d40fe26d357",
-            "group": null,
-            "uuid": "44f0e423-57fe-4595-bef2-84c961670aed"
-        },
-        {
-            "@type": "WorkflowStep",
-            "name": "Create EWS 42E6",
-            "description": null,
-            "arguments": {
-                "when": "{{vars.steps.Get_T0846_Assets['sourceAsset'] == \"\"}}",
-                "resource": {
-                    "ip": "110.132.30.72",
-                    "name": "EWS-42E6",
-                    "zone": "\/api\/3\/picklists\/1f6a2248-0d8d-4233-9764-5d641a257ba7",
-                    "level": "\/api\/3\/picklists\/3eb967b4-ceca-473b-9a05-f3b8b5dac837",
-                    "state": "\/api\/3\/picklists\/b31da3b9-6f87-469e-a1bf-2517c48a7001",
-                    "status": "\/api\/3\/picklists\/421c20cd-e63d-4e32-9a25-774b2155cd24",
-                    "vendor": "Intel",
-                    "category": "\/api\/3\/picklists\/20fe5586-6c9e-4a4f-ac1a-15df7bbafe0e",
-                    "hostname": "EWS-42E6",
-                    "protocol": [
-                        "\/api\/3\/picklists\/7d8bb656-a176-41ca-ae2e-499691ac7432",
-                        "\/api\/3\/picklists\/fb4eaae0-248a-4c0c-ba81-47d5e374f552"
-                    ],
-                    "__replace": "",
-                    "assetType": "\/api\/3\/picklists\/7630b182-4930-4f97-beec-3c3a5372cb3b",
-                    "assetClass": "\/api\/3\/picklists\/3864918a-79b9-412d-a09e-3f6f13aae2f9",
-                    "macAddress": "00:04:23:B6:44:F3",
-                    "criticality": "\/api\/3\/picklists\/f734dfbb-fd61-425e-8a14-ebd560289fac",
-                    "operatingSystem": "\/api\/3\/picklists\/f0fc6b95-965f-4b65-9b3c-bb3c7f790c1d"
-                },
-                "operation": "Overwrite",
-                "collection": "\/api\/3\/assets",
-                "__recommend": [],
-                "fieldOperation": {
-                    "protocol": "Overwrite",
-                    "recordTags": "Overwrite"
-                },
-                "step_variables": {
-                    "__dummy": "{{vars.recordIRI.append(vars.result['@id'])}}",
-                    "sourceAsset": "{{vars.result['@id']}}"
-                }
-            },
-            "status": null,
-            "top": "580",
-            "left": "620",
-            "stepType": "\/api\/3\/workflow_step_types\/2597053c-e718-44b4-8394-4d40fe26d357",
-            "group": null,
-            "uuid": "aa1fa61b-b1b8-4f59-9bda-702f2a2ff0e3"
-        },
-        {
-            "@type": "WorkflowStep",
-            "name": "Configuration",
-            "description": null,
-            "arguments": {
-                "recordIRI": "[]"
-            },
-            "status": null,
-            "top": "165",
-            "left": "125",
-            "stepType": "\/api\/3\/workflow_step_types\/04d0cf46-b6a8-42c4-8683-60a7eaa69e8f",
-            "group": null,
-            "uuid": "918fb4b1-6fc3-41b8-b2c5-d690b162c570"
-        },
-        {
-            "@type": "WorkflowStep",
-            "name": "Wait for second",
-            "description": null,
-            "arguments": {
-                "rule": {
-                    "actions": [
-                        {
-                            "type": "resume_playbook",
-                            "enabled": true,
-                            "channel_uuid": "e2ce87c2-c55a-11ec-9d64-0242ac120002"
-                        }
-                    ],
-                    "is_active": true,
-                    "event_source": "crudhub"
-                },
-                "type": "TimeBased",
-                "delay": {
-                    "days": 0,
-                    "hours": 0,
-                    "weeks": 0,
-                    "minutes": 0,
-                    "seconds": 2
-                }
-            },
-            "status": null,
-            "top": "160",
-            "left": "620",
-            "stepType": "\/api\/3\/workflow_step_types\/6832e556-b9c7-497a-babe-feda3bd27dbf",
-            "group": null,
-            "uuid": "7e9e20f8-65d3-455d-b644-3ade03f07282"
-        },
-        {
-            "@type": "WorkflowStep",
-            "name": "Wait for seconds",
-            "description": null,
-            "arguments": {
-                "rule": {
-                    "actions": [
-                        {
-                            "type": "resume_playbook",
-                            "enabled": true,
-                            "channel_uuid": "e2ce87c2-c55a-11ec-9d64-0242ac120002"
-                        }
-                    ],
-                    "is_active": true,
-                    "event_source": "crudhub"
-                },
-                "type": "TimeBased",
-                "delay": {
-                    "days": 0,
-                    "hours": 0,
-                    "weeks": 0,
-                    "minutes": 0,
-                    "seconds": 2
-                }
-            },
-            "status": null,
-            "top": "160",
-            "left": "1040",
-            "stepType": "\/api\/3\/workflow_step_types\/6832e556-b9c7-497a-babe-feda3bd27dbf",
-            "group": null,
-            "uuid": "b28eb604-c2a0-4a40-8aef-29e19b57d96c"
-        },
-        {
-            "@type": "WorkflowStep",
-            "name": "Wait for secondss",
-            "description": null,
-            "arguments": {
-                "rule": {
-                    "actions": [
-                        {
-                            "type": "resume_playbook",
-                            "enabled": true,
-                            "channel_uuid": "e2ce87c2-c55a-11ec-9d64-0242ac120002"
-                        }
-                    ],
-                    "is_active": true,
-                    "event_source": "crudhub"
-                },
-                "type": "TimeBased",
-                "delay": {
-                    "days": 0,
-                    "hours": 0,
-                    "weeks": 0,
-                    "minutes": 0,
-                    "seconds": 2
-                }
-            },
-            "status": null,
-            "top": "160",
-            "left": "1420",
-            "stepType": "\/api\/3\/workflow_step_types\/6832e556-b9c7-497a-babe-feda3bd27dbf",
-            "group": null,
-            "uuid": "973e6915-6789-4f62-b641-f0ec7f8cf5ce"
-        },
-        {
-            "@type": "WorkflowStep",
-            "name": "Output",
-            "description": null,
-            "arguments": {
-                "@id": "{{vars.recordIRI}}"
-            },
-            "status": null,
-            "top": "700",
-            "left": "1780",
-            "stepType": "\/api\/3\/workflow_step_types\/04d0cf46-b6a8-42c4-8683-60a7eaa69e8f",
-            "group": null,
-            "uuid": "f549712c-b842-4521-b75f-0130a90501c4"
+            "uuid": "37b08e61-592d-45c4-ad0e-a0f2b28d74ef"
         },
         {
             "@type": "WorkflowStep",
@@ -530,75 +137,462 @@
         },
         {
             "@type": "WorkflowStep",
-            "name": "Update T0847 Alert",
+            "name": "Create Remote System Discovery_T0846 Alert",
             "description": null,
             "arguments": {
                 "resource": {
-                    "__link": {
-                        "assets": "{{vars.sourceAsset, vars.destinationAsset}}"
-                    }
+                    "name": "Anomalous communication between two Windows XP machines",
+                    "type": "\/api\/3\/picklists\/d282a627-a16e-4a8e-9b80-fce1636dfcfc",
+                    "state": "\/api\/3\/picklists\/a1bac09b-1441-45aa-ad1b-c88744e48e72",
+                    "source": "FortiSIEM",
+                    "status": "\/api\/3\/picklists\/7de816ff-7140-4ee5-bd05-93ce22002146",
+                    "severity": "\/api\/3\/picklists\/58d0753f-f7e4-403b-953c-b0f521eab759",
+                    "sourceIp": "110.132.30.72",
+                    "__replace": "false",
+                    "recordTags": [
+                        "\/api\/3\/tags\/OT IT",
+                        "\/api\/3\/tags\/sampleAlert"
+                    ],
+                    "sourcePort": "4912",
+                    "ackSlaStatus": "\/api\/3\/picklists\/72979f64-e8b9-4888-a965-957e0ec24818",
+                    "mitretactics": "\/api\/3\/mitre_tactics\/696af733-728e-49d7-8261-75fdc590f453",
+                    "destinationIp": "110.132.30.51",
+                    "mitreattackid": "T0846",
+                    "respSlaStatus": "\/api\/3\/picklists\/72979f64-e8b9-4888-a965-957e0ec24818",
+                    "priorityWeight": 1,
+                    "destinationPort": "1141",
+                    "escalatedtoincident": "\/api\/3\/picklists\/2128a09c-153d-4db3-985d-de6be33deae5",
+                    "alertRemainingAckSLA": 0
                 },
-                "operation": "Append",
-                "collection": "{{vars.steps.Create_a_Replication_Through_Removable_Media_T0847_Alert['@id']}}",
+                "operation": "Overwrite",
+                "collection": "\/api\/3\/upsert\/alerts",
                 "__recommend": [],
-                "collectionType": "\/api\/3\/alerts",
-                "fieldOperation": [],
-                "step_variables": []
-            },
-            "status": null,
-            "top": "840",
-            "left": "125",
-            "stepType": "\/api\/3\/workflow_step_types\/b593663d-7d13-40ce-a3a3-96dece928722",
-            "group": null,
-            "uuid": "250aea00-eb13-4f9f-92fd-4276407d1149"
-        },
-        {
-            "@type": "WorkflowStep",
-            "name": "Get T0846 Assets",
-            "description": null,
-            "arguments": {
-                "arguments": {
-                    "sourceIPAddress": "{{vars.steps.Create_Remote_System_Discovery_T0846_Alert.sourceIp}}",
-                    "destinationIPAddress": "{{vars.steps.Create_Remote_System_Discovery_T0846_Alert.destinationIp}}"
+                "fieldOperation": {
+                    "recordTags": "Overwrite"
                 },
-                "apply_async": false,
                 "step_variables": {
-                    "sourceAsset": "{{vars.result['sourceAsset']}}",
-                    "destinationAsset": "{{vars.result['destinationAsset']}}"
-                },
-                "pass_input_record": false,
-                "workflowReference": "\/api\/3\/workflows\/9a71aada-d52d-414a-af6a-8e14e3877907"
+                    "__dummy": "{{vars.recordIRI.append(vars.result['@id'])}}"
+                }
             },
             "status": null,
-            "top": "440",
-            "left": "620",
-            "stepType": "\/api\/3\/workflow_step_types\/74932bdc-b8b6-4d24-88c4-1a4dfbc524f3",
+            "top": "200",
+            "left": "560",
+            "stepType": "\/api\/3\/workflow_step_types\/2597053c-e718-44b4-8394-4d40fe26d357",
             "group": null,
-            "uuid": "ca41c034-5593-4853-863e-2d242f9394ef"
+            "uuid": "3fe9bf8d-26b1-45ca-a619-fbb4e2842e0f"
         },
         {
             "@type": "WorkflowStep",
-            "name": "Update T0846 Alert",
+            "name": "Create PLC 04 S7 400",
+            "description": null,
+            "arguments": {
+                "when": "{{vars.steps.Get_T0843_Assets['destinationAsset'] == \"\"}}",
+                "resource": {
+                    "ip": "110.132.25.43",
+                    "name": "PLC-04-S7-400",
+                    "zone": "\/api\/3\/picklists\/66dc774d-1f2b-44c7-b1d3-d17eda9febba",
+                    "level": "\/api\/3\/picklists\/adc8d997-3da5-4516-b112-42c6fdb74c3b",
+                    "state": "\/api\/3\/picklists\/b31da3b9-6f87-469e-a1bf-2517c48a7001",
+                    "status": "\/api\/3\/picklists\/421c20cd-e63d-4e32-9a25-774b2155cd24",
+                    "vendor": "Siemens",
+                    "category": "\/api\/3\/picklists\/b7a653a4-4840-44cc-b116-fa618d8ddcd5",
+                    "firmware": "V4.5.2",
+                    "hostname": "PLC-04-S7-400",
+                    "__replace": "false",
+                    "assetType": "\/api\/3\/picklists\/f36137a5-aa8f-4532-aab5-e57a8d7420a1",
+                    "assetClass": "\/api\/3\/picklists\/3864918a-79b9-412d-a09e-3f6f13aae2f9",
+                    "macAddress": "08:00:06:94:D3:01",
+                    "recordTags": [
+                        "\/api\/3\/tags\/OT IT",
+                        "\/api\/3\/tags\/sampleAsset"
+                    ],
+                    "criticality": "\/api\/3\/picklists\/873268b5-6751-4eac-a61c-0295f68baa9e"
+                },
+                "operation": "Overwrite",
+                "collection": "\/api\/3\/upsert\/assets",
+                "__recommend": [],
+                "fieldOperation": {
+                    "protocol": "Overwrite",
+                    "recordTags": "Overwrite"
+                },
+                "step_variables": {
+                    "__dummy": "{{vars.recordIRI.append(vars.result['@id'])}}",
+                    "destinationAsset": "{{vars.result['@id']}}"
+                }
+            },
+            "status": null,
+            "top": "500",
+            "left": "1280",
+            "stepType": "\/api\/3\/workflow_step_types\/2597053c-e718-44b4-8394-4d40fe26d357",
+            "group": null,
+            "uuid": "44f0e423-57fe-4595-bef2-84c961670aed"
+        },
+        {
+            "@type": "WorkflowStep",
+            "name": "Create EWS 01Q3 Asset",
+            "description": null,
+            "arguments": {
+                "when": "{{vars.steps.Get_T0847_Assets['sourceAsset'] == \"\"}}",
+                "resource": {
+                    "ip": "110.132.30.51",
+                    "name": "EWS-01Q3",
+                    "zone": "\/api\/3\/picklists\/1f6a2248-0d8d-4233-9764-5d641a257ba7",
+                    "level": "\/api\/3\/picklists\/3eb967b4-ceca-473b-9a05-f3b8b5dac837",
+                    "state": "\/api\/3\/picklists\/b31da3b9-6f87-469e-a1bf-2517c48a7001",
+                    "status": "\/api\/3\/picklists\/421c20cd-e63d-4e32-9a25-774b2155cd24",
+                    "category": "\/api\/3\/picklists\/20fe5586-6c9e-4a4f-ac1a-15df7bbafe0e",
+                    "hostname": "EWS-01Q3",
+                    "protocol": [
+                        "\/api\/3\/picklists\/24a46b26-3ca3-4455-a5d1-cee4a79d3a59"
+                    ],
+                    "__replace": "false",
+                    "assetType": "\/api\/3\/picklists\/7630b182-4930-4f97-beec-3c3a5372cb3b",
+                    "macAddress": "00:A0:24:E7:B8:A3",
+                    "recordTags": [
+                        "\/api\/3\/tags\/OT IT",
+                        "\/api\/3\/tags\/sampleAsset"
+                    ],
+                    "criticality": "\/api\/3\/picklists\/f734dfbb-fd61-425e-8a14-ebd560289fac",
+                    "operatingSystem": "\/api\/3\/picklists\/f0fc6b95-965f-4b65-9b3c-bb3c7f790c1d"
+                },
+                "operation": "Overwrite",
+                "collection": "\/api\/3\/upsert\/assets",
+                "__recommend": [],
+                "fieldOperation": {
+                    "protocol": "Overwrite",
+                    "recordTags": "Overwrite"
+                },
+                "step_variables": {
+                    "__dummy": "{{vars.recordIRI.append(vars.result['@id'])}}",
+                    "sourceAsset": "{{vars.result['@id']}}"
+                }
+            },
+            "status": null,
+            "top": "570",
+            "left": "125",
+            "stepType": "\/api\/3\/workflow_step_types\/2597053c-e718-44b4-8394-4d40fe26d357",
+            "group": null,
+            "uuid": "57b1ce70-c34b-4463-ac23-4fe5d99aedea"
+        },
+        {
+            "@type": "WorkflowStep",
+            "name": "Wait for second",
+            "description": null,
+            "arguments": {
+                "rule": {
+                    "actions": [
+                        {
+                            "type": "resume_playbook",
+                            "enabled": true,
+                            "channel_uuid": "e2ce87c2-c55a-11ec-9d64-0242ac120002"
+                        }
+                    ],
+                    "is_active": true,
+                    "event_source": "crudhub"
+                },
+                "type": "TimeBased",
+                "delay": {
+                    "days": 0,
+                    "hours": 0,
+                    "weeks": 0,
+                    "minutes": 0,
+                    "seconds": 2
+                }
+            },
+            "status": null,
+            "top": "80",
+            "left": "560",
+            "stepType": "\/api\/3\/workflow_step_types\/6832e556-b9c7-497a-babe-feda3bd27dbf",
+            "group": null,
+            "uuid": "7e9e20f8-65d3-455d-b644-3ade03f07282"
+        },
+        {
+            "@type": "WorkflowStep",
+            "name": "Create a Replication Through Removable Media_T0847 Alert",
             "description": null,
             "arguments": {
                 "resource": {
-                    "__link": {
-                        "assets": "{{vars.sourceAsset, vars.destinationAsset}}"
-                    }
+                    "name": "Stuxnet peer to peer communication attempt",
+                    "type": "\/api\/3\/picklists\/0cbc2c31-c360-4770-b1e7-3653a8c24ead",
+                    "state": "\/api\/3\/picklists\/a1bac09b-1441-45aa-ad1b-c88744e48e72",
+                    "source": "FortiSIEM",
+                    "status": "\/api\/3\/picklists\/7de816ff-7140-4ee5-bd05-93ce22002146",
+                    "severity": "\/api\/3\/picklists\/58d0753f-f7e4-403b-953c-b0f521eab759",
+                    "sourceIp": "110.132.30.51",
+                    "__replace": "false",
+                    "recordTags": [
+                        "\/api\/3\/tags\/OT IT",
+                        "\/api\/3\/tags\/sampleAlert"
+                    ],
+                    "sourcePort": "1434",
+                    "description": "A machine infected by Stuxnet has attempted to establish a communication with other potentially stuxnet infected machine via a malware-specific RPC-based peer to peer control. If the protocol negotiation is successful, also the other machine is infected by Stuxnet. It is advised to immediately quarantine and clean the Stuxnet infected machine.",
+                    "ackSlaStatus": "\/api\/3\/picklists\/72979f64-e8b9-4888-a965-957e0ec24818",
+                    "mitretactics": "\/api\/3\/mitre_tactics\/69da72d2-f550-41c5-ab9e-e8255707f28a",
+                    "destinationIp": "110.132.30.63",
+                    "mitreattackid": "T0847",
+                    "respSlaStatus": "\/api\/3\/picklists\/72979f64-e8b9-4888-a965-957e0ec24818",
+                    "priorityWeight": 1,
+                    "destinationPort": "423",
+                    "escalatedtoincident": "\/api\/3\/picklists\/2128a09c-153d-4db3-985d-de6be33deae5",
+                    "alertRemainingAckSLA": 0
                 },
-                "operation": "Append",
-                "collection": "{{vars.steps.Create_Remote_System_Discovery_T0846_Alert['@id']}}",
+                "operation": "Overwrite",
+                "collection": "\/api\/3\/upsert\/alerts",
                 "__recommend": [],
-                "collectionType": "\/api\/3\/alerts",
-                "fieldOperation": [],
-                "step_variables": []
+                "fieldOperation": {
+                    "recordTags": "Overwrite"
+                },
+                "step_variables": {
+                    "__dummy": "{{vars.recordIRI.append(vars.result['@id'])}}",
+                    "sourceDestinationIP": "{% set ip = [] %}{% set _ = ip.append(vars.result.sourceIp) %}{% set _ = ip.append(vars.result.destinationIp) %}{{ip}}"
+                }
             },
             "status": null,
-            "top": "700",
-            "left": "620",
-            "stepType": "\/api\/3\/workflow_step_types\/b593663d-7d13-40ce-a3a3-96dece928722",
+            "top": "300",
+            "left": "125",
+            "stepType": "\/api\/3\/workflow_step_types\/2597053c-e718-44b4-8394-4d40fe26d357",
             "group": null,
-            "uuid": "e7c3a6ea-251d-461c-b421-440cb29702c9"
+            "uuid": "8853063e-66d6-4fc0-a990-a1cbe659f6f8"
+        },
+        {
+            "@type": "WorkflowStep",
+            "name": "Configuration",
+            "description": null,
+            "arguments": {
+                "recordIRI": "[]"
+            },
+            "status": null,
+            "top": "165",
+            "left": "125",
+            "stepType": "\/api\/3\/workflow_step_types\/04d0cf46-b6a8-42c4-8683-60a7eaa69e8f",
+            "group": null,
+            "uuid": "918fb4b1-6fc3-41b8-b2c5-d690b162c570"
+        },
+        {
+            "@type": "WorkflowStep",
+            "name": "Create Commonly Used Port_T0885 Alert",
+            "description": null,
+            "arguments": {
+                "resource": {
+                    "name": "Communication between public and private networks",
+                    "type": "\/api\/3\/picklists\/382b0435-e517-4760-867a-d662048fe292",
+                    "state": "\/api\/3\/picklists\/a1bac09b-1441-45aa-ad1b-c88744e48e72",
+                    "source": "FortiSIEM",
+                    "status": "\/api\/3\/picklists\/7de816ff-7140-4ee5-bd05-93ce22002146",
+                    "severity": "\/api\/3\/picklists\/58d0753f-f7e4-403b-953c-b0f521eab759",
+                    "sourceIp": "110.132.30.63",
+                    "__replace": "true",
+                    "recordTags": [
+                        "\/api\/3\/tags\/OT IT",
+                        "\/api\/3\/tags\/sampleAlert"
+                    ],
+                    "sourcePort": "5234",
+                    "description": "A host with a public IP address has communicated with a host with a private IP address, and vice versa. Public IP addresses are typically used by devices that can be accessed via the internet and are not expected to communicate with private networks. Please confirm that this is a legitimate communication.",
+                    "ackSlaStatus": "\/api\/3\/picklists\/72979f64-e8b9-4888-a965-957e0ec24818",
+                    "mitretactics": "\/api\/3\/mitre_tactics\/97c8ff73-bd14-4b6c-ac32-3d91d2c41e3f",
+                    "destinationIp": "103.224.182.249",
+                    "mitreattackid": "T0885",
+                    "respSlaStatus": "\/api\/3\/picklists\/72979f64-e8b9-4888-a965-957e0ec24818",
+                    "priorityWeight": 1,
+                    "destinationPort": "73",
+                    "escalatedtoincident": "\/api\/3\/picklists\/2128a09c-153d-4db3-985d-de6be33deae5",
+                    "alertRemainingAckSLA": 0
+                },
+                "operation": "Overwrite",
+                "collection": "\/api\/3\/upsert\/alerts",
+                "__recommend": [],
+                "fieldOperation": {
+                    "recordTags": "Overwrite"
+                },
+                "step_variables": {
+                    "__dummy": "{{vars.recordIRI.append(vars.result['@id'])}}"
+                }
+            },
+            "status": null,
+            "top": "220",
+            "left": "920",
+            "stepType": "\/api\/3\/workflow_step_types\/2597053c-e718-44b4-8394-4d40fe26d357",
+            "group": null,
+            "uuid": "939b1127-5d69-4cac-85c8-5288c0fda7c4"
+        },
+        {
+            "@type": "WorkflowStep",
+            "name": "Wait for secondss",
+            "description": null,
+            "arguments": {
+                "rule": {
+                    "actions": [
+                        {
+                            "type": "resume_playbook",
+                            "enabled": true,
+                            "channel_uuid": "e2ce87c2-c55a-11ec-9d64-0242ac120002"
+                        }
+                    ],
+                    "is_active": true,
+                    "event_source": "crudhub"
+                },
+                "type": "TimeBased",
+                "delay": {
+                    "days": 0,
+                    "hours": 0,
+                    "weeks": 0,
+                    "minutes": 0,
+                    "seconds": 2
+                }
+            },
+            "status": null,
+            "top": "80",
+            "left": "1280",
+            "stepType": "\/api\/3\/workflow_step_types\/6832e556-b9c7-497a-babe-feda3bd27dbf",
+            "group": null,
+            "uuid": "973e6915-6789-4f62-b641-f0ec7f8cf5ce"
+        },
+        {
+            "@type": "WorkflowStep",
+            "name": "Create Program Download_T0843 Alert",
+            "description": null,
+            "arguments": {
+                "resource": {
+                    "name": "STEP7 configuration download command",
+                    "type": "\/api\/3\/picklists\/574a6ee2-7265-4701-815e-cff83b053bce",
+                    "state": "\/api\/3\/picklists\/a1bac09b-1441-45aa-ad1b-c88744e48e72",
+                    "source": "FortiSIEM",
+                    "status": "\/api\/3\/picklists\/7de816ff-7140-4ee5-bd05-93ce22002146",
+                    "severity": "\/api\/3\/picklists\/58d0753f-f7e4-403b-953c-b0f521eab759",
+                    "sourceIp": "110.132.30.51",
+                    "__replace": "false",
+                    "recordTags": [
+                        "\/api\/3\/tags\/OT IT",
+                        "\/api\/3\/tags\/sampleAlert"
+                    ],
+                    "sourcePort": "5213",
+                    "description": "Potentially dangerous STEP7 operation: the STEP7 master or an operator is downloading the software and\/or hardware configuration into a PLC. This operation may be part of regular maintance, but can also be used in a cyber attack.",
+                    "ackSlaStatus": "\/api\/3\/picklists\/72979f64-e8b9-4888-a965-957e0ec24818",
+                    "mitretactics": "\/api\/3\/mitre_tactics\/ff048b6c-b872-4218-b68c-3735ebd1f024",
+                    "destinationIp": "110.132.25.43",
+                    "mitreattackid": "T0843",
+                    "respSlaStatus": "\/api\/3\/picklists\/72979f64-e8b9-4888-a965-957e0ec24818",
+                    "priorityWeight": 1,
+                    "destinationPort": "124",
+                    "escalatedtoincident": "\/api\/3\/picklists\/2128a09c-153d-4db3-985d-de6be33deae5",
+                    "alertRemainingAckSLA": 0
+                },
+                "operation": "Overwrite",
+                "collection": "\/api\/3\/upsert\/alerts",
+                "__recommend": [],
+                "fieldOperation": {
+                    "recordTags": "Overwrite"
+                },
+                "step_variables": {
+                    "__dummy": "{{vars.recordIRI.append(vars.result['@id'])}}"
+                }
+            },
+            "status": null,
+            "top": "220",
+            "left": "1280",
+            "stepType": "\/api\/3\/workflow_step_types\/2597053c-e718-44b4-8394-4d40fe26d357",
+            "group": null,
+            "uuid": "a80eb6c0-906f-4811-98ab-f21d801346cc"
+        },
+        {
+            "@type": "WorkflowStep",
+            "name": "Create EWS 42E6",
+            "description": null,
+            "arguments": {
+                "when": "{{vars.steps.Get_T0846_Assets['sourceAsset'] == \"\"}}",
+                "resource": {
+                    "ip": "110.132.30.72",
+                    "name": "EWS-42E6",
+                    "zone": "\/api\/3\/picklists\/1f6a2248-0d8d-4233-9764-5d641a257ba7",
+                    "level": "\/api\/3\/picklists\/3eb967b4-ceca-473b-9a05-f3b8b5dac837",
+                    "state": "\/api\/3\/picklists\/b31da3b9-6f87-469e-a1bf-2517c48a7001",
+                    "status": "\/api\/3\/picklists\/421c20cd-e63d-4e32-9a25-774b2155cd24",
+                    "vendor": "Intel",
+                    "category": "\/api\/3\/picklists\/20fe5586-6c9e-4a4f-ac1a-15df7bbafe0e",
+                    "hostname": "EWS-42E6",
+                    "protocol": [
+                        "\/api\/3\/picklists\/7d8bb656-a176-41ca-ae2e-499691ac7432",
+                        "\/api\/3\/picklists\/fb4eaae0-248a-4c0c-ba81-47d5e374f552"
+                    ],
+                    "__replace": "false",
+                    "assetType": "\/api\/3\/picklists\/7630b182-4930-4f97-beec-3c3a5372cb3b",
+                    "assetClass": "\/api\/3\/picklists\/3864918a-79b9-412d-a09e-3f6f13aae2f9",
+                    "macAddress": "00:04:23:B6:44:F3",
+                    "recordTags": [
+                        "\/api\/3\/tags\/OT IT",
+                        "\/api\/3\/tags\/sampleAsset"
+                    ],
+                    "criticality": "\/api\/3\/picklists\/f734dfbb-fd61-425e-8a14-ebd560289fac",
+                    "operatingSystem": "\/api\/3\/picklists\/f0fc6b95-965f-4b65-9b3c-bb3c7f790c1d"
+                },
+                "operation": "Overwrite",
+                "collection": "\/api\/3\/upsert\/assets",
+                "__recommend": [],
+                "fieldOperation": {
+                    "protocol": "Overwrite",
+                    "recordTags": "Overwrite"
+                },
+                "step_variables": {
+                    "__dummy": "{{vars.recordIRI.append(vars.result['@id'])}}",
+                    "sourceAsset": "{{vars.result['@id']}}"
+                }
+            },
+            "status": null,
+            "top": "480",
+            "left": "560",
+            "stepType": "\/api\/3\/workflow_step_types\/2597053c-e718-44b4-8394-4d40fe26d357",
+            "group": null,
+            "uuid": "aa1fa61b-b1b8-4f59-9bda-702f2a2ff0e3"
+        },
+        {
+            "@type": "WorkflowStep",
+            "name": "Wait for seconds",
+            "description": null,
+            "arguments": {
+                "rule": {
+                    "actions": [
+                        {
+                            "type": "resume_playbook",
+                            "enabled": true,
+                            "channel_uuid": "e2ce87c2-c55a-11ec-9d64-0242ac120002"
+                        }
+                    ],
+                    "is_active": true,
+                    "event_source": "crudhub"
+                },
+                "type": "TimeBased",
+                "delay": {
+                    "days": 0,
+                    "hours": 0,
+                    "weeks": 0,
+                    "minutes": 0,
+                    "seconds": 2
+                }
+            },
+            "status": null,
+            "top": "80",
+            "left": "920",
+            "stepType": "\/api\/3\/workflow_step_types\/6832e556-b9c7-497a-babe-feda3bd27dbf",
+            "group": null,
+            "uuid": "b28eb604-c2a0-4a40-8aef-29e19b57d96c"
+        },
+        {
+            "@type": "WorkflowStep",
+            "name": "Start",
+            "description": null,
+            "arguments": {
+                "step_variables": {
+                    "input": {
+                        "params": []
+                    }
+                }
+            },
+            "status": null,
+            "top": "30",
+            "left": "125",
+            "stepType": "\/api\/3\/workflow_step_types\/b348f017-9a94-471f-87f8-ce88b6a7ad62",
+            "group": null,
+            "uuid": "b5d2c66a-c38e-4e07-8485-52afd0ac3cc0"
         },
         {
             "@type": "WorkflowStep",
@@ -618,44 +612,20 @@
                 "workflowReference": "\/api\/3\/workflows\/9a71aada-d52d-414a-af6a-8e14e3877907"
             },
             "status": null,
-            "top": "440",
-            "left": "1040",
+            "top": "360",
+            "left": "920",
             "stepType": "\/api\/3\/workflow_step_types\/74932bdc-b8b6-4d24-88c4-1a4dfbc524f3",
             "group": null,
             "uuid": "bef3cfec-869a-464b-8f62-2defff3d5f5b"
         },
         {
             "@type": "WorkflowStep",
-            "name": "Update T0885 Alert",
-            "description": null,
-            "arguments": {
-                "resource": {
-                    "__link": {
-                        "assets": "{{vars.sourceAsset}}"
-                    }
-                },
-                "operation": "Append",
-                "collection": "{{vars.steps.Create_Commonly_Used_Port_T0885_Alert['@id']}}",
-                "__recommend": [],
-                "collectionType": "\/api\/3\/alerts",
-                "fieldOperation": [],
-                "step_variables": []
-            },
-            "status": null,
-            "top": "580",
-            "left": "1040",
-            "stepType": "\/api\/3\/workflow_step_types\/b593663d-7d13-40ce-a3a3-96dece928722",
-            "group": null,
-            "uuid": "37b08e61-592d-45c4-ad0e-a0f2b28d74ef"
-        },
-        {
-            "@type": "WorkflowStep",
-            "name": "Get T0843 Assets",
+            "name": "Get T0846 Assets",
             "description": null,
             "arguments": {
                 "arguments": {
-                    "sourceIPAddress": "{{vars.steps.Create_Program_Download_T0843_Alert.sourceIp}}",
-                    "destinationIPAddress": "{{vars.steps.Create_Program_Download_T0843_Alert.destinationIp}}"
+                    "sourceIPAddress": "{{vars.steps.Create_Remote_System_Discovery_T0846_Alert.sourceIp}}",
+                    "destinationIPAddress": "{{vars.steps.Create_Remote_System_Discovery_T0846_Alert.destinationIp}}"
                 },
                 "apply_async": false,
                 "step_variables": {
@@ -666,11 +636,11 @@
                 "workflowReference": "\/api\/3\/workflows\/9a71aada-d52d-414a-af6a-8e14e3877907"
             },
             "status": null,
-            "top": "440",
-            "left": "1420",
+            "top": "340",
+            "left": "560",
             "stepType": "\/api\/3\/workflow_step_types\/74932bdc-b8b6-4d24-88c4-1a4dfbc524f3",
             "group": null,
-            "uuid": "ddc8229d-4b23-47f6-8457-86c9bafe9a62"
+            "uuid": "ca41c034-5593-4853-863e-2d242f9394ef"
         },
         {
             "@type": "WorkflowStep",
@@ -690,11 +660,73 @@
                 "step_variables": []
             },
             "status": null,
-            "top": "700",
-            "left": "1420",
+            "top": "620",
+            "left": "1280",
             "stepType": "\/api\/3\/workflow_step_types\/b593663d-7d13-40ce-a3a3-96dece928722",
             "group": null,
             "uuid": "d7e79de8-109d-459e-abaf-7dc0d2d04a37"
+        },
+        {
+            "@type": "WorkflowStep",
+            "name": "Get T0843 Assets",
+            "description": null,
+            "arguments": {
+                "arguments": {
+                    "sourceIPAddress": "{{vars.steps.Create_Program_Download_T0843_Alert.sourceIp}}",
+                    "destinationIPAddress": "{{vars.steps.Create_Program_Download_T0843_Alert.destinationIp}}"
+                },
+                "apply_async": false,
+                "step_variables": {
+                    "sourceAsset": "{{vars.result['sourceAsset']}}",
+                    "destinationAsset": "{{vars.result['destinationAsset']}}"
+                },
+                "pass_input_record": false,
+                "workflowReference": "\/api\/3\/workflows\/9a71aada-d52d-414a-af6a-8e14e3877907"
+            },
+            "status": null,
+            "top": "360",
+            "left": "1280",
+            "stepType": "\/api\/3\/workflow_step_types\/74932bdc-b8b6-4d24-88c4-1a4dfbc524f3",
+            "group": null,
+            "uuid": "ddc8229d-4b23-47f6-8457-86c9bafe9a62"
+        },
+        {
+            "@type": "WorkflowStep",
+            "name": "Update T0846 Alert",
+            "description": null,
+            "arguments": {
+                "resource": {
+                    "__link": {
+                        "assets": "{{vars.sourceAsset, vars.destinationAsset}}"
+                    }
+                },
+                "operation": "Append",
+                "collection": "{{vars.steps.Create_Remote_System_Discovery_T0846_Alert['@id']}}",
+                "__recommend": [],
+                "collectionType": "\/api\/3\/alerts",
+                "fieldOperation": [],
+                "step_variables": []
+            },
+            "status": null,
+            "top": "620",
+            "left": "560",
+            "stepType": "\/api\/3\/workflow_step_types\/b593663d-7d13-40ce-a3a3-96dece928722",
+            "group": null,
+            "uuid": "e7c3a6ea-251d-461c-b421-440cb29702c9"
+        },
+        {
+            "@type": "WorkflowStep",
+            "name": "Output",
+            "description": null,
+            "arguments": {
+                "@id": "{{vars.recordIRI}}"
+            },
+            "status": null,
+            "top": "620",
+            "left": "1580",
+            "stepType": "\/api\/3\/workflow_step_types\/04d0cf46-b6a8-42c4-8683-60a7eaa69e8f",
+            "group": null,
+            "uuid": "f549712c-b842-4521-b75f-0130a90501c4"
         }
     ],
     "routes": [
@@ -897,6 +929,7 @@
     "recordTags": [
         "Alerts",
         "Assets",
-        "OT IT"
+        "OT IT",
+        "Scenario"
     ]
 }

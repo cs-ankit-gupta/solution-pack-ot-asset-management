@@ -503,9 +503,7 @@
     "isPrivate": false,
     "deletedAt": null,
     "recordTags": [
-        "SystemWaitForCompletion",
-        "Incidents",
-        "Alerts",
-        "OT IT"
+        "OT IT",
+        "SystemWaitForCompletion"
     ]
 }

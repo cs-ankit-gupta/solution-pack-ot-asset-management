@@ -14,9 +14,7 @@ Refer to the section `OT - Asset Management` to understand how this solution pac
 
 ### Steps to be followed after installing SP:
 
-1. Use Playbook on ICS Configuration - **MITRE ATT&CK > Fetch Latest Data** of MITRE Connector Sample Playbook to get the Tactics, Techniques, Sub-techniques, Mitigations, Groups and Software.
-2. Import sample Assets by excuting Playbook **Read CSV File** over Attachment record `OT Sample Asset`
-3. Import sample Alerts by excuting Playbook **Read CSV File** over Attachment record `OT Sample Alert`
+1. Use Playbook - **MITRE ATT&CK > Fetch Latest Data** on ICS Configuration of MITRE Connector Sample Playbook to get the Tactics, Techniques, Sub-techniques, Mitigations, Groups and Software.
 
 > Note: On alert creation, IOCs get enriched, and the alert get correlated with Techniques, Mitigation, and all other records for the MITRE ATT&CK Id available in the alert.
 
@@ -24,10 +22,20 @@ Refer to the section `OT - Asset Management` to understand how this solution pac
 
 The simulation mode has some sample data that helps you get a better understanding of how the solution pack functions. Following steps help you use the solution pack with some included sample data.
 
-> **1. OT - Stuxnet Attack Scenario**
+> **1. OT - Add Sample Assets**
+- Browse to `Simulations` > `OT - Add Sample Assets` scenario and click **Simulate Scenario**.
+- This scenario adds 83 different sample OT Assets (different Purdue Levels, Types etc.) for testing dashboards, use case playbooks, reports and other actions.<br>
+***NOTE***: Ensure you run this 'OT - Add Sample Assets' Scenario prior to running the 'OT - Add Sample Alerts', for facilitating the correlations of Alerts and Asset records.
+
+> **2. OT - Add Sample Alerts**
+- Browse to `Simulations` > `OT - Add Sample Alerts` scenario and click **Simulate Scenario**.
+- This scenario adds 12 well populated sample OT Alerts for testing dashboards, use case playbooks, reports and other actions.<br>
+***NOTE***: Ensure you run the 'OT - Add Sample Assets' Scenario prior to this, for facilitating the correlations of Alerts and Asset records.
+
+> **3. OT - Stuxnet Attack Scenario**
 - Make sure the global variable **Demo mode** is set to `true`. 
 - Browse to `Simulations` > `OT - Stuxnet Attack Scenario` scenario and click **Simulate Scenario**.
-- Four Alerts are created each at an interval of 2 seconds:
+- Four Alerts get created each at an interval of 2 seconds:
     - Stuxnet peer to peer communication attempt
     - Anomalous communication between two Windows XP machines
     - Communication between public and private networks
@@ -40,8 +48,8 @@ The simulation mode has some sample data that helps you get a better understandi
 - Click on **Quarantine Asset and Raise Ticket** to quarantine assets and raise ticket for assets.
 - You can generate report by using **Generate Incident Summary Report**
 
-> **2. OT - Asset Change Activity**
-- Browse to `Simulations` > `OT - Asset Change Activity` scenario and click **Simulate Scenario**.
+> **4. OT - Add Sample Asset Change Activity Record**
+- Browse to `Simulations` > `OT - Add Sample Asset Change Activity Record` scenario and click **Simulate Scenario**.
 - Playbook: **Scenario - OT - Asset Change Activity** has two variables `dueDays` and `mediumImpactAsset`. You can populate these variables with your preferred names in the *Configuration* step. 
     - `dueDays` - Days required to complete change activity.
     - `mediumImpactAsset` - Impacted Asset hostname.
@@ -55,3 +63,22 @@ The simulation mode has some sample data that helps you get a better understandi
 - New task can be added by using **Add New Task** playbook.
 - To generate the report, execute **Generate Compliance Report** and report get attached to particular record.
 
+
+> **Note**: List or detail views of the various modules are mentioned below.
+- `Asset`: Please download this zip file and import it into your instance if you want to update the [List View](./res/Asset_List_View.zip) List View and [Details View](./res/Asset_Detail_View.zip) of Assets to what is shown below.
+
+| ![](./res/Aseet_List_View.png) | ![](./res/Asset_Detail_view.png) |
+|:----------------------------------:|:-------------------------------------:|
+| Aseet List View | Asset Detail View |
+
+- `Alert`: Please download this zip file and import it into your instance if you want to update the [Details View](./res/Alert_Detail_View.zip) of Alert to what is shown below.
+
+| ![](./res/Alert_Detail_View.png) |
+|:----------------------------------:|
+| Alert Detail View |
+
+- `Incident`: Please download this zip file and import it into your instance if you want to update the [Details View](./res/Incident_Detail_View.zip) of Incident to what is shown below.
+
+| ![](./res/Incident_Detail_View.png) |
+|:----------------------------------:|
+| Incident Detail View |

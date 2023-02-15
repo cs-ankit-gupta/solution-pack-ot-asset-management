@@ -304,7 +304,7 @@
                                                                                                                         },
                                                                                                                         "readOnly": false
                                                                                                                     },
-                                                                                                                    "moduleCount": 0,
+                                                                                                                    "moduleCount": 1,
                                                                                                                     "fieldValue": null
                                                                                                                 },
                                                                                                                 {
@@ -465,7 +465,7 @@
                                                                                                             "wid": "9fcc8353-64e5-45d9-8a88-8daff236540f",
                                                                                                             "duedate": "dueDate",
                                                                                                             "sladate": "closedOn",
-                                                                                                            "slapaused": "modifyDate",
+                                                                                                            "slapaused": "dueDate",
                                                                                                             "slaPausedOn": "status",
                                                                                                             "slaMappedOn": "status",
                                                                                                             "pausedItemvalue": "On Hold\/Blocked",

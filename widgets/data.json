@@ -1,11 +1,12 @@
 [
     {
-        "name": "recordDistribution",
-        "title": "Record Distribution",
+        "name": "mitretest",
+        "title": "MITRE ATT&CK",
         "install_mode": "rpm"
     },
     {
-        "name": "mitretest",
-        "title": "MITRE ATT&CK"
+        "name": "recordDistribution",
+        "title": "Record Distribution",
+        "install_mode": "rpm"
     }
 ]

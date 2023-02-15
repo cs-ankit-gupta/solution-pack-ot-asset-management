@@ -113,9 +113,9 @@
     "isPrivate": false,
     "deletedAt": null,
     "recordTags": [
-        "system",
         "Asset Change Activity",
         "On Update",
-        "OT IT"
+        "OT IT",
+        "system"
     ]
 }

@@ -24,7 +24,7 @@
                     "tags": [],
                     "type": "\/api\/3\/picklists\/ff599189-3eeb-4c86-acb0-a7915e85ac3b",
                     "tenant": "",
-                    "content": "<p>Added Task <span class=\"badge badge-pill badge-danger\" style=\"background: green; color: #fff;\">Verify Security Controls - {{vars.input.records[0].title}}<\/span><\/p>",
+                    "content": "<p>Added Task <span style=\"background: green; color: #fff;\" class=\"badge badge-pill badge-danger\">Verify Security Controls - {{vars.input.records[0].title}}<\/span><\/p>",
                     "records": "{{vars.input.records[0]['@id']}}",
                     "parentstepid": "\/api\/3\/workflow_steps\/ef3f0c06-21cf-45d3-9521-ec5f3f980393"
                 },
@@ -33,7 +33,9 @@
                     "dueBy": "{{vars.input.records[0].dueDate}}",
                     "assets": "{{vars.assetIRI}}",
                     "status": "\/api\/3\/picklists\/7669725a-28cc-4b19-98a3-9ca71e0f88f4",
-                    "recordTags": "{{vars.tagList}}",
+                    "recordTags": [
+                        "\/api\/3\/tags\/AssetChangeActivity"
+                    ],
                     "description": "Verify & Document Impacted CIP-005 & CIP-007 Security",
                     "assignedOnDate": "{{arrow.utcnow().int_timestamp}}",
                     "assignedToPerson": "{{vars.steps.Assignee_And_Approver_Name.input.verifySecurityControl}}",
@@ -77,7 +79,7 @@
                     "tags": [],
                     "type": "\/api\/3\/picklists\/ff599189-3eeb-4c86-acb0-a7915e85ac3b",
                     "tenant": "",
-                    "content": "<p>Added Task <span style=\"background: green; color: #fff;\" class=\"badge badge-pill badge-danger\">Identify Security Control - {{vars.input.records[0].title}}<\/span><\/p>",
+                    "content": "<p>Added Task <span class=\"badge badge-pill badge-danger\" style=\"background: green; color: #fff;\">Identify Security Control - {{vars.input.records[0].title}}<\/span><\/p>",
                     "records": "{{vars.input.records[0]['@id']}}"
                 },
                 "resource": {
@@ -85,7 +87,9 @@
                     "dueBy": "{{vars.input.records[0].dueDate}}",
                     "assets": "{{vars.assetIRI}}",
                     "status": "\/api\/3\/picklists\/7669725a-28cc-4b19-98a3-9ca71e0f88f4",
-                    "recordTags": "{{vars.tagList}}",
+                    "recordTags": [
+                        "\/api\/3\/tags\/AssetChangeActivity"
+                    ],
                     "description": "Identify Impacted CIP-005 & CIP-007 Security Control.",
                     "assignedOnDate": "{{arrow.utcnow().int_timestamp}}",
                     "assignedToPerson": "{{vars.steps.Assignee_And_Approver_Name.input.identifySecurityControl}}",
@@ -218,43 +222,60 @@
                                                 "details": {
                                                     "tasks": {
                                                         "subtabs": {
-                                                            "Correlations": "alerts"
+                                                            "Correlations": "k_e_v_alerts"
                                                         }
                                                     },
                                                     "alerts": {
                                                         "subtabs": {
+                                                            "Tasks": "tasks",
                                                             "Indicators": "indicators",
                                                             "Correlations": "assets",
-                                                            "Recommended Mitigation": "mitre_software",
-                                                            "External Communications": "communication"
+                                                            "Recommended Mitigation": "mitre_mitigations",
+                                                            "External Communications": "communication",
+                                                            "MITRE ATT&CK\u00ae Navigator": "mitre_software",
+                                                            "MITRE ATT&CK Correlations": "mitre_techniques"
+                                                        },
+                                                        "workspace": {
+                                                            "tab": "comments"
+                                                        },
+                                                        "openCollab": false,
+                                                        "selectedTab": "Indicators"
+                                                    },
+                                                    "assets": {
+                                                        "subtabs": {
+                                                            "Related Assets": "assets",
+                                                            "Related Records": "alerts",
+                                                            "Asset Change Activity": "tasks",
+                                                            "Vulnerability Management": "scans"
+                                                        },
+                                                        "openCollab": false,
+                                                        "selectedTab": "Related Assets"
+                                                    },
+                                                    "c_v_es": {
+                                                        "subtabs": {
+                                                            "Related Records": "k_e_v_alerts"
+                                                        },
+                                                        "selectedTab": "Related Records"
+                                                    },
+                                                    "scenario": {
+                                                        "selectedTab": "Source"
+                                                    },
+                                                    "warrooms": {
+                                                        "subtabs": "incidents",
+                                                        "openCollab": false,
+                                                        "selectedTab": "Dashboard"
+                                                    },
+                                                    "incidents": {
+                                                        "subtabs": {
+                                                            "Tasks": "tasks",
+                                                            "Indicators": "indicators",
+                                                            "Correlations": "assets"
                                                         },
                                                         "workspace": {
                                                             "tab": "comments"
                                                         },
                                                         "openCollab": true,
                                                         "selectedTab": "Correlations"
-                                                    },
-                                                    "assets": {
-                                                        "subtabs": {
-                                                            "Related Assets": "assets",
-                                                            "Related Records": "alerts"
-                                                        },
-                                                        "openCollab": false,
-                                                        "selectedTab": "Related Assets"
-                                                    },
-                                                    "scenario": {
-                                                        "selectedTab": "Source"
-                                                    },
-                                                    "warrooms": {
-                                                        "openCollab": false
-                                                    },
-                                                    "incidents": {
-                                                        "subtabs": {
-                                                            "Indicators": "indicators",
-                                                            "Correlations": "mitre_software"
-                                                        },
-                                                        "openCollab": false,
-                                                        "selectedTab": "Indicators"
                                                     },
                                                     "indicators": {
                                                         "subtabs": {
@@ -266,11 +287,46 @@
                                                             "Correlations": "alerts"
                                                         }
                                                     },
+                                                    "k_e_v_alerts": {
+                                                        "openCollab": false,
+                                                        "selectedTab": "Evaluation"
+                                                    },
+                                                    "mitre_groups": {
+                                                        "subtabs": {
+                                                            "Related Records": "mitre_software"
+                                                        }
+                                                    },
+                                                    "mitre_tactics": {
+                                                        "subtabs": {
+                                                            "Techniques": "mitre_techniques"
+                                                        }
+                                                    },
+                                                    "mitre_software": {
+                                                        "subtabs": {
+                                                            "Related Records": "mitre_techniques"
+                                                        }
+                                                    },
+                                                    "i_c_s_advisories": {
+                                                        "subtabs": {
+                                                            "Related Records": "c_v_es"
+                                                        },
+                                                        "selectedTab": "Advisory Details"
+                                                    },
+                                                    "mitre_techniques": {
+                                                        "subtabs": {
+                                                            "Sub-techniques": "alerts",
+                                                            "Procedure Examples": "alerts"
+                                                        }
+                                                    },
                                                     "onboarding-guide": {
                                                         "onboardingSetupLater": true
                                                     },
+                                                    "collapsible-columns": {
+                                                        "00d1126d-cea9-49ad-88f1-8c64a4b3f11b": true,
+                                                        "3c617d7d-3dc5-493d-ba3e-6a5dcdf1da87": true
+                                                    },
                                                     "asset_change_activities": {
-                                                        "selectedTab": "Task Management"
+                                                        "selectedTab": "Assets & Vulnerabilities"
                                                     }
                                                 },
                                                 "modules-alerts-list": {
@@ -284,6 +340,12 @@
                                                         "12ad943e-f2f7-44a0-ae58-a1c9e820bc1d": "expanded",
                                                         "229923c5-d391-49ae-b5e1-68d03256a767": "expanded",
                                                         "2cdcec12-3934-47b2-9a0f-776d1ec22ad0": "expanded"
+                                                    }
+                                                },
+                                                "modules-c_v_es-list": {
+                                                    "chart": {
+                                                        "78627c3c-8737-4363-a1d8-196e06923a0e": "expanded",
+                                                        "d6ac2f0b-14f2-450f-8d4b-d3a2a13dc17c": "expanded"
                                                     }
                                                 }
                                             },
@@ -305,11 +367,7 @@
                                         },
                                         "playbook": {
                                             "logs": {
-                                                "tags": [
-                                                    {
-                                                        "uuid": "system"
-                                                    }
-                                                ],
+                                                "tags": [],
                                                 "filterOpration": "exclude"
                                             },
                                             "autosave": true,
@@ -469,6 +527,15 @@
                                             "execute": true
                                         },
                                         "assets": {
+                                            "read": true,
+                                            "clone": true,
+                                            "create": true,
+                                            "delete": true,
+                                            "fields": [],
+                                            "update": true,
+                                            "execute": true
+                                        },
+                                        "c_v_es": {
                                             "read": true,
                                             "clone": true,
                                             "create": true,
@@ -756,6 +823,15 @@
                                             "update": true,
                                             "execute": false
                                         },
+                                        "k_e_v_alerts": {
+                                            "read": true,
+                                            "clone": true,
+                                            "create": true,
+                                            "delete": true,
+                                            "fields": [],
+                                            "update": true,
+                                            "execute": true
+                                        },
                                         "mitre_groups": {
                                             "read": true,
                                             "clone": true,
@@ -856,6 +932,15 @@
                                             "execute": false
                                         },
                                         "vulnerabilities": {
+                                            "read": true,
+                                            "clone": true,
+                                            "create": true,
+                                            "delete": true,
+                                            "fields": [],
+                                            "update": true,
+                                            "execute": true
+                                        },
+                                        "i_c_s_advisories": {
                                             "read": true,
                                             "clone": true,
                                             "create": true,
@@ -998,43 +1083,60 @@
                                                 "details": {
                                                     "tasks": {
                                                         "subtabs": {
-                                                            "Correlations": "alerts"
+                                                            "Correlations": "k_e_v_alerts"
                                                         }
                                                     },
                                                     "alerts": {
                                                         "subtabs": {
+                                                            "Tasks": "tasks",
                                                             "Indicators": "indicators",
                                                             "Correlations": "assets",
-                                                            "Recommended Mitigation": "mitre_software",
-                                                            "External Communications": "communication"
+                                                            "Recommended Mitigation": "mitre_mitigations",
+                                                            "External Communications": "communication",
+                                                            "MITRE ATT&CK\u00ae Navigator": "mitre_software",
+                                                            "MITRE ATT&CK Correlations": "mitre_techniques"
+                                                        },
+                                                        "workspace": {
+                                                            "tab": "comments"
+                                                        },
+                                                        "openCollab": false,
+                                                        "selectedTab": "Indicators"
+                                                    },
+                                                    "assets": {
+                                                        "subtabs": {
+                                                            "Related Assets": "assets",
+                                                            "Related Records": "alerts",
+                                                            "Asset Change Activity": "tasks",
+                                                            "Vulnerability Management": "scans"
+                                                        },
+                                                        "openCollab": false,
+                                                        "selectedTab": "Related Assets"
+                                                    },
+                                                    "c_v_es": {
+                                                        "subtabs": {
+                                                            "Related Records": "k_e_v_alerts"
+                                                        },
+                                                        "selectedTab": "Related Records"
+                                                    },
+                                                    "scenario": {
+                                                        "selectedTab": "Source"
+                                                    },
+                                                    "warrooms": {
+                                                        "subtabs": "incidents",
+                                                        "openCollab": false,
+                                                        "selectedTab": "Dashboard"
+                                                    },
+                                                    "incidents": {
+                                                        "subtabs": {
+                                                            "Tasks": "tasks",
+                                                            "Indicators": "indicators",
+                                                            "Correlations": "assets"
                                                         },
                                                         "workspace": {
                                                             "tab": "comments"
                                                         },
                                                         "openCollab": true,
                                                         "selectedTab": "Correlations"
-                                                    },
-                                                    "assets": {
-                                                        "subtabs": {
-                                                            "Related Assets": "assets",
-                                                            "Related Records": "alerts"
-                                                        },
-                                                        "openCollab": false,
-                                                        "selectedTab": "Related Assets"
-                                                    },
-                                                    "scenario": {
-                                                        "selectedTab": "Source"
-                                                    },
-                                                    "warrooms": {
-                                                        "openCollab": false
-                                                    },
-                                                    "incidents": {
-                                                        "subtabs": {
-                                                            "Indicators": "indicators",
-                                                            "Correlations": "mitre_software"
-                                                        },
-                                                        "openCollab": false,
-                                                        "selectedTab": "Indicators"
                                                     },
                                                     "indicators": {
                                                         "subtabs": {
@@ -1046,11 +1148,46 @@
                                                             "Correlations": "alerts"
                                                         }
                                                     },
+                                                    "k_e_v_alerts": {
+                                                        "openCollab": false,
+                                                        "selectedTab": "Evaluation"
+                                                    },
+                                                    "mitre_groups": {
+                                                        "subtabs": {
+                                                            "Related Records": "mitre_software"
+                                                        }
+                                                    },
+                                                    "mitre_tactics": {
+                                                        "subtabs": {
+                                                            "Techniques": "mitre_techniques"
+                                                        }
+                                                    },
+                                                    "mitre_software": {
+                                                        "subtabs": {
+                                                            "Related Records": "mitre_techniques"
+                                                        }
+                                                    },
+                                                    "i_c_s_advisories": {
+                                                        "subtabs": {
+                                                            "Related Records": "c_v_es"
+                                                        },
+                                                        "selectedTab": "Advisory Details"
+                                                    },
+                                                    "mitre_techniques": {
+                                                        "subtabs": {
+                                                            "Sub-techniques": "alerts",
+                                                            "Procedure Examples": "alerts"
+                                                        }
+                                                    },
                                                     "onboarding-guide": {
                                                         "onboardingSetupLater": true
                                                     },
+                                                    "collapsible-columns": {
+                                                        "00d1126d-cea9-49ad-88f1-8c64a4b3f11b": true,
+                                                        "3c617d7d-3dc5-493d-ba3e-6a5dcdf1da87": true
+                                                    },
                                                     "asset_change_activities": {
-                                                        "selectedTab": "Task Management"
+                                                        "selectedTab": "Assets & Vulnerabilities"
                                                     }
                                                 },
                                                 "modules-alerts-list": {
@@ -1064,6 +1201,12 @@
                                                         "12ad943e-f2f7-44a0-ae58-a1c9e820bc1d": "expanded",
                                                         "229923c5-d391-49ae-b5e1-68d03256a767": "expanded",
                                                         "2cdcec12-3934-47b2-9a0f-776d1ec22ad0": "expanded"
+                                                    }
+                                                },
+                                                "modules-c_v_es-list": {
+                                                    "chart": {
+                                                        "78627c3c-8737-4363-a1d8-196e06923a0e": "expanded",
+                                                        "d6ac2f0b-14f2-450f-8d4b-d3a2a13dc17c": "expanded"
                                                     }
                                                 }
                                             },
@@ -1085,11 +1228,7 @@
                                         },
                                         "playbook": {
                                             "logs": {
-                                                "tags": [
-                                                    {
-                                                        "uuid": "system"
-                                                    }
-                                                ],
+                                                "tags": [],
                                                 "filterOpration": "exclude"
                                             },
                                             "autosave": true,
@@ -1249,6 +1388,15 @@
                                             "execute": true
                                         },
                                         "assets": {
+                                            "read": true,
+                                            "clone": true,
+                                            "create": true,
+                                            "delete": true,
+                                            "fields": [],
+                                            "update": true,
+                                            "execute": true
+                                        },
+                                        "c_v_es": {
                                             "read": true,
                                             "clone": true,
                                             "create": true,
@@ -1536,6 +1684,15 @@
                                             "update": true,
                                             "execute": false
                                         },
+                                        "k_e_v_alerts": {
+                                            "read": true,
+                                            "clone": true,
+                                            "create": true,
+                                            "delete": true,
+                                            "fields": [],
+                                            "update": true,
+                                            "execute": true
+                                        },
                                         "mitre_groups": {
                                             "read": true,
                                             "clone": true,
@@ -1636,6 +1793,15 @@
                                             "execute": false
                                         },
                                         "vulnerabilities": {
+                                            "read": true,
+                                            "clone": true,
+                                            "create": true,
+                                            "delete": true,
+                                            "fields": [],
+                                            "update": true,
+                                            "execute": true
+                                        },
+                                        "i_c_s_advisories": {
                                             "read": true,
                                             "clone": true,
                                             "create": true,
@@ -1770,43 +1936,60 @@
                                                 "details": {
                                                     "tasks": {
                                                         "subtabs": {
-                                                            "Correlations": "alerts"
+                                                            "Correlations": "k_e_v_alerts"
                                                         }
                                                     },
                                                     "alerts": {
                                                         "subtabs": {
+                                                            "Tasks": "tasks",
                                                             "Indicators": "indicators",
                                                             "Correlations": "assets",
-                                                            "Recommended Mitigation": "mitre_software",
-                                                            "External Communications": "communication"
+                                                            "Recommended Mitigation": "mitre_mitigations",
+                                                            "External Communications": "communication",
+                                                            "MITRE ATT&CK\u00ae Navigator": "mitre_software",
+                                                            "MITRE ATT&CK Correlations": "mitre_techniques"
+                                                        },
+                                                        "workspace": {
+                                                            "tab": "comments"
+                                                        },
+                                                        "openCollab": false,
+                                                        "selectedTab": "Indicators"
+                                                    },
+                                                    "assets": {
+                                                        "subtabs": {
+                                                            "Related Assets": "assets",
+                                                            "Related Records": "alerts",
+                                                            "Asset Change Activity": "tasks",
+                                                            "Vulnerability Management": "scans"
+                                                        },
+                                                        "openCollab": false,
+                                                        "selectedTab": "Related Assets"
+                                                    },
+                                                    "c_v_es": {
+                                                        "subtabs": {
+                                                            "Related Records": "k_e_v_alerts"
+                                                        },
+                                                        "selectedTab": "Related Records"
+                                                    },
+                                                    "scenario": {
+                                                        "selectedTab": "Source"
+                                                    },
+                                                    "warrooms": {
+                                                        "subtabs": "incidents",
+                                                        "openCollab": false,
+                                                        "selectedTab": "Dashboard"
+                                                    },
+                                                    "incidents": {
+                                                        "subtabs": {
+                                                            "Tasks": "tasks",
+                                                            "Indicators": "indicators",
+                                                            "Correlations": "assets"
                                                         },
                                                         "workspace": {
                                                             "tab": "comments"
                                                         },
                                                         "openCollab": true,
                                                         "selectedTab": "Correlations"
-                                                    },
-                                                    "assets": {
-                                                        "subtabs": {
-                                                            "Related Assets": "assets",
-                                                            "Related Records": "alerts"
-                                                        },
-                                                        "openCollab": false,
-                                                        "selectedTab": "Related Assets"
-                                                    },
-                                                    "scenario": {
-                                                        "selectedTab": "Source"
-                                                    },
-                                                    "warrooms": {
-                                                        "openCollab": false
-                                                    },
-                                                    "incidents": {
-                                                        "subtabs": {
-                                                            "Indicators": "indicators",
-                                                            "Correlations": "mitre_software"
-                                                        },
-                                                        "openCollab": false,
-                                                        "selectedTab": "Indicators"
                                                     },
                                                     "indicators": {
                                                         "subtabs": {
@@ -1818,11 +2001,46 @@
                                                             "Correlations": "alerts"
                                                         }
                                                     },
+                                                    "k_e_v_alerts": {
+                                                        "openCollab": false,
+                                                        "selectedTab": "Evaluation"
+                                                    },
+                                                    "mitre_groups": {
+                                                        "subtabs": {
+                                                            "Related Records": "mitre_software"
+                                                        }
+                                                    },
+                                                    "mitre_tactics": {
+                                                        "subtabs": {
+                                                            "Techniques": "mitre_techniques"
+                                                        }
+                                                    },
+                                                    "mitre_software": {
+                                                        "subtabs": {
+                                                            "Related Records": "mitre_techniques"
+                                                        }
+                                                    },
+                                                    "i_c_s_advisories": {
+                                                        "subtabs": {
+                                                            "Related Records": "c_v_es"
+                                                        },
+                                                        "selectedTab": "Advisory Details"
+                                                    },
+                                                    "mitre_techniques": {
+                                                        "subtabs": {
+                                                            "Sub-techniques": "alerts",
+                                                            "Procedure Examples": "alerts"
+                                                        }
+                                                    },
                                                     "onboarding-guide": {
                                                         "onboardingSetupLater": true
                                                     },
+                                                    "collapsible-columns": {
+                                                        "00d1126d-cea9-49ad-88f1-8c64a4b3f11b": true,
+                                                        "3c617d7d-3dc5-493d-ba3e-6a5dcdf1da87": true
+                                                    },
                                                     "asset_change_activities": {
-                                                        "selectedTab": "Task Management"
+                                                        "selectedTab": "Assets & Vulnerabilities"
                                                     }
                                                 },
                                                 "modules-alerts-list": {
@@ -1836,6 +2054,12 @@
                                                         "12ad943e-f2f7-44a0-ae58-a1c9e820bc1d": "expanded",
                                                         "229923c5-d391-49ae-b5e1-68d03256a767": "expanded",
                                                         "2cdcec12-3934-47b2-9a0f-776d1ec22ad0": "expanded"
+                                                    }
+                                                },
+                                                "modules-c_v_es-list": {
+                                                    "chart": {
+                                                        "78627c3c-8737-4363-a1d8-196e06923a0e": "expanded",
+                                                        "d6ac2f0b-14f2-450f-8d4b-d3a2a13dc17c": "expanded"
                                                     }
                                                 }
                                             },
@@ -1857,11 +2081,7 @@
                                         },
                                         "playbook": {
                                             "logs": {
-                                                "tags": [
-                                                    {
-                                                        "uuid": "system"
-                                                    }
-                                                ],
+                                                "tags": [],
                                                 "filterOpration": "exclude"
                                             },
                                             "autosave": true,
@@ -2021,6 +2241,15 @@
                                             "execute": true
                                         },
                                         "assets": {
+                                            "read": true,
+                                            "clone": true,
+                                            "create": true,
+                                            "delete": true,
+                                            "fields": [],
+                                            "update": true,
+                                            "execute": true
+                                        },
+                                        "c_v_es": {
                                             "read": true,
                                             "clone": true,
                                             "create": true,
@@ -2308,6 +2537,15 @@
                                             "update": true,
                                             "execute": false
                                         },
+                                        "k_e_v_alerts": {
+                                            "read": true,
+                                            "clone": true,
+                                            "create": true,
+                                            "delete": true,
+                                            "fields": [],
+                                            "update": true,
+                                            "execute": true
+                                        },
                                         "mitre_groups": {
                                             "read": true,
                                             "clone": true,
@@ -2408,6 +2646,15 @@
                                             "execute": false
                                         },
                                         "vulnerabilities": {
+                                            "read": true,
+                                            "clone": true,
+                                            "create": true,
+                                            "delete": true,
+                                            "fields": [],
+                                            "update": true,
+                                            "execute": true
+                                        },
+                                        "i_c_s_advisories": {
                                             "read": true,
                                             "clone": true,
                                             "create": true,
@@ -2574,43 +2821,60 @@
                                                 "details": {
                                                     "tasks": {
                                                         "subtabs": {
-                                                            "Correlations": "alerts"
+                                                            "Correlations": "k_e_v_alerts"
                                                         }
                                                     },
                                                     "alerts": {
                                                         "subtabs": {
+                                                            "Tasks": "tasks",
                                                             "Indicators": "indicators",
                                                             "Correlations": "assets",
-                                                            "Recommended Mitigation": "mitre_software",
-                                                            "External Communications": "communication"
+                                                            "Recommended Mitigation": "mitre_mitigations",
+                                                            "External Communications": "communication",
+                                                            "MITRE ATT&CK\u00ae Navigator": "mitre_software",
+                                                            "MITRE ATT&CK Correlations": "mitre_techniques"
+                                                        },
+                                                        "workspace": {
+                                                            "tab": "comments"
+                                                        },
+                                                        "openCollab": false,
+                                                        "selectedTab": "Indicators"
+                                                    },
+                                                    "assets": {
+                                                        "subtabs": {
+                                                            "Related Assets": "assets",
+                                                            "Related Records": "alerts",
+                                                            "Asset Change Activity": "tasks",
+                                                            "Vulnerability Management": "scans"
+                                                        },
+                                                        "openCollab": false,
+                                                        "selectedTab": "Related Assets"
+                                                    },
+                                                    "c_v_es": {
+                                                        "subtabs": {
+                                                            "Related Records": "k_e_v_alerts"
+                                                        },
+                                                        "selectedTab": "Related Records"
+                                                    },
+                                                    "scenario": {
+                                                        "selectedTab": "Source"
+                                                    },
+                                                    "warrooms": {
+                                                        "subtabs": "incidents",
+                                                        "openCollab": false,
+                                                        "selectedTab": "Dashboard"
+                                                    },
+                                                    "incidents": {
+                                                        "subtabs": {
+                                                            "Tasks": "tasks",
+                                                            "Indicators": "indicators",
+                                                            "Correlations": "assets"
                                                         },
                                                         "workspace": {
                                                             "tab": "comments"
                                                         },
                                                         "openCollab": true,
                                                         "selectedTab": "Correlations"
-                                                    },
-                                                    "assets": {
-                                                        "subtabs": {
-                                                            "Related Assets": "assets",
-                                                            "Related Records": "alerts"
-                                                        },
-                                                        "openCollab": false,
-                                                        "selectedTab": "Related Assets"
-                                                    },
-                                                    "scenario": {
-                                                        "selectedTab": "Source"
-                                                    },
-                                                    "warrooms": {
-                                                        "openCollab": false
-                                                    },
-                                                    "incidents": {
-                                                        "subtabs": {
-                                                            "Indicators": "indicators",
-                                                            "Correlations": "mitre_software"
-                                                        },
-                                                        "openCollab": false,
-                                                        "selectedTab": "Indicators"
                                                     },
                                                     "indicators": {
                                                         "subtabs": {
@@ -2622,11 +2886,46 @@
                                                             "Correlations": "alerts"
                                                         }
                                                     },
+                                                    "k_e_v_alerts": {
+                                                        "openCollab": false,
+                                                        "selectedTab": "Evaluation"
+                                                    },
+                                                    "mitre_groups": {
+                                                        "subtabs": {
+                                                            "Related Records": "mitre_software"
+                                                        }
+                                                    },
+                                                    "mitre_tactics": {
+                                                        "subtabs": {
+                                                            "Techniques": "mitre_techniques"
+                                                        }
+                                                    },
+                                                    "mitre_software": {
+                                                        "subtabs": {
+                                                            "Related Records": "mitre_techniques"
+                                                        }
+                                                    },
+                                                    "i_c_s_advisories": {
+                                                        "subtabs": {
+                                                            "Related Records": "c_v_es"
+                                                        },
+                                                        "selectedTab": "Advisory Details"
+                                                    },
+                                                    "mitre_techniques": {
+                                                        "subtabs": {
+                                                            "Sub-techniques": "alerts",
+                                                            "Procedure Examples": "alerts"
+                                                        }
+                                                    },
                                                     "onboarding-guide": {
                                                         "onboardingSetupLater": true
                                                     },
+                                                    "collapsible-columns": {
+                                                        "00d1126d-cea9-49ad-88f1-8c64a4b3f11b": true,
+                                                        "3c617d7d-3dc5-493d-ba3e-6a5dcdf1da87": true
+                                                    },
                                                     "asset_change_activities": {
-                                                        "selectedTab": "Task Management"
+                                                        "selectedTab": "Assets & Vulnerabilities"
                                                     }
                                                 },
                                                 "modules-alerts-list": {
@@ -2640,6 +2939,12 @@
                                                         "12ad943e-f2f7-44a0-ae58-a1c9e820bc1d": "expanded",
                                                         "229923c5-d391-49ae-b5e1-68d03256a767": "expanded",
                                                         "2cdcec12-3934-47b2-9a0f-776d1ec22ad0": "expanded"
+                                                    }
+                                                },
+                                                "modules-c_v_es-list": {
+                                                    "chart": {
+                                                        "78627c3c-8737-4363-a1d8-196e06923a0e": "expanded",
+                                                        "d6ac2f0b-14f2-450f-8d4b-d3a2a13dc17c": "expanded"
                                                     }
                                                 }
                                             },
@@ -2661,11 +2966,7 @@
                                         },
                                         "playbook": {
                                             "logs": {
-                                                "tags": [
-                                                    {
-                                                        "uuid": "system"
-                                                    }
-                                                ],
+                                                "tags": [],
                                                 "filterOpration": "exclude"
                                             },
                                             "autosave": true,
@@ -2825,6 +3126,15 @@
                                             "execute": true
                                         },
                                         "assets": {
+                                            "read": true,
+                                            "clone": true,
+                                            "create": true,
+                                            "delete": true,
+                                            "fields": [],
+                                            "update": true,
+                                            "execute": true
+                                        },
+                                        "c_v_es": {
                                             "read": true,
                                             "clone": true,
                                             "create": true,
@@ -3112,6 +3422,15 @@
                                             "update": true,
                                             "execute": false
                                         },
+                                        "k_e_v_alerts": {
+                                            "read": true,
+                                            "clone": true,
+                                            "create": true,
+                                            "delete": true,
+                                            "fields": [],
+                                            "update": true,
+                                            "execute": true
+                                        },
                                         "mitre_groups": {
                                             "read": true,
                                             "clone": true,
@@ -3212,6 +3531,15 @@
                                             "execute": false
                                         },
                                         "vulnerabilities": {
+                                            "read": true,
+                                            "clone": true,
+                                            "create": true,
+                                            "delete": true,
+                                            "fields": [],
+                                            "update": true,
+                                            "execute": true
+                                        },
+                                        "i_c_s_advisories": {
                                             "read": true,
                                             "clone": true,
                                             "create": true,
@@ -3344,43 +3672,60 @@
                                                 "details": {
                                                     "tasks": {
                                                         "subtabs": {
-                                                            "Correlations": "alerts"
+                                                            "Correlations": "k_e_v_alerts"
                                                         }
                                                     },
                                                     "alerts": {
                                                         "subtabs": {
+                                                            "Tasks": "tasks",
                                                             "Indicators": "indicators",
                                                             "Correlations": "assets",
-                                                            "Recommended Mitigation": "mitre_software",
-                                                            "External Communications": "communication"
+                                                            "Recommended Mitigation": "mitre_mitigations",
+                                                            "External Communications": "communication",
+                                                            "MITRE ATT&CK\u00ae Navigator": "mitre_software",
+                                                            "MITRE ATT&CK Correlations": "mitre_techniques"
+                                                        },
+                                                        "workspace": {
+                                                            "tab": "comments"
+                                                        },
+                                                        "openCollab": false,
+                                                        "selectedTab": "Indicators"
+                                                    },
+                                                    "assets": {
+                                                        "subtabs": {
+                                                            "Related Assets": "assets",
+                                                            "Related Records": "alerts",
+                                                            "Asset Change Activity": "tasks",
+                                                            "Vulnerability Management": "scans"
+                                                        },
+                                                        "openCollab": false,
+                                                        "selectedTab": "Related Assets"
+                                                    },
+                                                    "c_v_es": {
+                                                        "subtabs": {
+                                                            "Related Records": "k_e_v_alerts"
+                                                        },
+                                                        "selectedTab": "Related Records"
+                                                    },
+                                                    "scenario": {
+                                                        "selectedTab": "Source"
+                                                    },
+                                                    "warrooms": {
+                                                        "subtabs": "incidents",
+                                                        "openCollab": false,
+                                                        "selectedTab": "Dashboard"
+                                                    },
+                                                    "incidents": {
+                                                        "subtabs": {
+                                                            "Tasks": "tasks",
+                                                            "Indicators": "indicators",
+                                                            "Correlations": "assets"
                                                         },
                                                         "workspace": {
                                                             "tab": "comments"
                                                         },
                                                         "openCollab": true,
                                                         "selectedTab": "Correlations"
-                                                    },
-                                                    "assets": {
-                                                        "subtabs": {
-                                                            "Related Assets": "assets",
-                                                            "Related Records": "alerts"
-                                                        },
-                                                        "openCollab": false,
-                                                        "selectedTab": "Related Assets"
-                                                    },
-                                                    "scenario": {
-                                                        "selectedTab": "Source"
-                                                    },
-                                                    "warrooms": {
-                                                        "openCollab": false
-                                                    },
-                                                    "incidents": {
-                                                        "subtabs": {
-                                                            "Indicators": "indicators",
-                                                            "Correlations": "mitre_software"
-                                                        },
-                                                        "openCollab": false,
-                                                        "selectedTab": "Indicators"
                                                     },
                                                     "indicators": {
                                                         "subtabs": {
@@ -3392,11 +3737,46 @@
                                                             "Correlations": "alerts"
                                                         }
                                                     },
+                                                    "k_e_v_alerts": {
+                                                        "openCollab": false,
+                                                        "selectedTab": "Evaluation"
+                                                    },
+                                                    "mitre_groups": {
+                                                        "subtabs": {
+                                                            "Related Records": "mitre_software"
+                                                        }
+                                                    },
+                                                    "mitre_tactics": {
+                                                        "subtabs": {
+                                                            "Techniques": "mitre_techniques"
+                                                        }
+                                                    },
+                                                    "mitre_software": {
+                                                        "subtabs": {
+                                                            "Related Records": "mitre_techniques"
+                                                        }
+                                                    },
+                                                    "i_c_s_advisories": {
+                                                        "subtabs": {
+                                                            "Related Records": "c_v_es"
+                                                        },
+                                                        "selectedTab": "Advisory Details"
+                                                    },
+                                                    "mitre_techniques": {
+                                                        "subtabs": {
+                                                            "Sub-techniques": "alerts",
+                                                            "Procedure Examples": "alerts"
+                                                        }
+                                                    },
                                                     "onboarding-guide": {
                                                         "onboardingSetupLater": true
                                                     },
+                                                    "collapsible-columns": {
+                                                        "00d1126d-cea9-49ad-88f1-8c64a4b3f11b": true,
+                                                        "3c617d7d-3dc5-493d-ba3e-6a5dcdf1da87": true
+                                                    },
                                                     "asset_change_activities": {
-                                                        "selectedTab": "Task Management"
+                                                        "selectedTab": "Assets & Vulnerabilities"
                                                     }
                                                 },
                                                 "modules-alerts-list": {
@@ -3410,6 +3790,12 @@
                                                         "12ad943e-f2f7-44a0-ae58-a1c9e820bc1d": "expanded",
                                                         "229923c5-d391-49ae-b5e1-68d03256a767": "expanded",
                                                         "2cdcec12-3934-47b2-9a0f-776d1ec22ad0": "expanded"
+                                                    }
+                                                },
+                                                "modules-c_v_es-list": {
+                                                    "chart": {
+                                                        "78627c3c-8737-4363-a1d8-196e06923a0e": "expanded",
+                                                        "d6ac2f0b-14f2-450f-8d4b-d3a2a13dc17c": "expanded"
                                                     }
                                                 }
                                             },
@@ -3431,11 +3817,7 @@
                                         },
                                         "playbook": {
                                             "logs": {
-                                                "tags": [
-                                                    {
-                                                        "uuid": "system"
-                                                    }
-                                                ],
+                                                "tags": [],
                                                 "filterOpration": "exclude"
                                             },
                                             "autosave": true,
@@ -3595,6 +3977,15 @@
                                             "execute": true
                                         },
                                         "assets": {
+                                            "read": true,
+                                            "clone": true,
+                                            "create": true,
+                                            "delete": true,
+                                            "fields": [],
+                                            "update": true,
+                                            "execute": true
+                                        },
+                                        "c_v_es": {
                                             "read": true,
                                             "clone": true,
                                             "create": true,
@@ -3882,6 +4273,15 @@
                                             "update": true,
                                             "execute": false
                                         },
+                                        "k_e_v_alerts": {
+                                            "read": true,
+                                            "clone": true,
+                                            "create": true,
+                                            "delete": true,
+                                            "fields": [],
+                                            "update": true,
+                                            "execute": true
+                                        },
                                         "mitre_groups": {
                                             "read": true,
                                             "clone": true,
@@ -3982,6 +4382,15 @@
                                             "execute": false
                                         },
                                         "vulnerabilities": {
+                                            "read": true,
+                                            "clone": true,
+                                            "create": true,
+                                            "delete": true,
+                                            "fields": [],
+                                            "update": true,
+                                            "execute": true
+                                        },
+                                        "i_c_s_advisories": {
                                             "read": true,
                                             "clone": true,
                                             "create": true,
@@ -4114,43 +4523,60 @@
                                                 "details": {
                                                     "tasks": {
                                                         "subtabs": {
-                                                            "Correlations": "alerts"
+                                                            "Correlations": "k_e_v_alerts"
                                                         }
                                                     },
                                                     "alerts": {
                                                         "subtabs": {
+                                                            "Tasks": "tasks",
                                                             "Indicators": "indicators",
                                                             "Correlations": "assets",
-                                                            "Recommended Mitigation": "mitre_software",
-                                                            "External Communications": "communication"
+                                                            "Recommended Mitigation": "mitre_mitigations",
+                                                            "External Communications": "communication",
+                                                            "MITRE ATT&CK\u00ae Navigator": "mitre_software",
+                                                            "MITRE ATT&CK Correlations": "mitre_techniques"
+                                                        },
+                                                        "workspace": {
+                                                            "tab": "comments"
+                                                        },
+                                                        "openCollab": false,
+                                                        "selectedTab": "Indicators"
+                                                    },
+                                                    "assets": {
+                                                        "subtabs": {
+                                                            "Related Assets": "assets",
+                                                            "Related Records": "alerts",
+                                                            "Asset Change Activity": "tasks",
+                                                            "Vulnerability Management": "scans"
+                                                        },
+                                                        "openCollab": false,
+                                                        "selectedTab": "Related Assets"
+                                                    },
+                                                    "c_v_es": {
+                                                        "subtabs": {
+                                                            "Related Records": "k_e_v_alerts"
+                                                        },
+                                                        "selectedTab": "Related Records"
+                                                    },
+                                                    "scenario": {
+                                                        "selectedTab": "Source"
+                                                    },
+                                                    "warrooms": {
+                                                        "subtabs": "incidents",
+                                                        "openCollab": false,
+                                                        "selectedTab": "Dashboard"
+                                                    },
+                                                    "incidents": {
+                                                        "subtabs": {
+                                                            "Tasks": "tasks",
+                                                            "Indicators": "indicators",
+                                                            "Correlations": "assets"
                                                         },
                                                         "workspace": {
                                                             "tab": "comments"
                                                         },
                                                         "openCollab": true,
                                                         "selectedTab": "Correlations"
-                                                    },
-                                                    "assets": {
-                                                        "subtabs": {
-                                                            "Related Assets": "assets",
-                                                            "Related Records": "alerts"
-                                                        },
-                                                        "openCollab": false,
-                                                        "selectedTab": "Related Assets"
-                                                    },
-                                                    "scenario": {
-                                                        "selectedTab": "Source"
-                                                    },
-                                                    "warrooms": {
-                                                        "openCollab": false
-                                                    },
-                                                    "incidents": {
-                                                        "subtabs": {
-                                                            "Indicators": "indicators",
-                                                            "Correlations": "mitre_software"
-                                                        },
-                                                        "openCollab": false,
-                                                        "selectedTab": "Indicators"
                                                     },
                                                     "indicators": {
                                                         "subtabs": {
@@ -4162,11 +4588,46 @@
                                                             "Correlations": "alerts"
                                                         }
                                                     },
+                                                    "k_e_v_alerts": {
+                                                        "openCollab": false,
+                                                        "selectedTab": "Evaluation"
+                                                    },
+                                                    "mitre_groups": {
+                                                        "subtabs": {
+                                                            "Related Records": "mitre_software"
+                                                        }
+                                                    },
+                                                    "mitre_tactics": {
+                                                        "subtabs": {
+                                                            "Techniques": "mitre_techniques"
+                                                        }
+                                                    },
+                                                    "mitre_software": {
+                                                        "subtabs": {
+                                                            "Related Records": "mitre_techniques"
+                                                        }
+                                                    },
+                                                    "i_c_s_advisories": {
+                                                        "subtabs": {
+                                                            "Related Records": "c_v_es"
+                                                        },
+                                                        "selectedTab": "Advisory Details"
+                                                    },
+                                                    "mitre_techniques": {
+                                                        "subtabs": {
+                                                            "Sub-techniques": "alerts",
+                                                            "Procedure Examples": "alerts"
+                                                        }
+                                                    },
                                                     "onboarding-guide": {
                                                         "onboardingSetupLater": true
                                                     },
+                                                    "collapsible-columns": {
+                                                        "00d1126d-cea9-49ad-88f1-8c64a4b3f11b": true,
+                                                        "3c617d7d-3dc5-493d-ba3e-6a5dcdf1da87": true
+                                                    },
                                                     "asset_change_activities": {
-                                                        "selectedTab": "Task Management"
+                                                        "selectedTab": "Assets & Vulnerabilities"
                                                     }
                                                 },
                                                 "modules-alerts-list": {
@@ -4180,6 +4641,12 @@
                                                         "12ad943e-f2f7-44a0-ae58-a1c9e820bc1d": "expanded",
                                                         "229923c5-d391-49ae-b5e1-68d03256a767": "expanded",
                                                         "2cdcec12-3934-47b2-9a0f-776d1ec22ad0": "expanded"
+                                                    }
+                                                },
+                                                "modules-c_v_es-list": {
+                                                    "chart": {
+                                                        "78627c3c-8737-4363-a1d8-196e06923a0e": "expanded",
+                                                        "d6ac2f0b-14f2-450f-8d4b-d3a2a13dc17c": "expanded"
                                                     }
                                                 }
                                             },
@@ -4201,11 +4668,7 @@
                                         },
                                         "playbook": {
                                             "logs": {
-                                                "tags": [
-                                                    {
-                                                        "uuid": "system"
-                                                    }
-                                                ],
+                                                "tags": [],
                                                 "filterOpration": "exclude"
                                             },
                                             "autosave": true,
@@ -4365,6 +4828,15 @@
                                             "execute": true
                                         },
                                         "assets": {
+                                            "read": true,
+                                            "clone": true,
+                                            "create": true,
+                                            "delete": true,
+                                            "fields": [],
+                                            "update": true,
+                                            "execute": true
+                                        },
+                                        "c_v_es": {
                                             "read": true,
                                             "clone": true,
                                             "create": true,
@@ -4652,6 +5124,15 @@
                                             "update": true,
                                             "execute": false
                                         },
+                                        "k_e_v_alerts": {
+                                            "read": true,
+                                            "clone": true,
+                                            "create": true,
+                                            "delete": true,
+                                            "fields": [],
+                                            "update": true,
+                                            "execute": true
+                                        },
                                         "mitre_groups": {
                                             "read": true,
                                             "clone": true,
@@ -4752,6 +5233,15 @@
                                             "execute": false
                                         },
                                         "vulnerabilities": {
+                                            "read": true,
+                                            "clone": true,
+                                            "create": true,
+                                            "delete": true,
+                                            "fields": [],
+                                            "update": true,
+                                            "execute": true
+                                        },
+                                        "i_c_s_advisories": {
                                             "read": true,
                                             "clone": true,
                                             "create": true,
@@ -4890,9 +5380,7 @@
                 "fieldOperation": {
                     "recordTags": "Append"
                 },
-                "step_variables": {
-                    "tagList": "{% set tags = [] %}{% for asset in vars.assetIRI %}{% set _ = tags.append((asset | fromIRI).hostname) %}{% endfor %}{% set _ = tags.extend((\"OT IT\", \"Modify Cyber Asset\", \"Asset Change Activity\")) %}{{tags}}"
-                }
+                "step_variables": []
             },
             "status": null,
             "top": "435",
@@ -4975,7 +5463,7 @@
                     "tags": [],
                     "type": "\/api\/3\/picklists\/ff599189-3eeb-4c86-acb0-a7915e85ac3b",
                     "tenant": "",
-                    "content": "<p>Added Task <span class=\"badge badge-pill badge-danger\" style=\"background: green; color: #fff;\">Implement Change - {{vars.input.records[0].title}}<\/span><\/p>",
+                    "content": "<p>Added Task <span style=\"background: green; color: #fff;\" class=\"badge badge-pill badge-danger\">Implement Change - {{vars.input.records[0].title}}<\/span><\/p>",
                     "records": "{{vars.input.records[0]['@id']}}",
                     "parentstepid": "\/api\/3\/workflow_steps\/ef3f0c06-21cf-45d3-9521-ec5f3f980393"
                 },
@@ -4984,7 +5472,9 @@
                     "dueBy": "{{vars.input.records[0].dueDate}}",
                     "assets": "{{vars.assetIRI}}",
                     "status": "\/api\/3\/picklists\/7669725a-28cc-4b19-98a3-9ca71e0f88f4",
-                    "recordTags": "{{vars.tagList}}",
+                    "recordTags": [
+                        "\/api\/3\/tags\/AssetChangeActivity"
+                    ],
                     "description": "Implement The Change.",
                     "assignedOnDate": "{{arrow.utcnow().int_timestamp}}",
                     "assignedToPerson": "{{vars.steps.Assignee_And_Approver_Name.input.implementChange}}",
@@ -5009,7 +5499,7 @@
                     "tags": [],
                     "type": "\/api\/3\/picklists\/ff599189-3eeb-4c86-acb0-a7915e85ac3b",
                     "tenant": "",
-                    "content": "<p>Added Task <span class=\"badge badge-pill badge-danger\" style=\"background: green; color: #fff;\">Assignee Approval To Implement - {{vars.input.records[0].title}}<\/span><\/p>",
+                    "content": "<p>Added Task <span style=\"background: green; color: #fff;\" class=\"badge badge-pill badge-danger\">Assignee Approval To Implement - {{vars.input.records[0].title}}<\/span><\/p>",
                     "records": "{{vars.input.records[0]['@id']}}",
                     "parentstepid": "\/api\/3\/workflow_steps\/e5e0c8ad-8ac3-4673-b0f5-5866142b689f"
                 },
@@ -5018,7 +5508,9 @@
                     "dueBy": "{{vars.input.records[0].dueDate}}",
                     "assets": "{{vars.assetIRI}}",
                     "status": "\/api\/3\/picklists\/7669725a-28cc-4b19-98a3-9ca71e0f88f4",
-                    "recordTags": "{{vars.tagList}}",
+                    "recordTags": [
+                        "\/api\/3\/tags\/AssetChangeActivity"
+                    ],
                     "description": "Approval to proceed with the implementation.",
                     "assignedOnDate": "{{arrow.utcnow().int_timestamp}}",
                     "assignedToPerson": "{{vars.steps.Assignee_And_Approver_Name.input.assigneeApprovalToImplement}}",
@@ -5043,7 +5535,7 @@
                     "tags": [],
                     "type": "\/api\/3\/picklists\/ff599189-3eeb-4c86-acb0-a7915e85ac3b",
                     "tenant": "",
-                    "content": "<p>Added Task <span style=\"background: green; color: #fff;\" class=\"badge badge-pill badge-danger\">Update Baseline - {{vars.input.records[0].title}}<\/span><\/p>",
+                    "content": "<p>Added Task <span class=\"badge badge-pill badge-danger\" style=\"background: green; color: #fff;\">Update Baseline - {{vars.input.records[0].title}}<\/span><\/p>",
                     "records": "{{vars.input.records[0]['@id']}}",
                     "parentstepid": "\/api\/3\/workflow_steps\/ef3f0c06-21cf-45d3-9521-ec5f3f980393"
                 },
@@ -5052,7 +5544,9 @@
                     "dueBy": "{{vars.input.records[0].dueDate}}",
                     "assets": "{{vars.assetIRI}}",
                     "status": "\/api\/3\/picklists\/7669725a-28cc-4b19-98a3-9ca71e0f88f4",
-                    "recordTags": "{{vars.tagList}}",
+                    "recordTags": [
+                        "\/api\/3\/tags\/AssetChangeActivity"
+                    ],
                     "description": "Update Baseline Documentation & Golden Baseline",
                     "assignedOnDate": "{{arrow.utcnow().int_timestamp}}",
                     "assignedToPerson": "{{vars.steps.Assignee_And_Approver_Name.input.updateBaseline}}",
@@ -5077,7 +5571,7 @@
                     "tags": [],
                     "type": "\/api\/3\/picklists\/ff599189-3eeb-4c86-acb0-a7915e85ac3b",
                     "tenant": "",
-                    "content": "<p>Added Task <span class=\"badge badge-pill badge-danger\" style=\"background: green; color: #fff;\">Verify Software Source - {{vars.input.records[0].title}}<\/span><\/p>",
+                    "content": "<p>Added Task <span style=\"background: green; color: #fff;\" class=\"badge badge-pill badge-danger\">Verify Software Source - {{vars.input.records[0].title}}<\/span><\/p>",
                     "records": "{{vars.input.records[0]['@id']}}",
                     "parentstepid": "\/api\/3\/workflow_steps\/31791554-8cdf-4301-a38d-9dc4bc85b31b"
                 },
@@ -5086,7 +5580,9 @@
                     "dueBy": "{{vars.input.records[0].dueDate}}",
                     "assets": "{{vars.assetIRI}}",
                     "status": "\/api\/3\/picklists\/7669725a-28cc-4b19-98a3-9ca71e0f88f4",
-                    "recordTags": "{{vars.tagList}}",
+                    "recordTags": [
+                        "\/api\/3\/tags\/AssetChangeActivity"
+                    ],
                     "description": "Verify Identify & Integrity of Software Source.",
                     "assignedOnDate": "{{arrow.utcnow().int_timestamp}}",
                     "assignedToPerson": "{{vars.steps.Assignee_And_Approver_Name.input.verifySoftwareSource}}",
@@ -5111,7 +5607,7 @@
                     "tags": [],
                     "type": "\/api\/3\/picklists\/ff599189-3eeb-4c86-acb0-a7915e85ac3b",
                     "tenant": "",
-                    "content": "<p>Added Task <span style=\"background: green; color: #fff;\" class=\"badge badge-pill badge-danger\">Approver Approval To Implement - {{vars.input.records[0].title}}<\/span><\/p>",
+                    "content": "<p>Added Task <span class=\"badge badge-pill badge-danger\" style=\"background: green; color: #fff;\">Approver Approval To Implement - {{vars.input.records[0].title}}<\/span><\/p>",
                     "records": "{{vars.input.records[0]['@id']}}",
                     "parentstepid": "\/api\/3\/workflow_steps\/d279c83f-1db0-44b5-870a-058e69dfc38e"
                 },
@@ -5120,7 +5616,9 @@
                     "dueBy": "{{vars.input.records[0].dueDate}}",
                     "assets": "{{vars.assetIRI}}",
                     "status": "\/api\/3\/picklists\/7669725a-28cc-4b19-98a3-9ca71e0f88f4",
-                    "recordTags": "{{vars.tagList}}",
+                    "recordTags": [
+                        "\/api\/3\/tags\/AssetChangeActivity"
+                    ],
                     "description": "Approval to proceed with the implementation.",
                     "assignedOnDate": "{{arrow.utcnow().int_timestamp}}",
                     "assignedToPerson": "{{vars.steps.Assignee_And_Approver_Name.input.approverApprovalToImplement}}",
@@ -5296,7 +5794,7 @@
     "isPrivate": false,
     "deletedAt": null,
     "recordTags": [
-        "AssetChangeActivity",
+        "Asset Change Activity",
         "Modify Cyber Asset",
         "OT IT"
     ]

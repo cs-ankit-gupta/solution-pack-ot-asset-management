@@ -56,10 +56,11 @@
                                     },
                                     "assignedToSetting": "all",
                                     "aggregate": true,
-                                    "title": "Assets - Purdue Zone Overview",
+                                    "title": "Assets - Zone Overview",
                                     "resource": "assets",
                                     "chart": "donut",
-                                    "showCount": true
+                                    "showCount": true,
+                                    "showTabularData": false
                                 }
                             }
                         ],
@@ -110,10 +111,11 @@
                                     },
                                     "assignedToSetting": "all",
                                     "aggregate": true,
-                                    "title": "Assets - Purdue Level Overview",
+                                    "title": "Assets - Level Overview",
                                     "resource": "assets",
                                     "chart": "donut",
-                                    "showCount": true
+                                    "showCount": true,
+                                    "showTabularData": false
                                 }
                             }
                         ],
@@ -270,6 +272,62 @@
                     }
                 ],
                 "wid": "b432f770-00e0-4184-b4a1-b86e6702a5de",
+                "_collapsed": false
+            },
+            {
+                "columns": [
+                    {
+                        "widgets": [
+                            {
+                                "type": "grid",
+                                "config": {
+                                    "wid": "b9bb3b73-6bfa-4078-b352-e47106de3b0a",
+                                    "module": "assets",
+                                    "columns": [
+                                        "id",
+                                        "hostname",
+                                        "macAddress",
+                                        "ip",
+                                        "vendor",
+                                        "criticality",
+                                        "zone",
+                                        "level"
+                                    ],
+                                    "expandableCol": [],
+                                    "relationshipField": [],
+                                    "checkboxStatus": false,
+                                    "editableFields": false,
+                                    "actionButtons": [],
+                                    "query": {
+                                        "sort": [],
+                                        "limit": 5,
+                                        "logic": "AND",
+                                        "filters": [
+                                            {
+                                                "field": "recordTags",
+                                                "value": [
+                                                    "\/api\/3\/tags\/MEF"
+                                                ],
+                                                "display": null,
+                                                "operator": "in",
+                                                "type": "array",
+                                                "OPERATOR_KEY": "$",
+                                                "module": "recordTags",
+                                                "template": "tags",
+                                                "previousOperator": "in",
+                                                "previousTemplate": "tags"
+                                            }
+                                        ]
+                                    },
+                                    "title": "MEF Assets",
+                                    "enableHorizontalScroll": true
+                                }
+                            }
+                        ],
+                        "style": "col-lg-12"
+                    }
+                ],
+                "wid": "8db11199-b399-4b7f-a78c-3d92a1cfdb3d",
                 "_collapsed": false
             },
             {
@@ -668,7 +726,8 @@
                                             "importedBy": []
                                         }
                                     ],
-                                    "showCorrelation": true
+                                    "showCorrelation": true,
+                                    "iconField": "assetIcon"
                                 }
                             }
                         ],

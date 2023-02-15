@@ -44,12 +44,12 @@
         "OT & IoT Security",
         "Reporting"
     ],
-    "supportInfo": null,
+    "supportInfo": "support@fortinet.com",
     "iconLarge": null,
     "postInstallConfig": {
         "enabled": false
     },
-    "date": "2023-02-08T08:32:53+00:00",
+    "date": "2023-02-15T11:25:36+00:00",
     "contents": {
         "picklistNames": [
             {
@@ -66,6 +66,9 @@
             },
             {
                 "name": "AssetProtocol"
+            },
+            {
+                "name": "AssetType"
             },
             {
                 "name": "AssetZone"
@@ -86,16 +89,17 @@
             "": {
                 "name": "Assets",
                 "apiName": "assets"
+            },
+            "attachments": {
+                "name": "Attachments",
+                "apiName": "attachments"
+            },
+            "scenario": {
+                "name": "Scenario",
+                "apiName": "scenario"
             }
         },
         "viewTemplates": {
-            "alerts": {
-                "name": "Alerts",
-                "apiName": "alerts",
-                "views": [
-                    "detail"
-                ]
-            },
             "asset_change_activities": {
                 "name": "Asset Change Activities",
                 "apiName": "asset_change_activities",
@@ -112,22 +116,6 @@
                     "list",
                     "detail",
                     "form"
-                ]
-            },
-            "assets": {
-                "name": "Assets",
-                "apiName": "assets",
-                "views": [
-                    "list",
-                    "detail",
-                    "form"
-                ]
-            },
-            "incidents": {
-                "name": "Incidents",
-                "apiName": "incidents",
-                "views": [
-                    "detail"
                 ]
             }
         },
@@ -187,22 +175,35 @@
                 "apiName": "fortigate-firewall"
             },
             {
-                "name": "Qualys",
-                "apiName": "qualys"
-            },
-            {
                 "name": "ServiceNow",
                 "apiName": "servicenow"
             }
         ],
         "widgets": [
             {
-                "apiName": "recordDistribution",
-                "name": "Record Distribution"
-            },
-            {
                 "apiName": "mitretest",
                 "name": "MITRE ATT&CK"
+            },
+            {
+                "apiName": "recordDistribution",
+                "name": "Record Distribution"
+            }
+        ],
+        "recordSets": [
+            {
+                "name": "Asset Resources",
+                "apiName": "asset_resources",
+                "count": 10
+            },
+            {
+                "name": "Attachments",
+                "apiName": "attachments",
+                "count": 2
+            },
+            {
+                "name": "Scenario",
+                "apiName": "scenario",
+                "count": 4
             }
         ]
     }

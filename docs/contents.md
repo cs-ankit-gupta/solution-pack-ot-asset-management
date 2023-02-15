@@ -32,11 +32,10 @@ The `OT - Asset Management` solution pack contains the following resources.
 
 |**Name**|**Description**|
 | :- | :- |
-| Asset | New Fields has been added. Such as: Network, Subnet, Firmware, ESPZone, Facility, Zone, Level, Vendor, Asset Type, Protocol, Assets, Vulnerability Risk Status, Asset Change Activity, Asset Icon. Change In List View, Details View |
+| Asset | New Fields has been added. Such as: Network, Subnet, Firmware, ESPZone, Facility, Zone, Level, Vendor, Asset Type, Protocol, Assets, Vulnerability Risk Status, Asset Change Activity, Asset Icon. |
 | Asset Resources | A Module that contain the Icons of Assets |
 | Asset Change Activity | A module that monitors asset changes on various baselines. |
-| Alert | Change in Details View |
-| Incident | Change in Details View |
+
 
 ## Picklist
 |**Name**|

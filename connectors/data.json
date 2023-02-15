@@ -33,17 +33,6 @@
         "install_mode": "rpm"
     },
     {
-        "name": "qualys",
-        "label": "Qualys",
-        "category": "Vulnerability Management",
-        "description": "Qualys provides cloud security, compliance and protection of IT assets and web applications. This connector facilitates the automated operations for vulnerability management, policy compliance, asset management",
-        "publisher": null,
-        "operation_roles": [],
-        "configurations": [],
-        "dataImports": [],
-        "install_mode": "rpm"
-    },
-    {
         "name": "servicenow",
         "label": "ServiceNow",
         "category": "CMDB",

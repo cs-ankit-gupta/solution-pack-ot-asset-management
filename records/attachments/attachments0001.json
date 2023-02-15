@@ -1,38 +1,32 @@
 [
     {
         "@type": "Attachment",
-        "name": "Asset Record",
+        "name": "OT - Sample Assets CSV",
         "description": null,
-        "file": "\/api\/3\/files\/37b044b9-0290-4d2a-93a2-a32c693ef448",
+        "file": "\/api\/3\/files\/71fafca2-4217-41f9-895c-3e6224f44a02",
         "type": null,
-        "uuid": "900905e8-de44-4be2-95e1-00b9714e4bb2",
+        "uuid": "27e7ad03-7746-46c4-9580-81b9842cbe91",
         "createUser": "\/api\/3\/people\/3451141c-bac6-467c-8d72-85e0fab569ce",
-        "createDate": 1673332847.088455,
+        "createDate": 1675767317.65046,
         "modifyUser": "\/api\/3\/people\/3451141c-bac6-467c-8d72-85e0fab569ce",
-        "modifyDate": 1673422427.594712,
+        "modifyDate": 1676454506.950893,
         "id": 1,
-        "recordTags": [
-            "OT - Specific",
-            "Assets"
-        ],
+        "recordTags": [],
         "assignee": ""
     },
     {
         "@type": "Attachment",
-        "name": "Alert Record",
-        "description": null,
-        "file": "\/api\/3\/files\/076e9a0a-5179-4518-8a46-f06d50ae456e",
+        "name": "OT - Sample Alerts CSV",
+        "description": "",
+        "file": "\/api\/3\/files\/de937949-8079-40f1-afa8-6228ab114c45",
         "type": null,
-        "uuid": "a91612c5-e338-48dd-86c2-5a05cc58e616",
+        "uuid": "32fc291a-9afe-46b2-8f67-3b4d4837e2d7",
         "createUser": "\/api\/3\/people\/3451141c-bac6-467c-8d72-85e0fab569ce",
-        "createDate": 1673333505.667403,
+        "createDate": 1675767334.320994,
         "modifyUser": "\/api\/3\/people\/3451141c-bac6-467c-8d72-85e0fab569ce",
-        "modifyDate": 1673333551.479252,
+        "modifyDate": 1676454602.793917,
         "id": 2,
-        "recordTags": [
-            "Alerts",
-            "OT - Specific"
-        ],
+        "recordTags": [],
         "assignee": ""
     }
 ]

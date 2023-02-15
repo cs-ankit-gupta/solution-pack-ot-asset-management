@@ -76,9 +76,11 @@
             "name": "icon",
             "length": null,
             "orderIndex": 2,
-            "formType": "richtext",
-            "dataSource": null,
-            "searchable": true,
+            "formType": "file",
+            "dataSource": {
+                "model": "files"
+            },
+            "searchable": false,
             "peerReplicable": true,
             "system": false,
             "encrypted": false,
@@ -89,7 +91,8 @@
             "validation": {
                 "required": false,
                 "minlength": 0,
-                "maxlength": 10485761
+                "maxlength": 10485761,
+                "_enableRange": false
             },
             "bulkAction": {
                 "allow": false,
