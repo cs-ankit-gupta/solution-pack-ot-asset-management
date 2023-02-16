@@ -538,20 +538,9 @@
                                                 {
                                                     "widgets": [
                                                         {
-                                                            "type": "mitretest-1.0.0",
+                                                            "type": "mitreAttackSpread-1.0.0",
                                                             "config": {
-                                                                "wid": "f446442b-f075-4151-a31c-3268e25312c8",
-                                                                "displayTechniques": false,
-                                                                "displaySubtechniques": false,
-                                                                "hideTactics": false,
-                                                                "hideTechniques": false,
-                                                                "hideParentTactics": false,
-                                                                "filterGroups": false,
-                                                                "enableHeatmap": false,
-                                                                "enableCoverage": true,
-                                                                "toggleDisabledExpand": true,
-                                                                "selectedGroups": [],
-                                                                "title": ""
+                                                                "wid": "5f47d457-4be4-48c1-bb8b-406b81f20eeb"
                                                             }
                                                         }
                                                     ],
