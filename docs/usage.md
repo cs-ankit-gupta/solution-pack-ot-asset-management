@@ -68,7 +68,7 @@ The simulation mode has some sample data that helps you get a better understandi
 
 ## Aseets Icon
 - As illustrated in figure, you can change the Assets Icon by selecting it from the available Icons in the Asset Resources Record.
-| ![](./res/Asset_Icon_Setting.png) |
+![](./res/Asset_Icon_Setting.png)
 
 > **Note**: List or detail views of the various modules are mentioned below.
 - `Asset`: Please download this zip file and import it into your instance if you want to update the [List View](./res/Asset_List_View.zip) List View and [Details View](./res/Asset_Detail_View.zip) of Assets to what is shown below.
