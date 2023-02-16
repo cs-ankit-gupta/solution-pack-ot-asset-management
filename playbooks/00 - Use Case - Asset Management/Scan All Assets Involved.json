@@ -45,6 +45,7 @@
                 "version": "1.0.1",
                 "connector": "qualys",
                 "operation": "list_host",
+                "mock_result": "{\"status\": \"finished\"}",
                 "operationTitle": "Get Scanned Host List",
                 "pickFromTenant": false,
                 "step_variables": []
@@ -60,7 +61,9 @@
             "@type": "WorkflowStep",
             "name": "Configuration",
             "description": null,
-            "arguments": [],
+            "arguments": {
+                "useMockOutput": "{{globalVars.Demo_mode}}"
+            },
             "status": null,
             "top": "165",
             "left": "125",

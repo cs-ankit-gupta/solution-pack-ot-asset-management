@@ -4,7 +4,7 @@
     "name": "Set Assets With MEF Tag",
     "aliasName": null,
     "tag": null,
-    "description": "This PB will add MEF tag to Assets",
+    "description": "This PB will add MEF tag on Assets",
     "isActive": true,
     "debug": false,
     "singleRecordExecution": false,

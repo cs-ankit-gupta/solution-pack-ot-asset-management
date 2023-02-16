@@ -29,6 +29,7 @@
                 "version": "5.2.1",
                 "connector": "fortigate-firewall",
                 "operation": "quarantine_host",
+                "mock_result": "{\"status\": \"finished\"}",
                 "ignore_errors": false,
                 "operationTitle": "Quarantine Host",
                 "pickFromTenant": false,
@@ -82,7 +83,8 @@
             "name": "Configuration",
             "description": null,
             "arguments": {
-                "macAddress": ""
+                "macAddress": "",
+                "useMockOutput": "{{globalVars.Demo_mode}}"
             },
             "status": null,
             "top": "165",

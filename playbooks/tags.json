@@ -14,11 +14,11 @@
     "system",
     "Modify Cyber Asset",
     "IP Address",
+    "Comment",
+    "Isolate",
     "Alerts",
     "Import CSV",
     "Scenario",
-    "Comment",
-    "Isolate",
     "isolate",
     "Policy",
     "Incident",
@@ -26,6 +26,6 @@
     "Raise Ticket",
     "Mitre ATTACK",
     "On Create",
-    "CSV Record",
-    "MEF"
+    "MEF",
+    "CSV Record"
 ]

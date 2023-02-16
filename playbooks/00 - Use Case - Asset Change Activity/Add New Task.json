@@ -1024,14 +1024,14 @@
                     "tags": [],
                     "type": "\/api\/3\/picklists\/ff599189-3eeb-4c86-acb0-a7915e85ac3b",
                     "tenant": "",
-                    "content": "<p>Added Task <span class=\"badge badge-pill badge-danger\" style=\"background: green; color: #fff;\">{{vars.steps.Add_Task_Details.input.name}} - {{vars.input.records[0].title}}<\/span><\/p>",
+                    "content": "<p>Added Task <span style=\"background: green; color: #fff;\" class=\"badge badge-pill badge-danger\">{{vars.steps.Add_Task_Details.input.name}} - {{vars.input.records[0].title}}<\/span><\/p>",
                     "records": "{{vars.input.records[0]['@id']}}"
                 },
                 "resource": {
                     "name": "{{vars.steps.Add_Task_Details.input.name}} - {{vars.input.records[0].title}}",
                     "dueBy": "{{vars.input.records[0].dueDate}}",
                     "assets": "{{vars.steps.Get_Relationship.data.assets[0]['@id']}}",
-                    "status": "\/api\/3\/picklists\/0d92127c-fed9-4c5c-a952-3f2803503cd2",
+                    "status": "\/api\/3\/picklists\/7669725a-28cc-4b19-98a3-9ca71e0f88f4",
                     "__replace": "",
                     "description": "{{vars.steps.Add_Task_Details.input.description}}",
                     "assignedToPerson": "{{vars.steps.Add_Task_Details.input.assignedPerson}}",

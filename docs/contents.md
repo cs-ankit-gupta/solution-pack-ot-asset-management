@@ -91,9 +91,10 @@ The `OT - Asset Management` solution pack contains the following resources.
 
 ## Playbook Collection
 
-|00 - Use Case - Asset Change Activity||
-| :- | :- |
+### 00 - Use Case - Asset Change Activity
+
 |**Playbook Name**|**Description**|
+| :- | :- |
 | Scenario - OT - Asset Change Activity | Generate an Asset Change Activity record for type Add New Asset and Medium Impact Baseline Change. |
 | Medium Impact Baseline Change | Baseline Change Workflow for Medium Impact Cyber Assets |
 | High Impact Baseline Change | Baseline Change Workflow for High Impact Cyber Assets |
@@ -106,9 +107,10 @@ The `OT - Asset Management` solution pack contains the following resources.
 | Generate Asset Change Summary Report | Generate report by manual trigger in FortiSOAR |
 | Generate Report | Generates Report and Link to Incidents |
 
-| 00 - Use Case - Asset Management ||
-| :- | :- |
+### 00 - Use Case - Asset Management
+
 |**Playbook Name**|**Description**|
+| :- | :- |
 | Scenario - OT - Create Assets Record | Playbook will read a CSV file and create Assets records. |
 | Create Assets Record | This will generate an Alert record. |
 | Set Assets With MEF Tag | This PB will add MEF tag on Assets. | 

@@ -1,20 +1,20 @@
 [
     {
         "@type": "AssetResource",
-        "description": null,
+        "description": "This contain the image file for Switch icon.",
         "icon": "\/api\/3\/files\/38e45fae-39f1-468b-8412-8e3e93db397f",
         "type": "Switch",
         "uuid": "28e15657-64f4-47f5-b914-b5e966c19efb",
         "createUser": "\/api\/3\/people\/3451141c-bac6-467c-8d72-85e0fab569ce",
         "createDate": 1676442291.672867,
         "modifyUser": "\/api\/3\/people\/3451141c-bac6-467c-8d72-85e0fab569ce",
-        "modifyDate": 1676442291.672867,
+        "modifyDate": 1676462514.063664,
         "id": 4,
         "recordTags": []
     },
     {
         "@type": "AssetResource",
-        "description": null,
+        "description": "This contain the image file for PLC icon.",
         "icon": "\/api\/3\/files\/5649226a-3b3c-46ae-b153-3612e470f357",
         "type": "PLC",
         "uuid": "31676f5b-73ad-4e40-80e3-52be43b541ac",
@@ -27,7 +27,7 @@
     },
     {
         "@type": "AssetResource",
-        "description": null,
+        "description": "This contain the image file for Firewall icon.",
         "icon": "\/api\/3\/files\/b76d9c7e-2a90-45be-89f4-447061d9940b",
         "type": "Firewall",
         "uuid": "8e141b6f-ede2-4d17-8975-4d6c83ad75bd",
@@ -40,7 +40,7 @@
     },
     {
         "@type": "AssetResource",
-        "description": null,
+        "description": "This contain the image file for HMI icon.",
         "icon": "\/api\/3\/files\/a5a5d9ae-a205-490d-aed9-e6357f117d9f",
         "type": "HMI",
         "uuid": "9b564710-9946-4bad-b092-085275a655fa",
@@ -53,7 +53,7 @@
     },
     {
         "@type": "AssetResource",
-        "description": null,
+        "description": "This contain the image file for Laptop, Desktop, Endpoint icon.",
         "icon": "\/api\/3\/files\/6426afbf-b8af-4b85-a70f-9eab0066b032",
         "type": "Laptop, Desktop, Endpoint",
         "uuid": "a031110b-d768-40ff-8d5c-ec18e0b9c553",
@@ -79,7 +79,7 @@
     },
     {
         "@type": "AssetResource",
-        "description": null,
+        "description": "This contain the image file for Storage icon.",
         "icon": "\/api\/3\/files\/55e12534-880f-430f-ae09-a30d066656f1",
         "type": "Storage",
         "uuid": "c83e686e-30d5-4c25-ba7b-ae723eea9e64",
@@ -92,7 +92,7 @@
     },
     {
         "@type": "AssetResource",
-        "description": null,
+        "description": "This contain the image file for WorkStation icon.",
         "icon": "\/api\/3\/files\/af505166-5c23-4d7a-b691-e730b3a19568",
         "type": "WorkStation",
         "uuid": "cd51b55e-8152-4fc8-bd1b-c00444a1e321",
@@ -105,7 +105,7 @@
     },
     {
         "@type": "AssetResource",
-        "description": null,
+        "description": "This contain the image file for Router icon.",
         "icon": "\/api\/3\/files\/a14ba4f9-896e-401d-99cd-5844036d1f22",
         "type": "Router",
         "uuid": "d26f6ff8-34dc-42f2-b65f-ca7cc60a1fa9",
@@ -118,7 +118,7 @@
     },
     {
         "@type": "AssetResource",
-        "description": null,
+        "description": "This contain the image file for Network icon.",
         "icon": "\/api\/3\/files\/e2abc3f9-52de-4c2d-bf2f-528fbb5fa82c",
         "type": "Network",
         "uuid": "e686e4ef-a65a-449b-8fdd-f3a38bea89be",
