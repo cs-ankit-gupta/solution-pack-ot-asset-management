@@ -28,7 +28,7 @@ The `OT - Asset Management` solution pack contains the following resources.
 |**Name**|**Description**|
 | :- | :- |
 | Record Distribution | Ability to visualise items/records and their correlations in different levels based on a given grouping context. A very good example of the widget's utility is the OT view, where assets are visualised across different Purdue Levels and highlight any existing relations with other assets at different levels. | 
-| MITRE ATT&CK ||
+| MITRE ATT&CK Alert Incident Spread | Detailed table view of Alerts and Incidents linked to MITRE ATT&CK records. |
  
 ## Module Schema
 
