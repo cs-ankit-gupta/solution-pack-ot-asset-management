@@ -399,7 +399,7 @@
                 "input": {
                     "schema": {
                         "title": "Specify Assignee And Approver For Tasks",
-                        "description": "<h4>Following Tasks will be created based on the Asset Change Type Activity. Please assign suitable users for each task. The users will get notifications and the tasks will be assigned accordingly. <\/h4>\n\n<hr>\n",
+                        "description": "<h4>Following Tasks will be created based on the Asset Change Type Activity. Please assign suitable users for each task. The users will get notifications and the tasks will be assigned accordingly. <\/h4>\n<h5 ><span style=\"color: red\">Note:<\/span> New tasks get created once the previous task is marked completed. <\/h5>\n\n<hr>\n",
                         "inputVariables": [
                             {
                                 "name": "identifySecurityControl",

@@ -40,6 +40,11 @@ The simulation mode has some sample data that helps you get a better understandi
     - Anomalous communication between two Windows XP machines
     - Communication between public and private networks
     - STEP7 configuration download command
+- If an asset does not already exist, it is created and added to the record with the following hostname:
+    - PLC-04-S7-400
+    - EWS-42E6
+    - IE11Win7
+    - EWS-01Q3
 - Each alert get associated with assets based on the Source and Destination IP.
 - **Technique**, **Sub-Technique** and **Software** get linked to alerts under the **MITRE ATT&CK Correlations** tab.
 - **Mitigation** comes under the **Recommended Mitigation** tab.
@@ -59,9 +64,11 @@ The simulation mode has some sample data that helps you get a better understandi
 - With a given value of due date in `dueDays` two Asset Change Activity entries are made.
     - Add New Cyber Asset - Intel Core i7-13700K (Asset) 
     - Medium Impact Baseline Change - Patch For log 4J
+- If an asset does not already exist, it is created and added to the record with the following hostname:
+    - Intel Core i7-13700K
 - Assets are linked and can be seen in the Assets & Vulnerabilities tab.
 - Once the record has been created, execute the **Add Task From Templates** to assign different tasks to different people. 
-- New tasks get created after the previous task is completed.
+- New tasks get created once the previous task is completed.
 - New task can be added by using **Add New Task** playbook.
 - Once all task get completed record get closed.
 - To generate the report, execute **Generate Compliance Report** and report get attached to particular record comments.

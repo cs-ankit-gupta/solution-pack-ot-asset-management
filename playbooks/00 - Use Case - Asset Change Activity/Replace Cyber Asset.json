@@ -24,7 +24,7 @@
                 "input": {
                     "schema": {
                         "title": "Specify Assignee And Approver For Tasks",
-                        "description": "<h4>Following Tasks will be created based on the Asset Change Type Activity. Please assign suitable users for each task. The users will get notifications and the tasks will be assigned accordingly. <\/h4>\n\n<hr>\n",
+                        "description": "<h4>Following Tasks will be created based on the Asset Change Type Activity. Please assign suitable users for each task. The users will get notifications and the tasks will be assigned accordingly. <\/h4>\n<h5 ><span style=\"color: red\">Note:<\/span> New tasks get created once the previous task is marked completed. <\/h5>\n\n<hr>\n",
                         "inputVariables": [
                             {
                                 "name": "identifySecurityControl",
@@ -5368,8 +5368,8 @@
                 "step_variables": []
             },
             "status": null,
-            "top": "1120",
-            "left": "800",
+            "top": "1110",
+            "left": "568",
             "stepType": "\/api\/3\/workflow_step_types\/dc6ac63d-c5a5-472f-9eb4-6b18473a98b8",
             "group": null,
             "uuid": "6c197eae-ca1d-4bb1-a827-74eb15544350"
