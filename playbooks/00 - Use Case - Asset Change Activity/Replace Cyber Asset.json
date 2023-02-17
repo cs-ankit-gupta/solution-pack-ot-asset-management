@@ -5229,7 +5229,7 @@
             "description": null,
             "arguments": {
                 "resource": {
-                    "status": "{{arrow.utcnow().int_timestamp}}",
+                    "status": "\/api\/3\/picklists\/f79c90bc-0c2d-4848-8138-0266cc13ffe6",
                     "closedOn": "{{arrow.utcnow().int_timestamp}}"
                 },
                 "operation": "Append",
