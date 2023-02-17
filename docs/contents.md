@@ -22,7 +22,7 @@ The `OT - Asset Management` solution pack contains the following resources.
 | Fortinet FortiGate | 5.2.1 or later | Fortinet FortiGate enterprise firewall provide high performance, consolidated advanced security and granular visibility for broad protection across the entire digital attack surface. |
 | ServiceNow | 3.2.0 or later | ServiceNow connector provides functionality to create, read, update and delete records of Table and Catalog type |
 | Qualys | 1.0.1 or later | Qualys provides cloud security, compliance and protection of IT assets and web applications. This connector facilitates the automated operations for vulnerability management, policy compliance, asset management. |
-
+| MITRE ATT&CK > Fetch Latest Data | Manually fetches the latest data from MITRE |
 ## Widgets
 
 |**Name**|**Description**|
