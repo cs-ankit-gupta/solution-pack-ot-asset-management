@@ -331,7 +331,7 @@
                                                         {
                                                             "type": "cardList",
                                                             "config": {
-                                                                "wid": "90081bf0-02b2-4dfa-9f96-fa65e3f5386e",
+                                                                "wid": "6d5e5a3c-b6c3-4de2-8e7b-295922b5442a",
                                                                 "query": {
                                                                     "sort": [
                                                                         {
@@ -522,6 +522,42 @@
                 "wid": "3d00067f-8495-485e-b90b-de9d434f0362",
                 "collapsible": false,
                 "collapsibleIndex": 0,
+                "_collapsed": false
+            },
+            {
+                "columns": [
+                    {
+                        "widgets": [
+                            {
+                                "type": "rows",
+                                "config": {
+                                    "wid": "3769207a-ef8a-4cd6-bc51-2ae7fed2b76d",
+                                    "rows": [
+                                        {
+                                            "columns": [
+                                                {
+                                                    "widgets": [
+                                                        {
+                                                            "type": "mitreAttackSpread-1.0.0",
+                                                            "config": {
+                                                                "wid": "5f47d457-4be4-48c1-bb8b-406b81f20eeb"
+                                                            }
+                                                        }
+                                                    ],
+                                                    "style": "col-lg-12"
+                                                }
+                                            ],
+                                            "wid": "cf42cde2-a069-465f-b0e4-b285193f7256",
+                                            "_collapsed": false
+                                        }
+                                    ]
+                                }
+                            }
+                        ],
+                        "style": "col-lg-12"
+                    }
+                ],
+                "wid": "f2963dbf-4137-4477-b541-f03221abc1d4",
                 "_collapsed": false
             }
         ],

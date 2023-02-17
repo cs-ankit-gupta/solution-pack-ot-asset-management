@@ -78,7 +78,7 @@
                                                                                     {
                                                                                         "name": "closedOn",
                                                                                         "highlightMode": true,
-                                                                                        "readOnly": false
+                                                                                        "readOnly": true
                                                                                     }
                                                                                 ]
                                                                             }
@@ -448,39 +448,7 @@
                                                                                                                         },
                                                                                                                         "readOnly": false
                                                                                                                     },
-                                                                                                                    "moduleCount": 2,
-                                                                                                                    "selectedFieldData": {
-                                                                                                                        "@id": "\/api\/3\/picklists\/343f4b67-e929-4205-bf95-ba5b70545fed",
-                                                                                                                        "@type": "Picklist",
-                                                                                                                        "itemValue": "Completed",
-                                                                                                                        "orderIndex": 2,
-                                                                                                                        "color": "#3ec210",
-                                                                                                                        "icon": null,
-                                                                                                                        "listName": "\/api\/3\/picklist_names\/21ddbcfd-b4a3-4273-adea-c674fe47d643",
-                                                                                                                        "uuid": "343f4b67-e929-4205-bf95-ba5b70545fed",
-                                                                                                                        "id": 18,
-                                                                                                                        "importedBy": []
-                                                                                                                    },
-                                                                                                                    "selectedField": [
-                                                                                                                        {
-                                                                                                                            "@id": "\/api\/3\/tasks\/a119dd3f-1bbc-4fca-9521-75fbd6fcb2ce",
-                                                                                                                            "@type": "Task",
-                                                                                                                            "status": {
-                                                                                                                                "@id": "\/api\/3\/picklists\/343f4b67-e929-4205-bf95-ba5b70545fed",
-                                                                                                                                "@type": "Picklist",
-                                                                                                                                "itemValue": "Completed",
-                                                                                                                                "orderIndex": 2,
-                                                                                                                                "color": "#3ec210",
-                                                                                                                                "icon": null,
-                                                                                                                                "listName": "\/api\/3\/picklist_names\/21ddbcfd-b4a3-4273-adea-c674fe47d643",
-                                                                                                                                "uuid": "343f4b67-e929-4205-bf95-ba5b70545fed",
-                                                                                                                                "id": 18,
-                                                                                                                                "importedBy": []
-                                                                                                                            },
-                                                                                                                            "uuid": "a119dd3f-1bbc-4fca-9521-75fbd6fcb2ce",
-                                                                                                                            "id": 45
-                                                                                                                        }
-                                                                                                                    ],
+                                                                                                                    "moduleCount": 0,
                                                                                                                     "fieldValue": "\/api\/3\/picklists\/343f4b67-e929-4205-bf95-ba5b70545fed"
                                                                                                                 }
                                                                                                             ]
@@ -496,8 +464,8 @@
                                                                                                         "config": {
                                                                                                             "wid": "9fcc8353-64e5-45d9-8a88-8daff236540f",
                                                                                                             "duedate": "dueDate",
-                                                                                                            "sladate": "modifyDate",
-                                                                                                            "slapaused": "modifyDate",
+                                                                                                            "sladate": "closedOn",
+                                                                                                            "slapaused": "dueDate",
                                                                                                             "slaPausedOn": "status",
                                                                                                             "slaMappedOn": "status",
                                                                                                             "pausedItemvalue": "On Hold\/Blocked",

@@ -10,13 +10,13 @@
             "name": "sOARFramework",
             "type": "solutionpack",
             "label": "SOAR Framework",
-            "minVersion": "2.0.1"
+            "minVersion": "2.0.2"
         },
         {
             "name": "socSimulator",
             "type": "solutionpack",
             "label": "SOC Simulator",
-            "minVersion": null
+            "minVersion": "1.0.1"
         },
         {
             "name": "mITREATT&CKEnrichmentFramework",
@@ -32,26 +32,28 @@
         }
     ],
     "prerequisite": null,
-    "publisher": "Foritnet",
-    "description": "Solution Pack manages assets in both the OT and IT domains. It provides a method for dealing with asset baseline changes.",
+    "publisher": "Fortinet",
+    "description": "Solution Pack manages assets in both the OT and IT domains. It provides a way of dealing with asset baseline changes.",
     "help": "https://github.com/fortinet-fortisoar/solution-pack-ot-asset-management/blob/release/1.0.0/README.md",
     "category": [
         "Monitoring",
+        "Vulnerability Management",
         "Alert Management",
-        "Reporting",
+        "Vulnerability and Risk Management",
         "Asset Management",
-        "OT & IoT Security"
+        "OT & IoT Security",
+        "Reporting"
     ],
-    "supportInfo": null,
+    "supportInfo": "support@fortinet.com",
     "iconLarge": null,
-    "date": "2023-01-11T10:26:23+00:00",
+    "postInstallConfig": {
+        "enabled": false
+    },
+    "date": "2023-02-17T09:59:27+00:00",
     "contents": {
         "picklistNames": [
             {
                 "name": "ActivityStatus"
-            },
-            {
-                "name": "AlertType"
             },
             {
                 "name": "AssetCategory"
@@ -70,6 +72,9 @@
             },
             {
                 "name": "AssetZone"
+            },
+            {
+                "name": "VulnerabilityRiskStatus"
             }
         ],
         "modules": {
@@ -77,19 +82,16 @@
                 "name": "Asset Change Activities",
                 "apiName": "asset_change_activities"
             },
+            "asset_resources": {
+                "name": "Asset Resources",
+                "apiName": "asset_resources"
+            },
             "": {
                 "name": "Assets",
                 "apiName": "assets"
             }
         },
         "viewTemplates": {
-            "alerts": {
-                "name": "Alerts",
-                "apiName": "alerts",
-                "views": [
-                    "detail"
-                ]
-            },
             "asset_change_activities": {
                 "name": "Asset Change Activities",
                 "apiName": "asset_change_activities",
@@ -99,20 +101,13 @@
                     "form"
                 ]
             },
-            "assets": {
-                "name": "Assets",
-                "apiName": "assets",
+            "asset_resources": {
+                "name": "Asset Resources",
+                "apiName": "asset_resources",
                 "views": [
                     "list",
                     "detail",
                     "form"
-                ]
-            },
-            "incidents": {
-                "name": "Incidents",
-                "apiName": "incidents",
-                "views": [
-                    "detail"
                 ]
             }
         },
@@ -134,14 +129,7 @@
                 "name": "00 - Use Case - Asset Management"
             }
         ],
-        "globalVariables": [
-            {
-                "id": 16,
-                "name": "Demo_mode",
-                "value": "true",
-                "default_value": "false"
-            }
-        ],
+        "globalVariables": [],
         "reports": [
             {
                 "name": "Asset Change Activity Summary Report"
@@ -168,11 +156,30 @@
                 "apiName": "fortinet-fortiedr"
             },
             {
+                "name": "Fortinet FortiGate",
+                "apiName": "fortigate-firewall"
+            },
+            {
                 "name": "ServiceNow",
                 "apiName": "servicenow"
             }
         ],
+        "widgets": [
+            {
+                "apiName": "recordDistribution",
+                "name": "Record Distribution"
+            },
+            {
+                "apiName": "mitreAttackSpread",
+                "name": "MITRE ATT&CK Alert Incident Spread"
+            }
+        ],
         "recordSets": [
+            {
+                "name": "Asset Resources",
+                "apiName": "asset_resources",
+                "count": 10
+            },
             {
                 "name": "Attachments",
                 "apiName": "attachments",
@@ -181,7 +188,7 @@
             {
                 "name": "Scenario",
                 "apiName": "scenario",
-                "count": 2
+                "count": 4
             }
         ]
     }

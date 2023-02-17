@@ -19,42 +19,6 @@
     "steps": [
         {
             "@type": "WorkflowStep",
-            "name": "Find Assets",
-            "description": null,
-            "arguments": {
-                "query": {
-                    "sort": [],
-                    "limit": 30,
-                    "logic": "AND",
-                    "filters": [
-                        {
-                            "type": "primitive",
-                            "field": "hostname",
-                            "value": "{{vars.item}}",
-                            "operator": "eq",
-                            "_operator": "eq"
-                        }
-                    ]
-                },
-                "module": "assets?$limit=30",
-                "for_each": {
-                    "item": "{{vars.targetAsset}}",
-                    "parallel": false,
-                    "condition": ""
-                },
-                "step_variables": {
-                    "assetsIRI": "{{vars.result | flatten | json_query('[*][\"@id\"][]')}}"
-                }
-            },
-            "status": null,
-            "top": "570",
-            "left": "125",
-            "stepType": "\/api\/3\/workflow_step_types\/b593663d-7d13-40ce-a3a3-96dece928770",
-            "group": null,
-            "uuid": "06414df4-709d-4e2d-97d3-f175e15393a8"
-        },
-        {
-            "@type": "WorkflowStep",
             "name": "Get Tactics",
             "description": null,
             "arguments": {
@@ -154,7 +118,6 @@
                     "name": "{{vars.record['Name']}}",
                     "type": "{{\"AlertType\" | picklist(vars.record['Type'], \"@id\")}}",
                     "state": "\/api\/3\/picklists\/a1bac09b-1441-45aa-ad1b-c88744e48e72",
-                    "assets": "{{vars.assetsIRI}}",
                     "domain": "{{vars.record['Domain']}}",
                     "source": "{{vars.record['Source']}}",
                     "status": "{{\"AlertStatus\" | picklist(vars.record['Status'], \"@id\")}}",
@@ -169,7 +132,7 @@
                     "sourceId": "{{vars.record['Source ID']}}",
                     "sourceIp": "{{vars.record['Source IP']}}",
                     "userName": "{{vars.record['Username']}}",
-                    "__replace": "",
+                    "__replace": "true",
                     "deviceUID": "{{vars.record['Device UID']}}",
                     "emailBody": "{{vars.record['Email Body']}}",
                     "emailFrom": "{{vars.record['Email From']}}",
@@ -223,7 +186,7 @@
                     "vulnerabilitySeverity": "{{vars.record['Vulnerability Severity']}}"
                 },
                 "operation": "Overwrite",
-                "collection": "\/api\/3\/alerts",
+                "collection": "\/api\/3\/upsert\/alerts",
                 "__recommend": [],
                 "fieldOperation": {
                     "recordTags": "Overwrite"
@@ -231,7 +194,7 @@
                 "step_variables": []
             },
             "status": null,
-            "top": "705",
+            "top": "570",
             "left": "125",
             "stepType": "\/api\/3\/workflow_step_types\/2597053c-e718-44b4-8394-4d40fe26d357",
             "group": null,
@@ -255,15 +218,6 @@
     "routes": [
         {
             "@type": "WorkflowRoute",
-            "name": "Get Groups -> Find Assets",
-            "targetStep": "\/api\/3\/workflow_steps\/06414df4-709d-4e2d-97d3-f175e15393a8",
-            "sourceStep": "\/api\/3\/workflow_steps\/6c431deb-6d5f-4f7a-bc3f-cb6f0b9faa93",
-            "label": null,
-            "isExecuted": false,
-            "uuid": "12b1275a-bdf2-4d3d-92dc-ea6e21189f43"
-        },
-        {
-            "@type": "WorkflowRoute",
             "name": "Get Values -> Get Tactics",
             "targetStep": "\/api\/3\/workflow_steps\/1efe9ee2-338a-4e58-851b-ea3833e8707a",
             "sourceStep": "\/api\/3\/workflow_steps\/fd66bd08-ae50-4635-84f0-e95fa48bf0b8",
@@ -273,21 +227,21 @@
         },
         {
             "@type": "WorkflowRoute",
+            "name": "Get Groups -> Create Alert",
+            "targetStep": "\/api\/3\/workflow_steps\/f2b37bfc-ddf1-47e2-b646-41054ac75642",
+            "sourceStep": "\/api\/3\/workflow_steps\/6c431deb-6d5f-4f7a-bc3f-cb6f0b9faa93",
+            "label": null,
+            "isExecuted": false,
+            "uuid": "4f3e76c1-2ae4-40c9-a47e-a05a15af0618"
+        },
+        {
+            "@type": "WorkflowRoute",
             "name": "Get Tactics -> Get Groups",
             "targetStep": "\/api\/3\/workflow_steps\/6c431deb-6d5f-4f7a-bc3f-cb6f0b9faa93",
             "sourceStep": "\/api\/3\/workflow_steps\/1efe9ee2-338a-4e58-851b-ea3833e8707a",
             "label": null,
             "isExecuted": false,
             "uuid": "d41f808c-ee7e-4060-a8d8-8cd85ed47197"
-        },
-        {
-            "@type": "WorkflowRoute",
-            "name": "Find Assets -> Create Alert",
-            "targetStep": "\/api\/3\/workflow_steps\/f2b37bfc-ddf1-47e2-b646-41054ac75642",
-            "sourceStep": "\/api\/3\/workflow_steps\/06414df4-709d-4e2d-97d3-f175e15393a8",
-            "label": null,
-            "isExecuted": false,
-            "uuid": "f2580c7a-64b6-4ed0-b229-3933f933871f"
         },
         {
             "@type": "WorkflowRoute",
@@ -307,7 +261,7 @@
     "deletedAt": null,
     "recordTags": [
         "Alerts",
-        "OT - Specific",
-        "CSV Record"
+        "CSV Record",
+        "OT IT"
     ]
 }

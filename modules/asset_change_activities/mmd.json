@@ -1,6 +1,6 @@
 {
     "@context": "\/api\/3\/contexts\/StagingModelMetadata",
-    "@id": "\/api\/3\/staging_model_metadatas\/bf36c832-e867-4699-bb03-6ca861341655",
+    "@id": "\/api\/3\/staging_model_metadatas\/dbec9976-d4a6-4a26-9c04-78a477551517",
     "@type": "StagingModelMetadata",
     "type": "asset_change_activities",
     "parentType": null,
@@ -17,12 +17,72 @@
     "writable": true,
     "attributes": [
         {
+            "@id": "\/api\/3\/attribute_metadatas\/55a54f13-89ed-4abd-99e8-c6a2ec8ad669",
+            "@type": "AttributeMetadata",
+            "type": "integer",
+            "name": "closedOn",
+            "length": null,
+            "orderIndex": 1,
+            "formType": "datetime",
+            "dataSource": null,
+            "searchable": true,
+            "peerReplicable": true,
+            "system": false,
+            "encrypted": false,
+            "gridColumn": false,
+            "collection": false,
+            "inversedField": null,
+            "ownsRelationship": false,
+            "validation": {
+                "required": false,
+                "minlength": 0,
+                "maxlength": 10485761,
+                "_enableRange": false
+            },
+            "bulkAction": {
+                "allow": false,
+                "buttonText": "",
+                "buttonIcon": "",
+                "buttonClass": "btn btn-default btn-sm"
+            },
+            "dataSourceFilters": null,
+            "defaultValue": null,
+            "tooltip": null,
+            "visibility": [
+                {
+                    "sort": [],
+                    "limit": 30,
+                    "logic": "AND",
+                    "filters": [
+                        {
+                            "field": "closedOn",
+                            "value": "false",
+                            "operator": "isnull",
+                            "type": "datetime"
+                        }
+                    ]
+                }
+            ],
+            "htmlEscape": false,
+            "orphanRemoval": null,
+            "readable": true,
+            "writeable": true,
+            "identifier": null,
+            "unique": false,
+            "recommend": false,
+            "uuid": "55a54f13-89ed-4abd-99e8-c6a2ec8ad669",
+            "displayName": "{{ closedOn }}",
+            "descriptions": {
+                "singular": "Closed On"
+            }
+        },
+        {
             "@id": "\/api\/3\/attribute_metadatas\/57b9d571-c85a-4787-a5d5-bf64c54eeb81",
             "@type": "AttributeMetadata",
             "type": "string",
             "name": "title",
             "length": null,
-            "orderIndex": 1,
+            "orderIndex": 2,
             "formType": "text",
             "dataSource": null,
             "searchable": true,
@@ -68,7 +128,7 @@
             "type": "picklists",
             "name": "assetChangeType",
             "length": null,
-            "orderIndex": 2,
+            "orderIndex": 3,
             "formType": "picklist",
             "dataSource": {
                 "model": "picklists",
@@ -158,7 +218,7 @@
             "type": "string",
             "name": "description",
             "length": null,
-            "orderIndex": 3,
+            "orderIndex": 4,
             "formType": "richtext",
             "dataSource": null,
             "searchable": false,
@@ -204,7 +264,7 @@
             "type": "string",
             "name": "justification",
             "length": null,
-            "orderIndex": 4,
+            "orderIndex": 5,
             "formType": "richtext",
             "dataSource": null,
             "searchable": false,
@@ -250,7 +310,7 @@
             "type": "people",
             "name": "assignedTo",
             "length": null,
-            "orderIndex": 5,
+            "orderIndex": 6,
             "formType": "lookup",
             "dataSource": {
                 "model": "people"
@@ -298,7 +358,7 @@
             "type": "integer",
             "name": "dueDate",
             "length": null,
-            "orderIndex": 6,
+            "orderIndex": 7,
             "formType": "datetime",
             "dataSource": null,
             "searchable": true,
@@ -336,66 +396,6 @@
             "displayName": "{{ dueDate }}",
             "descriptions": {
                 "singular": "Due Date"
-            }
-        },
-        {
-            "@id": "\/api\/3\/attribute_metadatas\/754f41ad-40a0-45df-a97b-39c71ebfe897",
-            "@type": "AttributeMetadata",
-            "type": "integer",
-            "name": "closedOn",
-            "length": null,
-            "orderIndex": 7,
-            "formType": "datetime",
-            "dataSource": null,
-            "searchable": true,
-            "peerReplicable": true,
-            "system": false,
-            "encrypted": false,
-            "gridColumn": false,
-            "collection": false,
-            "inversedField": null,
-            "ownsRelationship": false,
-            "validation": {
-                "required": false,
-                "minlength": 0,
-                "maxlength": 10485761,
-                "_enableRange": false
-            },
-            "bulkAction": {
-                "allow": false,
-                "buttonText": "",
-                "buttonIcon": "",
-                "buttonClass": "btn btn-default btn-sm"
-            },
-            "dataSourceFilters": null,
-            "defaultValue": null,
-            "tooltip": null,
-            "visibility": [
-                {
-                    "sort": [],
-                    "limit": 30,
-                    "logic": "AND",
-                    "filters": [
-                        {
-                            "field": "closedOn",
-                            "value": "false",
-                            "operator": "isnull",
-                            "type": "datetime"
-                        }
-                    ]
-                }
-            ],
-            "htmlEscape": false,
-            "orphanRemoval": null,
-            "readable": true,
-            "writeable": true,
-            "identifier": null,
-            "unique": false,
-            "recommend": false,
-            "uuid": "754f41ad-40a0-45df-a97b-39c71ebfe897",
-            "displayName": "{{ closedOn }}",
-            "descriptions": {
-                "singular": "Closed On"
             }
         },
         {
@@ -771,7 +771,7 @@
     ],
     "system": false,
     "module": "asset_change_activities",
-    "softDeleteable": false,
+    "softDeleteable": true,
     "archivable": false,
     "paused": false,
     "partitionBy": "modifyDate",
@@ -780,7 +780,7 @@
         "delete_primary_data_after": 60
     },
     "archivalFilters": [],
-    "uuid": "bf36c832-e867-4699-bb03-6ca861341655",
+    "uuid": "dbec9976-d4a6-4a26-9c04-78a477551517",
     "displayName": "{{ title }}",
     "descriptions": {
         "singular": "Asset Change Activity",

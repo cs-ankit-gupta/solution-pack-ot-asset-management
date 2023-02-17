@@ -136,15 +136,14 @@
                     "owners": "{{vars.input.params.incidentOwners}}",
                     "resSla": "\/api\/3\/picklists\/090115d7-90fc-4dc6-97ca-27950fc30c1c",
                     "status": "\/api\/3\/picklists\/bb73fe9e-f699-11e7-8c3f-9a214cf093ae",
-                    "category": "{{vars.input.params.incidentType or None}}",
-                    "severity": "{{vars.input.params.severity or None}}",
+                    "category": "{{\"IncidentType\" | picklist(vars.input.params.incidentType.itemValue, \"@id\")}}",
+                    "severity": "{{\"Severity\" | picklist(vars.input.params.severity.itemValue, \"@id\")}}",
                     "slaState": "\/api\/3\/picklists\/090115d7-90fc-4dc6-97ca-27950fc30c1c",
                     "__replace": "",
                     "indicators": "{{vars.sorted_indicator_list or None}}",
                     "recordTags": [
                         "\/api\/3\/tags\/OT - Specific",
-                        "\/api\/3\/tags\/Escalated",
-                        "\/api\/3\/tags\/Stuxnet"
+                        "\/api\/3\/tags\/Escalated"
                     ],
                     "incidentLead": "{{vars.input.params.incidentLead or None}}",
                     "mitresoftware": "{{vars.sorted_software_list or None}}",
@@ -307,5 +306,7 @@
     "owners": [],
     "isPrivate": false,
     "deletedAt": null,
-    "recordTags": []
+    "recordTags": [
+        "OT IT"
+    ]
 }

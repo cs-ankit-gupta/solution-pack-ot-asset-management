@@ -24,7 +24,7 @@
             "arguments": {
                 "assets_record_list": "{{vars.related_records.assets | json_query('[*].\"@id\"[]')}}",
                 "software_record_list": "{{vars.related_records.mitresoftware | json_query('[*].\"@id\"[]')}}",
-                "technique_record_IRI": "{{vars.steps.Get_Technique[0]['@id']}}",
+                "technique_record_IRI": "{{vars.steps.Get_Technique[0]['@id'] or none}}",
                 "indicators_record_list": "{{vars.related_records.indicators | json_query('[*].\"@id\"[]')}}",
                 "mitigation_record_list": "{{vars.related_records.mitremitigations | json_query('[*].\"@id\"[]')}}"
             },
@@ -40,6 +40,7 @@
             "name": "Get Technique",
             "description": null,
             "arguments": {
+                "when": "{{vars.related_records.mitreattackid is not none}}",
                 "query": {
                     "sort": [],
                     "limit": 30,
@@ -134,5 +135,7 @@
     "owners": [],
     "isPrivate": false,
     "deletedAt": null,
-    "recordTags": []
+    "recordTags": [
+        "OT IT"
+    ]
 }

@@ -60,7 +60,7 @@
                     "hostname": "{{vars.record.Hostname}}",
                     "location": "{{vars.record.Location}}",
                     "protocol": "{{vars.protocolIRIs}}",
-                    "__replace": "",
+                    "__replace": "true",
                     "assetType": "{{\"AssetType\" | picklist(vars.record['Asset Type'], \"@id\")}}",
                     "deviceUid": "{{vars.record['Device UID']}}",
                     "managedBy": "{{vars.record.Owner}}",
@@ -76,7 +76,7 @@
                     "registrationDate": "{{vars.assetRegistrationDate}}"
                 },
                 "operation": "Overwrite",
-                "collection": "\/api\/3\/assets",
+                "collection": "\/api\/3\/upsert\/assets",
                 "__recommend": [],
                 "fieldOperation": {
                     "protocol": "Overwrite",
@@ -136,8 +136,8 @@
     "isPrivate": false,
     "deletedAt": null,
     "recordTags": [
-        "OT - Specific",
         "Assets",
-        "CSV Record"
+        "CSV Record",
+        "OT IT"
     ]
 }

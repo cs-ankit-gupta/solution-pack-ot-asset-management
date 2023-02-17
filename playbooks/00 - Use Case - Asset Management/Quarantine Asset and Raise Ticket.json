@@ -17,11 +17,11 @@
     "steps": [
         {
             "@type": "WorkflowStep",
-            "name": "Raise Ticket",
+            "name": "Raise ServiceNow Ticket",
             "description": null,
             "arguments": {
                 "name": "ServiceNow",
-                "config": "bd814183-84bb-4c65-a9fe-02d32bc2c7a3",
+                "config": "e3bb83dd-17a7-4542-a75d-1f2c5b9327c0",
                 "params": {
                     "state": "",
                     "impact": "1",
@@ -41,7 +41,7 @@
                     "tags": [],
                     "type": "\/api\/3\/picklists\/ff599189-3eeb-4c86-acb0-a7915e85ac3b",
                     "tenant": "",
-                    "content": "<p>Isolated Assets and Raised Ticket: <span class=\"badge badge-pill badge-danger\" style=\"background: #009d00; color: #fff;\">{{vars.result.data.result.number}}<\/span><\/p>",
+                    "content": "<p>Isolated Following Assets and Raised ServiceNow Ticket : <span class=\"badge badge-pill badge-danger\" style=\"background: #009d00; color: #fff;\">{{vars.result.data.result.number}}<\/span><\/p>\n<p>{% for asset in vars.assetList %}<\/p>\n<ul>\n<li>{{asset.hostname}}<\/li>\n<\/ul>\n<p>{% endfor %}<\/p>",
                     "records": "{{vars.input.records[0]['@id']}}"
                 },
                 "version": "3.2.0",
@@ -190,7 +190,7 @@
         },
         {
             "@type": "WorkflowStep",
-            "name": "Quarantine Asset",
+            "name": "Quarantine Asset In FortiEDR",
             "description": null,
             "arguments": {
                 "name": "Fortinet FortiEDR",
@@ -330,9 +330,9 @@
     "isPrivate": false,
     "deletedAt": null,
     "recordTags": [
-        "OT - Specific",
+        "Incident",
+        "OT IT",
         "Quarantine",
-        "Raise Ticket",
-        "Incident"
+        "Raise Ticket"
     ]
 }

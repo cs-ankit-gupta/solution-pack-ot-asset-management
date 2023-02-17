@@ -79,7 +79,6 @@
                             "value": "\/api\/3\/picklists\/f79c90bc-0c2d-4848-8138-0266cc13ffe6",
                             "_value": {
                                 "@id": "\/api\/3\/picklists\/f79c90bc-0c2d-4848-8138-0266cc13ffe6",
-                                "display": "Closed",
                                 "itemValue": "Closed"
                             },
                             "operator": "eq"
@@ -98,12 +97,12 @@
     "routes": [
         {
             "@type": "WorkflowRoute",
-            "name": "Start -> Update War Room",
+            "name": "Start -> Update Asset Change Activity",
             "targetStep": "\/api\/3\/workflow_steps\/5c7ff996-4f2e-4865-906f-173b691fc4eb",
             "sourceStep": "\/api\/3\/workflow_steps\/f6e602b6-109f-4bd8-bf3f-28ce08117592",
             "label": null,
             "isExecuted": false,
-            "uuid": "6c9bad7b-21fb-4025-aeb9-1ce9869a618f"
+            "uuid": "db14f7ef-27d1-457d-a0c8-13a23f577740"
         }
     ],
     "groups": [],
@@ -113,9 +112,9 @@
     "isPrivate": false,
     "deletedAt": null,
     "recordTags": [
-        "system",
-        "OT - Specific",
         "Asset Change Activity",
-        "On Update"
+        "On Update",
+        "OT IT",
+        "system"
     ]
 }

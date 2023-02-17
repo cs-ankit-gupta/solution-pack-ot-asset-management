@@ -4,7 +4,7 @@
     "name": "Isolate and Comment Assets",
     "aliasName": null,
     "tag": null,
-    "description": "This PB will update the assets as isolate and add a comment.",
+    "description": "This PB will update the assets as Isolate and add a comment.",
     "isActive": true,
     "debug": false,
     "singleRecordExecution": false,
@@ -38,23 +38,26 @@
         },
         {
             "@type": "WorkflowStep",
-            "name": "Isolate Asset",
+            "name": "Update Asset State",
             "description": null,
             "arguments": {
                 "message": {
                     "tags": [],
                     "type": "\/api\/3\/picklists\/ff599189-3eeb-4c86-acb0-a7915e85ac3b",
                     "tenant": "",
-                    "content": "<p>Isolated because found in malicious activity:<\/p>\n<p>{% for alert in vars.record['alerts'] %}Alert {{loop.index}}:<a href=\"\/modules\/alerts\/{{alert.uuid}}\">{{alert.name}}<\/a><br \/>{% endfor %}{% for incident in vars.record['incidents'] %}Incident {{loop.index}}:<a href=\"\/modules\/incidents\/{{incident.uuid}}\">{{incident.name}}<\/a><br \/>{% endfor %}<\/p>",
+                    "content": "<p>Isolated because found in malicious activity:<\/p>\n<p>{% for alert in vars.record['alerts'] %}Alert {{loop.index}}:<a href=\"\/modules\/alerts\/{{alert.uuid}}\">{{alert.name}}<\/a><br>{% endfor %}{% for incident in vars.record['incidents'] %}Incident {{loop.index}}:<a href=\"\/modules\/incidents\/{{incident.uuid}}\">{{incident.name}}<\/a><br>{% endfor %}<\/p>",
                     "records": "{{vars.record['@id']}}"
                 },
-                "resource": [],
+                "resource": {
+                    "state": "\/api\/3\/picklists\/321ad354-42ce-42b6-8636-2fa184a7dcd5"
+                },
                 "operation": "Append",
                 "collection": "{{vars.record['@id']}}",
                 "__recommend": [],
                 "collectionType": "\/api\/3\/assets",
                 "fieldOperation": {
-                    "protocol": "Append"
+                    "protocol": "Append",
+                    "recordTags": "Append"
                 },
                 "step_variables": []
             },
@@ -84,9 +87,9 @@
     "isPrivate": false,
     "deletedAt": null,
     "recordTags": [
-        "OT - Specific",
         "Assets",
         "Comment",
-        "Isolate"
+        "Isolate",
+        "OT IT"
     ]
 }

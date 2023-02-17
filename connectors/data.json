@@ -22,6 +22,17 @@
         "install_mode": "rpm"
     },
     {
+        "name": "fortigate-firewall",
+        "label": "Fortinet FortiGate",
+        "category": "Firewall and Network Protection",
+        "description": "Fortinet FortiGate enterprise firewall provide high performance, consolidated advanced security and granular visibility for broad protection across the entire digital attack surface.",
+        "publisher": null,
+        "operation_roles": [],
+        "configurations": [],
+        "dataImports": [],
+        "install_mode": "rpm"
+    },
+    {
         "name": "servicenow",
         "label": "ServiceNow",
         "category": "CMDB",

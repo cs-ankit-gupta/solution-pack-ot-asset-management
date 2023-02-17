@@ -1,390 +1,260 @@
 {
-    "@context": "\/api\/3\/contexts\/PicklistName",
-    "@id": "\/api\/3\/picklist_names\/0042bf40-d0e6-4324-ab84-0c7b0703f681",
+    "@context": "/api/3/contexts/PicklistName",
+    "@id": "/api/3/picklist_names/0042bf40-d0e6-4324-ab84-0c7b0703f681",
     "@type": "PicklistName",
     "name": "AssetCategory",
     "system": false,
     "picklists": [
-        {
-            "@id": "\/api\/3\/picklists\/0e9cd412-66a1-49ed-8f98-11fab108f6d5",
-            "@type": "Picklist",
-            "itemValue": "Printer",
-            "orderIndex": 8,
-            "color": null,
-            "icon": null,
-            "listName": "\/api\/3\/picklist_names\/0042bf40-d0e6-4324-ab84-0c7b0703f681",
-            "uuid": "0e9cd412-66a1-49ed-8f98-11fab108f6d5"
-        },
-        {
-            "@id": "\/api\/3\/picklists\/183da94b-00f9-4f57-af92-a43394cdbe00",
-            "@type": "Picklist",
-            "itemValue": "UPS",
-            "orderIndex": 10,
-            "color": null,
-            "icon": null,
-            "listName": "\/api\/3\/picklist_names\/0042bf40-d0e6-4324-ab84-0c7b0703f681",
-            "uuid": "183da94b-00f9-4f57-af92-a43394cdbe00"
-        },
-        {
-            "@id": "\/api\/3\/picklists\/bce81cb2-13b4-470e-ba38-615c92c44133",
-            "@type": "Picklist",
-            "itemValue": "RTU",
-            "orderIndex": 14,
-            "color": null,
-            "icon": null,
-            "listName": "\/api\/3\/picklist_names\/0042bf40-d0e6-4324-ab84-0c7b0703f681",
-            "uuid": "bce81cb2-13b4-470e-ba38-615c92c44133"
-        },
-        {
-            "@id": "\/api\/3\/picklists\/b7a653a4-4840-44cc-b116-fa618d8ddcd5",
-            "@type": "Picklist",
-            "itemValue": "PLC",
-            "orderIndex": 13,
-            "color": null,
-            "icon": null,
-            "listName": "\/api\/3\/picklist_names\/0042bf40-d0e6-4324-ab84-0c7b0703f681",
-            "uuid": "b7a653a4-4840-44cc-b116-fa618d8ddcd5"
-        },
-        {
-            "@id": "\/api\/3\/picklists\/be46356b-d8ea-473d-8d50-08f644b1afea",
-            "@type": "Picklist",
-            "itemValue": "IED",
-            "orderIndex": 15,
-            "color": null,
-            "icon": null,
-            "listName": "\/api\/3\/picklist_names\/0042bf40-d0e6-4324-ab84-0c7b0703f681",
-            "uuid": "be46356b-d8ea-473d-8d50-08f644b1afea"
-        },
-        {
-            "@id": "\/api\/3\/picklists\/b6028859-865b-4aa4-83dc-225bec23f635",
-            "@type": "Picklist",
-            "itemValue": "SCADA Server",
-            "orderIndex": 22,
-            "color": null,
-            "icon": null,
-            "listName": "\/api\/3\/picklist_names\/0042bf40-d0e6-4324-ab84-0c7b0703f681",
-            "uuid": "b6028859-865b-4aa4-83dc-225bec23f635"
-        },
-        {
-            "@id": "\/api\/3\/picklists\/ea256c04-890c-4deb-aac4-c06e43f7b86c",
-            "@type": "Picklist",
-            "itemValue": "HMI",
-            "orderIndex": 16,
-            "color": null,
-            "icon": null,
-            "listName": "\/api\/3\/picklist_names\/0042bf40-d0e6-4324-ab84-0c7b0703f681",
-            "uuid": "ea256c04-890c-4deb-aac4-c06e43f7b86c"
-        },
-        {
-            "@id": "\/api\/3\/picklists\/84aed873-7794-4a15-8973-e3597a13a544",
-            "@type": "Picklist",
-            "itemValue": "Firewall",
-            "orderIndex": 21,
-            "color": null,
-            "icon": null,
-            "listName": "\/api\/3\/picklist_names\/0042bf40-d0e6-4324-ab84-0c7b0703f681",
-            "uuid": "84aed873-7794-4a15-8973-e3597a13a544"
-        },
-        {
-            "@id": "\/api\/3\/picklists\/03138952-93dc-4445-9f7f-6003aa8b4199",
-            "@type": "Picklist",
-            "itemValue": "Controller",
-            "orderIndex": 12,
-            "color": null,
-            "icon": null,
-            "listName": "\/api\/3\/picklist_names\/0042bf40-d0e6-4324-ab84-0c7b0703f681",
-            "uuid": "03138952-93dc-4445-9f7f-6003aa8b4199"
-        },
-        {
-            "@id": "\/api\/3\/picklists\/7b797e12-2c7d-458b-8414-0449f8a05a05",
-            "@type": "Picklist",
-            "itemValue": "File Server",
-            "orderIndex": 17,
-            "color": null,
-            "icon": null,
-            "listName": "\/api\/3\/picklist_names\/0042bf40-d0e6-4324-ab84-0c7b0703f681",
-            "uuid": "7b797e12-2c7d-458b-8414-0449f8a05a05"
-        },
-        {
-            "@id": "\/api\/3\/picklists\/20fe5586-6c9e-4a4f-ac1a-15df7bbafe0e",
-            "@type": "Picklist",
-            "itemValue": "Engineering Station",
-            "orderIndex": 18,
-            "color": null,
-            "icon": null,
-            "listName": "\/api\/3\/picklist_names\/0042bf40-d0e6-4324-ab84-0c7b0703f681",
-            "uuid": "20fe5586-6c9e-4a4f-ac1a-15df7bbafe0e"
-        },
-        {
-            "@id": "\/api\/3\/picklists\/4ea4775b-4822-40d0-9508-9369b1626bc4",
-            "@type": "Picklist",
-            "itemValue": "Nested Device",
-            "orderIndex": 19,
-            "color": null,
-            "icon": null,
-            "listName": "\/api\/3\/picklist_names\/0042bf40-d0e6-4324-ab84-0c7b0703f681",
-            "uuid": "4ea4775b-4822-40d0-9508-9369b1626bc4"
-        },
-        {
-            "@id": "\/api\/3\/picklists\/457dd781-aa05-4e11-a20a-1c04498fe7b1",
-            "@type": "Picklist",
-            "itemValue": "Historian",
-            "orderIndex": 20,
-            "color": null,
-            "icon": null,
-            "listName": "\/api\/3\/picklist_names\/0042bf40-d0e6-4324-ab84-0c7b0703f681",
-            "uuid": "457dd781-aa05-4e11-a20a-1c04498fe7b1"
-        },
-        {
-            "@id": "\/api\/3\/picklists\/0bd043c4-16ee-4c19-a58a-72016e89fad5",
-            "@type": "Picklist",
-            "itemValue": "SCADA Client",
-            "orderIndex": 23,
-            "color": null,
-            "icon": null,
-            "listName": "\/api\/3\/picklist_names\/0042bf40-d0e6-4324-ab84-0c7b0703f681",
-            "uuid": "0bd043c4-16ee-4c19-a58a-72016e89fad5"
-        },
-        {
-            "@id": "\/api\/3\/picklists\/882a1e3c-df18-4ce1-a54c-f77ac9c7e816",
-            "@type": "Picklist",
-            "itemValue": "Networking\/Scan",
-            "orderIndex": 24,
-            "color": null,
-            "icon": null,
-            "listName": "\/api\/3\/picklist_names\/0042bf40-d0e6-4324-ab84-0c7b0703f681",
-            "uuid": "882a1e3c-df18-4ce1-a54c-f77ac9c7e816"
-        },
-        {
-            "@id": "\/api\/3\/picklists\/5ad133a5-6c33-4de7-acde-ce9ea522e927",
-            "@type": "Picklist",
-            "itemValue": "Domain Controller",
-            "orderIndex": 25,
-            "color": null,
-            "icon": null,
-            "listName": "\/api\/3\/picklist_names\/0042bf40-d0e6-4324-ab84-0c7b0703f681",
-            "uuid": "5ad133a5-6c33-4de7-acde-ce9ea522e927"
-        },
-        {
-            "@id": "\/api\/3\/picklists\/473d5500-dbba-4a36-9061-8faea21d7567",
-            "@type": "Picklist",
-            "itemValue": "Robot",
-            "orderIndex": 26,
-            "color": null,
-            "icon": null,
-            "listName": "\/api\/3\/picklist_names\/0042bf40-d0e6-4324-ab84-0c7b0703f681",
-            "uuid": "473d5500-dbba-4a36-9061-8faea21d7567"
-        },
-        {
-            "@id": "\/api\/3\/picklists\/9f6e5b90-983e-4e76-91b3-4c8b2d1aeed6",
-            "@type": "Picklist",
-            "itemValue": "Camera",
-            "orderIndex": 27,
-            "color": null,
-            "icon": null,
-            "listName": "\/api\/3\/picklist_names\/0042bf40-d0e6-4324-ab84-0c7b0703f681",
-            "uuid": "9f6e5b90-983e-4e76-91b3-4c8b2d1aeed6"
-        },
-        {
-            "@id": "\/api\/3\/picklists\/8307aae8-dd13-4840-af0f-ad9d58686a17",
-            "@type": "Picklist",
-            "itemValue": "Autonomous Vehicle",
-            "orderIndex": 28,
-            "color": null,
-            "icon": null,
-            "listName": "\/api\/3\/picklist_names\/0042bf40-d0e6-4324-ab84-0c7b0703f681",
-            "uuid": "8307aae8-dd13-4840-af0f-ad9d58686a17"
-        },
-        {
-            "@id": "\/api\/3\/picklists\/5319b62d-1315-40f9-9409-0c8deda054c4",
-            "@type": "Picklist",
-            "itemValue": "End Point",
-            "orderIndex": 29,
-            "color": null,
-            "icon": null,
-            "listName": "\/api\/3\/picklist_names\/0042bf40-d0e6-4324-ab84-0c7b0703f681",
-            "uuid": "5319b62d-1315-40f9-9409-0c8deda054c4"
-        },
-        {
-            "@id": "\/api\/3\/picklists\/0ce2136d-42c4-402f-8fa5-7fe0aac464db",
-            "@type": "Picklist",
-            "itemValue": "OT",
-            "orderIndex": 30,
-            "color": null,
-            "icon": null,
-            "listName": "\/api\/3\/picklist_names\/0042bf40-d0e6-4324-ab84-0c7b0703f681",
-            "uuid": "0ce2136d-42c4-402f-8fa5-7fe0aac464db"
-        },
-        {
-            "@id": "\/api\/3\/picklists\/bbf18dc3-5edd-411a-b9a3-5d9ba09be36a",
-            "@type": "Picklist",
-            "itemValue": "Gateway",
-            "orderIndex": 31,
-            "color": null,
-            "icon": null,
-            "listName": "\/api\/3\/picklist_names\/0042bf40-d0e6-4324-ab84-0c7b0703f681",
-            "uuid": "bbf18dc3-5edd-411a-b9a3-5d9ba09be36a"
-        },
-        {
-            "@id": "\/api\/3\/picklists\/869b70eb-e3c7-4c36-989d-58edf0c9f1d8",
-            "@type": "Picklist",
-            "itemValue": "OPC-Server",
-            "orderIndex": 32,
-            "color": null,
-            "icon": null,
-            "listName": "\/api\/3\/picklist_names\/0042bf40-d0e6-4324-ab84-0c7b0703f681",
-            "uuid": "869b70eb-e3c7-4c36-989d-58edf0c9f1d8"
-        },
-        {
-            "@id": "\/api\/3\/picklists\/008a2ea3-824f-4ade-a67c-8085e419d75a",
-            "@type": "Picklist",
-            "itemValue": "Access Point",
-            "orderIndex": 33,
-            "color": null,
-            "icon": null,
-            "listName": "\/api\/3\/picklist_names\/0042bf40-d0e6-4324-ab84-0c7b0703f681",
-            "uuid": "008a2ea3-824f-4ade-a67c-8085e419d75a"
-        },
-        {
-            "@id": "\/api\/3\/picklists\/901488eb-7437-40b6-9486-2723a1b5981b",
-            "@type": "Picklist",
-            "itemValue": "GPS Device",
-            "orderIndex": 34,
-            "color": null,
-            "icon": null,
-            "listName": "\/api\/3\/picklist_names\/0042bf40-d0e6-4324-ab84-0c7b0703f681",
-            "uuid": "901488eb-7437-40b6-9486-2723a1b5981b"
-        },
-        {
-            "@id": "\/api\/3\/picklists\/81a8ecd4-5f12-4a98-bbd4-4d746a614296",
-            "@type": "Picklist",
-            "itemValue": "Video Recorder",
-            "orderIndex": 35,
-            "color": null,
-            "icon": null,
-            "listName": "\/api\/3\/picklist_names\/0042bf40-d0e6-4324-ab84-0c7b0703f681",
-            "uuid": "81a8ecd4-5f12-4a98-bbd4-4d746a614296"
-        },
-        {
-            "@id": "\/api\/3\/picklists\/2d076b86-a347-4586-8491-1656c63ef53a",
-            "@type": "Picklist",
-            "itemValue": "DNS Server",
-            "orderIndex": 36,
-            "color": null,
-            "icon": null,
-            "listName": "\/api\/3\/picklist_names\/0042bf40-d0e6-4324-ab84-0c7b0703f681",
-            "uuid": "2d076b86-a347-4586-8491-1656c63ef53a"
-        },
-        {
-            "@id": "\/api\/3\/picklists\/9487292e-5061-4cbb-b078-62f2ecedffc8",
-            "@type": "Picklist",
-            "itemValue": "Time Server",
-            "orderIndex": 37,
-            "color": null,
-            "icon": null,
-            "listName": "\/api\/3\/picklist_names\/0042bf40-d0e6-4324-ab84-0c7b0703f681",
-            "uuid": "9487292e-5061-4cbb-b078-62f2ecedffc8"
-        },
-        {
-            "@id": "\/api\/3\/picklists\/1bfa4142-b3f2-4945-8393-66228f9260d3",
-            "@type": "Picklist",
-            "itemValue": "Server",
-            "orderIndex": 2,
-            "color": null,
-            "icon": null,
-            "listName": "\/api\/3\/picklist_names\/0042bf40-d0e6-4324-ab84-0c7b0703f681",
-            "uuid": "1bfa4142-b3f2-4945-8393-66228f9260d3"
-        },
-        {
-            "@id": "\/api\/3\/picklists\/373f6e62-4229-4fbe-9a68-085ec266ff69",
-            "@type": "Picklist",
-            "itemValue": "Laptop",
-            "orderIndex": 0,
-            "color": null,
-            "icon": null,
-            "listName": "\/api\/3\/picklist_names\/0042bf40-d0e6-4324-ab84-0c7b0703f681",
-            "uuid": "373f6e62-4229-4fbe-9a68-085ec266ff69"
-        },
-        {
-            "@id": "\/api\/3\/picklists\/72fe5701-89ba-4d08-a790-ec5e7a56f1ac",
-            "@type": "Picklist",
-            "itemValue": "Access Control Device",
-            "orderIndex": 6,
-            "color": null,
-            "icon": null,
-            "listName": "\/api\/3\/picklist_names\/0042bf40-d0e6-4324-ab84-0c7b0703f681",
-            "uuid": "72fe5701-89ba-4d08-a790-ec5e7a56f1ac"
-        },
-        {
-            "@id": "\/api\/3\/picklists\/8d702d9a-0c1d-4380-9c5e-64b5e1f5ab13",
-            "@type": "Picklist",
-            "itemValue": "VOIP Phone",
-            "orderIndex": 7,
-            "color": null,
-            "icon": null,
-            "listName": "\/api\/3\/picklist_names\/0042bf40-d0e6-4324-ab84-0c7b0703f681",
-            "uuid": "8d702d9a-0c1d-4380-9c5e-64b5e1f5ab13"
-        },
-        {
-            "@id": "\/api\/3\/picklists\/925104c4-9c7a-48fd-be71-74fe85c55f69",
-            "@type": "Picklist",
-            "itemValue": "Other",
-            "orderIndex": 11,
-            "color": null,
-            "icon": null,
-            "listName": "\/api\/3\/picklist_names\/0042bf40-d0e6-4324-ab84-0c7b0703f681",
-            "uuid": "925104c4-9c7a-48fd-be71-74fe85c55f69"
-        },
-        {
-            "@id": "\/api\/3\/picklists\/b40802a5-8462-49d8-a6f0-7853666a4d3a",
-            "@type": "Picklist",
-            "itemValue": "Storage Device",
-            "orderIndex": 9,
-            "color": null,
-            "icon": null,
-            "listName": "\/api\/3\/picklist_names\/0042bf40-d0e6-4324-ab84-0c7b0703f681",
-            "uuid": "b40802a5-8462-49d8-a6f0-7853666a4d3a"
-        },
-        {
-            "@id": "\/api\/3\/picklists\/bb8b4a11-98ab-458e-9db2-d4a3cda8b874",
-            "@type": "Picklist",
-            "itemValue": "Desktop",
-            "orderIndex": 1,
-            "color": null,
-            "icon": null,
-            "listName": "\/api\/3\/picklist_names\/0042bf40-d0e6-4324-ab84-0c7b0703f681",
-            "uuid": "bb8b4a11-98ab-458e-9db2-d4a3cda8b874"
-        },
-        {
-            "@id": "\/api\/3\/picklists\/bc5f5523-058d-476d-9bf5-de6d90855637",
-            "@type": "Picklist",
-            "itemValue": "Router",
-            "orderIndex": 4,
-            "color": null,
-            "icon": null,
-            "listName": "\/api\/3\/picklist_names\/0042bf40-d0e6-4324-ab84-0c7b0703f681",
-            "uuid": "bc5f5523-058d-476d-9bf5-de6d90855637"
-        },
-        {
-            "@id": "\/api\/3\/picklists\/e231a1fb-166b-40b4-9c9f-1a71d5515db3",
-            "@type": "Picklist",
-            "itemValue": "Switch",
-            "orderIndex": 5,
-            "color": null,
-            "icon": null,
-            "listName": "\/api\/3\/picklist_names\/0042bf40-d0e6-4324-ab84-0c7b0703f681",
-            "uuid": "e231a1fb-166b-40b4-9c9f-1a71d5515db3"
-        },
-        {
-            "@id": "\/api\/3\/picklists\/e41a02ee-6be3-480a-aa2c-c22ba5ebb40f",
-            "@type": "Picklist",
-            "itemValue": "Mobile Device",
-            "orderIndex": 3,
-            "color": null,
-            "icon": null,
-            "listName": "\/api\/3\/picklist_names\/0042bf40-d0e6-4324-ab84-0c7b0703f681",
-            "uuid": "e41a02ee-6be3-480a-aa2c-c22ba5ebb40f"
-        }
+      {
+        "@id": "/api/3/picklists/bce81cb2-13b4-470e-ba38-615c92c44133",
+        "@type": "Picklist",
+        "itemValue": "RTU",
+        "orderIndex": 14,
+        "color": null,
+        "icon": null,
+        "listName": "/api/3/picklist_names/0042bf40-d0e6-4324-ab84-0c7b0703f681",
+        "uuid": "bce81cb2-13b4-470e-ba38-615c92c44133"
+      },
+      {
+        "@id": "/api/3/picklists/b7a653a4-4840-44cc-b116-fa618d8ddcd5",
+        "@type": "Picklist",
+        "itemValue": "PLC",
+        "orderIndex": 13,
+        "color": null,
+        "icon": null,
+        "listName": "/api/3/picklist_names/0042bf40-d0e6-4324-ab84-0c7b0703f681",
+        "uuid": "b7a653a4-4840-44cc-b116-fa618d8ddcd5"
+      },
+      {
+        "@id": "/api/3/picklists/be46356b-d8ea-473d-8d50-08f644b1afea",
+        "@type": "Picklist",
+        "itemValue": "IED",
+        "orderIndex": 15,
+        "color": null,
+        "icon": null,
+        "listName": "/api/3/picklist_names/0042bf40-d0e6-4324-ab84-0c7b0703f681",
+        "uuid": "be46356b-d8ea-473d-8d50-08f644b1afea"
+      },
+      {
+        "@id": "/api/3/picklists/b6028859-865b-4aa4-83dc-225bec23f635",
+        "@type": "Picklist",
+        "itemValue": "SCADA Server",
+        "orderIndex": 22,
+        "color": null,
+        "icon": null,
+        "listName": "/api/3/picklist_names/0042bf40-d0e6-4324-ab84-0c7b0703f681",
+        "uuid": "b6028859-865b-4aa4-83dc-225bec23f635"
+      },
+      {
+        "@id": "/api/3/picklists/ea256c04-890c-4deb-aac4-c06e43f7b86c",
+        "@type": "Picklist",
+        "itemValue": "HMI",
+        "orderIndex": 16,
+        "color": null,
+        "icon": null,
+        "listName": "/api/3/picklist_names/0042bf40-d0e6-4324-ab84-0c7b0703f681",
+        "uuid": "ea256c04-890c-4deb-aac4-c06e43f7b86c"
+      },
+      {
+        "@id": "/api/3/picklists/84aed873-7794-4a15-8973-e3597a13a544",
+        "@type": "Picklist",
+        "itemValue": "Firewall",
+        "orderIndex": 21,
+        "color": null,
+        "icon": null,
+        "listName": "/api/3/picklist_names/0042bf40-d0e6-4324-ab84-0c7b0703f681",
+        "uuid": "84aed873-7794-4a15-8973-e3597a13a544"
+      },
+      {
+        "@id": "/api/3/picklists/03138952-93dc-4445-9f7f-6003aa8b4199",
+        "@type": "Picklist",
+        "itemValue": "Controller",
+        "orderIndex": 12,
+        "color": null,
+        "icon": null,
+        "listName": "/api/3/picklist_names/0042bf40-d0e6-4324-ab84-0c7b0703f681",
+        "uuid": "03138952-93dc-4445-9f7f-6003aa8b4199"
+      },
+      {
+        "@id": "/api/3/picklists/7b797e12-2c7d-458b-8414-0449f8a05a05",
+        "@type": "Picklist",
+        "itemValue": "File Server",
+        "orderIndex": 17,
+        "color": null,
+        "icon": null,
+        "listName": "/api/3/picklist_names/0042bf40-d0e6-4324-ab84-0c7b0703f681",
+        "uuid": "7b797e12-2c7d-458b-8414-0449f8a05a05"
+      },
+      {
+        "@id": "/api/3/picklists/20fe5586-6c9e-4a4f-ac1a-15df7bbafe0e",
+        "@type": "Picklist",
+        "itemValue": "Engineering Station",
+        "orderIndex": 18,
+        "color": null,
+        "icon": null,
+        "listName": "/api/3/picklist_names/0042bf40-d0e6-4324-ab84-0c7b0703f681",
+        "uuid": "20fe5586-6c9e-4a4f-ac1a-15df7bbafe0e"
+      },
+      {
+        "@id": "/api/3/picklists/4ea4775b-4822-40d0-9508-9369b1626bc4",
+        "@type": "Picklist",
+        "itemValue": "Nested Device",
+        "orderIndex": 19,
+        "color": null,
+        "icon": null,
+        "listName": "/api/3/picklist_names/0042bf40-d0e6-4324-ab84-0c7b0703f681",
+        "uuid": "4ea4775b-4822-40d0-9508-9369b1626bc4"
+      },
+      {
+        "@id": "/api/3/picklists/457dd781-aa05-4e11-a20a-1c04498fe7b1",
+        "@type": "Picklist",
+        "itemValue": "Historian",
+        "orderIndex": 20,
+        "color": null,
+        "icon": null,
+        "listName": "/api/3/picklist_names/0042bf40-d0e6-4324-ab84-0c7b0703f681",
+        "uuid": "457dd781-aa05-4e11-a20a-1c04498fe7b1"
+      },
+      {
+        "@id": "/api/3/picklists/0bd043c4-16ee-4c19-a58a-72016e89fad5",
+        "@type": "Picklist",
+        "itemValue": "SCADA Client",
+        "orderIndex": 23,
+        "color": null,
+        "icon": null,
+        "listName": "/api/3/picklist_names/0042bf40-d0e6-4324-ab84-0c7b0703f681",
+        "uuid": "0bd043c4-16ee-4c19-a58a-72016e89fad5"
+      },
+      {
+        "@id": "/api/3/picklists/882a1e3c-df18-4ce1-a54c-f77ac9c7e816",
+        "@type": "Picklist",
+        "itemValue": "Networking/Scan",
+        "orderIndex": 24,
+        "color": null,
+        "icon": null,
+        "listName": "/api/3/picklist_names/0042bf40-d0e6-4324-ab84-0c7b0703f681",
+        "uuid": "882a1e3c-df18-4ce1-a54c-f77ac9c7e816"
+      },
+      {
+        "@id": "/api/3/picklists/5ad133a5-6c33-4de7-acde-ce9ea522e927",
+        "@type": "Picklist",
+        "itemValue": "Domain Controller",
+        "orderIndex": 25,
+        "color": null,
+        "icon": null,
+        "listName": "/api/3/picklist_names/0042bf40-d0e6-4324-ab84-0c7b0703f681",
+        "uuid": "5ad133a5-6c33-4de7-acde-ce9ea522e927"
+      },
+      {
+        "@id": "/api/3/picklists/473d5500-dbba-4a36-9061-8faea21d7567",
+        "@type": "Picklist",
+        "itemValue": "Robot",
+        "orderIndex": 26,
+        "color": null,
+        "icon": null,
+        "listName": "/api/3/picklist_names/0042bf40-d0e6-4324-ab84-0c7b0703f681",
+        "uuid": "473d5500-dbba-4a36-9061-8faea21d7567"
+      },
+      {
+        "@id": "/api/3/picklists/9f6e5b90-983e-4e76-91b3-4c8b2d1aeed6",
+        "@type": "Picklist",
+        "itemValue": "Camera",
+        "orderIndex": 27,
+        "color": null,
+        "icon": null,
+        "listName": "/api/3/picklist_names/0042bf40-d0e6-4324-ab84-0c7b0703f681",
+        "uuid": "9f6e5b90-983e-4e76-91b3-4c8b2d1aeed6"
+      },
+      {
+        "@id": "/api/3/picklists/8307aae8-dd13-4840-af0f-ad9d58686a17",
+        "@type": "Picklist",
+        "itemValue": "Autonomous Vehicle",
+        "orderIndex": 28,
+        "color": null,
+        "icon": null,
+        "listName": "/api/3/picklist_names/0042bf40-d0e6-4324-ab84-0c7b0703f681",
+        "uuid": "8307aae8-dd13-4840-af0f-ad9d58686a17"
+      },
+      {
+        "@id": "/api/3/picklists/5319b62d-1315-40f9-9409-0c8deda054c4",
+        "@type": "Picklist",
+        "itemValue": "End Point",
+        "orderIndex": 29,
+        "color": null,
+        "icon": null,
+        "listName": "/api/3/picklist_names/0042bf40-d0e6-4324-ab84-0c7b0703f681",
+        "uuid": "5319b62d-1315-40f9-9409-0c8deda054c4"
+      },
+      {
+        "@id": "/api/3/picklists/bbf18dc3-5edd-411a-b9a3-5d9ba09be36a",
+        "@type": "Picklist",
+        "itemValue": "Gateway",
+        "orderIndex": 31,
+        "color": null,
+        "icon": null,
+        "listName": "/api/3/picklist_names/0042bf40-d0e6-4324-ab84-0c7b0703f681",
+        "uuid": "bbf18dc3-5edd-411a-b9a3-5d9ba09be36a"
+      },
+      {
+        "@id": "/api/3/picklists/869b70eb-e3c7-4c36-989d-58edf0c9f1d8",
+        "@type": "Picklist",
+        "itemValue": "OPC-Server",
+        "orderIndex": 32,
+        "color": null,
+        "icon": null,
+        "listName": "/api/3/picklist_names/0042bf40-d0e6-4324-ab84-0c7b0703f681",
+        "uuid": "869b70eb-e3c7-4c36-989d-58edf0c9f1d8"
+      },
+      {
+        "@id": "/api/3/picklists/008a2ea3-824f-4ade-a67c-8085e419d75a",
+        "@type": "Picklist",
+        "itemValue": "Access Point",
+        "orderIndex": 33,
+        "color": null,
+        "icon": null,
+        "listName": "/api/3/picklist_names/0042bf40-d0e6-4324-ab84-0c7b0703f681",
+        "uuid": "008a2ea3-824f-4ade-a67c-8085e419d75a"
+      },
+      {
+        "@id": "/api/3/picklists/901488eb-7437-40b6-9486-2723a1b5981b",
+        "@type": "Picklist",
+        "itemValue": "GPS Device",
+        "orderIndex": 34,
+        "color": null,
+        "icon": null,
+        "listName": "/api/3/picklist_names/0042bf40-d0e6-4324-ab84-0c7b0703f681",
+        "uuid": "901488eb-7437-40b6-9486-2723a1b5981b"
+      },
+      {
+        "@id": "/api/3/picklists/81a8ecd4-5f12-4a98-bbd4-4d746a614296",
+        "@type": "Picklist",
+        "itemValue": "Video Recorder",
+        "orderIndex": 35,
+        "color": null,
+        "icon": null,
+        "listName": "/api/3/picklist_names/0042bf40-d0e6-4324-ab84-0c7b0703f681",
+        "uuid": "81a8ecd4-5f12-4a98-bbd4-4d746a614296"
+      },
+      {
+        "@id": "/api/3/picklists/2d076b86-a347-4586-8491-1656c63ef53a",
+        "@type": "Picklist",
+        "itemValue": "DNS Server",
+        "orderIndex": 36,
+        "color": null,
+        "icon": null,
+        "listName": "/api/3/picklist_names/0042bf40-d0e6-4324-ab84-0c7b0703f681",
+        "uuid": "2d076b86-a347-4586-8491-1656c63ef53a"
+      },
+      {
+        "@id": "/api/3/picklists/9487292e-5061-4cbb-b078-62f2ecedffc8",
+        "@type": "Picklist",
+        "itemValue": "Time Server",
+        "orderIndex": 37,
+        "color": null,
+        "icon": null,
+        "listName": "/api/3/picklist_names/0042bf40-d0e6-4324-ab84-0c7b0703f681",
+        "uuid": "9487292e-5061-4cbb-b078-62f2ecedffc8"
+      }
     ],
     "uuid": "0042bf40-d0e6-4324-ab84-0c7b0703f681"
-}
+  }
