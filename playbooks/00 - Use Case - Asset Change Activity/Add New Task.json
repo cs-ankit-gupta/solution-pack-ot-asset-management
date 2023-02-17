@@ -17,26 +17,38 @@
     "steps": [
         {
             "@type": "WorkflowStep",
-            "name": "Get Relationship",
+            "name": "Get Correlated Asset",
             "description": null,
             "arguments": {
-                "params": {
-                    "iri": "{{vars.input.records[0]['@id']}}?$relationships=true",
-                    "body": "",
-                    "method": "GET"
+                "query": {
+                    "sort": [],
+                    "limit": 30,
+                    "logic": "AND",
+                    "filters": [
+                        {
+                            "type": "primitive",
+                            "field": "id",
+                            "value": "{{vars.input.records[0].id}}",
+                            "operator": "eq",
+                            "_operator": "eq"
+                        }
+                    ],
+                    "__selectFields": [
+                        "assets"
+                    ]
                 },
-                "version": "3.2.1",
-                "connector": "cyops_utilities",
-                "operation": "make_cyops_request",
-                "operationTitle": "FSR: Make FortiSOAR API Call",
-                "step_variables": []
+                "module": "asset_change_activities?$limit=30&$relationships=true&$fsr_max_relation_count=100",
+                "checkboxFields": true,
+                "step_variables": {
+                    "assetIRI": "{{vars.steps.Get_Correlated_Asset[0].assets | json_query('[*][\"@id\"][]')}}"
+                }
             },
             "status": null,
             "top": "165",
             "left": "125",
-            "stepType": "\/api\/3\/workflow_step_types\/0109f35d-090b-4a2b-bd8a-94cbc3508562",
+            "stepType": "\/api\/3\/workflow_step_types\/b593663d-7d13-40ce-a3a3-96dece928770",
             "group": null,
-            "uuid": "6324b1e9-3c18-46bb-94df-d0983a71f2be"
+            "uuid": "6375675e-8582-43a9-9d36-5cd83af323ec"
         },
         {
             "@type": "WorkflowStep",
@@ -1030,7 +1042,7 @@
                 "resource": {
                     "name": "{{vars.steps.Add_Task_Details.input.name}} - {{vars.input.records[0].title}}",
                     "dueBy": "{{vars.input.records[0].dueDate}}",
-                    "assets": "{{vars.steps.Get_Relationship.data.assets[0]['@id']}}",
+                    "assets": "{{vars.assetIRI}}",
                     "status": "\/api\/3\/picklists\/7669725a-28cc-4b19-98a3-9ca71e0f88f4",
                     "__replace": "",
                     "description": "{{vars.steps.Add_Task_Details.input.description}}",
@@ -1056,12 +1068,12 @@
     "routes": [
         {
             "@type": "WorkflowRoute",
-            "name": "Start -> Get Relationship",
-            "targetStep": "\/api\/3\/workflow_steps\/6324b1e9-3c18-46bb-94df-d0983a71f2be",
+            "name": "Start -> Get Correlated Asset",
+            "targetStep": "\/api\/3\/workflow_steps\/6375675e-8582-43a9-9d36-5cd83af323ec",
             "sourceStep": "\/api\/3\/workflow_steps\/86c5564e-a361-40e5-a68d-563ccb1e14bf",
             "label": null,
             "isExecuted": false,
-            "uuid": "431e63d9-da01-4a46-9a8e-2d921e02e2db"
+            "uuid": "55c9b25a-452d-4cde-a9d5-53516713613c"
         },
         {
             "@type": "WorkflowRoute",
@@ -1074,12 +1086,12 @@
         },
         {
             "@type": "WorkflowRoute",
-            "name": "Get Relationship -> Add Task Details",
+            "name": "Get Correlated Asset -> Add Task Details",
             "targetStep": "\/api\/3\/workflow_steps\/77697478-e3a1-42a2-a88f-ea6e3f6fe86c",
-            "sourceStep": "\/api\/3\/workflow_steps\/6324b1e9-3c18-46bb-94df-d0983a71f2be",
+            "sourceStep": "\/api\/3\/workflow_steps\/6375675e-8582-43a9-9d36-5cd83af323ec",
             "label": null,
             "isExecuted": false,
-            "uuid": "ed55e399-a6f8-4c44-a852-27c92c5ef99b"
+            "uuid": "ea3b27bf-aef3-4554-bd29-f035b4e928bb"
         }
     ],
     "groups": [],

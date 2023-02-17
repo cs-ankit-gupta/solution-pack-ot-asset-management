@@ -24,7 +24,7 @@
                 "input": {
                     "schema": {
                         "title": "Specify Assignee And Approver For Tasks",
-                        "description": "<h4>Following Tasks will be created based on the Asset Change Type Activity. Please assign suitable users for each task. The users will get notifications and the tasks will be assigned accordingly. <\/h4>\n<h5 ><span style=\"color: red\">Note:<\/span> New tasks get created once the previous task is marked completed. <\/h5>\n\n<hr>\n",
+                        "description": "<h4>Following Tasks will be created based on the Asset Change Type Activity. Please assign suitable users for each task. The users will get notifications and the tasks will be assigned accordingly. <\/h4>\n<h5 ><span style=\"color: red\">Note:<\/span> New tasks get created once the previous task is completed. <\/h5>\n\n<hr>\n",
                         "inputVariables": [
                             {
                                 "name": "identifySecurityControl",
@@ -5225,11 +5225,12 @@
         },
         {
             "@type": "WorkflowStep",
-            "name": "Activity Completed",
+            "name": "Mark Activity Closed",
             "description": null,
             "arguments": {
                 "resource": {
-                    "status": "\/api\/3\/picklists\/f79c90bc-0c2d-4848-8138-0266cc13ffe6"
+                    "status": "{{arrow.utcnow().int_timestamp}}",
+                    "closedOn": "{{arrow.utcnow().int_timestamp}}"
                 },
                 "operation": "Append",
                 "collection": "{{vars.input.records[0]['@id']}}",
@@ -5412,7 +5413,7 @@
         },
         {
             "@type": "WorkflowStep",
-            "name": "Activity In Process",
+            "name": "Mark Activity In Process",
             "description": null,
             "arguments": {
                 "resource": {
@@ -5573,31 +5574,6 @@
         },
         {
             "@type": "WorkflowStep",
-            "name": "Get Relationship",
-            "description": null,
-            "arguments": {
-                "params": {
-                    "iri": "{{vars.input.records[0]['@id']}}?$relationships=true",
-                    "body": "",
-                    "method": "GET"
-                },
-                "version": "3.2.1",
-                "connector": "cyops_utilities",
-                "operation": "make_cyops_request",
-                "operationTitle": "FSR: Make FortiSOAR API Call",
-                "step_variables": {
-                    "assetIRI": "{{vars.steps.Get_Relationship.data.assets | json_query('[*][\"@id\"][]') }}"
-                }
-            },
-            "status": null,
-            "top": "165",
-            "left": "300",
-            "stepType": "\/api\/3\/workflow_step_types\/0109f35d-090b-4a2b-bd8a-94cbc3508562",
-            "group": null,
-            "uuid": "bf044252-f122-4351-9dc6-dd4c42c9e3bc"
-        },
-        {
-            "@type": "WorkflowStep",
             "name": "Is Approver Assigned",
             "description": null,
             "arguments": {
@@ -5657,9 +5633,62 @@
             "stepType": "\/api\/3\/workflow_step_types\/dc6ac63d-c5a5-472f-9eb4-6b18473a98b8",
             "group": null,
             "uuid": "e477b249-9fbd-4dc9-a2a0-c3f16957c28c"
+        },
+        {
+            "@type": "WorkflowStep",
+            "name": "Get Correlated Asset",
+            "description": null,
+            "arguments": {
+                "query": {
+                    "sort": [],
+                    "limit": 30,
+                    "logic": "AND",
+                    "filters": [
+                        {
+                            "type": "primitive",
+                            "field": "id",
+                            "value": "{{vars.input.records[0].id}}",
+                            "operator": "eq",
+                            "_operator": "eq"
+                        }
+                    ],
+                    "__selectFields": [
+                        "assets"
+                    ]
+                },
+                "module": "asset_change_activities?$limit=30&$relationships=true&$fsr_max_relation_count=100",
+                "checkboxFields": true,
+                "step_variables": {
+                    "assetIRI": "{{vars.steps.Get_Correlated_Asset[0].assets | json_query('[*][\"@id\"][]')}}"
+                }
+            },
+            "status": null,
+            "top": "165",
+            "left": "300",
+            "stepType": "\/api\/3\/workflow_step_types\/b593663d-7d13-40ce-a3a3-96dece928770",
+            "group": null,
+            "uuid": "fe230f14-ee3f-4377-9605-4ca8507ecef7"
         }
     ],
     "routes": [
+        {
+            "@type": "WorkflowRoute",
+            "name": "Start -> Get Correlated Asset",
+            "targetStep": "\/api\/3\/workflow_steps\/fe230f14-ee3f-4377-9605-4ca8507ecef7",
+            "sourceStep": "\/api\/3\/workflow_steps\/8a80265d-1b54-4b22-9da6-db11b8e14fef",
+            "label": null,
+            "isExecuted": false,
+            "uuid": "1930a6fb-56be-4389-9bf7-3d9c89aba0d0"
+        },
+        {
+            "@type": "WorkflowRoute",
+            "name": "Get Correlated Asset -> Assignee And Approver Name",
+            "targetStep": "\/api\/3\/workflow_steps\/21f78960-335e-48c5-9854-d6a9aa5e7c39",
+            "sourceStep": "\/api\/3\/workflow_steps\/fe230f14-ee3f-4377-9605-4ca8507ecef7",
+            "label": null,
+            "isExecuted": false,
+            "uuid": "f22e7dde-4187-43d6-9cbe-1846af7e43c8"
+        },
         {
             "@type": "WorkflowRoute",
             "name": "Copy of Check Approver 2 -> Implement Change",
@@ -5668,15 +5697,6 @@
             "label": "No",
             "isExecuted": false,
             "uuid": "a6d48263-9a1e-4547-8463-b486fc55133f"
-        },
-        {
-            "@type": "WorkflowRoute",
-            "name": "Start -> Get Relationship",
-            "targetStep": "\/api\/3\/workflow_steps\/bf044252-f122-4351-9dc6-dd4c42c9e3bc",
-            "sourceStep": "\/api\/3\/workflow_steps\/8a80265d-1b54-4b22-9da6-db11b8e14fef",
-            "label": null,
-            "isExecuted": false,
-            "uuid": "7eea1886-3a7f-4324-866f-0e41b28a6c3c"
         },
         {
             "@type": "WorkflowRoute",
@@ -5758,15 +5778,6 @@
             "label": null,
             "isExecuted": false,
             "uuid": "38e12812-06db-442a-8c2f-bcbef4a697ee"
-        },
-        {
-            "@type": "WorkflowRoute",
-            "name": "Get Relationship -> Assignee And Approver Name",
-            "targetStep": "\/api\/3\/workflow_steps\/21f78960-335e-48c5-9854-d6a9aa5e7c39",
-            "sourceStep": "\/api\/3\/workflow_steps\/bf044252-f122-4351-9dc6-dd4c42c9e3bc",
-            "label": null,
-            "isExecuted": false,
-            "uuid": "677125e4-e98b-45ff-bf52-867b9526dbce"
         },
         {
             "@type": "WorkflowRoute",

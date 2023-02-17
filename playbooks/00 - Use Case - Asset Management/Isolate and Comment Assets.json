@@ -38,7 +38,7 @@
         },
         {
             "@type": "WorkflowStep",
-            "name": "Isolate Asset",
+            "name": "Update Asset State",
             "description": null,
             "arguments": {
                 "message": {

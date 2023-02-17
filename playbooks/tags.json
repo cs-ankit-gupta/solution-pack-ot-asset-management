@@ -2,11 +2,11 @@
     "Add Cyber Asset",
     "Asset Change Activity",
     "OT IT",
+    "Remove Cyber Asset",
     "Assets",
     "Medium Impact Baseline Change",
-    "Remove Cyber Asset",
-    "Replace Cyber Asset",
     "Task",
+    "Replace Cyber Asset",
     "Report",
     "SystemWaitForCompletion",
     "High Impact Baseline Change",
@@ -27,5 +27,6 @@
     "Mitre ATTACK",
     "On Create",
     "MEF",
+    "mitre-attack",
     "CSV Record"
 ]

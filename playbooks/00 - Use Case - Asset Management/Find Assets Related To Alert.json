@@ -1,7 +1,7 @@
 {
     "@type": "Workflow",
     "triggerLimit": null,
-    "name": "Find Assets",
+    "name": "Find Assets Related To Alert",
     "aliasName": null,
     "tag": null,
     "description": "Finds the asset based on the IP address provided.",
