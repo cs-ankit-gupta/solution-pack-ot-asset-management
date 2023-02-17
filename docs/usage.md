@@ -14,7 +14,7 @@ Refer to the section `OT - Asset Management` to understand how this solution pac
 
 ### Steps to be followed after installing SP:
 
-1. Use Playbook - **MITRE ATT&CK > Fetch Latest Data** on ICS Configuration of MITRE Connector Sample Playbook to get the Tactics, Techniques, Sub-techniques, Mitigations, Groups and Software.
+1. Use Playbook - **MITRE ATT&CK > Fetch Latest Data** on ICS Configuration of MITRE Connector from Playbook Collection - `00 - Use Case - Asset Management`  to get the Tactics, Techniques, Sub-techniques, Mitigations, Groups and Software.
 
 > Note: On alert creation, IOCs get enriched, and the alert get correlated with Techniques, Mitigation, and all other records for the MITRE ATT&CK Id available in the alert.
 

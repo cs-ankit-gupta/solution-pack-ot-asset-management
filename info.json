@@ -2,6 +2,13 @@
     "name": "oT-AssetManagement",
     "version": "1.0.0",
     "fsrMinCompatibility": "7.2.0",
+    "featuredTags": [
+        {
+            "color": "#2d87e3",
+            "tag": "preview"
+        }
+    ],
+    "featured": true,
     "type": "solutionpack",
     "local": true,
     "label": "OT - Asset Management",
