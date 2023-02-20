@@ -1,0 +1,509 @@
+{
+    "@type": "Workflow",
+    "triggerLimit": null,
+    "name": "Alert - Escalate To Incident",
+    "aliasName": null,
+    "tag": "#system",
+    "description": "Creates a new incident with the given inputs and links the alert(s) to the newly created Incident.",
+    "isActive": true,
+    "debug": false,
+    "singleRecordExecution": false,
+    "remoteExecutableFlag": false,
+    "parameters": [],
+    "synchronous": false,
+    "collection": "\/api\/3\/workflow_collections\/fb4aa534-4bfc-4196-b509-96ef02fb9270",
+    "versions": [],
+    "triggerStep": "\/api\/3\/workflow_steps\/bb26ff21-c88d-43a7-904f-654eda59b004",
+    "steps": [
+        {
+            "@type": "WorkflowStep",
+            "name": "Reference escalate playbook",
+            "description": null,
+            "arguments": {
+                "arguments": {
+                    "records": "{{vars.input.records}}",
+                    "severity": "{{vars.input.params.severity}}",
+                    "incidentLead": "{{vars.input.params.incidentLead}}",
+                    "incidentName": "{{vars.input.params.incidentName}}",
+                    "incidentType": "{{vars.input.params.incidentType}}",
+                    "incidentOwners": "{{vars.incident_lead_teams}}",
+                    "escalationReason": "{{vars.input.params.escalationReason}}"
+                },
+                "apply_async": false,
+                "step_variables": [],
+                "pass_input_record": true,
+                "workflowReference": "\/api\/3\/workflows\/a1ab1f09-5f45-476f-bc36-71185192b45e"
+            },
+            "status": null,
+            "top": "435",
+            "left": "125",
+            "stepType": "\/api\/3\/workflow_step_types\/74932bdc-b8b6-4d24-88c4-1a4dfbc524f3",
+            "group": null,
+            "uuid": "56d0faba-fddb-4ecd-91a7-9bbe406c7753"
+        },
+        {
+            "@type": "WorkflowStep",
+            "name": "Get Incident Lead Teams",
+            "description": null,
+            "arguments": {
+                "params": {
+                    "iri": "{{vars.input.params.incidentLead['@id']}}\/teams",
+                    "body": "",
+                    "method": "GET"
+                },
+                "version": "3.0.1",
+                "connector": "cyops_utilities",
+                "operation": "make_cyops_request",
+                "operationTitle": "FSR: Make FortiSOAR API Call",
+                "step_variables": {
+                    "incident_lead_teams": "[]"
+                }
+            },
+            "status": null,
+            "top": "165",
+            "left": "125",
+            "stepType": "\/api\/3\/workflow_step_types\/0109f35d-090b-4a2b-bd8a-94cbc3508562",
+            "group": null,
+            "uuid": "a9cf9d2e-3d7a-40fc-8418-a8909c128a22"
+        },
+        {
+            "@type": "WorkflowStep",
+            "name": "Start",
+            "description": null,
+            "arguments": {
+                "route": "c6b8fe29-52e8-4e04-9dd2-5723d8a45a4b",
+                "title": "Escalate To Incident",
+                "resources": [
+                    "alerts"
+                ],
+                "inputVariables": [
+                    {
+                        "name": "incidentName",
+                        "type": "string",
+                        "label": "Incident Name",
+                        "tooltip": "",
+                        "dataType": "text",
+                        "formType": "text",
+                        "required": true,
+                        "_expanded": false,
+                        "_nameTouched": true,
+                        "defaultValue": null,
+                        "useModuleField": false,
+                        "useRecordFieldDefault": false
+                    },
+                    {
+                        "name": "severity",
+                        "type": "picklists",
+                        "label": "Severity",
+                        "title": "Picklist",
+                        "usable": true,
+                        "tooltip": "",
+                        "dataType": "picklist",
+                        "formType": "picklist",
+                        "required": true,
+                        "_expanded": true,
+                        "collection": false,
+                        "dataSource": {
+                            "model": "picklists",
+                            "query": {
+                                "sort": [
+                                    {
+                                        "field": "orderIndex",
+                                        "direction": "ASC"
+                                    }
+                                ],
+                                "logic": "AND",
+                                "filters": [
+                                    {
+                                        "field": "listName__name",
+                                        "value": "Severity",
+                                        "operator": "eq"
+                                    }
+                                ]
+                            },
+                            "displayConditions": {
+                                "0d609b08-45e0-469f-8910-41145c0b7c03": {
+                                    "conditions": null,
+                                    "visibility": "visible"
+                                },
+                                "40187287-89fc-4e9c-b717-e9443d57eedb": {
+                                    "conditions": null,
+                                    "visibility": "visible"
+                                },
+                                "58d0753f-f7e4-403b-953c-b0f521eab759": {
+                                    "conditions": null,
+                                    "visibility": "visible"
+                                },
+                                "7efa2220-39bb-44e4-961f-ac368776e3b0": {
+                                    "conditions": null,
+                                    "visibility": "visible"
+                                },
+                                "876c1483-416b-4d2f-8138-15769ae16d5c": {
+                                    "conditions": null,
+                                    "visibility": "visible"
+                                },
+                                "b3c20a3a-ecfd-4adc-a225-0205968e6793": {
+                                    "conditions": null,
+                                    "visibility": "visible"
+                                },
+                                "bcebcab1-3f93-468a-9f3f-91e5c511a0b5": {
+                                    "conditions": null,
+                                    "visibility": "visible"
+                                }
+                            }
+                        },
+                        "searchable": false,
+                        "moduleField": "severity",
+                        "templateUrl": "app\/components\/form\/fields\/typeahead.html",
+                        "defaultValue": null,
+                        "useModuleField": false,
+                        "allowedEncryption": false,
+                        "allowedGridColumn": true,
+                        "useRecordFieldDefault": false
+                    },
+                    {
+                        "name": "incidentLead",
+                        "type": "people",
+                        "label": "Incident Lead",
+                        "title": "Lookup",
+                        "usable": true,
+                        "tooltip": "",
+                        "dataType": "lookup",
+                        "formType": "lookup",
+                        "required": true,
+                        "_expanded": false,
+                        "collection": false,
+                        "dataSource": {
+                            "model": "people"
+                        },
+                        "searchable": false,
+                        "templateUrl": "app\/components\/form\/fields\/typeahead.html",
+                        "defaultValue": null,
+                        "useModuleField": false,
+                        "displayTemplate": "{{ firstname }} {{ lastname }}",
+                        "allowedEncryption": false,
+                        "allowedGridColumn": true,
+                        "useRecordFieldDefault": false
+                    },
+                    {
+                        "name": "escalationReason",
+                        "type": "string",
+                        "label": "Escalation Reason",
+                        "tooltip": "",
+                        "dataType": "text",
+                        "formType": "textarea",
+                        "required": true,
+                        "_expanded": false,
+                        "defaultValue": "Alert needs to be investigated.",
+                        "useModuleField": false,
+                        "useRecordFieldDefault": false
+                    },
+                    {
+                        "name": "incidentType",
+                        "type": "picklists",
+                        "label": "Incident Type",
+                        "title": "Picklist",
+                        "usable": true,
+                        "tooltip": "",
+                        "dataType": "picklist",
+                        "formType": "picklist",
+                        "required": true,
+                        "_expanded": false,
+                        "mmdUpdate": true,
+                        "collection": false,
+                        "dataSource": {
+                            "model": "picklists",
+                            "query": {
+                                "sort": [
+                                    {
+                                        "field": "orderIndex",
+                                        "direction": "ASC"
+                                    }
+                                ],
+                                "logic": "AND",
+                                "filters": [
+                                    {
+                                        "field": "listName__name",
+                                        "value": "IncidentType",
+                                        "operator": "eq"
+                                    }
+                                ]
+                            },
+                            "displayConditions": {
+                                "4e8c71d0-8fba-4313-8b01-ab336cc1af2a": {
+                                    "conditions": null,
+                                    "visibility": "visible"
+                                },
+                                "590f216a-a582-47b8-9d94-17a066ed234c": {
+                                    "conditions": null,
+                                    "visibility": "visible"
+                                },
+                                "70321398-f69a-11e7-8c3f-9a214cf093ae": {
+                                    "conditions": null,
+                                    "visibility": "visible"
+                                },
+                                "70321690-f69a-11e7-8c3f-9a214cf093ae": {
+                                    "conditions": null,
+                                    "visibility": "visible"
+                                },
+                                "703217da-f69a-11e7-8c3f-9a214cf093ae": {
+                                    "conditions": null,
+                                    "visibility": "visible"
+                                },
+                                "703218fc-f69a-11e7-8c3f-9a214cf093ae": {
+                                    "conditions": null,
+                                    "visibility": "visible"
+                                },
+                                "70321a1e-f69a-11e7-8c3f-9a214cf093ae": {
+                                    "conditions": null,
+                                    "visibility": "visible"
+                                },
+                                "70321e9c-f69a-11e7-8c3f-9a214cf093ae": {
+                                    "conditions": null,
+                                    "visibility": "visible"
+                                },
+                                "70321ffa-f69a-11e7-8c3f-9a214cf093ae": {
+                                    "conditions": null,
+                                    "visibility": "visible"
+                                },
+                                "703222e8-f69a-11e7-8c3f-9a214cf093ae": {
+                                    "conditions": null,
+                                    "visibility": "visible"
+                                },
+                                "70322432-f69a-11e7-8c3f-9a214cf093ae": {
+                                    "conditions": null,
+                                    "visibility": "visible"
+                                },
+                                "7032255e-f69a-11e7-8c3f-9a214cf093ae": {
+                                    "conditions": null,
+                                    "visibility": "visible"
+                                },
+                                "836d97af-6022-42b4-8b0a-1c3cab73a7ea": {
+                                    "conditions": null,
+                                    "visibility": "visible"
+                                },
+                                "8fea3472-6bd7-4bbf-a080-ca4e778617f8": {
+                                    "conditions": null,
+                                    "visibility": "visible"
+                                },
+                                "9c50d999-f17f-40ac-8830-b3417893db70": {
+                                    "conditions": null,
+                                    "visibility": "visible"
+                                },
+                                "bb741514-f699-11e7-8c3f-9a214cf093ae": {
+                                    "conditions": null,
+                                    "visibility": "visible"
+                                },
+                                "bb7417b2-f699-11e7-8c3f-9a214cf093ae": {
+                                    "conditions": null,
+                                    "visibility": "visible"
+                                },
+                                "f79c4b3c-f69a-11e7-8c3f-9a214cf093ae": {
+                                    "conditions": null,
+                                    "visibility": "visible"
+                                },
+                                "f79c5316-f69a-11e7-8c3f-9a214cf093ae": {
+                                    "conditions": null,
+                                    "visibility": "visible"
+                                },
+                                "f79c54d8-f69a-11e7-8c3f-9a214cf093ae": {
+                                    "conditions": null,
+                                    "visibility": "visible"
+                                },
+                                "f79c5618-f69a-11e7-8c3f-9a214cf093ae": {
+                                    "conditions": null,
+                                    "visibility": "visible"
+                                },
+                                "f79c5744-f69a-11e7-8c3f-9a214cf093ae": {
+                                    "conditions": null,
+                                    "visibility": "visible"
+                                },
+                                "f79c585c-f69a-11e7-8c3f-9a214cf093ae": {
+                                    "conditions": null,
+                                    "visibility": "visible"
+                                }
+                            }
+                        },
+                        "searchable": false,
+                        "templateUrl": "app\/components\/form\/fields\/typeahead.html",
+                        "defaultValue": null,
+                        "_previousName": "incidentTy",
+                        "displayTemplate": "%7B%7B%20itemValue%20%7D%7D",
+                        "lengthConstraint": false,
+                        "allowedEncryption": false,
+                        "allowedGridColumn": true,
+                        "useRecordFieldDefault": false
+                    },
+                    {
+                        "name": "closureReason",
+                        "type": "picklists",
+                        "label": "Closure Reason",
+                        "title": "Picklist",
+                        "usable": true,
+                        "tooltip": "",
+                        "dataType": "picklist",
+                        "formType": "picklist",
+                        "required": true,
+                        "_expanded": false,
+                        "mmdUpdate": true,
+                        "collection": false,
+                        "dataSource": {
+                            "model": "picklists",
+                            "query": {
+                                "sort": [
+                                    {
+                                        "field": "orderIndex",
+                                        "direction": "ASC"
+                                    }
+                                ],
+                                "logic": "AND",
+                                "filters": [
+                                    {
+                                        "field": "listName__name",
+                                        "value": "Closure Reason",
+                                        "operator": "eq"
+                                    }
+                                ]
+                            },
+                            "displayConditions": {
+                                "2ab3e8e9-8cd9-4641-8400-a18a4e8a2da8": {
+                                    "conditions": null,
+                                    "visibility": "visible"
+                                },
+                                "2b0112f6-4746-4dab-ada6-a8cd1e675572": {
+                                    "conditions": null,
+                                    "visibility": "visible"
+                                },
+                                "672aef13-a684-422e-be6c-15e10ec49915": {
+                                    "conditions": null,
+                                    "visibility": "visible"
+                                },
+                                "8590c81e-3307-4645-97f5-c3e1bec4e05a": {
+                                    "conditions": null,
+                                    "visibility": "visible"
+                                },
+                                "8f8ce378-df65-4231-85e3-0b8f25a04379": {
+                                    "conditions": null,
+                                    "visibility": "visible"
+                                },
+                                "cc2d6b59-62de-4cb6-93a2-bcce4250009d": {
+                                    "conditions": null,
+                                    "visibility": "visible"
+                                }
+                            }
+                        },
+                        "searchable": false,
+                        "templateUrl": "app\/components\/form\/fields\/typeahead.html",
+                        "defaultValue": {
+                            "id": "371",
+                            "@id": "\/api\/3\/picklists\/cc2d6b59-62de-4cb6-93a2-bcce4250009d",
+                            "icon": null,
+                            "uuid": "cc2d6b59-62de-4cb6-93a2-bcce4250009d",
+                            "@type": "Picklist",
+                            "color": null,
+                            "display": "Escalated to Incident",
+                            "listName": "\/api\/3\/picklist_names\/4ebacea1-88cd-4ea8-9dcc-385bea42cc59",
+                            "itemValue": "Escalated to Incident",
+                            "importedBy": [],
+                            "orderIndex": 1
+                        },
+                        "_previousName": "closureRe",
+                        "displayTemplate": "%7B%7B%20itemValue%20%7D%7D",
+                        "lengthConstraint": false,
+                        "allowedEncryption": false,
+                        "allowedGridColumn": true,
+                        "useRecordFieldDefault": false
+                    }
+                ],
+                "step_variables": {
+                    "input": {
+                        "params": {
+                            "severity": "{{vars.request.data[\"severity\"]}}",
+                            "incidentLead": "{{vars.request.data[\"incidentLead\"]}}",
+                            "incidentName": "{{vars.request.data[\"incidentName\"]}}",
+                            "incidentType": "{{vars.request.data[\"incidentType\"]}}",
+                            "closureReason": "{{vars.request.data[\"closureReason\"]}}",
+                            "escalationReason": "{{vars.request.data[\"escalationReason\"]}}"
+                        },
+                        "records": "{{vars.input.records}}"
+                    }
+                },
+                "_promptexpanded": true,
+                "displayConditions": {
+                    "alerts": {
+                        "sort": [],
+                        "limit": 30,
+                        "logic": "AND",
+                        "filters": []
+                    }
+                },
+                "executeButtonText": "Escalate",
+                "noRecordExecution": false,
+                "singleRecordExecution": false
+            },
+            "status": null,
+            "top": "30",
+            "left": "125",
+            "stepType": "\/api\/3\/workflow_step_types\/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+            "group": null,
+            "uuid": "bb26ff21-c88d-43a7-904f-654eda59b004"
+        },
+        {
+            "@type": "WorkflowStep",
+            "name": "Set Incident Lead Teams",
+            "description": null,
+            "arguments": {
+                "for_each": {
+                    "item": "{{vars.steps.Get_Incident_Lead_Teams.data['hydra:member']}}",
+                    "condition": ""
+                },
+                "incident_owners": "{{vars.incident_lead_teams.append(vars.item[\"@id\"])}}"
+            },
+            "status": null,
+            "top": "300",
+            "left": "125",
+            "stepType": "\/api\/3\/workflow_step_types\/04d0cf46-b6a8-42c4-8683-60a7eaa69e8f",
+            "group": null,
+            "uuid": "fb72d315-7450-452b-920c-b937a1bfebcd"
+        }
+    ],
+    "routes": [
+        {
+            "@type": "WorkflowRoute",
+            "name": "Start -> Get Incident Lead Teams",
+            "targetStep": "\/api\/3\/workflow_steps\/a9cf9d2e-3d7a-40fc-8418-a8909c128a22",
+            "sourceStep": "\/api\/3\/workflow_steps\/bb26ff21-c88d-43a7-904f-654eda59b004",
+            "label": null,
+            "isExecuted": false,
+            "uuid": "457b44cb-accc-44d6-a587-38cfcd41acfe"
+        },
+        {
+            "@type": "WorkflowRoute",
+            "name": "Set Incident Lead Teams -> Copy of Reference escalate playbook",
+            "targetStep": "\/api\/3\/workflow_steps\/56d0faba-fddb-4ecd-91a7-9bbe406c7753",
+            "sourceStep": "\/api\/3\/workflow_steps\/fb72d315-7450-452b-920c-b937a1bfebcd",
+            "label": null,
+            "isExecuted": false,
+            "uuid": "61f9d26c-800d-4bcd-878d-2c422402dd9d"
+        },
+        {
+            "@type": "WorkflowRoute",
+            "name": "Get Incident Lead Teams -> Set Incident Lead Teams",
+            "targetStep": "\/api\/3\/workflow_steps\/fb72d315-7450-452b-920c-b937a1bfebcd",
+            "sourceStep": "\/api\/3\/workflow_steps\/a9cf9d2e-3d7a-40fc-8418-a8909c128a22",
+            "label": null,
+            "isExecuted": false,
+            "uuid": "9109b8f8-6101-48b6-9c4f-22e0219e7846"
+        }
+    ],
+    "groups": [],
+    "priority": null,
+    "uuid": "0c86fd1b-6214-4c38-984c-856fa61a5e04",
+    "owners": [],
+    "isPrivate": false,
+    "deletedAt": null,
+    "recordTags": [
+        "OT IT",
+        "SystemWaitForCompletion"
+    ]
+}

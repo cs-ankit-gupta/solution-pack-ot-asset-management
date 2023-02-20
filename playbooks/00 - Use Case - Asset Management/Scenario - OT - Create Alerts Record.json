@@ -1,0 +1,210 @@
+{
+    "@type": "Workflow",
+    "triggerLimit": null,
+    "name": "Scenario - OT - Create Alerts Record",
+    "aliasName": null,
+    "tag": null,
+    "description": "Playbook will read a CSV file and create Alerts records",
+    "isActive": true,
+    "debug": false,
+    "singleRecordExecution": false,
+    "remoteExecutableFlag": false,
+    "parameters": [],
+    "synchronous": false,
+    "collection": "\/api\/3\/workflow_collections\/fb4aa534-4bfc-4196-b509-96ef02fb9270",
+    "versions": [],
+    "triggerStep": "\/api\/3\/workflow_steps\/7926edf0-c57d-4b36-9ad0-058bdddd4353",
+    "steps": [
+        {
+            "@type": "WorkflowStep",
+            "name": "Configuration",
+            "description": null,
+            "arguments": {
+                "alertAttachmentUUID": "32fc291a-9afe-46b2-8f67-3b4d4837e2d7"
+            },
+            "status": null,
+            "top": "165",
+            "left": "125",
+            "stepType": "\/api\/3\/workflow_step_types\/04d0cf46-b6a8-42c4-8683-60a7eaa69e8f",
+            "group": null,
+            "uuid": "392a0a58-a0c7-47d1-b70c-fff5b3967a7e"
+        },
+        {
+            "@type": "WorkflowStep",
+            "name": "Output",
+            "description": null,
+            "arguments": {
+                "@id": "{{vars.steps.Create_Alerts_Record | json_query('[*][\"@id\"][]')}}"
+            },
+            "status": null,
+            "top": "705",
+            "left": "125",
+            "stepType": "\/api\/3\/workflow_step_types\/04d0cf46-b6a8-42c4-8683-60a7eaa69e8f",
+            "group": null,
+            "uuid": "72c0d905-ccef-4794-b79c-c9ed6d41bcce"
+        },
+        {
+            "@type": "WorkflowStep",
+            "name": "Start",
+            "description": null,
+            "arguments": {
+                "step_variables": {
+                    "input": {
+                        "params": []
+                    }
+                }
+            },
+            "status": null,
+            "top": "30",
+            "left": "125",
+            "stepType": "\/api\/3\/workflow_step_types\/b348f017-9a94-471f-87f8-ce88b6a7ad62",
+            "group": null,
+            "uuid": "7926edf0-c57d-4b36-9ad0-058bdddd4353"
+        },
+        {
+            "@type": "WorkflowStep",
+            "name": "Find Attachment",
+            "description": null,
+            "arguments": {
+                "query": {
+                    "sort": [],
+                    "limit": 30,
+                    "logic": "AND",
+                    "filters": [
+                        {
+                            "type": "primitive",
+                            "field": "uuid",
+                            "value": "{{vars.alertAttachmentUUID}}",
+                            "operator": "eq",
+                            "_operator": "eq"
+                        }
+                    ]
+                },
+                "module": "attachments?$limit=30",
+                "step_variables": []
+            },
+            "status": null,
+            "top": "300",
+            "left": "125",
+            "stepType": "\/api\/3\/workflow_step_types\/b593663d-7d13-40ce-a3a3-96dece928770",
+            "group": null,
+            "uuid": "7ba1f125-a3b2-47ed-9cb7-8646d8f32247"
+        },
+        {
+            "@type": "WorkflowStep",
+            "name": "Get Data From CSV File",
+            "description": null,
+            "arguments": {
+                "name": "CSV Data Management",
+                "params": {
+                    "input": "File IRI",
+                    "value": "{{vars.steps.Find_Attachment[0].file['@id']}}",
+                    "columnNames": "",
+                    "filterInput": "",
+                    "recordBatch": false,
+                    "deDupValuesOn": "",
+                    "saveAsAttachment": "",
+                    "numberOfRowsToSkip": ""
+                },
+                "version": "1.1.0",
+                "connector": "csv-data-management",
+                "operation": "extract_data_from_csv",
+                "operationTitle": "Extract Data from Single CSV",
+                "pickFromTenant": false,
+                "step_variables": {
+                    "data": "{{vars.steps.Get_Data_From_CSV_File.data['records'] | replace('N\/A', None)}}"
+                }
+            },
+            "status": null,
+            "top": "435",
+            "left": "125",
+            "stepType": "\/api\/3\/workflow_step_types\/0bfed618-0316-11e7-93ae-92361f002671",
+            "group": null,
+            "uuid": "8a5b0669-3b89-4af2-969f-9910c0214902"
+        },
+        {
+            "@type": "WorkflowStep",
+            "name": "Create Alerts Record",
+            "description": null,
+            "arguments": {
+                "for_each": {
+                    "item": "{{vars.data}}",
+                    "parallel": false,
+                    "condition": ""
+                },
+                "arguments": {
+                    "alertRecord": "{{vars.item}}"
+                },
+                "apply_async": false,
+                "step_variables": [],
+                "pass_input_record": false,
+                "workflowReference": "\/api\/3\/workflows\/50bf3bf4-1280-4b86-be7d-d78dd3a56ce1"
+            },
+            "status": null,
+            "top": "570",
+            "left": "125",
+            "stepType": "\/api\/3\/workflow_step_types\/74932bdc-b8b6-4d24-88c4-1a4dfbc524f3",
+            "group": null,
+            "uuid": "dd7e424a-03c3-44fc-8804-9df22742f01a"
+        }
+    ],
+    "routes": [
+        {
+            "@type": "WorkflowRoute",
+            "name": "Start -> Configuration",
+            "targetStep": "\/api\/3\/workflow_steps\/392a0a58-a0c7-47d1-b70c-fff5b3967a7e",
+            "sourceStep": "\/api\/3\/workflow_steps\/7926edf0-c57d-4b36-9ad0-058bdddd4353",
+            "label": null,
+            "isExecuted": false,
+            "uuid": "05c65f59-e84a-4782-b5ea-8da117005528"
+        },
+        {
+            "@type": "WorkflowRoute",
+            "name": "Configuration -> Find Attachment",
+            "targetStep": "\/api\/3\/workflow_steps\/7ba1f125-a3b2-47ed-9cb7-8646d8f32247",
+            "sourceStep": "\/api\/3\/workflow_steps\/392a0a58-a0c7-47d1-b70c-fff5b3967a7e",
+            "label": null,
+            "isExecuted": false,
+            "uuid": "4df8ffa8-e58c-4f2b-9bc0-4bcdaa819533"
+        },
+        {
+            "@type": "WorkflowRoute",
+            "name": "Find Attachment -> Get Data From CSV File",
+            "targetStep": "\/api\/3\/workflow_steps\/8a5b0669-3b89-4af2-969f-9910c0214902",
+            "sourceStep": "\/api\/3\/workflow_steps\/7ba1f125-a3b2-47ed-9cb7-8646d8f32247",
+            "label": null,
+            "isExecuted": false,
+            "uuid": "64243507-6fdc-4df0-917a-4e9ef97d8792"
+        },
+        {
+            "@type": "WorkflowRoute",
+            "name": "Create Alerts Record -> Output",
+            "targetStep": "\/api\/3\/workflow_steps\/72c0d905-ccef-4794-b79c-c9ed6d41bcce",
+            "sourceStep": "\/api\/3\/workflow_steps\/dd7e424a-03c3-44fc-8804-9df22742f01a",
+            "label": null,
+            "isExecuted": false,
+            "uuid": "96a07a1b-c5ef-40b4-8b6b-0a0a429fe91f"
+        },
+        {
+            "@type": "WorkflowRoute",
+            "name": "Get Data From CSV File -> Create Alerts Record",
+            "targetStep": "\/api\/3\/workflow_steps\/dd7e424a-03c3-44fc-8804-9df22742f01a",
+            "sourceStep": "\/api\/3\/workflow_steps\/8a5b0669-3b89-4af2-969f-9910c0214902",
+            "label": null,
+            "isExecuted": false,
+            "uuid": "f66276fc-b581-4c05-ab52-ad8f992fc246"
+        }
+    ],
+    "groups": [],
+    "priority": "\/api\/3\/picklists\/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+    "uuid": "f6af9205-18c3-4fc3-8117-3ded76231867",
+    "owners": [],
+    "isPrivate": false,
+    "deletedAt": null,
+    "recordTags": [
+        "Alerts",
+        "Import CSV",
+        "OT IT",
+        "Scenario"
+    ]
+}

@@ -1,0 +1,562 @@
+{
+    "@context": "\/api\/3\/contexts\/Dashboard",
+    "@type": "Dashboard",
+    "uuid": "4d6ea7b3-2aa0-4620-9426-52d9c8b76c1d",
+    "displayName": "Asset Change Activity Tracking",
+    "type": "rows",
+    "templateType": "dashboard",
+    "roles": [],
+    "parentTemplateId": null,
+    "config": {
+        "rows": [
+            {
+                "columns": [
+                    {
+                        "widgets": [
+                            {
+                                "type": "rows",
+                                "config": {
+                                    "wid": "3b1ffc7c-12c8-4edf-a90d-0b17f8f4adb4",
+                                    "rows": [
+                                        {
+                                            "columns": [
+                                                {
+                                                    "widgets": [
+                                                        {
+                                                            "type": "chart",
+                                                            "config": {
+                                                                "wid": "62e238e6-e81e-4680-a9ee-421228f0e786",
+                                                                "widgetAlwaysDisplay": true,
+                                                                "query": {
+                                                                    "sort": [
+                                                                        {
+                                                                            "field": "status.orderIndex",
+                                                                            "direction": "ASC"
+                                                                        }
+                                                                    ],
+                                                                    "limit": 2147483647,
+                                                                    "logic": "AND",
+                                                                    "filters": [],
+                                                                    "aggregates": [
+                                                                        {
+                                                                            "operator": "countdistinct",
+                                                                            "field": "*",
+                                                                            "alias": "total"
+                                                                        },
+                                                                        {
+                                                                            "operator": "groupby",
+                                                                            "alias": "status",
+                                                                            "field": "status.itemValue"
+                                                                        },
+                                                                        {
+                                                                            "operator": "groupby",
+                                                                            "alias": "color",
+                                                                            "field": "status.color"
+                                                                        },
+                                                                        {
+                                                                            "operator": "groupby",
+                                                                            "alias": "orderIndex",
+                                                                            "field": "status.orderIndex"
+                                                                        }
+                                                                    ]
+                                                                },
+                                                                "mapping": {
+                                                                    "fieldName": "status"
+                                                                },
+                                                                "assignedToSetting": "onlyMe",
+                                                                "aggregate": true,
+                                                                "title": "Asset Change Activity By Status",
+                                                                "resource": "asset_change_activities",
+                                                                "chart": "donut",
+                                                                "showCount": true
+                                                            }
+                                                        }
+                                                    ],
+                                                    "style": "col-lg-4"
+                                                },
+                                                {
+                                                    "widgets": [
+                                                        {
+                                                            "type": "chart",
+                                                            "config": {
+                                                                "wid": "da40ebca-ea77-4016-823e-41ddc9d1ed2f",
+                                                                "widgetAlwaysDisplay": true,
+                                                                "query": {
+                                                                    "sort": [
+                                                                        {
+                                                                            "field": "assetChangeType.orderIndex",
+                                                                            "direction": "ASC"
+                                                                        }
+                                                                    ],
+                                                                    "limit": 2147483647,
+                                                                    "logic": "AND",
+                                                                    "filters": [],
+                                                                    "aggregates": [
+                                                                        {
+                                                                            "operator": "countdistinct",
+                                                                            "field": "*",
+                                                                            "alias": "total"
+                                                                        },
+                                                                        {
+                                                                            "operator": "groupby",
+                                                                            "alias": "assetChangeType",
+                                                                            "field": "assetChangeType.itemValue"
+                                                                        },
+                                                                        {
+                                                                            "operator": "groupby",
+                                                                            "alias": "color",
+                                                                            "field": "assetChangeType.color"
+                                                                        },
+                                                                        {
+                                                                            "operator": "groupby",
+                                                                            "alias": "orderIndex",
+                                                                            "field": "assetChangeType.orderIndex"
+                                                                        }
+                                                                    ]
+                                                                },
+                                                                "mapping": {
+                                                                    "fieldName": "assetChangeType"
+                                                                },
+                                                                "assignedToSetting": "onlyMe",
+                                                                "aggregate": true,
+                                                                "title": "Asset Change Activity By Change Type",
+                                                                "resource": "asset_change_activities",
+                                                                "chart": "donut",
+                                                                "showCount": true
+                                                            }
+                                                        }
+                                                    ],
+                                                    "style": "col-lg-4"
+                                                },
+                                                {
+                                                    "widgets": [
+                                                        {
+                                                            "type": "chart",
+                                                            "config": {
+                                                                "wid": "220a3407-bc6b-4729-90dd-74c6805c38af",
+                                                                "widgetAlwaysDisplay": true,
+                                                                "query": {
+                                                                    "sort": [
+                                                                        {
+                                                                            "field": "criticality.orderIndex",
+                                                                            "direction": "ASC"
+                                                                        }
+                                                                    ],
+                                                                    "limit": 2147483647,
+                                                                    "logic": "AND",
+                                                                    "filters": [
+                                                                        {
+                                                                            "field": "assetChangeActivities.id",
+                                                                            "operator": "isnull",
+                                                                            "_operator": "isnull",
+                                                                            "value": "false",
+                                                                            "type": "primitive"
+                                                                        }
+                                                                    ],
+                                                                    "aggregates": [
+                                                                        {
+                                                                            "operator": "countdistinct",
+                                                                            "field": "*",
+                                                                            "alias": "total"
+                                                                        },
+                                                                        {
+                                                                            "operator": "groupby",
+                                                                            "alias": "criticality",
+                                                                            "field": "criticality.itemValue"
+                                                                        },
+                                                                        {
+                                                                            "operator": "groupby",
+                                                                            "alias": "color",
+                                                                            "field": "criticality.color"
+                                                                        },
+                                                                        {
+                                                                            "operator": "groupby",
+                                                                            "alias": "orderIndex",
+                                                                            "field": "criticality.orderIndex"
+                                                                        }
+                                                                    ]
+                                                                },
+                                                                "mapping": {
+                                                                    "fieldName": "criticality"
+                                                                },
+                                                                "assignedToSetting": "onlyMe",
+                                                                "aggregate": true,
+                                                                "title": "Correlated Assets Criticality",
+                                                                "resource": "assets",
+                                                                "chart": "donut",
+                                                                "showCount": true
+                                                            }
+                                                        }
+                                                    ],
+                                                    "style": "col-lg-4"
+                                                }
+                                            ],
+                                            "wid": "4d932905-7f3e-458e-9b1e-58c5b2a48812",
+                                            "collapsible": false,
+                                            "collapsibleIndex": 0,
+                                            "_collapsed": false
+                                        }
+                                    ]
+                                }
+                            }
+                        ],
+                        "style": "col-lg-12"
+                    }
+                ],
+                "wid": "8c1224db-59e9-4e2a-800f-96514d9914dc",
+                "_collapsed": false
+            },
+            {
+                "columns": [
+                    {
+                        "widgets": [
+                            {
+                                "type": "rows",
+                                "config": {
+                                    "wid": "6d100bd6-9151-4ebe-89fe-754cc7757811",
+                                    "rows": [
+                                        {
+                                            "columns": [
+                                                {
+                                                    "widgets": [
+                                                        {
+                                                            "type": "cardList",
+                                                            "config": {
+                                                                "wid": "111713cb-2ff5-4942-bf5d-f636eec69603",
+                                                                "query": {
+                                                                    "sort": [],
+                                                                    "limit": 5,
+                                                                    "logic": "AND",
+                                                                    "filters": [
+                                                                        {
+                                                                            "field": "assetChangeActivities.id",
+                                                                            "operator": "isnull",
+                                                                            "_operator": "isnull",
+                                                                            "value": "false",
+                                                                            "type": "primitive"
+                                                                        },
+                                                                        {
+                                                                            "field": "status",
+                                                                            "operator": "neq",
+                                                                            "value": "\/api\/3\/picklists\/343f4b67-e929-4205-bf95-ba5b70545fed",
+                                                                            "_value": {
+                                                                                "itemValue": "Completed",
+                                                                                "@id": "\/api\/3\/picklists\/343f4b67-e929-4205-bf95-ba5b70545fed"
+                                                                            },
+                                                                            "type": "object"
+                                                                        }
+                                                                    ]
+                                                                },
+                                                                "mapping": {
+                                                                    "templateView": "cardView",
+                                                                    "assignedToPerson": "assignedToPerson",
+                                                                    "picklistBar": "priority",
+                                                                    "title": "name",
+                                                                    "subTitle": "status",
+                                                                    "subTitle3": "dueBy",
+                                                                    "subTitle4": "priority"
+                                                                },
+                                                                "assignedToSetting": "all",
+                                                                "title": "Overall Pending Tasks",
+                                                                "module": "tasks"
+                                                            }
+                                                        }
+                                                    ],
+                                                    "style": "col-lg-12"
+                                                }
+                                            ],
+                                            "wid": "07c0d55e-0a6c-424a-9473-bedeebd36962",
+                                            "_collapsed": false
+                                        }
+                                    ]
+                                }
+                            }
+                        ],
+                        "style": "col-lg-6"
+                    },
+                    {
+                        "widgets": [
+                            {
+                                "type": "rows",
+                                "config": {
+                                    "wid": "0bd52f39-312e-4d43-b81d-31e6b1e9d37c",
+                                    "rows": [
+                                        {
+                                            "columns": [
+                                                {
+                                                    "widgets": [
+                                                        {
+                                                            "type": "cardList",
+                                                            "config": {
+                                                                "wid": "9b995dc7-8582-47f5-b0cc-796a31680387",
+                                                                "query": {
+                                                                    "sort": [],
+                                                                    "limit": 5,
+                                                                    "logic": "AND",
+                                                                    "filters": [
+                                                                        {
+                                                                            "field": "assetChangeActivities.id",
+                                                                            "operator": "isnull",
+                                                                            "_operator": "isnull",
+                                                                            "value": "false",
+                                                                            "type": "primitive"
+                                                                        },
+                                                                        {
+                                                                            "field": "status",
+                                                                            "operator": "neq",
+                                                                            "value": "\/api\/3\/picklists\/343f4b67-e929-4205-bf95-ba5b70545fed",
+                                                                            "_value": {
+                                                                                "itemValue": "Completed",
+                                                                                "@id": "\/api\/3\/picklists\/343f4b67-e929-4205-bf95-ba5b70545fed"
+                                                                            },
+                                                                            "type": "object"
+                                                                        }
+                                                                    ]
+                                                                },
+                                                                "mapping": {
+                                                                    "templateView": "cardView",
+                                                                    "assignedToPerson": "assignedToPerson",
+                                                                    "picklistBar": "priority",
+                                                                    "title": "name",
+                                                                    "subTitle": "status",
+                                                                    "subTitle3": "dueBy",
+                                                                    "subTitle4": "priority"
+                                                                },
+                                                                "assignedToSetting": "onlyMe",
+                                                                "title": "My Pending Task",
+                                                                "module": "tasks"
+                                                            }
+                                                        }
+                                                    ],
+                                                    "style": "col-lg-12"
+                                                }
+                                            ],
+                                            "wid": "a72eebce-bd69-406d-9f43-c8336f54f866",
+                                            "_collapsed": false
+                                        }
+                                    ]
+                                }
+                            }
+                        ],
+                        "style": "col-lg-6"
+                    }
+                ],
+                "wid": "3fba008b-91b5-4ec4-b726-1c13860b3714",
+                "collapsible": false,
+                "collapsibleIndex": 0,
+                "_collapsed": false
+            },
+            {
+                "columns": [
+                    {
+                        "widgets": [
+                            {
+                                "type": "rows",
+                                "config": {
+                                    "wid": "41ed6cee-74ad-4c2f-aa90-7b94e63a69c8",
+                                    "rows": [
+                                        {
+                                            "columns": [
+                                                {
+                                                    "widgets": [
+                                                        {
+                                                            "type": "chart",
+                                                            "config": {
+                                                                "wid": "06c6c0fc-0f77-4bc5-a279-83a8705d1fd5",
+                                                                "widgetAlwaysDisplay": true,
+                                                                "query": {
+                                                                    "sort": [
+                                                                        {
+                                                                            "field": "assetChangeType.orderIndex",
+                                                                            "direction": "ASC"
+                                                                        },
+                                                                        {
+                                                                            "field": "status.orderIndex",
+                                                                            "direction": "ASC"
+                                                                        }
+                                                                    ],
+                                                                    "limit": 2147483647,
+                                                                    "logic": "AND",
+                                                                    "filters": [],
+                                                                    "aggregates": [
+                                                                        {
+                                                                            "operator": "countdistinct",
+                                                                            "field": "*",
+                                                                            "alias": "total"
+                                                                        },
+                                                                        {
+                                                                            "operator": "groupby",
+                                                                            "alias": "assetChangeType",
+                                                                            "field": "assetChangeType.itemValue"
+                                                                        },
+                                                                        {
+                                                                            "operator": "groupby",
+                                                                            "alias": "firstOrderIndex",
+                                                                            "field": "assetChangeType.orderIndex"
+                                                                        },
+                                                                        {
+                                                                            "operator": "groupby",
+                                                                            "alias": "status",
+                                                                            "field": "status.itemValue"
+                                                                        },
+                                                                        {
+                                                                            "operator": "groupby",
+                                                                            "alias": "secondOrderIndex",
+                                                                            "field": "status.orderIndex"
+                                                                        },
+                                                                        {
+                                                                            "operator": "groupby",
+                                                                            "alias": "color",
+                                                                            "field": "status.color"
+                                                                        }
+                                                                    ]
+                                                                },
+                                                                "mapping": {
+                                                                    "firstGrouping": "assetChangeType",
+                                                                    "secondGrouping": "status"
+                                                                },
+                                                                "assignedToSetting": "onlyMe",
+                                                                "aggregate": true,
+                                                                "title": "Tasks Based On Asset Change Type",
+                                                                "resource": "asset_change_activities",
+                                                                "chart": "bar",
+                                                                "barStyle": "horizontal"
+                                                            }
+                                                        }
+                                                    ],
+                                                    "style": "col-lg-12"
+                                                }
+                                            ],
+                                            "wid": "7f54cb63-680f-4a1f-834a-be1d9bfd3acc",
+                                            "_collapsed": false
+                                        }
+                                    ]
+                                }
+                            }
+                        ],
+                        "style": "col-lg-12"
+                    }
+                ],
+                "wid": "5acb182d-2c92-4253-9516-b73437929c7b",
+                "_collapsed": false
+            },
+            {
+                "columns": [
+                    {
+                        "widgets": [
+                            {
+                                "type": "lineItem",
+                                "config": {
+                                    "wid": "5e44b721-bd74-4731-980a-5a5c2f3790f5",
+                                    "query": {
+                                        "sort": [
+                                            {
+                                                "direction": "DESC",
+                                                "field": "modifyDate",
+                                                "_fieldTitle": "Modified On",
+                                                "_fieldName": "modifyDate"
+                                            }
+                                        ],
+                                        "limit": 5,
+                                        "logic": "AND",
+                                        "filters": [
+                                            {
+                                                "field": "assetChangeActivities.id",
+                                                "operator": "isnull",
+                                                "_operator": "isnull",
+                                                "value": "false",
+                                                "type": "primitive"
+                                            }
+                                        ]
+                                    },
+                                    "mapping": {
+                                        "assignedToPerson": ""
+                                    },
+                                    "assignedToSetting": "all",
+                                    "columns": [
+                                        "hostname",
+                                        "ip",
+                                        "criticality",
+                                        "category"
+                                    ],
+                                    "module": "assets",
+                                    "title": "Recent Asset Linked"
+                                }
+                            }
+                        ],
+                        "style": "col-lg-6"
+                    },
+                    {
+                        "widgets": [
+                            {
+                                "type": "lineItem",
+                                "config": {
+                                    "wid": "1408ed7e-8369-4774-90b7-64c2181a35ba",
+                                    "query": {
+                                        "sort": [
+                                            {
+                                                "direction": "DESC",
+                                                "field": "createDate",
+                                                "_fieldTitle": "Created On",
+                                                "_fieldName": "createDate"
+                                            }
+                                        ],
+                                        "limit": 5,
+                                        "logic": "AND",
+                                        "filters": [
+                                            {
+                                                "field": "assets.id",
+                                                "operator": "isnull",
+                                                "_operator": "isnull",
+                                                "value": "false",
+                                                "type": "primitive"
+                                            },
+                                            {
+                                                "field": "status",
+                                                "value": [
+                                                    "\/api\/3\/picklists\/f79c90bc-0c2d-4848-8138-0266cc13ffe6"
+                                                ],
+                                                "display": "",
+                                                "operator": "nin",
+                                                "type": "object",
+                                                "OPERATOR_KEY": "$",
+                                                "displayTemplate": "",
+                                                "module": "status",
+                                                "template": "multiselectpicklist",
+                                                "previousOperator": "nin",
+                                                "previousTemplate": "multiselectpicklist"
+                                            }
+                                        ]
+                                    },
+                                    "mapping": {
+                                        "assignedToPerson": ""
+                                    },
+                                    "assignedToSetting": "all",
+                                    "columns": [
+                                        "assetChangeType",
+                                        "status",
+                                        "assignedTo",
+                                        "dueDate"
+                                    ],
+                                    "module": "asset_change_activities",
+                                    "title": "Recent Active Change Activities"
+                                }
+                            }
+                        ],
+                        "style": "col-lg-6"
+                    }
+                ],
+                "wid": "29b069f2-fcae-4831-8e33-1d045a800d18",
+                "collapsible": false,
+                "collapsibleIndex": 0,
+                "_collapsed": false
+            }
+        ],
+        "wid": "d7216a33-aa00-4650-9950-c54ef9ccb762",
+        "metadata": {
+            "customTemplateTitle": "Dashboard"
+        }
+    },
+    "filterArray": [],
+    "updateDate": null
+}

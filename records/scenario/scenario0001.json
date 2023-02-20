@@ -1,0 +1,127 @@
+[
+    {
+        "@type": "Scenario",
+        "configuration": null,
+        "title": "OT - Add Sample Assets",
+        "description": "This scenario adds 83 different sample OT Assets (different Purdue Levels, Types etc.) for testing dashboards, use case playbooks, reports and other actions. These assets contain, a specific tag called 'sampleAsset' so that they can easily be identified and if required, easily deleted later. The sample data is picked from a CSV file present in the 'OT - Sample Assets CSV' record in the 'Attachments' module - making it easier to modify the sample data as suitable. \n<br>\n\n**NOTE**: *Ensure you run this 'OT - Add Sample Assets' Scenario prior to running the 'OT - Add Sample Alerts', for facilitating the correlations of Alerts and Asset records.*",
+        "steps": {
+            "Steps": [
+                {
+                    "name": "OT - Sample Assets",
+                    "type": "executePlaybook",
+                    "playbookIRI": "\/api\/3\/workflows\/cfa2021b-379d-4b62-b388-5260652fe7b1",
+                    "preCreateMessage": "Creating Asset demo record for OT",
+                    "postCreateMessage": "",
+                    "waitTimeforNextStep": "0"
+                }
+            ]
+        },
+        "createdAlertsID": null,
+        "uuid": "2dea5c0f-23cc-45b3-8ca6-a8c8b30e23f0",
+        "createUser": "\/api\/3\/people\/3451141c-bac6-467c-8d72-85e0fab569ce",
+        "createDate": 1676440661.535656,
+        "modifyUser": "\/api\/3\/people\/3451141c-bac6-467c-8d72-85e0fab569ce",
+        "modifyDate": 1676453347.480679,
+        "id": 5,
+        "recordTags": [
+            "Assets",
+            "OT IT",
+            "Scenario"
+        ]
+    },
+    {
+        "@type": "Scenario",
+        "configuration": null,
+        "title": "OT - Stuxnet Attack Scenario",
+        "description": "This scenario recreates the Stuxnet attack in form of series of point alerts received by FortiSOAR from FortISIEM.\n<br>\n\n*Stuxnet is a worm that targets Siemens S7 PLCs connected to Windows-based engineering workstations. It is typically introduced to the target environment via an infected\u00a0USB Flash drive, thus crossing any air gap. The worm then propagates across the network, scanning for\u00a0Siemens Step7\u00a0software on computers controlling a PLC. In the absence of either criterion, Stuxnet becomes dormant inside the computer. If both the conditions are fulfilled, Stuxnet introduces the infected rootkit onto the PLC and Step7 software, modifying the code and giving unexpected commands to the PLC while returning a loop of normal operation system values back to the users*\n<br>\n\nThe operation of the Stuxnet malware can be summarized, as follows: \n1. Stuxnet enters the network via an infected USB flash drive. \n2. Stuxnet searches for computers running industrial applications connected to Siemens Step7 PLCs in the network. \n3. Stuxnet tries to connect to a CnC server on the Internet to update itself. \n4. Stuxnet compromises (introduces infected rootlet) and modifies the code running on the targeted PLCs. \n5. Stuxnet reports back fake normal process control information to other PLCs and users, so that they do not know the real state of the process.",
+        "steps": {
+            "Steps": [
+                {
+                    "name": "OT - Stuxnet Attack Scenario",
+                    "type": "executePlaybook",
+                    "playbookIRI": "\/api\/3\/workflows\/fc6ade35-4b83-492d-8592-7aa1f95588e6",
+                    "preCreateMessage": "Creating Alert and Asset demo record for Stuxnet Alert",
+                    "postCreateMessage": "",
+                    "waitTimeforNextStep": "0"
+                }
+            ]
+        },
+        "createdAlertsID": null,
+        "uuid": "6b0a2a31-fd74-4239-9383-708c50e1625f",
+        "createUser": "\/api\/3\/people\/3451141c-bac6-467c-8d72-85e0fab569ce",
+        "createDate": 1672816950.14907,
+        "modifyUser": "\/api\/3\/appliances\/57545210-2adc-472b-a24f-2df6ee8dfe63",
+        "modifyDate": 1676542011.3614,
+        "id": 2,
+        "recordTags": [
+            "Alerts",
+            "Assets",
+            "OT IT",
+            "Scenario",
+            "Siemens",
+            "Stuxnet Attack"
+        ]
+    },
+    {
+        "@type": "Scenario",
+        "configuration": null,
+        "title": "OT - Add Sample Asset Change Activity Record",
+        "description": "This scenario generates sample Asset Change Activity record each, for type \"Add New Asset\" and \"Medium Impact Baseline Change\" type of activities. These sample records can be useful to demonstrate and test the process of managing an Asset Change Activity, associated with this solution pack. These sample Asset Change Activity records have a tag, \"sampleAssetChangeActivity\" for easy identification. \n",
+        "steps": {
+            "Steps": [
+                {
+                    "name": "OT - Asset Change Activity",
+                    "type": "executePlaybook",
+                    "playbookIRI": "\/api\/3\/workflows\/4961c806-88bf-42f7-b3cd-150a1f2713d2",
+                    "preCreateMessage": "Creating Asset Change Activity And Assets demo record for OT",
+                    "postCreateMessage": "",
+                    "waitTimeforNextStep": "0"
+                }
+            ]
+        },
+        "createdAlertsID": null,
+        "uuid": "c185dfe7-0ced-40a4-b4ca-64062c8d7fe3",
+        "createUser": "\/api\/3\/people\/3451141c-bac6-467c-8d72-85e0fab569ce",
+        "createDate": 1672378366.980324,
+        "modifyUser": "\/api\/3\/appliances\/57545210-2adc-472b-a24f-2df6ee8dfe63",
+        "modifyDate": 1676532220.501743,
+        "id": 3,
+        "recordTags": [
+            "Add Cyber Asset",
+            "Asset Change Activity",
+            "Assets",
+            "Medium Impact Baseline Change",
+            "OT IT"
+        ]
+    },
+    {
+        "@type": "Scenario",
+        "configuration": null,
+        "title": "OT - Add Sample Alerts",
+        "description": "This scenario adds 12 well populated sample OT Alerts for testing dashboards, use case playbooks, reports and other actions. These alerts contain, a specific tag called 'sampleAlert' so that they can easily be identified and if required easily deleted later. The sample data is picked from a CSV file present in the 'OT - Sample Alerts CSV' record in the 'Attachments' module - making it easier to modify the sample data as suitable. \n<br>\n\n**NOTE**: *Ensure you run the 'OT - Add Sample Assets' Scenario prior to this, for facilitating the correlations of Alerts and Asset records.*",
+        "steps": {
+            "Steps": [
+                {
+                    "name": "OT - Sample Alerts",
+                    "type": "executePlaybook",
+                    "playbookIRI": "\/api\/3\/workflows\/f6af9205-18c3-4fc3-8117-3ded76231867",
+                    "preCreateMessage": "Creating Alert demo record for OT",
+                    "postCreateMessage": "",
+                    "waitTimeforNextStep": "0"
+                }
+            ]
+        },
+        "createdAlertsID": null,
+        "uuid": "d5abd233-df8a-43f6-ba98-db58c8fb2e80",
+        "createUser": "\/api\/3\/people\/3451141c-bac6-467c-8d72-85e0fab569ce",
+        "createDate": 1676446625.320437,
+        "modifyUser": "\/api\/3\/people\/3451141c-bac6-467c-8d72-85e0fab569ce",
+        "modifyDate": 1676453366.142198,
+        "id": 6,
+        "recordTags": [
+            "Alerts",
+            "OT IT",
+            "Scenario"
+        ]
+    }
+]

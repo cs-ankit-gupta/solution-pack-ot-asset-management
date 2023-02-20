@@ -1,0 +1,202 @@
+{
+    "name": "oT-AssetManagement",
+    "version": "1.0.0",
+    "fsrMinCompatibility": "7.2.0",
+    "featuredTags": [
+        {
+            "color": "#2d87e3",
+            "tag": "preview"
+        }
+    ],
+    "featured": true,
+    "type": "solutionpack",
+    "local": true,
+    "label": "OT - Asset Management",
+    "dependencies": [
+        {
+            "name": "sOARFramework",
+            "type": "solutionpack",
+            "label": "SOAR Framework",
+            "minVersion": "2.0.2"
+        },
+        {
+            "name": "socSimulator",
+            "type": "solutionpack",
+            "label": "SOC Simulator",
+            "minVersion": "1.0.1"
+        },
+        {
+            "name": "mITREATT&CKEnrichmentFramework",
+            "type": "solutionpack",
+            "label": "MITRE ATT&CK Enrichment Framework",
+            "minVersion": null
+        },
+        {
+            "name": "vulnerabilityManagement",
+            "type": "solutionpack",
+            "label": "Vulnerability Management",
+            "minVersion": null
+        }
+    ],
+    "prerequisite": null,
+    "publisher": "Fortinet",
+    "description": "Solution Pack manages assets in both the OT and IT domains. It provides a way of dealing with asset baseline changes.",
+    "help": "https://github.com/fortinet-fortisoar/solution-pack-ot-asset-management/blob/release/1.0.0/README.md",
+    "category": [
+        "Monitoring",
+        "Vulnerability Management",
+        "Alert Management",
+        "Vulnerability and Risk Management",
+        "Asset Management",
+        "OT & IoT Security",
+        "Reporting"
+    ],
+    "supportInfo": "support@fortinet.com",
+    "iconLarge": null,
+    "postInstallConfig": {
+        "enabled": false
+    },
+    "date": "2023-02-17T09:59:27+00:00",
+    "contents": {
+        "picklistNames": [
+            {
+                "name": "ActivityStatus"
+            },
+            {
+                "name": "AssetCategory"
+            },
+            {
+                "name": "AssetChangeType"
+            },
+            {
+                "name": "AssetLevel"
+            },
+            {
+                "name": "AssetProtocol"
+            },
+            {
+                "name": "AssetType"
+            },
+            {
+                "name": "AssetZone"
+            },
+            {
+                "name": "VulnerabilityRiskStatus"
+            }
+        ],
+        "modules": {
+            "asset_change_activities": {
+                "name": "Asset Change Activities",
+                "apiName": "asset_change_activities"
+            },
+            "asset_resources": {
+                "name": "Asset Resources",
+                "apiName": "asset_resources"
+            },
+            "": {
+                "name": "Assets",
+                "apiName": "assets"
+            }
+        },
+        "viewTemplates": {
+            "asset_change_activities": {
+                "name": "Asset Change Activities",
+                "apiName": "asset_change_activities",
+                "views": [
+                    "list",
+                    "detail",
+                    "form"
+                ]
+            },
+            "asset_resources": {
+                "name": "Asset Resources",
+                "apiName": "asset_resources",
+                "views": [
+                    "list",
+                    "detail",
+                    "form"
+                ]
+            }
+        },
+        "views": {
+            "navigation": [
+                "Resources"
+            ]
+        },
+        "roles": [
+            {
+                "name": "Full App Permissions"
+            }
+        ],
+        "playbooks": [
+            {
+                "name": "00 - Use Case - Asset Change Activity"
+            },
+            {
+                "name": "00 - Use Case - Asset Management"
+            }
+        ],
+        "globalVariables": [],
+        "reports": [
+            {
+                "name": "Asset Change Activity Summary Report"
+            }
+        ],
+        "dashboards": [
+            {
+                "name": "Asset Change Activity Tracking"
+            },
+            {
+                "name": "Asset Overview"
+            },
+            {
+                "name": "Asset Risk Overview"
+            }
+        ],
+        "connectors": [
+            {
+                "name": "CSV Data Management",
+                "apiName": "csv-data-management"
+            },
+            {
+                "name": "Fortinet FortiEDR",
+                "apiName": "fortinet-fortiedr"
+            },
+            {
+                "name": "Fortinet FortiGate",
+                "apiName": "fortigate-firewall"
+            },
+            {
+                "name": "ServiceNow",
+                "apiName": "servicenow"
+            }
+        ],
+        "widgets": [
+            {
+                "apiName": "recordDistribution",
+                "name": "Record Distribution"
+            },
+            {
+                "apiName": "mitreAttackSpread",
+                "name": "MITRE ATT&CK Alert Incident Spread"
+            }
+        ],
+        "recordSets": [
+            {
+                "name": "Asset Resources",
+                "apiName": "asset_resources",
+                "count": 10
+            },
+            {
+                "name": "Attachments",
+                "apiName": "attachments",
+                "count": 2
+            },
+            {
+                "name": "Scenario",
+                "apiName": "scenario",
+                "count": 4
+            }
+        ]
+    }
+}

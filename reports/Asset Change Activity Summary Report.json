@@ -1,0 +1,942 @@
+{
+    "@context": "\/api\/3\/contexts\/Reporting",
+    "@type": "Reporting",
+    "uuid": "378486c9-9bfb-4bf6-a954-926bd55025f6",
+    "displayName": "Asset Change Activity Summary Report",
+    "type": "rows",
+    "templateType": "reporting",
+    "roles": [
+        "\/api\/3\/roles\/17562d60-b841-4ed7-912b-1ebaf063c8c9",
+        "\/api\/3\/roles\/a501c11e-15af-49a6-a3a4-88605f32f016",
+        "\/api\/3\/roles\/c5ff8174-b3fa-41c5-b781-2b890b426a80",
+        "\/api\/3\/roles\/21d7a7c6-9d68-438f-b732-e8950c5f745b"
+    ],
+    "parentTemplateId": null,
+    "config": {
+        "rows": [
+            {
+                "columns": [
+                    {
+                        "widgets": [
+                            {
+                                "type": "sectionHeader",
+                                "config": {
+                                    "wid": "7dde165c-b423-4d31-a018-cf0399813c00",
+                                    "sectionText": "<p style=\"text-align: center;\">&nbsp;<\/p>\n<p style=\"text-align: center; background: #4e94d0; padding-top: 5px;\"><span style=\"font-size: 25pt;\"><strong><span style=\"color: #efefee;\">Asset Change Activity Summary Report<\/span>&nbsp;<\/strong><\/span><\/p>\n<p style=\"background: #2a5173; padding: 5px; text-align: center;\"><span style=\"font-size: 12pt; color: #efefee;\">Asset Change Activity ID # <strong>{{assetChangeActivityID}}<\/strong> | Generated On {{todayDate}}<\/span><\/p>",
+                                    "query": {
+                                        "filters": [],
+                                        "sort": [],
+                                        "limit": 10
+                                    },
+                                    "editorType": "html"
+                                }
+                            }
+                        ],
+                        "style": "col-lg-12"
+                    }
+                ],
+                "wid": "519727ca-5677-4a5d-954b-8c2c0de8aee5",
+                "container": false,
+                "_collapsed": false
+            },
+            {
+                "columns": [
+                    {
+                        "widgets": [
+                            {
+                                "type": "sectionHeader",
+                                "config": {
+                                    "wid": "37d4d2e0-8375-4556-960f-bc7d73654892",
+                                    "sectionText": "<h4 style=\"background: #404142; padding: 5px; text-align: left;\"><span style=\"font-size: 12pt; color: #ffffff;\"><strong>ASSET CHANGE ACTIVITY HIGHLIGHTS<\/strong><\/span><\/h4>",
+                                    "query": {
+                                        "filters": [],
+                                        "sort": [],
+                                        "limit": 10
+                                    },
+                                    "editorType": "html"
+                                }
+                            },
+                            {
+                                "type": "readonlyFormGroup",
+                                "config": {
+                                    "wid": "be59f9c2-0bbd-4d03-888a-1d3f1a2afa35",
+                                    "rows": [
+                                        {
+                                            "columns": [
+                                                {
+                                                    "fields": [
+                                                        {
+                                                            "name": "title",
+                                                            "highlightMode": true,
+                                                            "readOnly": true
+                                                        }
+                                                    ],
+                                                    "style": "col-lg-12"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "columns": [
+                                                {
+                                                    "fields": [],
+                                                    "style": "col-lg-6"
+                                                },
+                                                {
+                                                    "fields": [],
+                                                    "style": "col-lg-6"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "resource": "asset_change_activities",
+                                    "query": {
+                                        "sort": [],
+                                        "limit": 30,
+                                        "logic": "AND",
+                                        "filters": [
+                                            {
+                                                "field": "id",
+                                                "operator": "eq",
+                                                "_operator": "eq",
+                                                "value": "{{assetChangeActivityID}}",
+                                                "type": "primitive"
+                                            }
+                                        ]
+                                    },
+                                    "style": "display-inline-block",
+                                    "displayType": "card-view",
+                                    "gridColumns": [],
+                                    "widgetAlwaysDisplay": true,
+                                    "recordTitle": {
+                                        "type": "sectionHeader",
+                                        "wid": "fedaae02-e159-42c8-afec-90bdf782e80e",
+                                        "clone": false,
+                                        "remove": false
+                                    },
+                                    "relatedTemplate": {
+                                        "type": "rows",
+                                        "rows": [],
+                                        "wid": "13a623b5-38de-48f3-807c-cf461da7733b"
+                                    }
+                                }
+                            },
+                            {
+                                "type": "readonlyFormGroup",
+                                "config": {
+                                    "wid": "61c14116-0e8f-4379-b5d2-7d35ec91c3ba",
+                                    "rows": [
+                                        {
+                                            "columns": [
+                                                {
+                                                    "fields": [
+                                                        {
+                                                            "name": "description",
+                                                            "highlightMode": true,
+                                                            "readOnly": true
+                                                        }
+                                                    ],
+                                                    "style": "col-lg-12"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "resource": "asset_change_activities",
+                                    "query": {
+                                        "sort": [],
+                                        "limit": 30,
+                                        "logic": "AND",
+                                        "filters": [
+                                            {
+                                                "field": "id",
+                                                "operator": "eq",
+                                                "_operator": "eq",
+                                                "value": "{{assetChangeActivityID}}",
+                                                "type": "primitive"
+                                            }
+                                        ]
+                                    },
+                                    "title": "",
+                                    "style": "display-inline-block",
+                                    "displayType": "card-view",
+                                    "gridColumns": [],
+                                    "widgetAlwaysDisplay": true,
+                                    "recordTitle": {
+                                        "type": "sectionHeader",
+                                        "wid": "030fe666-0184-43ee-a79d-281b2f8e08ed",
+                                        "clone": false,
+                                        "remove": false
+                                    },
+                                    "relatedTemplate": {
+                                        "type": "rows",
+                                        "rows": [],
+                                        "wid": "c7d55c41-085e-4e51-bd70-c96e6c3de089"
+                                    }
+                                }
+                            },
+                            {
+                                "type": "readonlyFormGroup",
+                                "config": {
+                                    "wid": "597828c8-e39d-4168-9708-e525d14f9ba9",
+                                    "rows": [
+                                        {
+                                            "columns": [
+                                                {
+                                                    "fields": [
+                                                        {
+                                                            "name": "justification",
+                                                            "highlightMode": true,
+                                                            "readOnly": true
+                                                        }
+                                                    ],
+                                                    "style": "col-lg-12"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "resource": "asset_change_activities",
+                                    "query": {
+                                        "sort": [],
+                                        "limit": 30,
+                                        "logic": "AND",
+                                        "filters": [
+                                            {
+                                                "field": "id",
+                                                "operator": "eq",
+                                                "_operator": "eq",
+                                                "value": "{{assetChangeActivityID}}",
+                                                "type": "primitive"
+                                            }
+                                        ]
+                                    },
+                                    "title": "",
+                                    "style": "display-inline-block",
+                                    "displayType": "card-view",
+                                    "gridColumns": [],
+                                    "widgetAlwaysDisplay": true,
+                                    "recordTitle": {
+                                        "type": "sectionHeader",
+                                        "wid": "030fe666-0184-43ee-a79d-281b2f8e08ed",
+                                        "clone": false,
+                                        "remove": false
+                                    },
+                                    "relatedTemplate": {
+                                        "type": "rows",
+                                        "rows": [],
+                                        "wid": "c7d55c41-085e-4e51-bd70-c96e6c3de089"
+                                    }
+                                }
+                            },
+                            {
+                                "type": "readonlyFormGroup",
+                                "config": {
+                                    "wid": "721d1d40-312f-4b5c-b6bb-b1fc2784907b",
+                                    "rows": [
+                                        {
+                                            "columns": [
+                                                {
+                                                    "fields": [
+                                                        {
+                                                            "name": "assetChangeType",
+                                                            "highlightMode": true,
+                                                            "readOnly": true
+                                                        }
+                                                    ],
+                                                    "style": "col-lg-6"
+                                                },
+                                                {
+                                                    "fields": [
+                                                        {
+                                                            "name": "assignedTo",
+                                                            "highlightMode": true,
+                                                            "readOnly": true
+                                                        }
+                                                    ],
+                                                    "style": "col-lg-6"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "columns": [
+                                                {
+                                                    "fields": [
+                                                        {
+                                                            "name": "status",
+                                                            "highlightMode": true,
+                                                            "readOnly": true
+                                                        }
+                                                    ],
+                                                    "style": "col-lg-6"
+                                                },
+                                                {
+                                                    "fields": [
+                                                        {
+                                                            "name": "dueDate",
+                                                            "highlightMode": true,
+                                                            "readOnly": true
+                                                        }
+                                                    ],
+                                                    "style": "col-lg-6"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "resource": "asset_change_activities",
+                                    "query": {
+                                        "sort": [],
+                                        "limit": 30,
+                                        "logic": "AND",
+                                        "filters": [
+                                            {
+                                                "field": "id",
+                                                "operator": "eq",
+                                                "_operator": "eq",
+                                                "value": "{{assetChangeActivityID}}",
+                                                "type": "primitive"
+                                            }
+                                        ]
+                                    },
+                                    "style": "display-inline-block",
+                                    "displayType": "card-view",
+                                    "gridColumns": [],
+                                    "widgetAlwaysDisplay": true,
+                                    "recordTitle": {
+                                        "type": "sectionHeader",
+                                        "wid": "83cbf003-5b82-47c7-91bc-79cd59dc0c26",
+                                        "clone": false,
+                                        "remove": false
+                                    },
+                                    "relatedTemplate": {
+                                        "type": "rows",
+                                        "rows": [],
+                                        "wid": "92061507-a513-4388-8f83-6b28943c50ea"
+                                    }
+                                }
+                            },
+                            {
+                                "type": "lineItem",
+                                "config": {
+                                    "query": {
+                                        "sort": [],
+                                        "limit": 5,
+                                        "logic": "AND",
+                                        "filters": [
+                                            {
+                                                "field": "assetChangeActivities.id",
+                                                "operator": "eq",
+                                                "_operator": "eq",
+                                                "value": "{{assetChangeActivityID}}",
+                                                "type": "primitive"
+                                            }
+                                        ]
+                                    },
+                                    "mapping": {
+                                        "assignedToPerson": ""
+                                    },
+                                    "columns": [
+                                        "content",
+                                        "createUser",
+                                        "createDate"
+                                    ],
+                                    "wid": "da31f18f-3d77-4a73-96cf-2016c1b4d3ff",
+                                    "title": "Latest 5 Comments",
+                                    "module": "comments",
+                                    "assignedToSetting": "all"
+                                }
+                            }
+                        ],
+                        "style": "col-lg-12"
+                    }
+                ],
+                "wid": "f207f02d-85f5-4187-9d7e-1e0ea8741217",
+                "container": true,
+                "_collapsed": false
+            },
+            {
+                "columns": [
+                    {
+                        "widgets": [
+                            {
+                                "type": "sectionHeader",
+                                "config": {
+                                    "wid": "2a73fc24-3a99-46d2-bd91-9f4ade043c87",
+                                    "sectionText": "<h5 style=\"background: #404142; padding: 5px; text-align: left;\"><span style=\"font-size: 12pt; color: #ffffff;\"><strong>RELATED RECORDS<\/strong><\/span><\/h5>"
+                                }
+                            },
+                            {
+                                "type": "rows",
+                                "config": {
+                                    "wid": "30aa756c-a024-41f3-8c3d-b4646011bd42",
+                                    "rows": [
+                                        {
+                                            "columns": [
+                                                {
+                                                    "widgets": [
+                                                        {
+                                                            "type": "performanceMetrics",
+                                                            "config": {
+                                                                "wid": "d1cbe70b-d276-49ee-a4d9-be8c78ce7b59",
+                                                                "includeFailedPlaybooks": true,
+                                                                "excludeConfigActions": true,
+                                                                "days": 30,
+                                                                "showPercentageChanges": false,
+                                                                "metricsType": "totalCount",
+                                                                "title": "Related Assets",
+                                                                "resource": "assets",
+                                                                "query": {
+                                                                    "sort": [],
+                                                                    "limit": 30,
+                                                                    "logic": "AND",
+                                                                    "filters": [
+                                                                        {
+                                                                            "field": "assetChangeActivities.id",
+                                                                            "operator": "eq",
+                                                                            "_operator": "eq",
+                                                                            "value": "{{assetChangeActivityID}}",
+                                                                            "type": "primitive"
+                                                                        }
+                                                                    ]
+                                                                },
+                                                                "timeRange": "createDate",
+                                                                "grouping": {
+                                                                    "primary": [],
+                                                                    "secondary": []
+                                                                },
+                                                                "showSavings": "dollar"
+                                                            }
+                                                        }
+                                                    ],
+                                                    "style": "col-lg-4"
+                                                },
+                                                {
+                                                    "widgets": [
+                                                        {
+                                                            "type": "performanceMetrics",
+                                                            "config": {
+                                                                "wid": "c799e5a0-c7a0-41a3-a7cb-b6b7cfd41173",
+                                                                "includeFailedPlaybooks": true,
+                                                                "excludeConfigActions": true,
+                                                                "days": 30,
+                                                                "showPercentageChanges": false,
+                                                                "metricsType": "totalCount",
+                                                                "title": "Related Vulnerabilities",
+                                                                "resource": "vulnerabilities",
+                                                                "query": {
+                                                                    "sort": [],
+                                                                    "limit": 30,
+                                                                    "logic": "AND",
+                                                                    "filters": [
+                                                                        {
+                                                                            "field": "assetChangeActivities.id",
+                                                                            "operator": "eq",
+                                                                            "_operator": "eq",
+                                                                            "value": "{{assetChangeActivityID}}",
+                                                                            "type": "primitive"
+                                                                        }
+                                                                    ]
+                                                                },
+                                                                "timeRange": "createDate",
+                                                                "grouping": {
+                                                                    "primary": [],
+                                                                    "secondary": []
+                                                                },
+                                                                "showSavings": "dollar"
+                                                            }
+                                                        }
+                                                    ],
+                                                    "style": "col-lg-4"
+                                                },
+                                                {
+                                                    "widgets": [
+                                                        {
+                                                            "type": "performanceMetrics",
+                                                            "config": {
+                                                                "wid": "3908fbed-7b9f-42d2-81da-c71d2cc87177",
+                                                                "includeFailedPlaybooks": true,
+                                                                "excludeConfigActions": true,
+                                                                "days": 30,
+                                                                "showPercentageChanges": false,
+                                                                "metricsType": "totalCount",
+                                                                "title": "Related task",
+                                                                "resource": "tasks",
+                                                                "query": {
+                                                                    "sort": [],
+                                                                    "limit": 30,
+                                                                    "logic": "AND",
+                                                                    "filters": [
+                                                                        {
+                                                                            "field": "assetChangeActivities.id",
+                                                                            "operator": "eq",
+                                                                            "_operator": "eq",
+                                                                            "value": "{{assetChangeActivityID}}",
+                                                                            "type": "primitive"
+                                                                        }
+                                                                    ]
+                                                                },
+                                                                "timeRange": "createDate",
+                                                                "grouping": {
+                                                                    "primary": [],
+                                                                    "secondary": []
+                                                                },
+                                                                "showSavings": "dollar"
+                                                            }
+                                                        }
+                                                    ],
+                                                    "style": "col-lg-4"
+                                                }
+                                            ],
+                                            "wid": "a4ca0f75-fa90-4a47-a897-8bd0626a97b7",
+                                            "_collapsed": false,
+                                            "collapsible": false,
+                                            "collapsibleIndex": 0
+                                        }
+                                    ]
+                                }
+                            }
+                        ],
+                        "style": "col-lg-12"
+                    }
+                ],
+                "wid": "de2bf7f4-61f6-4f69-83d3-d7b7e802e6e0",
+                "container": true,
+                "_collapsed": false
+            },
+            {
+                "columns": [
+                    {
+                        "widgets": [
+                            {
+                                "type": "sectionHeader",
+                                "config": {
+                                    "wid": "be1de874-7574-494b-970d-7cf4ffc1e540",
+                                    "sectionText": "<h6 style=\"background: #404142; padding: 5px; text-align: left;\"><span style=\"font-size: 10pt; color: #ffffff;\"><strong>Related Assets<\/strong><\/span><\/h6>"
+                                }
+                            },
+                            {
+                                "type": "readonlyFormGroup",
+                                "config": {
+                                    "wid": "b9c9f668-db3c-4976-8bc8-ffbac17a4ee0",
+                                    "query": {
+                                        "sort": [],
+                                        "limit": 10,
+                                        "logic": "AND",
+                                        "filters": [
+                                            {
+                                                "field": "assetChangeActivities.id",
+                                                "operator": "eq",
+                                                "_operator": "eq",
+                                                "value": "{{assetChangeActivityID}}",
+                                                "type": "primitive"
+                                            }
+                                        ]
+                                    },
+                                    "rows": [
+                                        {
+                                            "columns": [
+                                                {
+                                                    "fields": [
+                                                        {
+                                                            "name": "hostname",
+                                                            "highlightMode": true,
+                                                            "linky": true,
+                                                            "readOnly": true
+                                                        }
+                                                    ],
+                                                    "style": "col-lg-4"
+                                                },
+                                                {
+                                                    "fields": [
+                                                        {
+                                                            "name": "status",
+                                                            "highlightMode": true,
+                                                            "linky": true,
+                                                            "readOnly": true
+                                                        }
+                                                    ],
+                                                    "style": "col-lg-4"
+                                                },
+                                                {
+                                                    "fields": [
+                                                        {
+                                                            "name": "propertyOf",
+                                                            "highlightMode": true,
+                                                            "linky": true,
+                                                            "readOnly": true
+                                                        }
+                                                    ],
+                                                    "style": "col-lg-4"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "resource": "assets",
+                                    "style": "display-inline-block",
+                                    "displayType": "card-view",
+                                    "gridColumns": [],
+                                    "widgetAlwaysDisplay": true,
+                                    "recordTitle": {
+                                        "type": "sectionHeader",
+                                        "wid": "fc8a3c49-0970-4b5f-9a14-c27b0cb62322",
+                                        "clone": false,
+                                        "remove": false
+                                    },
+                                    "relatedTemplate": {
+                                        "type": "rows",
+                                        "rows": [],
+                                        "wid": "b8adc888-303e-413d-a2a7-d724144e9313"
+                                    }
+                                }
+                            }
+                        ],
+                        "style": "col-lg-12"
+                    }
+                ],
+                "wid": "ca9d2f12-f558-459e-a30a-05602d11d32b",
+                "container": true,
+                "_collapsed": false
+            },
+            {
+                "columns": [
+                    {
+                        "widgets": [
+                            {
+                                "type": "sectionHeader",
+                                "config": {
+                                    "wid": "644edf16-9009-440b-83f5-a6727f2bfea5",
+                                    "sectionText": "<h6 style=\"background: #404142; padding: 5px; text-align: left;\"><span style=\"font-size: 10pt; color: #ffffff;\"><strong>Related Vulnerabilities<\/strong><\/span><\/h6>",
+                                    "query": {
+                                        "filters": [],
+                                        "sort": [],
+                                        "limit": 10
+                                    },
+                                    "editorType": "html"
+                                }
+                            },
+                            {
+                                "type": "readonlyFormGroup",
+                                "config": {
+                                    "wid": "fbaead0a-a0c2-493c-9239-819c8e762b22",
+                                    "query": {
+                                        "sort": [],
+                                        "limit": 10,
+                                        "logic": "AND",
+                                        "filters": [
+                                            {
+                                                "field": "assetChangeActivities.id",
+                                                "operator": "eq",
+                                                "_operator": "eq",
+                                                "value": "{{assetChangeActivityID}}",
+                                                "type": "primitive"
+                                            }
+                                        ]
+                                    },
+                                    "rows": [
+                                        {
+                                            "columns": [
+                                                {
+                                                    "fields": [
+                                                        {
+                                                            "name": "name",
+                                                            "highlightMode": true,
+                                                            "readOnly": true
+                                                        }
+                                                    ],
+                                                    "style": "col-lg-12"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "columns": [
+                                                {
+                                                    "fields": [
+                                                        {
+                                                            "name": "vulnerabilityId",
+                                                            "highlightMode": true,
+                                                            "readOnly": true
+                                                        }
+                                                    ],
+                                                    "style": "col-lg-3"
+                                                },
+                                                {
+                                                    "fields": [
+                                                        {
+                                                            "name": "cvssTemporalScore",
+                                                            "highlightMode": true,
+                                                            "readOnly": true
+                                                        }
+                                                    ],
+                                                    "style": "col-lg-3"
+                                                },
+                                                {
+                                                    "fields": [
+                                                        {
+                                                            "name": "firstSeenDate",
+                                                            "highlightMode": true,
+                                                            "readOnly": true
+                                                        }
+                                                    ],
+                                                    "style": "col-lg-3"
+                                                },
+                                                {
+                                                    "fields": [
+                                                        {
+                                                            "name": "lastSeenScan",
+                                                            "highlightMode": true,
+                                                            "readOnly": true
+                                                        }
+                                                    ],
+                                                    "style": "col-lg-3"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "columns": [
+                                                {
+                                                    "fields": [
+                                                        {
+                                                            "name": "cvss",
+                                                            "highlightMode": true,
+                                                            "readOnly": true
+                                                        }
+                                                    ],
+                                                    "style": "col-lg-4"
+                                                },
+                                                {
+                                                    "fields": [
+                                                        {
+                                                            "name": "cveId",
+                                                            "highlightMode": true,
+                                                            "readOnly": true
+                                                        }
+                                                    ],
+                                                    "style": "col-lg-4"
+                                                },
+                                                {
+                                                    "fields": [
+                                                        {
+                                                            "name": "exploitSkills",
+                                                            "highlightMode": true,
+                                                            "readOnly": true
+                                                        }
+                                                    ],
+                                                    "style": "col-lg-4"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "columns": [
+                                                {
+                                                    "fields": [
+                                                        {
+                                                            "name": "severity",
+                                                            "highlightMode": true,
+                                                            "readOnly": true
+                                                        }
+                                                    ],
+                                                    "style": "col-lg-4"
+                                                },
+                                                {
+                                                    "fields": [
+                                                        {
+                                                            "name": "status",
+                                                            "highlightMode": true,
+                                                            "readOnly": true
+                                                        }
+                                                    ],
+                                                    "style": "col-lg-4"
+                                                },
+                                                {
+                                                    "fields": [
+                                                        {
+                                                            "name": "riskScore",
+                                                            "highlightMode": true,
+                                                            "readOnly": true
+                                                        }
+                                                    ],
+                                                    "style": "col-lg-4"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "resource": "vulnerabilities",
+                                    "style": "display-inline-block",
+                                    "displayType": "card-view",
+                                    "gridColumns": [],
+                                    "widgetAlwaysDisplay": true,
+                                    "recordTitle": {
+                                        "type": "sectionHeader",
+                                        "wid": "af03456d-b97c-4e90-93c5-343477608d98",
+                                        "clone": false,
+                                        "remove": false
+                                    },
+                                    "relatedTemplate": {
+                                        "type": "rows",
+                                        "rows": [],
+                                        "wid": "7945b91d-3e07-41cb-af87-73215f9418a1"
+                                    }
+                                }
+                            }
+                        ],
+                        "style": "col-lg-12"
+                    }
+                ],
+                "wid": "2eb5df90-9a05-4446-81b7-4d9742aa2174",
+                "container": true,
+                "_collapsed": false
+            },
+            {
+                "columns": [
+                    {
+                        "widgets": [
+                            {
+                                "type": "sectionHeader",
+                                "config": {
+                                    "wid": "89d92097-f49c-4eeb-85c5-6583fa80ec19",
+                                    "sectionText": "<h6 style=\"background: #404142; padding: 5px; text-align: left;\"><span style=\"font-size: 10pt; color: #ffffff;\"><strong>Related Tasks<\/strong><\/span><\/h6>"
+                                }
+                            },
+                            {
+                                "type": "readonlyFormGroup",
+                                "config": {
+                                    "wid": "13bf953e-aa4f-4eab-899e-48d04de44f5d",
+                                    "query": {
+                                        "sort": [],
+                                        "limit": 10,
+                                        "logic": "AND",
+                                        "filters": [
+                                            {
+                                                "field": "assetChangeActivities.id",
+                                                "operator": "eq",
+                                                "_operator": "eq",
+                                                "value": "{{assetChangeActivityID}}",
+                                                "type": "primitive"
+                                            }
+                                        ]
+                                    },
+                                    "rows": [
+                                        {
+                                            "columns": [
+                                                {
+                                                    "fields": [
+                                                        {
+                                                            "name": "name",
+                                                            "highlightMode": true,
+                                                            "linky": true,
+                                                            "readOnly": true
+                                                        }
+                                                    ],
+                                                    "style": "col-lg-12"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "columns": [
+                                                {
+                                                    "fields": [
+                                                        {
+                                                            "name": "status",
+                                                            "highlightMode": true,
+                                                            "linky": true,
+                                                            "readOnly": true
+                                                        }
+                                                    ],
+                                                    "style": "col-lg-3"
+                                                },
+                                                {
+                                                    "fields": [
+                                                        {
+                                                            "name": "priority",
+                                                            "highlightMode": true,
+                                                            "linky": true,
+                                                            "readOnly": true
+                                                        }
+                                                    ],
+                                                    "style": "col-lg-3"
+                                                },
+                                                {
+                                                    "fields": [
+                                                        {
+                                                            "name": "tasktype",
+                                                            "highlightMode": true,
+                                                            "linky": true,
+                                                            "readOnly": true
+                                                        }
+                                                    ],
+                                                    "style": "col-lg-3"
+                                                },
+                                                {
+                                                    "fields": [
+                                                        {
+                                                            "name": "assignedToPerson",
+                                                            "highlightMode": true,
+                                                            "linky": true,
+                                                            "readOnly": true
+                                                        }
+                                                    ],
+                                                    "style": "col-lg-3"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "resource": "tasks",
+                                    "style": "display-inline-block",
+                                    "displayType": "card-view",
+                                    "gridColumns": [],
+                                    "widgetAlwaysDisplay": true,
+                                    "recordTitle": {
+                                        "type": "sectionHeader",
+                                        "wid": "af03456d-b97c-4e90-93c5-343477608d98",
+                                        "clone": false,
+                                        "remove": false
+                                    },
+                                    "relatedTemplate": {
+                                        "type": "rows",
+                                        "rows": [],
+                                        "wid": "7945b91d-3e07-41cb-af87-73215f9418a1"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                ],
+                "wid": "897499e9-5d9e-415f-b08a-12aee9595005",
+                "container": true
+            },
+            {
+                "columns": [
+                    {
+                        "widgets": [
+                            {
+                                "type": "sectionHeader",
+                                "config": {
+                                    "wid": "171f4062-daaf-43a9-9dc0-2b99c52347f8",
+                                    "sectionText": "<p style=\"text-align: center;\"><span style=\"font-size: 10pt;\">Report Generated By FortiSOAR\u2122<\/span><\/p>"
+                                }
+                            }
+                        ],
+                        "style": "col-lg-12"
+                    }
+                ],
+                "wid": "d027f85c-fc5a-45df-9be9-09d51ede9bca",
+                "container": true,
+                "_collapsed": false
+            }
+        ],
+        "wid": "daaaadd9-c536-462a-8e54-47f8d9897aff",
+        "metadata": {
+            "customTemplateTitle": "Reporting"
+        }
+    },
+    "filterArray": [
+        {
+            "key": "assetChangeActivityID",
+            "open": true,
+            "type": "number",
+            "label": "Asset Change Activity ID",
+            "value": null,
+            "required": true,
+            "expression": "{{assetChangeActivityID}}",
+            "defaultValue": null
+        }
+    ],
+    "updateDate": null
+}

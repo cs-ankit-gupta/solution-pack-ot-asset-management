@@ -1,0 +1,571 @@
+{
+    "@context": "\/api\/3\/contexts\/Dashboard",
+    "@type": "Dashboard",
+    "uuid": "608947e3-1cc6-4f40-8518-52a008b486e4",
+    "displayName": "Asset Risk Overview",
+    "type": "rows",
+    "templateType": "dashboard",
+    "roles": [],
+    "parentTemplateId": null,
+    "config": {
+        "rows": [
+            {
+                "columns": [
+                    {
+                        "widgets": [
+                            {
+                                "type": "relationshipCount",
+                                "config": {
+                                    "wid": "6c21b5ac-df87-43c7-80fd-5eab92479ea5",
+                                    "widgetAlwaysDisplay": true,
+                                    "query": {
+                                        "sort": [
+                                            {
+                                                "field": "criticality.orderIndex",
+                                                "direction": "ASC"
+                                            }
+                                        ],
+                                        "limit": 2147483647,
+                                        "logic": "AND",
+                                        "filters": [
+                                            {
+                                                "field": "alerts.id",
+                                                "operator": "isnull",
+                                                "_operator": "isnull",
+                                                "value": "false",
+                                                "type": "primitive"
+                                            }
+                                        ],
+                                        "aggregates": [
+                                            {
+                                                "operator": "count",
+                                                "alias": "total",
+                                                "field": "alerts.uuid"
+                                            },
+                                            {
+                                                "operator": "groupby",
+                                                "alias": "criticality",
+                                                "field": "criticality.itemValue"
+                                            },
+                                            {
+                                                "operator": "groupby",
+                                                "alias": "firstOrderIndex",
+                                                "field": "criticality.orderIndex"
+                                            }
+                                        ]
+                                    },
+                                    "mapping": {
+                                        "firstGrouping": "criticality",
+                                        "secondGrouping": "alerts"
+                                    },
+                                    "assignedToSetting": "onlyMe",
+                                    "aggregate": true,
+                                    "title": "Alerts Based On Asset Criticality",
+                                    "chart": "relationshipBar",
+                                    "resource": "assets",
+                                    "primaryDataSourceLabel": "Assets",
+                                    "sortStyle": "ASC",
+                                    "resourceRelationship": "alerts",
+                                    "queryRelationship": {
+                                        "sort": [],
+                                        "limit": 30,
+                                        "logic": "AND",
+                                        "filters": []
+                                    },
+                                    "relatedDataSourceLabel": "Alerts"
+                                }
+                            }
+                        ],
+                        "style": "col-lg-6"
+                    },
+                    {
+                        "widgets": [
+                            {
+                                "type": "chart",
+                                "config": {
+                                    "wid": "4334bcfc-040d-445c-9db9-f70ef20719ab",
+                                    "widgetAlwaysDisplay": true,
+                                    "query": {
+                                        "sort": [
+                                            {
+                                                "field": "criticality.orderIndex",
+                                                "direction": "ASC"
+                                            }
+                                        ],
+                                        "limit": 2147483647,
+                                        "logic": "AND",
+                                        "filters": [],
+                                        "aggregates": [
+                                            {
+                                                "operator": "countdistinct",
+                                                "field": "*",
+                                                "alias": "total"
+                                            },
+                                            {
+                                                "operator": "groupby",
+                                                "alias": "criticality",
+                                                "field": "criticality.itemValue"
+                                            },
+                                            {
+                                                "operator": "groupby",
+                                                "alias": "color",
+                                                "field": "criticality.color"
+                                            },
+                                            {
+                                                "operator": "groupby",
+                                                "alias": "orderIndex",
+                                                "field": "criticality.orderIndex"
+                                            }
+                                        ]
+                                    },
+                                    "mapping": {
+                                        "fieldName": "criticality"
+                                    },
+                                    "assignedToSetting": "onlyMe",
+                                    "aggregate": true,
+                                    "resource": "assets",
+                                    "chart": "donut",
+                                    "title": "Assets By Criticality",
+                                    "showCount": true
+                                }
+                            }
+                        ],
+                        "style": "col-lg-6"
+                    }
+                ],
+                "wid": "0c7b35ec-032f-45cb-aef8-6230c2ecff9a",
+                "collapsible": false,
+                "collapsibleIndex": 0,
+                "_collapsed": false
+            },
+            {
+                "columns": [
+                    {
+                        "widgets": [
+                            {
+                                "type": "chart",
+                                "config": {
+                                    "wid": "9542b494-a356-4d8f-a043-faeb0178ab64",
+                                    "widgetAlwaysDisplay": true,
+                                    "query": {
+                                        "sort": [
+                                            {
+                                                "field": "level.orderIndex",
+                                                "direction": "ASC"
+                                            },
+                                            {
+                                                "field": "criticality.orderIndex",
+                                                "direction": "ASC"
+                                            }
+                                        ],
+                                        "limit": 2147483647,
+                                        "logic": "AND",
+                                        "filters": [],
+                                        "aggregates": [
+                                            {
+                                                "operator": "countdistinct",
+                                                "field": "*",
+                                                "alias": "total"
+                                            },
+                                            {
+                                                "operator": "groupby",
+                                                "alias": "level",
+                                                "field": "level.itemValue"
+                                            },
+                                            {
+                                                "operator": "groupby",
+                                                "alias": "firstOrderIndex",
+                                                "field": "level.orderIndex"
+                                            },
+                                            {
+                                                "operator": "groupby",
+                                                "alias": "criticality",
+                                                "field": "criticality.itemValue"
+                                            },
+                                            {
+                                                "operator": "groupby",
+                                                "alias": "secondOrderIndex",
+                                                "field": "criticality.orderIndex"
+                                            },
+                                            {
+                                                "operator": "groupby",
+                                                "alias": "color",
+                                                "field": "criticality.color"
+                                            }
+                                        ]
+                                    },
+                                    "mapping": {
+                                        "firstGrouping": "level",
+                                        "secondGrouping": "criticality"
+                                    },
+                                    "assignedToSetting": "onlyMe",
+                                    "aggregate": true,
+                                    "title": "Assets By Level By Criticality",
+                                    "resource": "assets",
+                                    "chart": "bar",
+                                    "barStyle": "horizontal"
+                                }
+                            }
+                        ],
+                        "style": "col-lg-12"
+                    }
+                ],
+                "wid": "a3648cf8-b74e-413e-852b-0a44106e1672",
+                "collapsible": false,
+                "collapsibleIndex": 0,
+                "_collapsed": false
+            },
+            {
+                "columns": [
+                    {
+                        "widgets": [
+                            {
+                                "type": "cardList",
+                                "config": {
+                                    "wid": "936fd65f-2410-4f9e-8516-0ce2d0d29814",
+                                    "query": {
+                                        "sort": [
+                                            {
+                                                "direction": "DESC",
+                                                "field": "createDate",
+                                                "_fieldTitle": "Created On",
+                                                "_fieldName": "createDate"
+                                            }
+                                        ],
+                                        "limit": 5,
+                                        "logic": "AND",
+                                        "filters": [
+                                            {
+                                                "field": "assets.id",
+                                                "operator": "isnull",
+                                                "_operator": "isnull",
+                                                "value": "false",
+                                                "type": "primitive"
+                                            }
+                                        ]
+                                    },
+                                    "mapping": {
+                                        "templateView": "cardView",
+                                        "assignedToPerson": null,
+                                        "picklistBar": "severity",
+                                        "title": "id",
+                                        "subTitle": "name",
+                                        "subTitle3": "severity",
+                                        "subTitle4": "assignedTo"
+                                    },
+                                    "assignedToSetting": "onlyMe",
+                                    "module": "alerts",
+                                    "title": "Recent Alerts On Critical Assets"
+                                }
+                            }
+                        ],
+                        "style": "col-lg-6"
+                    },
+                    {
+                        "widgets": [
+                            {
+                                "type": "cardList",
+                                "config": {
+                                    "wid": "ce0b0bbd-d175-4b93-b0d7-f4d6eb41d2b3",
+                                    "query": {
+                                        "sort": [
+                                            {
+                                                "direction": "DESC",
+                                                "field": "createDate",
+                                                "_fieldTitle": "Created On",
+                                                "_fieldName": "createDate"
+                                            }
+                                        ],
+                                        "limit": 5,
+                                        "logic": "AND",
+                                        "filters": [
+                                            {
+                                                "field": "assets.zone",
+                                                "operator": "eq",
+                                                "value": "\/api\/3\/picklists\/4104499e-f231-42e3-98f9-888af67e0555",
+                                                "_value": {
+                                                    "display": "Conduits",
+                                                    "itemValue": "Conduits",
+                                                    "@id": "\/api\/3\/picklists\/4104499e-f231-42e3-98f9-888af67e0555"
+                                                },
+                                                "type": "object"
+                                            }
+                                        ]
+                                    },
+                                    "mapping": {
+                                        "templateView": "cardView",
+                                        "assignedToPerson": null,
+                                        "picklistBar": null,
+                                        "title": "severity",
+                                        "subTitle": "name",
+                                        "subTitle3": "type",
+                                        "subTitle4": "assignedTo"
+                                    },
+                                    "assignedToSetting": "onlyMe",
+                                    "title": "Recent Alerts In DMZs",
+                                    "module": "alerts"
+                                }
+                            }
+                        ],
+                        "style": "col-lg-6"
+                    }
+                ],
+                "wid": "790c4c34-fbdd-4172-b648-081da449bfbd",
+                "_collapsed": false,
+                "collapsible": false,
+                "collapsibleIndex": 0
+            },
+            {
+                "columns": [
+                    {
+                        "widgets": [
+                            {
+                                "type": "rows",
+                                "config": {
+                                    "wid": "bd028e00-6f00-4e76-9ace-fc5b29282e39",
+                                    "rows": [
+                                        {
+                                            "columns": [
+                                                {
+                                                    "widgets": [
+                                                        {
+                                                            "type": "cardList",
+                                                            "config": {
+                                                                "wid": "6d5e5a3c-b6c3-4de2-8e7b-295922b5442a",
+                                                                "query": {
+                                                                    "sort": [
+                                                                        {
+                                                                            "direction": "DESC",
+                                                                            "field": "createDate",
+                                                                            "_fieldTitle": "Created On",
+                                                                            "_fieldName": "createDate"
+                                                                        }
+                                                                    ],
+                                                                    "limit": 5,
+                                                                    "logic": "AND",
+                                                                    "filters": [
+                                                                        {
+                                                                            "field": "assets.zone",
+                                                                            "operator": "eq",
+                                                                            "value": "\/api\/3\/picklists\/66dc774d-1f2b-44c7-b1d3-d17eda9febba",
+                                                                            "_value": {
+                                                                                "display": "Cell",
+                                                                                "itemValue": "Cell",
+                                                                                "@id": "\/api\/3\/picklists\/66dc774d-1f2b-44c7-b1d3-d17eda9febba"
+                                                                            },
+                                                                            "type": "object"
+                                                                        }
+                                                                    ]
+                                                                },
+                                                                "mapping": {
+                                                                    "templateView": "cardView",
+                                                                    "assignedToPerson": null,
+                                                                    "picklistBar": null,
+                                                                    "title": "severity",
+                                                                    "subTitle": "name",
+                                                                    "subTitle3": "type",
+                                                                    "subTitle4": "assignedTo"
+                                                                },
+                                                                "assignedToSetting": "onlyMe",
+                                                                "title": "Recent Alerts In Cell Zone",
+                                                                "module": "alerts"
+                                                            }
+                                                        }
+                                                    ],
+                                                    "style": "col-lg-12"
+                                                }
+                                            ],
+                                            "wid": "2fd01e75-1373-44c5-b705-792bad2c57b8",
+                                            "_collapsed": false
+                                        }
+                                    ]
+                                }
+                            }
+                        ],
+                        "style": "col-lg-4"
+                    },
+                    {
+                        "widgets": [
+                            {
+                                "type": "rows",
+                                "config": {
+                                    "wid": "d09ef8fb-33f6-445a-8537-6823f6bba982",
+                                    "rows": [
+                                        {
+                                            "columns": [
+                                                {
+                                                    "widgets": [
+                                                        {
+                                                            "type": "cardList",
+                                                            "config": {
+                                                                "wid": "617e213b-a688-4006-a655-eace7beee5f6",
+                                                                "query": {
+                                                                    "sort": [
+                                                                        {
+                                                                            "direction": "DESC",
+                                                                            "field": "createDate",
+                                                                            "_fieldTitle": "Created On",
+                                                                            "_fieldName": "createDate"
+                                                                        }
+                                                                    ],
+                                                                    "limit": 5,
+                                                                    "logic": "AND",
+                                                                    "filters": [
+                                                                        {
+                                                                            "field": "assets.zone",
+                                                                            "operator": "eq",
+                                                                            "value": "\/api\/3\/picklists\/0a216937-8ab4-4b6e-9e1b-2a5d0637f8dd",
+                                                                            "_value": {
+                                                                                "display": "Manufacturing",
+                                                                                "itemValue": "Manufacturing",
+                                                                                "@id": "\/api\/3\/picklists\/0a216937-8ab4-4b6e-9e1b-2a5d0637f8dd"
+                                                                            },
+                                                                            "type": "object"
+                                                                        }
+                                                                    ]
+                                                                },
+                                                                "mapping": {
+                                                                    "templateView": "cardView",
+                                                                    "assignedToPerson": null,
+                                                                    "picklistBar": null,
+                                                                    "title": "severity",
+                                                                    "subTitle": "name",
+                                                                    "subTitle3": "type",
+                                                                    "subTitle4": "assignedTo"
+                                                                },
+                                                                "assignedToSetting": "onlyMe",
+                                                                "title": "Recent Alerts In Manufacturing Zone",
+                                                                "module": "alerts"
+                                                            }
+                                                        }
+                                                    ],
+                                                    "style": "col-lg-12"
+                                                }
+                                            ],
+                                            "wid": "fe501924-271a-4c97-9705-0918cd4ebee8",
+                                            "_collapsed": false
+                                        }
+                                    ]
+                                }
+                            }
+                        ],
+                        "style": "col-lg-4"
+                    },
+                    {
+                        "widgets": [
+                            {
+                                "type": "rows",
+                                "config": {
+                                    "wid": "22dc6c6c-4383-4d38-a2d9-75e5bb811e00",
+                                    "rows": [
+                                        {
+                                            "columns": [
+                                                {
+                                                    "widgets": [
+                                                        {
+                                                            "type": "cardList",
+                                                            "config": {
+                                                                "wid": "029f727e-db40-4271-b9e5-2fb3922d910b",
+                                                                "query": {
+                                                                    "sort": [
+                                                                        {
+                                                                            "direction": "DESC",
+                                                                            "field": "createDate",
+                                                                            "_fieldTitle": "Created On",
+                                                                            "_fieldName": "createDate"
+                                                                        }
+                                                                    ],
+                                                                    "limit": 5,
+                                                                    "logic": "AND",
+                                                                    "filters": [
+                                                                        {
+                                                                            "field": "assets.zone",
+                                                                            "operator": "eq",
+                                                                            "value": "\/api\/3\/picklists\/1f6a2248-0d8d-4233-9764-5d641a257ba7",
+                                                                            "_value": {
+                                                                                "display": "Enterprise",
+                                                                                "itemValue": "Enterprise",
+                                                                                "@id": "\/api\/3\/picklists\/1f6a2248-0d8d-4233-9764-5d641a257ba7"
+                                                                            },
+                                                                            "type": "object"
+                                                                        }
+                                                                    ]
+                                                                },
+                                                                "mapping": {
+                                                                    "templateView": "cardView",
+                                                                    "assignedToPerson": null,
+                                                                    "picklistBar": null,
+                                                                    "title": "severity",
+                                                                    "subTitle": "name",
+                                                                    "subTitle3": "type",
+                                                                    "subTitle4": "assignedTo"
+                                                                },
+                                                                "assignedToSetting": "onlyMe",
+                                                                "title": "Recent Alerts In Enterprise Zone",
+                                                                "module": "alerts"
+                                                            }
+                                                        }
+                                                    ],
+                                                    "style": "col-lg-12"
+                                                }
+                                            ],
+                                            "wid": "24b8f9f7-6e06-4cc0-af57-fcafe63d6b9c",
+                                            "_collapsed": false
+                                        }
+                                    ]
+                                }
+                            }
+                        ],
+                        "style": "col-lg-4"
+                    }
+                ],
+                "wid": "3d00067f-8495-485e-b90b-de9d434f0362",
+                "collapsible": false,
+                "collapsibleIndex": 0,
+                "_collapsed": false
+            },
+            {
+                "columns": [
+                    {
+                        "widgets": [
+                            {
+                                "type": "rows",
+                                "config": {
+                                    "wid": "3769207a-ef8a-4cd6-bc51-2ae7fed2b76d",
+                                    "rows": [
+                                        {
+                                            "columns": [
+                                                {
+                                                    "widgets": [
+                                                        {
+                                                            "type": "mitreAttackSpread-1.0.0",
+                                                            "config": {
+                                                                "wid": "5f47d457-4be4-48c1-bb8b-406b81f20eeb"
+                                                            }
+                                                        }
+                                                    ],
+                                                    "style": "col-lg-12"
+                                                }
+                                            ],
+                                            "wid": "cf42cde2-a069-465f-b0e4-b285193f7256",
+                                            "_collapsed": false
+                                        }
+                                    ]
+                                }
+                            }
+                        ],
+                        "style": "col-lg-12"
+                    }
+                ],
+                "wid": "f2963dbf-4137-4477-b541-f03221abc1d4",
+                "_collapsed": false
+            }
+        ],
+        "wid": "832808bf-dcd5-4606-91f8-0db0cebeb2d1",
+        "metadata": {
+            "customTemplateTitle": "Dashboard"
+        }
+    },
+    "filterArray": [],
+    "updateDate": null
+}

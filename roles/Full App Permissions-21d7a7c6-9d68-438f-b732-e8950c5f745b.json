@@ -1,0 +1,34 @@
+{
+    "@context": "\/api\/3\/contexts\/Role",
+    "@id": "\/api\/3\/roles\/21d7a7c6-9d68-438f-b732-e8950c5f745b",
+    "@type": "Role",
+    "description": "Essentially the root user, use carefully",
+    "name": "Full App Permissions",
+    "modulePermissions": {
+        "48": {
+            "@id": "\/api\/3\/module_permissions\/fbe7b590-0c23-45d6-9089-760784353c2c",
+            "@type": "ModulePermission",
+            "canCreate": true,
+            "canExecute": true,
+            "canRead": true,
+            "canUpdate": true,
+            "canDelete": true,
+            "fieldPermissions": [],
+            "module": "asset_change_activities",
+            "uuid": "fbe7b590-0c23-45d6-9089-760784353c2c"
+        },
+        "49": {
+            "@id": "\/api\/3\/module_permissions\/889f1098-1d7e-4de1-a6eb-01a6b4ca799f",
+            "@type": "ModulePermission",
+            "canCreate": true,
+            "canExecute": true,
+            "canRead": true,
+            "canUpdate": true,
+            "canDelete": true,
+            "fieldPermissions": [],
+            "module": "asset_resources",
+            "uuid": "889f1098-1d7e-4de1-a6eb-01a6b4ca799f"
+        }
+    },
+    "uuid": "21d7a7c6-9d68-438f-b732-e8950c5f745b"
+}

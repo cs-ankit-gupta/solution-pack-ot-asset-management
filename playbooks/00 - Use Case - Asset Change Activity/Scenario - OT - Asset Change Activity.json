@@ -1,0 +1,376 @@
+{
+    "@type": "Workflow",
+    "triggerLimit": null,
+    "name": "Scenario - OT - Asset Change Activity",
+    "aliasName": null,
+    "tag": null,
+    "description": "Generate an Asset Change Activity record for type Add New Asset and Medium Impact Baseline Change.",
+    "isActive": true,
+    "debug": false,
+    "singleRecordExecution": false,
+    "remoteExecutableFlag": false,
+    "parameters": [],
+    "synchronous": false,
+    "collection": "\/api\/3\/workflow_collections\/0dc98705-9053-4d76-8a44-b73cf7f06666",
+    "versions": [],
+    "triggerStep": "\/api\/3\/workflow_steps\/b3f56374-2cdb-4aaa-abcc-038887918ce1",
+    "steps": [
+        {
+            "@type": "WorkflowStep",
+            "name": "Asset Change Activity_Medium Impact Baseline Change",
+            "description": null,
+            "arguments": {
+                "resource": {
+                    "title": "Medium Impact Baseline Change - Patch For log 4J",
+                    "status": "\/api\/3\/picklists\/5f43696e-b2ad-4f03-8092-8fcdef2ef76d",
+                    "dueDate": "{{arrow.get(arrow.utcnow().shift(days=+vars.dueDays)).int_timestamp}}",
+                    "__replace": "",
+                    "assignedTo": "\/api\/3\/people\/3451141c-bac6-467c-8d72-85e0fab569ce",
+                    "recordTags": [
+                        "\/api\/3\/tags\/Medium Impact Baseline Change",
+                        "\/api\/3\/tags\/sampleAssetChangeActivity",
+                        "\/api\/3\/tags\/OT IT"
+                    ],
+                    "description": "Apache Log4j2 versions 2.0-beta7 through 2.17.0 (excluding security fix releases 2.3.2 and 2.12.4) are vulnerable to a remote code execution (RCE) attack where an attacker with permission to modify the logging configuration file can construct a malicious configuration using a JDBC Appender with a data source referencing a JNDI URI which can execute remote code. This issue is fixed by limiting JNDI data source names to the java protocol in Log4j2 versions 2.17.1, 2.12.4, and 2.3.2.",
+                    "justification": "Log4Shell, also known as CVE-2021-44228, was first reported privately to Apache on November 24 and was patched on December 9. It affects Apache Struts, Apache Solr, Apache Druid, Elasticsearch, Apache Dubbo, and VMware vCenter.",
+                    "assetChangeType": "\/api\/3\/picklists\/94965daf-7707-4b41-8fc5-302d5db4ee6c"
+                },
+                "operation": "Overwrite",
+                "collection": "\/api\/3\/asset_change_activities",
+                "__recommend": [],
+                "fieldOperation": {
+                    "recordTags": "Overwrite"
+                },
+                "step_variables": {
+                    "__dummy": "{{vars.recordIRI.append(vars.result['@id'])}}"
+                }
+            },
+            "status": null,
+            "top": "570",
+            "left": "125",
+            "stepType": "\/api\/3\/workflow_step_types\/2597053c-e718-44b4-8394-4d40fe26d357",
+            "group": null,
+            "uuid": "1b3309cf-7eeb-45c5-950a-8560300488bd"
+        },
+        {
+            "@type": "WorkflowStep",
+            "name": "Update Medium Baseline Asset Change Activity",
+            "description": null,
+            "arguments": {
+                "resource": {
+                    "__link": {
+                        "assets": "{{vars.mediumAsset[0]['@id']}}"
+                    }
+                },
+                "operation": "Append",
+                "collection": "{{vars.steps.Asset_Change_Activity_Medium_Impact_Baseline_Change['@id']}}",
+                "__recommend": [],
+                "collectionType": "\/api\/3\/asset_change_activities",
+                "fieldOperation": {
+                    "recordTags": "Append"
+                },
+                "step_variables": []
+            },
+            "status": null,
+            "top": "975",
+            "left": "125",
+            "stepType": "\/api\/3\/workflow_step_types\/b593663d-7d13-40ce-a3a3-96dece928722",
+            "group": null,
+            "uuid": "354e0f44-2404-4eeb-aa5e-f7facedb5af6"
+        },
+        {
+            "@type": "WorkflowStep",
+            "name": "Asset Change Activity_Add New Asset",
+            "description": null,
+            "arguments": {
+                "resource": {
+                    "title": "Add New Cyber Asset - Intel Core i7-13700K",
+                    "status": "\/api\/3\/picklists\/5f43696e-b2ad-4f03-8092-8fcdef2ef76d",
+                    "dueDate": "{{arrow.get(arrow.utcnow().shift(days=+vars.dueDays)).int_timestamp}}",
+                    "__replace": "",
+                    "assignedTo": "\/api\/3\/people\/3451141c-bac6-467c-8d72-85e0fab569ce",
+                    "recordTags": [
+                        "\/api\/3\/tags\/Add Cyber Asset",
+                        "\/api\/3\/tags\/sampleAssetChangeActivity",
+                        "\/api\/3\/tags\/OT IT"
+                    ],
+                    "description": "Power up your productivity, and content creation with the Intel Core i7-13700K 3.4 GHz 16-Core LGA 1700 Processor. This 13th generation desktop processor builds upon the Hybrid Core architecture and Intel 7 process by fitting 16 cores\u2014 four more than the previous generation\u2014 onto a single processor while still supporting the LGA 1700 socket. Designed to provide high performance, the Core i7-13700K features eight low-voltage Efficient-cores that handle background tasks for multitasking while the eight 3.4 GHz Performance-cores provide speed for demanding applications and games. The built-in Intel Thread Director ensures that the two work seamlessly together by dynamically and intelligently assigning workloads to the right core at the right time.",
+                    "justification": "The latest i7 chips offer up to six cores and 12 threads, making them better suited for advanced multitasking. Core i7 processors are considered ideal for multimedia consumption, high-end gaming, demanding applications such as Adobe's Creative Suite, and scientific work.",
+                    "assetChangeType": "\/api\/3\/picklists\/8aaa06ca-9b13-405a-96d2-29381246d748"
+                },
+                "operation": "Overwrite",
+                "collection": "\/api\/3\/asset_change_activities",
+                "__recommend": [],
+                "fieldOperation": {
+                    "recordTags": "Overwrite"
+                },
+                "step_variables": {
+                    "__dummy": "{{vars.recordIRI.append(vars.result['@id'])}}"
+                }
+            },
+            "status": null,
+            "top": "300",
+            "left": "125",
+            "stepType": "\/api\/3\/workflow_step_types\/2597053c-e718-44b4-8394-4d40fe26d357",
+            "group": null,
+            "uuid": "699e1aac-ecbc-45b7-a66b-dbe8fc95b4a1"
+        },
+        {
+            "@type": "WorkflowStep",
+            "name": "Output",
+            "description": null,
+            "arguments": {
+                "@id": "{{vars.recordIRI}}"
+            },
+            "status": null,
+            "top": "1110",
+            "left": "125",
+            "stepType": "\/api\/3\/workflow_step_types\/04d0cf46-b6a8-42c4-8683-60a7eaa69e8f",
+            "group": null,
+            "uuid": "6ece692c-6253-43b5-93c7-aa50759f365f"
+        },
+        {
+            "@type": "WorkflowStep",
+            "name": "Add New Asset",
+            "description": null,
+            "arguments": {
+                "resource": {
+                    "ip": "101.10.60.125",
+                    "name": "Intel Core i7-13700K",
+                    "zone": "\/api\/3\/picklists\/1f6a2248-0d8d-4233-9764-5d641a257ba7",
+                    "level": "\/api\/3\/picklists\/2c1b93fc-05dd-4aba-a9d4-6a41dd453cf8",
+                    "state": "\/api\/3\/picklists\/b31da3b9-6f87-469e-a1bf-2517c48a7001",
+                    "status": "\/api\/3\/picklists\/421c20cd-e63d-4e32-9a25-774b2155cd24",
+                    "vendor": "Intel",
+                    "category": "\/api\/3\/picklists\/373f6e62-4229-4fbe-9a68-085ec266ff69",
+                    "hostname": "Intel Core i7-13700K",
+                    "__replace": "",
+                    "assetType": "\/api\/3\/picklists\/7630b182-4930-4f97-beec-3c3a5372cb3b",
+                    "assetClass": "\/api\/3\/picklists\/00cb224e-4198-4547-bbcb-a90bb9a60806",
+                    "macAddress": "00:12:A1:7F:F1:42",
+                    "recordTags": [
+                        "\/api\/3\/tags\/sampleAsset"
+                    ],
+                    "criticality": "\/api\/3\/picklists\/eb7b0557-971d-4d5c-abd2-23d0d8834a29",
+                    "operatingSystem": "\/api\/3\/picklists\/f0fc6b95-965f-4b65-9b3c-bb3c7f790c1d",
+                    "assetChangeActivities": "{{vars.steps.Asset_Change_Activity_Add_New_Asset['@id']}}"
+                },
+                "operation": "Overwrite",
+                "collection": "\/api\/3\/assets",
+                "__recommend": [],
+                "fieldOperation": {
+                    "protocol": "Overwrite",
+                    "recordTags": "Overwrite"
+                },
+                "step_variables": {
+                    "__dummy": "{{vars.recordIRI.append(vars.result['@id'])}}"
+                }
+            },
+            "status": null,
+            "top": "435",
+            "left": "125",
+            "stepType": "\/api\/3\/workflow_step_types\/2597053c-e718-44b4-8394-4d40fe26d357",
+            "group": null,
+            "uuid": "88e679c4-1578-448b-8d91-f5a929ee9937"
+        },
+        {
+            "@type": "WorkflowStep",
+            "name": "Start",
+            "description": null,
+            "arguments": {
+                "step_variables": {
+                    "input": {
+                        "params": []
+                    }
+                }
+            },
+            "status": null,
+            "top": "30",
+            "left": "125",
+            "stepType": "\/api\/3\/workflow_step_types\/b348f017-9a94-471f-87f8-ce88b6a7ad62",
+            "group": null,
+            "uuid": "b3f56374-2cdb-4aaa-abcc-038887918ce1"
+        },
+        {
+            "@type": "WorkflowStep",
+            "name": "Medium Impact Baseline Change Asset",
+            "description": null,
+            "arguments": {
+                "when": "{{vars.steps.Find_Asset | length == 0}}",
+                "resource": {
+                    "ip": "101.10.60.124",
+                    "name": "{{vars.mediumImpactAsset}}",
+                    "zone": "\/api\/3\/picklists\/1f6a2248-0d8d-4233-9764-5d641a257ba7",
+                    "level": "\/api\/3\/picklists\/2c1b93fc-05dd-4aba-a9d4-6a41dd453cf8",
+                    "state": "\/api\/3\/picklists\/b31da3b9-6f87-469e-a1bf-2517c48a7001",
+                    "status": "\/api\/3\/picklists\/421c20cd-e63d-4e32-9a25-774b2155cd24",
+                    "vendor": "Intel",
+                    "category": "\/api\/3\/picklists\/373f6e62-4229-4fbe-9a68-085ec266ff69",
+                    "hostname": "{{vars.mediumImpactAsset}}",
+                    "__replace": "false",
+                    "assetType": "\/api\/3\/picklists\/7630b182-4930-4f97-beec-3c3a5372cb3b",
+                    "assetClass": "\/api\/3\/picklists\/00cb224e-4198-4547-bbcb-a90bb9a60806",
+                    "macAddress": "00:12:D1:7F:01:47",
+                    "recordTags": [
+                        "\/api\/3\/tags\/Medium Impact Baseline Change",
+                        "\/api\/3\/tags\/sampleAsset"
+                    ],
+                    "criticality": "\/api\/3\/picklists\/eb7b0557-971d-4d5c-abd2-23d0d8834a29",
+                    "operatingSystem": "\/api\/3\/picklists\/f0fc6b95-965f-4b65-9b3c-bb3c7f790c1d",
+                    "assetChangeActivities": "{{vars.steps.Asset_Change_Activity_Medium_Impact_Baseline_Change['@id']}}"
+                },
+                "operation": "Overwrite",
+                "collection": "\/api\/3\/upsert\/assets",
+                "__recommend": [],
+                "fieldOperation": {
+                    "protocol": "Overwrite",
+                    "recordTags": "Overwrite"
+                },
+                "step_variables": {
+                    "__dummy": "{{vars.recordIRI.append(vars.result['@id'])}}",
+                    "mediumAsset": "{% set data = [] %}{% set _ = data.append(vars.result) %}{{data}}"
+                }
+            },
+            "status": null,
+            "top": "840",
+            "left": "125",
+            "stepType": "\/api\/3\/workflow_step_types\/2597053c-e718-44b4-8394-4d40fe26d357",
+            "group": null,
+            "uuid": "b5356aef-68e6-4386-991d-b5dc432e5fb7"
+        },
+        {
+            "@type": "WorkflowStep",
+            "name": "Configuration",
+            "description": null,
+            "arguments": {
+                "dueDays": "2",
+                "recordIRI": "[]",
+                "mediumImpactAsset": "Intel Xeon\u00ae Gold 5218R 2.1GHz"
+            },
+            "status": null,
+            "top": "165",
+            "left": "125",
+            "stepType": "\/api\/3\/workflow_step_types\/04d0cf46-b6a8-42c4-8683-60a7eaa69e8f",
+            "group": null,
+            "uuid": "c859dbdb-6539-463b-9e22-a35f71c15e3e"
+        },
+        {
+            "@type": "WorkflowStep",
+            "name": "Find Asset",
+            "description": null,
+            "arguments": {
+                "query": {
+                    "sort": [],
+                    "limit": 30,
+                    "logic": "AND",
+                    "filters": [
+                        {
+                            "type": "primitive",
+                            "field": "hostname",
+                            "value": "{{vars.mediumImpactAsset}}",
+                            "operator": "eq",
+                            "_operator": "eq"
+                        }
+                    ]
+                },
+                "module": "assets?$limit=30",
+                "step_variables": {
+                    "mediumAsset": "{{vars.result}}"
+                }
+            },
+            "status": null,
+            "top": "705",
+            "left": "125",
+            "stepType": "\/api\/3\/workflow_step_types\/b593663d-7d13-40ce-a3a3-96dece928770",
+            "group": null,
+            "uuid": "ffec2268-49d3-43f3-be77-f2045b787dd9"
+        }
+    ],
+    "routes": [
+        {
+            "@type": "WorkflowRoute",
+            "name": "Asset Change Activity_Medium Impact Baseline Change -> Find Asset",
+            "targetStep": "\/api\/3\/workflow_steps\/ffec2268-49d3-43f3-be77-f2045b787dd9",
+            "sourceStep": "\/api\/3\/workflow_steps\/1b3309cf-7eeb-45c5-950a-8560300488bd",
+            "label": null,
+            "isExecuted": false,
+            "uuid": "033b6d71-0f35-4d5a-8895-48af3fea38ea"
+        },
+        {
+            "@type": "WorkflowRoute",
+            "name": "Medium Impact Baseline Change Asset -> Update Medium Baseline Asset Change Activity",
+            "targetStep": "\/api\/3\/workflow_steps\/354e0f44-2404-4eeb-aa5e-f7facedb5af6",
+            "sourceStep": "\/api\/3\/workflow_steps\/b5356aef-68e6-4386-991d-b5dc432e5fb7",
+            "label": null,
+            "isExecuted": false,
+            "uuid": "18832604-746f-42de-8b44-579f46e704e2"
+        },
+        {
+            "@type": "WorkflowRoute",
+            "name": "New Asset -> Copy of Asset Change Activity Add New Asset",
+            "targetStep": "\/api\/3\/workflow_steps\/1b3309cf-7eeb-45c5-950a-8560300488bd",
+            "sourceStep": "\/api\/3\/workflow_steps\/88e679c4-1578-448b-8d91-f5a929ee9937",
+            "label": null,
+            "isExecuted": false,
+            "uuid": "2975a1fe-3432-4f09-ad43-1101e4e8067a"
+        },
+        {
+            "@type": "WorkflowRoute",
+            "name": "Configuration -> Create Asset Change Activity Record",
+            "targetStep": "\/api\/3\/workflow_steps\/699e1aac-ecbc-45b7-a66b-dbe8fc95b4a1",
+            "sourceStep": "\/api\/3\/workflow_steps\/c859dbdb-6539-463b-9e22-a35f71c15e3e",
+            "label": null,
+            "isExecuted": false,
+            "uuid": "58de5626-25d5-41ca-bb6c-8ef1219b80aa"
+        },
+        {
+            "@type": "WorkflowRoute",
+            "name": "Add New Asset -> New Asset",
+            "targetStep": "\/api\/3\/workflow_steps\/88e679c4-1578-448b-8d91-f5a929ee9937",
+            "sourceStep": "\/api\/3\/workflow_steps\/699e1aac-ecbc-45b7-a66b-dbe8fc95b4a1",
+            "label": null,
+            "isExecuted": false,
+            "uuid": "83d384d3-d8d0-4717-a0ae-cdd4795bf87f"
+        },
+        {
+            "@type": "WorkflowRoute",
+            "name": "Start -> Configuration",
+            "targetStep": "\/api\/3\/workflow_steps\/c859dbdb-6539-463b-9e22-a35f71c15e3e",
+            "sourceStep": "\/api\/3\/workflow_steps\/b3f56374-2cdb-4aaa-abcc-038887918ce1",
+            "label": null,
+            "isExecuted": false,
+            "uuid": "b3124d6d-b206-4234-b239-f8a0d2f80bfd"
+        },
+        {
+            "@type": "WorkflowRoute",
+            "name": "Update Medium Baseline Asset Change Activity -> Output",
+            "targetStep": "\/api\/3\/workflow_steps\/6ece692c-6253-43b5-93c7-aa50759f365f",
+            "sourceStep": "\/api\/3\/workflow_steps\/354e0f44-2404-4eeb-aa5e-f7facedb5af6",
+            "label": null,
+            "isExecuted": false,
+            "uuid": "d3235c80-5118-47cb-b0e2-88334d0d915e"
+        },
+        {
+            "@type": "WorkflowRoute",
+            "name": "Find Asset -> Medium Impact Baseline Change Asset",
+            "targetStep": "\/api\/3\/workflow_steps\/b5356aef-68e6-4386-991d-b5dc432e5fb7",
+            "sourceStep": "\/api\/3\/workflow_steps\/ffec2268-49d3-43f3-be77-f2045b787dd9",
+            "label": null,
+            "isExecuted": false,
+            "uuid": "f5171a48-f0e3-4c0c-92d1-b4ad0f8d4c26"
+        }
+    ],
+    "groups": [],
+    "priority": "\/api\/3\/picklists\/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+    "uuid": "4961c806-88bf-42f7-b3cd-150a1f2713d2",
+    "owners": [],
+    "isPrivate": false,
+    "deletedAt": null,
+    "recordTags": [
+        "Add Cyber Asset",
+        "Asset Change Activity",
+        "Assets",
+        "Medium Impact Baseline Change",
+        "OT IT"
+    ]
+}

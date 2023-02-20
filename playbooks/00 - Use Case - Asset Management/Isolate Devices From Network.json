@@ -1,0 +1,127 @@
+{
+    "@type": "Workflow",
+    "triggerLimit": null,
+    "name": "Isolate Devices From Network",
+    "aliasName": null,
+    "tag": null,
+    "description": "Isolate Selected Devices From Network Based On Criticality and Risk",
+    "isActive": true,
+    "debug": false,
+    "singleRecordExecution": false,
+    "remoteExecutableFlag": false,
+    "parameters": [],
+    "synchronous": false,
+    "collection": "\/api\/3\/workflow_collections\/fb4aa534-4bfc-4196-b509-96ef02fb9270",
+    "versions": [],
+    "triggerStep": "\/api\/3\/workflow_steps\/519a0d5a-1600-453a-a82b-0ab412e0a387",
+    "steps": [
+        {
+            "@type": "WorkflowStep",
+            "name": "Quarantine Host",
+            "description": null,
+            "arguments": {
+                "name": "Fortinet FortiGate",
+                "config": "fe87a666-f971-448b-91f0-4d85d1bf81e6",
+                "params": {
+                    "macs": "{{vars.macAddress}}",
+                    "vdom": ""
+                },
+                "version": "5.2.1",
+                "connector": "fortigate-firewall",
+                "operation": "quarantine_host",
+                "mock_result": "{\"status\": \"finished\"}",
+                "ignore_errors": false,
+                "operationTitle": "Quarantine Host",
+                "pickFromTenant": false,
+                "step_variables": []
+            },
+            "status": null,
+            "top": "300",
+            "left": "125",
+            "stepType": "\/api\/3\/workflow_step_types\/0bfed618-0316-11e7-93ae-92361f002671",
+            "group": null,
+            "uuid": "2c32f1ac-0215-4c08-bb6f-b2394bf70897"
+        },
+        {
+            "@type": "WorkflowStep",
+            "name": "Start",
+            "description": null,
+            "arguments": {
+                "route": "bbf0706e-8fc2-47ae-99a3-496dc9fda427",
+                "title": "Isolate Devices From Network",
+                "resources": [
+                    "warrooms"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                    "input": {
+                        "params": [],
+                        "records": "{{vars.input.records}}"
+                    }
+                },
+                "displayConditions": {
+                    "warrooms": {
+                        "sort": [],
+                        "limit": 30,
+                        "logic": "AND",
+                        "filters": []
+                    }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": false,
+                "singleRecordExecution": false
+            },
+            "status": null,
+            "top": "30",
+            "left": "125",
+            "stepType": "\/api\/3\/workflow_step_types\/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+            "group": null,
+            "uuid": "519a0d5a-1600-453a-a82b-0ab412e0a387"
+        },
+        {
+            "@type": "WorkflowStep",
+            "name": "Configuration",
+            "description": null,
+            "arguments": {
+                "macAddress": "",
+                "useMockOutput": "{{globalVars.Demo_mode}}"
+            },
+            "status": null,
+            "top": "165",
+            "left": "125",
+            "stepType": "\/api\/3\/workflow_step_types\/04d0cf46-b6a8-42c4-8683-60a7eaa69e8f",
+            "group": null,
+            "uuid": "b4d3ba90-c20f-4d56-b254-489fd9cf3d25"
+        }
+    ],
+    "routes": [
+        {
+            "@type": "WorkflowRoute",
+            "name": "Config -> Update Policy",
+            "targetStep": "\/api\/3\/workflow_steps\/2c32f1ac-0215-4c08-bb6f-b2394bf70897",
+            "sourceStep": "\/api\/3\/workflow_steps\/b4d3ba90-c20f-4d56-b254-489fd9cf3d25",
+            "label": null,
+            "isExecuted": false,
+            "uuid": "75aa0445-94fd-4796-9c27-2d5de5e8deb8"
+        },
+        {
+            "@type": "WorkflowRoute",
+            "name": "Start -> Config",
+            "targetStep": "\/api\/3\/workflow_steps\/b4d3ba90-c20f-4d56-b254-489fd9cf3d25",
+            "sourceStep": "\/api\/3\/workflow_steps\/519a0d5a-1600-453a-a82b-0ab412e0a387",
+            "label": null,
+            "isExecuted": false,
+            "uuid": "ff9d7351-b89b-401a-a4cf-1f663705c719"
+        }
+    ],
+    "groups": [],
+    "priority": "\/api\/3\/picklists\/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+    "uuid": "1884493e-59b1-4f87-820b-a418e8b78f6b",
+    "owners": [],
+    "isPrivate": false,
+    "deletedAt": null,
+    "recordTags": [
+        "isolate",
+        "OT IT"
+    ]
+}

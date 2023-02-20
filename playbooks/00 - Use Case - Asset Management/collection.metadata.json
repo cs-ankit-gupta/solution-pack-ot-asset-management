@@ -1,0 +1,11 @@
+{
+    "@context": "\/api\/3\/contexts\/WorkflowCollection",
+    "@type": "WorkflowCollection",
+    "name": "00 - Use Case - Asset Management",
+    "description": null,
+    "visible": true,
+    "image": null,
+    "uuid": "fb4aa534-4bfc-4196-b509-96ef02fb9270",
+    "deletedAt": null,
+    "recordTags": []
+}

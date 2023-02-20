@@ -1,0 +1,133 @@
+{
+    "@type": "Workflow",
+    "triggerLimit": null,
+    "name": "Generate Report",
+    "aliasName": null,
+    "tag": "#CyOPs-Utilities",
+    "description": "Generates Report and Link to Incidents",
+    "isActive": true,
+    "debug": false,
+    "singleRecordExecution": false,
+    "remoteExecutableFlag": false,
+    "parameters": [
+        "record_iri",
+        "record_id"
+    ],
+    "synchronous": false,
+    "collection": "\/api\/3\/workflow_collections\/0dc98705-9053-4d76-8a44-b73cf7f06666",
+    "versions": [],
+    "triggerStep": "\/api\/3\/workflow_steps\/bfa62188-3b0f-470b-8eb5-14641b848762",
+    "steps": [
+        {
+            "@type": "WorkflowStep",
+            "name": "Generate Report By Manual Trigger",
+            "description": null,
+            "arguments": {
+                "name": "Report Engine",
+                "params": {
+                    "user_id": "{{vars.currentUser}}",
+                    "timezone": "{{vars.request.headers.tz}}",
+                    "report_id": "378486c9-9bfb-4bf6-a954-926bd55025f6",
+                    "query_params": "{\"qparam\": {\"assetChangeActivityID\": {{vars.input.params['record_id']}} } }"
+                },
+                "version": "1.3.2",
+                "connector": "cyops-schedule-report",
+                "operation": "schedule_report_manual",
+                "operationTitle": "Generate Report From Report ID",
+                "step_variables": {
+                    "reportObject": "{{vars.result.data}}"
+                }
+            },
+            "status": null,
+            "top": "165",
+            "left": "125",
+            "stepType": "\/api\/3\/workflow_step_types\/0bfed618-0316-11e7-93ae-92361f002671",
+            "group": null,
+            "uuid": "0d50555e-09a7-4ad4-929f-460325220ac4"
+        },
+        {
+            "@type": "WorkflowStep",
+            "name": "Insert Link for Report",
+            "description": null,
+            "arguments": {
+                "resource": {
+                    "file": "{{vars.steps.Generate_Report_By_Manual_Trigger.data.file[\"@id\"]}}",
+                    "type": "\/api\/3\/picklists\/ff599189-3eeb-4c86-acb0-a7915e85ac3b",
+                    "people": [],
+                    "content": "<p>Requested \"Asset Change Activity Summary Report\" available for download<\/p>",
+                    "__replace": "",
+                    "isImportant": false,
+                    "peopleUpdated": false,
+                    "assetChangeActivities": "{{vars.input.params['record_iri']}}"
+                },
+                "_showJson": false,
+                "operation": "Overwrite",
+                "collection": "\/api\/3\/comments",
+                "__recommend": [],
+                "fieldOperation": {
+                    "recordTags": "Overwrite"
+                },
+                "step_variables": []
+            },
+            "status": null,
+            "top": "300",
+            "left": "125",
+            "stepType": "\/api\/3\/workflow_step_types\/2597053c-e718-44b4-8394-4d40fe26d357",
+            "group": null,
+            "uuid": "84ee3985-c216-4620-a69e-88f690b1801e"
+        },
+        {
+            "@type": "WorkflowStep",
+            "name": "Start",
+            "description": null,
+            "arguments": {
+                "step_variables": {
+                    "input": {
+                        "params": {
+                            "record_id": "{{ vars.record_id }}",
+                            "record_iri": "{{ vars.record_iri }}"
+                        }
+                    }
+                }
+            },
+            "status": null,
+            "top": "30",
+            "left": "125",
+            "stepType": "\/api\/3\/workflow_step_types\/b348f017-9a94-471f-87f8-ce88b6a7ad62",
+            "group": null,
+            "uuid": "bfa62188-3b0f-470b-8eb5-14641b848762"
+        }
+    ],
+    "routes": [
+        {
+            "@type": "WorkflowRoute",
+            "name": "Generate Report By Manual Trigger -> Insert Link for Report",
+            "targetStep": "\/api\/3\/workflow_steps\/84ee3985-c216-4620-a69e-88f690b1801e",
+            "sourceStep": "\/api\/3\/workflow_steps\/0d50555e-09a7-4ad4-929f-460325220ac4",
+            "label": null,
+            "isExecuted": false,
+            "uuid": "59b0f859-8b00-4acc-a878-5440897db049"
+        },
+        {
+            "@type": "WorkflowRoute",
+            "name": "Start -> Generate Report By Manual Trigger",
+            "targetStep": "\/api\/3\/workflow_steps\/0d50555e-09a7-4ad4-929f-460325220ac4",
+            "sourceStep": "\/api\/3\/workflow_steps\/bfa62188-3b0f-470b-8eb5-14641b848762",
+            "label": null,
+            "isExecuted": false,
+            "uuid": "bf37dce6-f248-44fd-972f-6ef712dbb783"
+        }
+    ],
+    "groups": [],
+    "priority": null,
+    "uuid": "42093f12-4492-4cf1-a81f-e05752bd6a0f",
+    "owners": [],
+    "isPrivate": false,
+    "deletedAt": null,
+    "recordTags": [
+        "Asset Change Activity",
+        "OT IT",
+        "Report",
+        "SystemWaitForCompletion"
+    ]
+}
