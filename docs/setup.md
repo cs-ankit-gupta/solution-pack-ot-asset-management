@@ -24,8 +24,8 @@ The **OT - Asset Management** solution pack depends on the following solution pa
 
 For optimal performance of **OT - Asset Management** solution pack, you can install and configure the connectors that help with the following:
 
->* **CSV Data Management** connectors to Isolate collectors. To configure and use the Fortinet FortiEDR connector, refer to [Configuring CSV Data Management](https://docs.fortinet.com/document/fortisoar/1.1.0/csv-data-management/346/csv-data-management-v1-1-0)
+>* **CSV Data Management** connectors to read CSV File. To configure and use the CSV Data Management connector, refer to [Configuring CSV Data Management](https://docs.fortinet.com/document/fortisoar/1.1.0/csv-data-management/346/csv-data-management-v1-1-0)
 >* **Fortinet FortiEDR** connectors to Isolate collectors. To configure and use the Fortinet FortiEDR connector, refer to [Configuring Fortinet FortiEDR](https://docs.fortinet.com/document/fortisoar/1.3.0/fortinet-fortiedr/161/fortinet-fortiedr-v1-3-0)
->* **Fortinet FortiGate** connectors to Isolate collectors. To configure and use the Fortinet FortiEDR connector, refer to [Configuring Fortinet FortiGate](https://docs.fortinet.com/document/fortisoar/5.2.1/fortinet-fortigate/425/fortinet-fortigate-v5-2-1)
+>* **Fortinet FortiGate** connectors to Quarantine hosts, Update Policy. To configure and use the Fortinet FortiGate connector, refer to [Configuring Fortinet FortiGate](https://docs.fortinet.com/document/fortisoar/5.2.1/fortinet-fortigate/425/fortinet-fortigate-v5-2-1)
 >* **ServiceNow** connectors to raise tickets. To configure and use the ServiceNow connector, refer to [Configuring ServiceNow](https://docs.fortinet.com/document/fortisoar/3.2.0/servicenow/384/servicenow-v3-2-0)
->* **Qualys** connectors to raise tickets. To configure and use the ServiceNow connector, refer to [Configuring Qualys](https://docs.fortinet.com/document/fortisoar/1.0.1/qualys/1/qualys-v1-0-1)
+>* **Qualys** connectors to get scanned host list. To configure and use the Qualys connector, refer to [Configuring Qualys](https://docs.fortinet.com/document/fortisoar/1.0.1/qualys/1/qualys-v1-0-1)
