@@ -1,0 +1,11 @@
+{
+    "@context": "\/api\/3\/contexts\/WorkflowCollection",
+    "@type": "WorkflowCollection",
+    "name": "02 - Use Case - Asset Change Activity",
+    "description": null,
+    "visible": true,
+    "image": null,
+    "uuid": "0dc98705-9053-4d76-8a44-b73cf7f06666",
+    "deletedAt": null,
+    "recordTags": []
+}

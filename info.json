@@ -1,7 +1,7 @@
 {
     "name": "oT-AssetManagement",
-    "version": "1.0.0",
-    "fsrMinCompatibility": "7.2.0",
+    "version": "2.0.0",
+    "fsrMinCompatibility": "7.3.0",
     "featuredTags": [
         {
             "color": "#2d87e3",
@@ -40,8 +40,8 @@
     ],
     "prerequisite": null,
     "publisher": "Fortinet",
-    "description": "Solution Pack manages assets in both the OT and IT domains. It provides a way of dealing with asset baseline changes.",
-    "help": "https://github.com/fortinet-fortisoar/solution-pack-ot-asset-management/blob/release/1.0.0/README.md",
+    "description": "OT Asset Management solution pack manages assets in both the operational technology (OT) and information and technology (IT) domains. It provides a method for dealing with asset baseline changes.",
+    "help": "https://github.com/fortinet-fortisoar/solution-pack-ot-asset-management/blob/release/2.0.0/README.md",
     "category": [
         "Monitoring",
         "Vulnerability Management",
@@ -53,10 +53,8 @@
     ],
     "supportInfo": "support@fortinet.com",
     "iconLarge": null,
-    "postInstallConfig": {
-        "enabled": false
-    },
-    "date": "2023-02-17T09:59:27+00:00",
+    "postInstallConfig": null,
+    "date": "2023-04-25T05:58:06+00:00",
     "contents": {
         "picklistNames": [
             {
@@ -93,7 +91,7 @@
                 "name": "Asset Resources",
                 "apiName": "asset_resources"
             },
-            "": {
+            "assets": {
                 "name": "Assets",
                 "apiName": "assets"
             }
@@ -130,10 +128,10 @@
         ],
         "playbooks": [
             {
-                "name": "00 - Use Case - Asset Change Activity"
+                "name": "02 - Use Case - Asset Change Activity"
             },
             {
-                "name": "00 - Use Case - Asset Management"
+                "name": "02 - Use Case - Asset Management"
             }
         ],
         "globalVariables": [],

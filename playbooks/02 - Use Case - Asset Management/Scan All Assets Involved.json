@@ -1,0 +1,144 @@
+{
+    "@type": "Workflow",
+    "triggerLimit": null,
+    "name": "Scan All Assets Involved",
+    "aliasName": null,
+    "tag": null,
+    "description": "Initiate a quick scan on all assets related to incident",
+    "isActive": true,
+    "debug": false,
+    "singleRecordExecution": false,
+    "remoteExecutableFlag": false,
+    "parameters": [],
+    "synchronous": false,
+    "collection": "\/api\/3\/workflow_collections\/fb4aa534-4bfc-4196-b509-96ef02fb9270",
+    "versions": [],
+    "triggerStep": "\/api\/3\/workflow_steps\/dc032c6a-045c-4c48-96f5-67a9bacc5cbc",
+    "steps": [
+        {
+            "@type": "WorkflowStep",
+            "name": "Configuration",
+            "description": null,
+            "arguments": {
+                "useMockOutput": "{{globalVars.Demo_mode}}"
+            },
+            "status": null,
+            "top": "165",
+            "left": "125",
+            "stepType": "\/api\/3\/workflow_step_types\/04d0cf46-b6a8-42c4-8683-60a7eaa69e8f",
+            "group": null,
+            "uuid": "db5c2f7a-1011-471c-9087-c08e15ea8698"
+        },
+        {
+            "@type": "WorkflowStep",
+            "name": "Scan Assets",
+            "description": null,
+            "arguments": {
+                "name": "Qualys",
+                "config": "d0a127d1-d74f-4bf3-bdf3-bdfd0170cb0e",
+                "params": {
+                    "ids": "",
+                    "ips": "",
+                    "ag_ids": "",
+                    "id_max": "",
+                    "id_min": "",
+                    "details": "Basic",
+                    "ag_titles": "",
+                    "os_pattern": "",
+                    "network_ids": "",
+                    "vm_scan_since": "",
+                    "no_vm_scan_since": "",
+                    "truncation_limit": "",
+                    "vm_processed_after": "",
+                    "vm_scan_date_after": "",
+                    "vm_processed_before": "",
+                    "vm_scan_date_before": "",
+                    "compliance_scan_since": "",
+                    "no_compliance_scan_since": ""
+                },
+                "version": "1.0.1",
+                "connector": "qualys",
+                "operation": "list_host",
+                "mock_result": "{\"status\": \"finished\"}",
+                "operationTitle": "Get Scanned Host List",
+                "pickFromTenant": false,
+                "step_variables": []
+            },
+            "status": null,
+            "top": "300",
+            "left": "125",
+            "stepType": "\/api\/3\/workflow_step_types\/0bfed618-0316-11e7-93ae-92361f002671",
+            "group": null,
+            "uuid": "0fc79091-1948-4105-be29-664b517df5e7"
+        },
+        {
+            "@type": "WorkflowStep",
+            "name": "Start",
+            "description": null,
+            "arguments": {
+                "route": "e78351e1-464f-49fe-8caf-2af9d129f2ee",
+                "title": "Scan All Assets Involved",
+                "resources": [
+                    "warrooms"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                    "input": {
+                        "params": [],
+                        "records": "{{vars.input.records}}"
+                    }
+                },
+                "displayConditions": {
+                    "warrooms": {
+                        "sort": [],
+                        "limit": 30,
+                        "logic": "AND",
+                        "filters": []
+                    }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": false,
+                "singleRecordExecution": false
+            },
+            "status": null,
+            "top": "30",
+            "left": "125",
+            "stepType": "\/api\/3\/workflow_step_types\/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+            "group": null,
+            "uuid": "dc032c6a-045c-4c48-96f5-67a9bacc5cbc"
+        }
+    ],
+    "routes": [
+        {
+            "@type": "WorkflowRoute",
+            "name": "Config -> Scan Assets",
+            "targetStep": "\/api\/3\/workflow_steps\/0fc79091-1948-4105-be29-664b517df5e7",
+            "sourceStep": "\/api\/3\/workflow_steps\/db5c2f7a-1011-471c-9087-c08e15ea8698",
+            "label": null,
+            "isExecuted": false,
+            "group": null,
+            "uuid": "13d27fbf-2156-4b05-8ac0-75ffb7f34b21"
+        },
+        {
+            "@type": "WorkflowRoute",
+            "name": "Start -> Config",
+            "targetStep": "\/api\/3\/workflow_steps\/db5c2f7a-1011-471c-9087-c08e15ea8698",
+            "sourceStep": "\/api\/3\/workflow_steps\/dc032c6a-045c-4c48-96f5-67a9bacc5cbc",
+            "label": null,
+            "isExecuted": false,
+            "group": null,
+            "uuid": "2eddb53b-69c5-4568-9fae-d91cbbc545aa"
+        }
+    ],
+    "groups": [],
+    "priority": "\/api\/3\/picklists\/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+    "uuid": "92e5982c-f203-466d-896d-7ea4d2192a20",
+    "owners": [],
+    "isPrivate": false,
+    "deletedAt": null,
+    "recordTags": [
+        "Assets",
+        "OT IT",
+        "isolate"
+    ]
+}
