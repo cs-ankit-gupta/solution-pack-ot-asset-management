@@ -507,6 +507,9 @@
     "deletedAt": null,
     "recordTags": [
         "SystemWaitForCompletion",
-        "OT IT"
+        "ManualTrigger",
+        "Alert",
+        "Incident",
+        "IT OT"
     ]
 }

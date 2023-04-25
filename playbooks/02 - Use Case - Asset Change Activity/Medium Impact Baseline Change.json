@@ -5806,8 +5806,9 @@
     "isPrivate": false,
     "deletedAt": null,
     "recordTags": [
+        "ManualTrigger",
         "Asset Change Activity",
-        "OT IT",
-        "Medium Impact Baseline Change"
+        "Medium Impact Baseline Change",
+        "IT OT"
     ]
 }

@@ -337,9 +337,12 @@
     "isPrivate": false,
     "deletedAt": null,
     "recordTags": [
-        "OT IT",
+        "ServiceNow",
+        "ManualTrigger",
         "Incident",
         "Quarantine",
-        "Raise Ticket"
+        "Raise Ticket",
+        "IT OT",
+        "FortiEDR"
     ]
 }

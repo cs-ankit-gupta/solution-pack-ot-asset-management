@@ -137,8 +137,10 @@
     "isPrivate": false,
     "deletedAt": null,
     "recordTags": [
+        "ManualTrigger",
         "Assets",
-        "OT IT",
-        "isolate"
+        "Isolate",
+        "IT OT",
+        "Qualys"
     ]
 }

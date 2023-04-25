@@ -44,8 +44,8 @@
                     "sourceIp": "110.132.30.51",
                     "__replace": "false",
                     "recordTags": [
-                        "\/api\/3\/tags\/OT IT",
-                        "\/api\/3\/tags\/sampleAlert"
+                        "\/api\/3\/tags\/Sample",
+                        "\/api\/3\/tags\/IT OT"
                     ],
                     "sourcePort": "1434",
                     "description": "A machine infected by Stuxnet has attempted to establish a communication with other potentially stuxnet infected machine via a malware-specific RPC-based peer to peer control. If the protocol negotiation is successful, also the other machine is infected by Stuxnet. It is advised to immediately quarantine and clean the Stuxnet infected machine.",
@@ -57,6 +57,7 @@
                     "priorityWeight": 1,
                     "destinationPort": "423",
                     "escalatedtoincident": "\/api\/3\/picklists\/2128a09c-153d-4db3-985d-de6be33deae5",
+                    "resolvedAutomatedly": false,
                     "alertRemainingAckSLA": 0
                 },
                 "operation": "Overwrite",
@@ -92,8 +93,8 @@
                     "sourceIp": "110.132.30.63",
                     "__replace": "true",
                     "recordTags": [
-                        "\/api\/3\/tags\/OT IT",
-                        "\/api\/3\/tags\/sampleAlert"
+                        "\/api\/3\/tags\/IT OT",
+                        "\/api\/3\/tags\/Sample"
                     ],
                     "sourcePort": "5234",
                     "description": "A host with a public IP address has communicated with a host with a private IP address, and vice versa. Public IP addresses are typically used by devices that can be accessed via the internet and are not expected to communicate with private networks. Please confirm that this is a legitimate communication.",
@@ -105,6 +106,7 @@
                     "priorityWeight": 1,
                     "destinationPort": "73",
                     "escalatedtoincident": "\/api\/3\/picklists\/2128a09c-153d-4db3-985d-de6be33deae5",
+                    "resolvedAutomatedly": false,
                     "alertRemainingAckSLA": 0
                 },
                 "operation": "Overwrite",
@@ -146,8 +148,8 @@
                     "assetType": "\/api\/3\/picklists\/7630b182-4930-4f97-beec-3c3a5372cb3b",
                     "macAddress": "00:A0:24:E7:B8:A3",
                     "recordTags": [
-                        "\/api\/3\/tags\/OT IT",
-                        "\/api\/3\/tags\/sampleAsset"
+                        "\/api\/3\/tags\/Sample",
+                        "\/api\/3\/tags\/IT OT"
                     ],
                     "criticality": "\/api\/3\/picklists\/f734dfbb-fd61-425e-8a14-ebd560289fac",
                     "operatingSystem": "\/api\/3\/picklists\/f0fc6b95-965f-4b65-9b3c-bb3c7f790c1d"
@@ -196,8 +198,8 @@
                     "assetClass": "\/api\/3\/picklists\/3864918a-79b9-412d-a09e-3f6f13aae2f9",
                     "macAddress": "00:04:23:B6:44:F3",
                     "recordTags": [
-                        "\/api\/3\/tags\/OT IT",
-                        "\/api\/3\/tags\/sampleAsset"
+                        "\/api\/3\/tags\/IT OT",
+                        "\/api\/3\/tags\/Sample"
                     ],
                     "criticality": "\/api\/3\/picklists\/f734dfbb-fd61-425e-8a14-ebd560289fac",
                     "operatingSystem": "\/api\/3\/picklists\/f0fc6b95-965f-4b65-9b3c-bb3c7f790c1d"
@@ -244,8 +246,8 @@
                     "assetType": "\/api\/3\/picklists\/7630b182-4930-4f97-beec-3c3a5372cb3b",
                     "macAddress": "08:00:27:85:C5:CD",
                     "recordTags": [
-                        "\/api\/3\/tags\/OT IT",
-                        "\/api\/3\/tags\/sampleAsset"
+                        "\/api\/3\/tags\/IT OT",
+                        "\/api\/3\/tags\/Sample"
                     ],
                     "criticality": "\/api\/3\/picklists\/f734dfbb-fd61-425e-8a14-ebd560289fac",
                     "operatingSystem": "\/api\/3\/picklists\/f0fc6b95-965f-4b65-9b3c-bb3c7f790c1d"
@@ -291,8 +293,8 @@
                     "assetClass": "\/api\/3\/picklists\/3864918a-79b9-412d-a09e-3f6f13aae2f9",
                     "macAddress": "08:00:06:94:D3:01",
                     "recordTags": [
-                        "\/api\/3\/tags\/OT IT",
-                        "\/api\/3\/tags\/sampleAsset"
+                        "\/api\/3\/tags\/IT OT",
+                        "\/api\/3\/tags\/Sample"
                     ],
                     "criticality": "\/api\/3\/picklists\/873268b5-6751-4eac-a61c-0295f68baa9e"
                 },
@@ -330,8 +332,8 @@
                     "sourceIp": "110.132.30.51",
                     "__replace": "false",
                     "recordTags": [
-                        "\/api\/3\/tags\/OT IT",
-                        "\/api\/3\/tags\/sampleAlert"
+                        "\/api\/3\/tags\/Sample",
+                        "\/api\/3\/tags\/IT OT"
                     ],
                     "sourcePort": "5213",
                     "description": "Potentially dangerous STEP7 operation: the STEP7 master or an operator is downloading the software and\/or hardware configuration into a PLC. This operation may be part of regular maintance, but can also be used in a cyber attack.",
@@ -343,6 +345,7 @@
                     "priorityWeight": 1,
                     "destinationPort": "124",
                     "escalatedtoincident": "\/api\/3\/picklists\/2128a09c-153d-4db3-985d-de6be33deae5",
+                    "resolvedAutomatedly": false,
                     "alertRemainingAckSLA": 0
                 },
                 "operation": "Overwrite",
@@ -377,8 +380,8 @@
                     "sourceIp": "110.132.30.72",
                     "__replace": "false",
                     "recordTags": [
-                        "\/api\/3\/tags\/OT IT",
-                        "\/api\/3\/tags\/sampleAlert"
+                        "\/api\/3\/tags\/Sample",
+                        "\/api\/3\/tags\/IT OT"
                     ],
                     "sourcePort": "4912",
                     "ackSlaStatus": "\/api\/3\/picklists\/72979f64-e8b9-4888-a965-957e0ec24818",
@@ -389,6 +392,7 @@
                     "priorityWeight": 1,
                     "destinationPort": "1141",
                     "escalatedtoincident": "\/api\/3\/picklists\/2128a09c-153d-4db3-985d-de6be33deae5",
+                    "resolvedAutomatedly": false,
                     "alertRemainingAckSLA": 0
                 },
                 "operation": "Overwrite",
@@ -950,7 +954,8 @@
     "recordTags": [
         "Alerts",
         "Assets",
+        "Referenced",
         "Scenario",
-        "OT IT"
+        "IT OT"
     ]
 }

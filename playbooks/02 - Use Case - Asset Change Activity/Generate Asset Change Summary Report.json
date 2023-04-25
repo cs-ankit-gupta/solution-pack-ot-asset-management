@@ -98,8 +98,9 @@
     "deletedAt": null,
     "recordTags": [
         "SystemWaitForCompletion",
+        "ManualTrigger",
         "Asset Change Activity",
-        "OT IT",
-        "Report"
+        "Report",
+        "IT OT"
     ]
 }

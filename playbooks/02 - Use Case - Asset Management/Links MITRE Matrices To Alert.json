@@ -259,10 +259,10 @@
     "isPrivate": false,
     "deletedAt": null,
     "recordTags": [
+        "PostCreate",
         "Alerts",
         "Assets",
-        "OT IT",
         "Mitre ATTACK",
-        "On Create"
+        "IT OT"
     ]
 }

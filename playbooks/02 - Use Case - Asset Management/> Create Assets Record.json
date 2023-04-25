@@ -1,7 +1,7 @@
 {
     "@type": "Workflow",
     "triggerLimit": null,
-    "name": "Create Assets Record",
+    "name": "> Create Assets Record",
     "aliasName": null,
     "tag": null,
     "description": "This will generate an Asset record.",
@@ -139,7 +139,9 @@
     "deletedAt": null,
     "recordTags": [
         "Assets",
-        "OT IT",
-        "CSV Record"
+        "Referenced",
+        "Scenario",
+        "CSV Record",
+        "IT OT"
     ]
 }

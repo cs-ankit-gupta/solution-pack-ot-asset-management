@@ -1104,8 +1104,9 @@
     "isPrivate": false,
     "deletedAt": null,
     "recordTags": [
+        "ManualTrigger",
         "Task",
         "Asset Change Activity",
-        "OT IT"
+        "IT OT"
     ]
 }

@@ -209,8 +209,9 @@
     "deletedAt": null,
     "recordTags": [
         "Assets",
+        "Referenced",
         "Scenario",
-        "OT IT",
-        "Import CSV"
+        "Import CSV",
+        "IT OT"
     ]
 }

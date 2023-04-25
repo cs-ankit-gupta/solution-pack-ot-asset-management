@@ -314,6 +314,9 @@
     "isPrivate": false,
     "deletedAt": null,
     "recordTags": [
-        "OT IT"
+        "Incidents",
+        "Alerts",
+        "Referenced",
+        "IT OT"
     ]
 }

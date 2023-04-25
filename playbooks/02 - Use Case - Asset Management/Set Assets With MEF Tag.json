@@ -105,8 +105,9 @@
     "isPrivate": false,
     "deletedAt": null,
     "recordTags": [
+        "ManualTrigger",
         "Assets",
-        "OT IT",
-        "MEF"
+        "MEF",
+        "IT OT"
     ]
 }

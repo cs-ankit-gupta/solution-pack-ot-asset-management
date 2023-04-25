@@ -128,8 +128,9 @@
     "deletedAt": null,
     "recordTags": [
         "SystemWaitForCompletion",
+        "Referenced",
         "Asset Change Activity",
-        "OT IT",
-        "Report"
+        "Report",
+        "IT OT"
     ]
 }

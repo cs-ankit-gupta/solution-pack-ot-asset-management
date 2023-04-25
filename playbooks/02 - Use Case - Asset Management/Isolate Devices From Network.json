@@ -123,7 +123,10 @@
     "isPrivate": false,
     "deletedAt": null,
     "recordTags": [
-        "OT IT",
-        "isolate"
+        "ManualTrigger",
+        "Isolate",
+        "IT OT",
+        "FortiGate",
+        "War Room"
     ]
 }

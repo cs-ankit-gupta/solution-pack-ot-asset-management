@@ -5818,8 +5818,9 @@
     "isPrivate": false,
     "deletedAt": null,
     "recordTags": [
+        "ManualTrigger",
         "Add Cyber Asset",
         "Asset Change Activity",
-        "OT IT"
+        "IT OT"
     ]
 }
