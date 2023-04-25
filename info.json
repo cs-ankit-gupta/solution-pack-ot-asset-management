@@ -165,6 +165,10 @@
                 "apiName": "fortigate-firewall"
             },
             {
+                "name": "Qualys",
+                "apiName": "qualys"
+            },
+            {
                 "name": "ServiceNow",
                 "apiName": "servicenow"
             }
