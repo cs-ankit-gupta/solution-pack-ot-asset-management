@@ -1,0 +1,145 @@
+{
+    "@type": "Workflow",
+    "triggerLimit": null,
+    "name": "Create Assets Record",
+    "aliasName": null,
+    "tag": null,
+    "description": "This will generate an Asset record.",
+    "isActive": true,
+    "debug": false,
+    "singleRecordExecution": false,
+    "remoteExecutableFlag": false,
+    "parameters": [
+        "assetRecord"
+    ],
+    "synchronous": false,
+    "collection": "\/api\/3\/workflow_collections\/fb4aa534-4bfc-4196-b509-96ef02fb9270",
+    "versions": [],
+    "triggerStep": "\/api\/3\/workflow_steps\/3c82fe05-f620-42c5-9ff9-840fb026b892",
+    "steps": [
+        {
+            "@type": "WorkflowStep",
+            "name": "Create Assets Records",
+            "description": null,
+            "arguments": {
+                "resource": {
+                    "ip": "{{vars.record['IP Address']}}",
+                    "tag": "{{vars.record['Asset Tag']}}",
+                    "name": "{{vars.record['Display Name']}}",
+                    "zone": "{{\"AssetZone\" | picklist(vars.record.Zone, \"@id\")}}",
+                    "level": "{{\"AssetLevel\" | picklist(vars.record.Level, \"@id\")}}",
+                    "state": "{{\"AssetState\" | picklist(vars.record['Asset State'], \"@id\")}}",
+                    "status": "{{\"AssetStatus\" | picklist(vars.record['Asset Status'], \"@id\")}}",
+                    "subnet": "{{vars.record.Subnet}}",
+                    "vendor": "{{vars.record.Vendor}}",
+                    "eSPZone": "{{vars.record['ESP Zone']}}",
+                    "emailId": "{{vars.record['Email ID']}}",
+                    "network": "{{vars.record.Network}}",
+                    "category": "{{\"AssetCategory\" | picklist(vars.record.Category, \"@id\")}}",
+                    "facility": "{{vars.record.Facility}}",
+                    "firmware": "{{vars.record['Firmware']}}",
+                    "hostname": "{{vars.record.Hostname}}",
+                    "location": "{{vars.record.Location}}",
+                    "protocol": "{{vars.protocolIRIs}}",
+                    "__replace": "true",
+                    "assetType": "{{\"AssetType\" | picklist(vars.record['Asset Type'], \"@id\")}}",
+                    "deviceUid": "{{vars.record['Device UID']}}",
+                    "managedBy": "{{vars.record.Owner}}",
+                    "assetClass": "{{\"AssetClass\" | picklist(vars.record.Class, \"@id\")}}",
+                    "macAddress": "{{vars.record['MAC Address']}}",
+                    "propertyOf": "{{vars.record['Property Of']}}",
+                    "recordTags": "{{vars.record.Tags}}",
+                    "criticality": "{{\"Criticality\" | picklist(vars.record['Asset Criticality'], \"@id\")}}",
+                    "dateScanned": "{{vars.lastScannedOn}}",
+                    "description": "{{vars.record.Description}}",
+                    "serialNumber": "{{vars.record['Serial No']}}",
+                    "operatingSystem": "{{\"OperatingSystem\" | picklist(vars.record['Operating System'], \"@id\")}}",
+                    "registrationDate": "{{vars.assetRegistrationDate}}"
+                },
+                "operation": "Overwrite",
+                "collection": "\/api\/3\/upsert\/assets",
+                "__recommend": [],
+                "fieldOperation": {
+                    "protocol": "Overwrite",
+                    "recordTags": "Overwrite",
+                    "securityLevel": "Overwrite"
+                },
+                "step_variables": []
+            },
+            "status": null,
+            "top": "300",
+            "left": "125",
+            "stepType": "\/api\/3\/workflow_step_types\/2597053c-e718-44b4-8394-4d40fe26d357",
+            "group": null,
+            "uuid": "7f52d399-ae92-48fc-9177-06cc67447503"
+        },
+        {
+            "@type": "WorkflowStep",
+            "name": "Get Values",
+            "description": null,
+            "arguments": {
+                "protocolIRIs": "{% set protocolList = (vars.record.Protocol | replace(\"'\",\"\\\"\") | from_json) %}{% set IRI = [] %}{% for num in range(protocolList | length) %}{% set _ = IRI.append(\"AssetProtocol\" | picklist(protocolList[num], \"@id\")) %}\n{% endfor %}{{IRI}}",
+                "lastScannedOn": "{% set data = vars.record['Last Scanned On']%}{% if data == \"None\" %}{{data}}{% else %}{{arrow.get(data).int_timestamp}}{% endif %}",
+                "assetRegistrationDate": "{% set data = vars.record['Asset Registration Date']%}{% if data == \"None\" %}{{data}}{% else %}{{arrow.get(data).int_timestamp}}{% endif %}"
+            },
+            "status": null,
+            "top": "165",
+            "left": "125",
+            "stepType": "\/api\/3\/workflow_step_types\/04d0cf46-b6a8-42c4-8683-60a7eaa69e8f",
+            "group": null,
+            "uuid": "9b9fc397-1bee-42c8-8e79-db981afacb5d"
+        },
+        {
+            "@type": "WorkflowStep",
+            "name": "Start",
+            "description": null,
+            "arguments": {
+                "step_variables": {
+                    "input": {
+                        "params": []
+                    },
+                    "record": "{{vars.input.params['assetRecord']}}"
+                }
+            },
+            "status": null,
+            "top": "30",
+            "left": "125",
+            "stepType": "\/api\/3\/workflow_step_types\/b348f017-9a94-471f-87f8-ce88b6a7ad62",
+            "group": null,
+            "uuid": "3c82fe05-f620-42c5-9ff9-840fb026b892"
+        }
+    ],
+    "routes": [
+        {
+            "@type": "WorkflowRoute",
+            "name": "Get Values -> Copy of Create Assets Records",
+            "targetStep": "\/api\/3\/workflow_steps\/7f52d399-ae92-48fc-9177-06cc67447503",
+            "sourceStep": "\/api\/3\/workflow_steps\/9b9fc397-1bee-42c8-8e79-db981afacb5d",
+            "label": null,
+            "isExecuted": false,
+            "group": null,
+            "uuid": "0b8ae345-e44a-4113-be96-e3296d78140c"
+        },
+        {
+            "@type": "WorkflowRoute",
+            "name": "Start -> Get Values",
+            "targetStep": "\/api\/3\/workflow_steps\/9b9fc397-1bee-42c8-8e79-db981afacb5d",
+            "sourceStep": "\/api\/3\/workflow_steps\/3c82fe05-f620-42c5-9ff9-840fb026b892",
+            "label": null,
+            "isExecuted": false,
+            "group": null,
+            "uuid": "44ccda4a-bf34-4cde-a849-0d4060bdde2e"
+        }
+    ],
+    "groups": [],
+    "priority": "\/api\/3\/picklists\/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+    "uuid": "d6017f29-92f5-464f-b41b-e55f0f4d0298",
+    "owners": [],
+    "isPrivate": false,
+    "deletedAt": null,
+    "recordTags": [
+        "Assets",
+        "OT IT",
+        "CSV Record"
+    ]
+}

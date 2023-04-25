@@ -1,0 +1,96 @@
+{
+    "@type": "Workflow",
+    "triggerLimit": null,
+    "name": "Isolate and Comment Assets",
+    "aliasName": null,
+    "tag": null,
+    "description": "This PB will update the assets as Isolate and add a comment.",
+    "isActive": true,
+    "debug": false,
+    "singleRecordExecution": false,
+    "remoteExecutableFlag": false,
+    "parameters": [
+        "assetRecord"
+    ],
+    "synchronous": false,
+    "collection": "\/api\/3\/workflow_collections\/fb4aa534-4bfc-4196-b509-96ef02fb9270",
+    "versions": [],
+    "triggerStep": "\/api\/3\/workflow_steps\/63fa3688-0730-4782-997e-24a450d2f20e",
+    "steps": [
+        {
+            "@type": "WorkflowStep",
+            "name": "Start",
+            "description": null,
+            "arguments": {
+                "step_variables": {
+                    "input": {
+                        "params": []
+                    },
+                    "record": "{{vars.input.params.assetRecord}}"
+                }
+            },
+            "status": null,
+            "top": "30",
+            "left": "125",
+            "stepType": "\/api\/3\/workflow_step_types\/b348f017-9a94-471f-87f8-ce88b6a7ad62",
+            "group": null,
+            "uuid": "63fa3688-0730-4782-997e-24a450d2f20e"
+        },
+        {
+            "@type": "WorkflowStep",
+            "name": "Update Asset State",
+            "description": null,
+            "arguments": {
+                "message": {
+                    "tags": [],
+                    "type": "\/api\/3\/picklists\/ff599189-3eeb-4c86-acb0-a7915e85ac3b",
+                    "tenant": "",
+                    "content": "<p>Isolated because found in malicious activity:<\/p>\n<p>{% for alert in vars.record['alerts'] %}Alert {{loop.index}}:<a href=\"\/modules\/alerts\/{{alert.uuid}}\">{{alert.name}}<\/a><br>{% endfor %}{% for incident in vars.record['incidents'] %}Incident {{loop.index}}:<a href=\"\/modules\/incidents\/{{incident.uuid}}\">{{incident.name}}<\/a><br>{% endfor %}<\/p>",
+                    "records": "{{vars.record['@id']}}"
+                },
+                "resource": {
+                    "state": "\/api\/3\/picklists\/321ad354-42ce-42b6-8636-2fa184a7dcd5"
+                },
+                "operation": "Append",
+                "collection": "{{vars.record['@id']}}",
+                "__recommend": [],
+                "collectionType": "\/api\/3\/assets",
+                "fieldOperation": {
+                    "protocol": "Append",
+                    "recordTags": "Append"
+                },
+                "step_variables": []
+            },
+            "status": null,
+            "top": "165",
+            "left": "125",
+            "stepType": "\/api\/3\/workflow_step_types\/b593663d-7d13-40ce-a3a3-96dece928722",
+            "group": null,
+            "uuid": "d7292293-bb93-4aaa-8471-a5db587a185d"
+        }
+    ],
+    "routes": [
+        {
+            "@type": "WorkflowRoute",
+            "name": "Start -> Isolate Asset",
+            "targetStep": "\/api\/3\/workflow_steps\/d7292293-bb93-4aaa-8471-a5db587a185d",
+            "sourceStep": "\/api\/3\/workflow_steps\/63fa3688-0730-4782-997e-24a450d2f20e",
+            "label": null,
+            "isExecuted": false,
+            "group": null,
+            "uuid": "db82d602-e180-4f38-b9f9-a2c7e8e0b58b"
+        }
+    ],
+    "groups": [],
+    "priority": "\/api\/3\/picklists\/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+    "uuid": "90e2748c-7a9b-4b2a-9e26-ae1ea5fb1c76",
+    "owners": [],
+    "isPrivate": false,
+    "deletedAt": null,
+    "recordTags": [
+        "Assets",
+        "Comment",
+        "OT IT",
+        "Isolate"
+    ]
+}

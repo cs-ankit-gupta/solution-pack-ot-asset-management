@@ -1,0 +1,105 @@
+{
+    "@type": "Workflow",
+    "triggerLimit": null,
+    "name": "MITRE ATT&CK > Fetch Latest Data",
+    "aliasName": null,
+    "tag": "#mitre-attack",
+    "description": "Manually fetches the latest data from MITRE",
+    "isActive": true,
+    "debug": false,
+    "singleRecordExecution": false,
+    "remoteExecutableFlag": false,
+    "parameters": [],
+    "synchronous": false,
+    "collection": "\/api\/3\/workflow_collections\/fb4aa534-4bfc-4196-b509-96ef02fb9270",
+    "versions": [],
+    "triggerStep": "\/api\/3\/workflow_steps\/3765b9c9-3f6d-420e-8b12-73c270052d74",
+    "steps": [
+        {
+            "@type": "WorkflowStep",
+            "name": "Fetch and Create",
+            "description": null,
+            "arguments": {
+                "name": "MITRE ATT&CK",
+                "config": "d35763f3-7312-4f65-b32f-432fbfad88aa",
+                "params": {
+                    "modules": [
+                        "Tactics",
+                        "Groups",
+                        "Techniques",
+                        "Subtechniques",
+                        "Mitigations",
+                        "Software"
+                    ],
+                    "matrices": "{{ vars.input.params.matricesToPull | json_query('[*][\"itemValue\"][]')}}",
+                    "upload_json": false,
+                    "force_ingestion": ""
+                },
+                "version": "2.0.1",
+                "connector": "mitre-attack",
+                "operation": "get_mitre_data",
+                "operationTitle": "Get MITRE Data",
+                "pickFromTenant": false,
+                "step_variables": []
+            },
+            "status": null,
+            "top": "165",
+            "left": "125",
+            "stepType": "\/api\/3\/workflow_step_types\/0bfed618-0316-11e7-93ae-92361f002671",
+            "group": null,
+            "uuid": "99b3c140-ca71-45fa-8f61-fc1d3e76f6f8"
+        },
+        {
+            "@type": "WorkflowStep",
+            "name": "Start",
+            "description": null,
+            "arguments": {
+                "route": "385b252a-a340-440f-ab79-e3d307a7e05f",
+                "resources": [
+                    "mitre_groups",
+                    "mitre_tactics",
+                    "mitre_techniques"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                    "input": {
+                        "params": [],
+                        "records": "{{vars.input.records}}"
+                    }
+                },
+                "_promptexpanded": true,
+                "executeButtonText": "Fetch",
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+            },
+            "status": null,
+            "top": "30",
+            "left": "125",
+            "stepType": "\/api\/3\/workflow_step_types\/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+            "group": null,
+            "uuid": "3765b9c9-3f6d-420e-8b12-73c270052d74"
+        }
+    ],
+    "routes": [
+        {
+            "@type": "WorkflowRoute",
+            "name": "Start -> Fetch and Create",
+            "targetStep": "\/api\/3\/workflow_steps\/99b3c140-ca71-45fa-8f61-fc1d3e76f6f8",
+            "sourceStep": "\/api\/3\/workflow_steps\/3765b9c9-3f6d-420e-8b12-73c270052d74",
+            "label": null,
+            "isExecuted": false,
+            "group": null,
+            "uuid": "d432938f-e2c5-4e86-86f4-c76ad8566b80"
+        }
+    ],
+    "groups": [],
+    "priority": null,
+    "uuid": "099a82c3-cbf1-4a50-bc49-ae0d0b0c3e58",
+    "owners": [],
+    "isPrivate": false,
+    "deletedAt": null,
+    "recordTags": [
+        "mitre-attack",
+        "OT IT"
+    ]
+}
