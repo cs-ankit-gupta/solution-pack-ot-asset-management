@@ -251,19 +251,31 @@
                                                 "type": "primitive"
                                             },
                                             {
-                                                "field": "assets.criticality",
-                                                "value": [
-                                                    "\/api\/3\/picklists\/873268b5-6751-4eac-a61c-0295f68baa9e",
-                                                    "\/api\/3\/picklists\/306b3eaf-f97e-4903-b416-049a40c3bef1"
-                                                ],
-                                                "display": "",
-                                                "operator": "in",
-                                                "type": "object",
-                                                "OPERATOR_KEY": "$",
-                                                "displayTemplate": "",
-                                                "template": "multiselectpicklist",
-                                                "previousOperator": "in",
-                                                "previousTemplate": "multiselectpicklist"
+                                                "logic": "OR",
+                                                "filters": [
+                                                    {
+                                                        "field": "assets.criticality",
+                                                        "operator": "eq",
+                                                        "value": "\/api\/3\/picklists\/873268b5-6751-4eac-a61c-0295f68baa9e",
+                                                        "_value": {
+                                                            "display": "Critical",
+                                                            "itemValue": "Critical",
+                                                            "@id": "\/api\/3\/picklists\/873268b5-6751-4eac-a61c-0295f68baa9e"
+                                                        },
+                                                        "type": "object"
+                                                    },
+                                                    {
+                                                        "field": "assets.criticality",
+                                                        "operator": "eq",
+                                                        "value": "\/api\/3\/picklists\/306b3eaf-f97e-4903-b416-049a40c3bef1",
+                                                        "_value": {
+                                                            "display": "Very Critical",
+                                                            "itemValue": "Very Critical",
+                                                            "@id": "\/api\/3\/picklists\/306b3eaf-f97e-4903-b416-049a40c3bef1"
+                                                        },
+                                                        "type": "object"
+                                                    }
+                                                ]
                                             }
                                         ]
                                     },
