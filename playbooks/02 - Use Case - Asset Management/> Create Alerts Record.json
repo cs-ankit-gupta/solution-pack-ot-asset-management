@@ -1,0 +1,273 @@
+{
+    "@type": "Workflow",
+    "triggerLimit": null,
+    "name": "> Create Alerts Record",
+    "aliasName": null,
+    "tag": null,
+    "description": "This will generate an Alert record.",
+    "isActive": true,
+    "debug": false,
+    "singleRecordExecution": false,
+    "remoteExecutableFlag": false,
+    "parameters": [
+        "alertRecord"
+    ],
+    "synchronous": false,
+    "collection": "\/api\/3\/workflow_collections\/fb4aa534-4bfc-4196-b509-96ef02fb9270",
+    "versions": [],
+    "triggerStep": "\/api\/3\/workflow_steps\/438ff1ce-4f2b-4288-8e29-d0c1c1b5bea8",
+    "steps": [
+        {
+            "@type": "WorkflowStep",
+            "name": "Create Alert",
+            "description": null,
+            "arguments": {
+                "resource": {
+                    "url": "{{vars.record['URL']}}",
+                    "name": "{{vars.record['Name']}}",
+                    "type": "{{\"AlertType\" | picklist(vars.record['Type'], \"@id\")}}",
+                    "state": "\/api\/3\/picklists\/a1bac09b-1441-45aa-ad1b-c88744e48e72",
+                    "domain": "{{vars.record['Domain']}}",
+                    "source": "{{vars.record['Source']}}",
+                    "status": "{{\"AlertStatus\" | picklist(vars.record['Status'], \"@id\")}}",
+                    "emailTo": "{{vars.record['Email Recipients (To)']}}",
+                    "metrics": "{{vars.record['Metrics']}}",
+                    "fileHash": "{{vars.record['File Hash']}}",
+                    "fileName": "{{vars.record['File Name']}}",
+                    "filePath": "{{vars.record['File Path']}}",
+                    "reporter": "{{vars.record['Reporter']}}",
+                    "services": "{{vars.record['Service']}}",
+                    "severity": "{{\"Severity\" | picklist(vars.record['Severity'], \"@id\")}}",
+                    "sourceId": "{{vars.record['Source ID']}}",
+                    "sourceIp": "{{vars.record['Source IP']}}",
+                    "userName": "{{vars.record['Username']}}",
+                    "__replace": "true",
+                    "deviceUID": "{{vars.record['Device UID']}}",
+                    "emailBody": "{{vars.record['Email Body']}}",
+                    "emailFrom": "{{vars.record['Email From']}}",
+                    "fileEmail": "{{vars.record['Email']}}",
+                    "fileNames": "{{vars.record['File Names']}}",
+                    "processId": "{{vars.record['Process ID']}}",
+                    "bucketName": "{{vars.record['Bucket Name']}}",
+                    "deviceType": "{{\"AssetCategory\" | picklist(vars.record['Device Type'], \"@id\")}}",
+                    "recordTags": "{{vars.record['Tags']}}",
+                    "returnPath": "{{vars.record['Return Path']}}",
+                    "sourcePort": "{{vars.record['Source Port']}}",
+                    "sourceTool": "{{vars.record['Source Tool']}}",
+                    "sourcedata": "{{vars.record['Source Data']}}",
+                    "description": "{{vars.record['Description']}}",
+                    "deviceOwner": "{{vars.record['Device Owner']}}",
+                    "mitregroups": "{{vars.record['Groups']}}",
+                    "processGuid": "{{vars.record['Process GUID']}}",
+                    "processName": "{{vars.record['Process Name']}}",
+                    "processTree": "{{vars.record['Process Tree']}}",
+                    "registryKey": "{{vars.record['Registry Key']}}",
+                    "targetAsset": "{{vars.record['Target Asset']}}",
+                    "userDetails": "{{vars.record['User Details']}}",
+                    "ackSlaStatus": "\/api\/3\/picklists\/72979f64-e8b9-4888-a965-957e0ec24818",
+                    "computerName": "{{vars.record['Computer Name']}}",
+                    "emailHeaders": "{{vars.record['Email Headers']}}",
+                    "emailSubject": "{{vars.record['Email Subject']}}",
+                    "mitretactics": "{{vars.record['Tactics']}}",
+                    "senderDomain": "{{vars.record['Sender Domain']}}",
+                    "destinationID": "{{vars.record['Destination ID']}}",
+                    "destinationIp": "{{vars.record['Destination IP']}}",
+                    "mitreattackid": "{{vars.record['MITRE ATT&CK ID']}}",
+                    "respSlaStatus": "\/api\/3\/picklists\/72979f64-e8b9-4888-a965-957e0ec24818",
+                    "scheduledTask": "{{vars.record['Scheduled Task']}}",
+                    "sourceProcess": "{{vars.record['Source Process']}}",
+                    "targetProcess": "{{vars.record['Target Process']}}",
+                    "deviceSerialNo": "{{vars.record['Device Serial No']}}",
+                    "killChainPhase": "{{\"KillChainPhases\" | picklist(vars.record['Kill Chain Phase'], \"@id\")}}",
+                    "mitreTechnique": "{{vars.record['MITRE Technique']}}",
+                    "priorityWeight": "{{vars.record['Priority Weight']}}",
+                    "destinationPort": "{{vars.record['Destination Port']}}",
+                    "parentProcessPid": "{{vars.record['Parent Process ID']}}",
+                    "registryKeyValue": "{{vars.record['Registry Key Value']}}",
+                    "parentProcessName": "{{vars.record['Parent Process Name']}}",
+                    "reporterEmailBody": "{{vars.record['Reporter Email Body']}}",
+                    "senderEmailAddress": "{{vars.record['Sender Email Address']}}",
+                    "emailClassification": "{{\"Email Classification\" | picklist(vars.record['Email Classification'], \"@id\")}}",
+                    "escalatedtoincident": "\/api\/3\/picklists\/2128a09c-153d-4db3-985d-de6be33deae5",
+                    "alertRemainingAckSLA": 0,
+                    "parentProcessCmdLine": "{{vars.record['Parent Process Command Line']}}",
+                    "recipientEmailAddress": "{{vars.record['Recipient Email Address']}}",
+                    "vulnerabilitySeverity": "{{vars.record['Vulnerability Severity']}}"
+                },
+                "operation": "Overwrite",
+                "collection": "\/api\/3\/upsert\/alerts",
+                "__recommend": [],
+                "fieldOperation": {
+                    "recordTags": "Overwrite"
+                },
+                "step_variables": []
+            },
+            "status": null,
+            "top": "570",
+            "left": "125",
+            "stepType": "\/api\/3\/workflow_step_types\/2597053c-e718-44b4-8394-4d40fe26d357",
+            "group": null,
+            "uuid": "f2b37bfc-ddf1-47e2-b646-41054ac75642"
+        },
+        {
+            "@type": "WorkflowStep",
+            "name": "Get Groups",
+            "description": null,
+            "arguments": {
+                "when": "{{vars.record['Groups'] != \"None\"}}",
+                "query": {
+                    "sort": [],
+                    "limit": 30,
+                    "logic": "AND",
+                    "filters": [
+                        {
+                            "type": "primitive",
+                            "field": "name",
+                            "value": "{{vars.record['Groups']}}",
+                            "operator": "eq",
+                            "_operator": "eq"
+                        }
+                    ],
+                    "__selectFields": [
+                        "id"
+                    ]
+                },
+                "module": "mitre_groups?$limit=30",
+                "checkboxFields": true,
+                "step_variables": {
+                    "record": "{{ vars.record | replace(vars.record['Groups'], vars.result[0]['@id'])}}"
+                }
+            },
+            "status": null,
+            "top": "435",
+            "left": "125",
+            "stepType": "\/api\/3\/workflow_step_types\/b593663d-7d13-40ce-a3a3-96dece928770",
+            "group": null,
+            "uuid": "6c431deb-6d5f-4f7a-bc3f-cb6f0b9faa93"
+        },
+        {
+            "@type": "WorkflowStep",
+            "name": "Get Tactics",
+            "description": null,
+            "arguments": {
+                "when": "{{vars.record['Tactics'] != \"None\"}}",
+                "query": {
+                    "sort": [],
+                    "limit": 30,
+                    "logic": "AND",
+                    "filters": [
+                        {
+                            "type": "primitive",
+                            "field": "name",
+                            "value": "{{vars.record['Tactics'] | string}}",
+                            "operator": "eq",
+                            "_operator": "eq"
+                        }
+                    ],
+                    "__selectFields": [
+                        "id"
+                    ]
+                },
+                "module": "mitre_tactics?$limit=30",
+                "checkboxFields": true,
+                "step_variables": {
+                    "record": "{{ vars.record | replace(vars.record['Tactics'], vars.result[0]['@id'])}}"
+                }
+            },
+            "status": null,
+            "top": "300",
+            "left": "125",
+            "stepType": "\/api\/3\/workflow_step_types\/b593663d-7d13-40ce-a3a3-96dece928770",
+            "group": null,
+            "uuid": "1efe9ee2-338a-4e58-851b-ea3833e8707a"
+        },
+        {
+            "@type": "WorkflowStep",
+            "name": "Get Values",
+            "description": null,
+            "arguments": {
+                "targetAsset": "{{vars.record['Target Asset'].split(', ')}}"
+            },
+            "status": null,
+            "top": "165",
+            "left": "125",
+            "stepType": "\/api\/3\/workflow_step_types\/04d0cf46-b6a8-42c4-8683-60a7eaa69e8f",
+            "group": null,
+            "uuid": "fd66bd08-ae50-4635-84f0-e95fa48bf0b8"
+        },
+        {
+            "@type": "WorkflowStep",
+            "name": "Start",
+            "description": null,
+            "arguments": {
+                "step_variables": {
+                    "input": {
+                        "params": []
+                    },
+                    "record": "{{vars.input.params.alertRecord}}"
+                }
+            },
+            "status": null,
+            "top": "30",
+            "left": "125",
+            "stepType": "\/api\/3\/workflow_step_types\/b348f017-9a94-471f-87f8-ce88b6a7ad62",
+            "group": null,
+            "uuid": "438ff1ce-4f2b-4288-8e29-d0c1c1b5bea8"
+        }
+    ],
+    "routes": [
+        {
+            "@type": "WorkflowRoute",
+            "name": "Get Groups -> Create Alert",
+            "targetStep": "\/api\/3\/workflow_steps\/f2b37bfc-ddf1-47e2-b646-41054ac75642",
+            "sourceStep": "\/api\/3\/workflow_steps\/6c431deb-6d5f-4f7a-bc3f-cb6f0b9faa93",
+            "label": null,
+            "isExecuted": false,
+            "group": null,
+            "uuid": "4f3e76c1-2ae4-40c9-a47e-a05a15af0618"
+        },
+        {
+            "@type": "WorkflowRoute",
+            "name": "Get Tactics -> Get Groups",
+            "targetStep": "\/api\/3\/workflow_steps\/6c431deb-6d5f-4f7a-bc3f-cb6f0b9faa93",
+            "sourceStep": "\/api\/3\/workflow_steps\/1efe9ee2-338a-4e58-851b-ea3833e8707a",
+            "label": null,
+            "isExecuted": false,
+            "group": null,
+            "uuid": "d41f808c-ee7e-4060-a8d8-8cd85ed47197"
+        },
+        {
+            "@type": "WorkflowRoute",
+            "name": "Get Values -> Get Tactics",
+            "targetStep": "\/api\/3\/workflow_steps\/1efe9ee2-338a-4e58-851b-ea3833e8707a",
+            "sourceStep": "\/api\/3\/workflow_steps\/fd66bd08-ae50-4635-84f0-e95fa48bf0b8",
+            "label": null,
+            "isExecuted": false,
+            "group": null,
+            "uuid": "195dcbd7-c87f-4280-af7f-788f76f0b534"
+        },
+        {
+            "@type": "WorkflowRoute",
+            "name": "Start -> Get Values",
+            "targetStep": "\/api\/3\/workflow_steps\/fd66bd08-ae50-4635-84f0-e95fa48bf0b8",
+            "sourceStep": "\/api\/3\/workflow_steps\/438ff1ce-4f2b-4288-8e29-d0c1c1b5bea8",
+            "label": null,
+            "isExecuted": false,
+            "group": null,
+            "uuid": "fe22b8b7-94cd-43a4-885a-2a77ad683b84"
+        }
+    ],
+    "groups": [],
+    "priority": "\/api\/3\/picklists\/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+    "uuid": "50bf3bf4-1280-4b86-be7d-d78dd3a56ce1",
+    "owners": [],
+    "isPrivate": false,
+    "deletedAt": null,
+    "recordTags": [
+        "Alerts",
+        "Referenced",
+        "Scenario",
+        "CSV Record",
+        "IT OT"
+    ]
+}

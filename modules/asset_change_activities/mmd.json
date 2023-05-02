@@ -71,6 +71,7 @@
             "unique": false,
             "recommend": false,
             "uuid": "55a54f13-89ed-4abd-99e8-c6a2ec8ad669",
+            "skipSerialization": false,
             "displayName": "{{ closedOn }}",
             "descriptions": {
                 "singular": "Closed On"
@@ -117,6 +118,7 @@
             "unique": false,
             "recommend": false,
             "uuid": "57b9d571-c85a-4787-a5d5-bf64c54eeb81",
+            "skipSerialization": false,
             "displayName": "{{ title }}",
             "descriptions": {
                 "singular": "Title"
@@ -207,6 +209,7 @@
             "unique": false,
             "recommend": false,
             "uuid": "897a7e1b-706c-4cc1-82b4-ecdb32c0bf03",
+            "skipSerialization": false,
             "displayName": "{{ assetChangeType }}",
             "descriptions": {
                 "singular": "Asset Change Type"
@@ -253,6 +256,7 @@
             "unique": false,
             "recommend": false,
             "uuid": "92cc3100-c06d-41ff-bf98-85df97e36bec",
+            "skipSerialization": false,
             "displayName": "{{ description }}",
             "descriptions": {
                 "singular": "Description"
@@ -299,6 +303,7 @@
             "unique": false,
             "recommend": false,
             "uuid": "351eae99-4f8f-454c-92e0-e0dc6b0081a5",
+            "skipSerialization": false,
             "displayName": "{{ justification }}",
             "descriptions": {
                 "singular": "Justification"
@@ -347,6 +352,7 @@
             "unique": false,
             "recommend": false,
             "uuid": "55b4d493-383d-43e6-8f0f-1db227d772c0",
+            "skipSerialization": false,
             "displayName": "{{ assignedTo }}",
             "descriptions": {
                 "singular": "Assigned To"
@@ -393,6 +399,7 @@
             "unique": false,
             "recommend": false,
             "uuid": "491cc97c-ecf0-46a5-91ae-19f04ed29372",
+            "skipSerialization": false,
             "displayName": "{{ dueDate }}",
             "descriptions": {
                 "singular": "Due Date"
@@ -543,6 +550,7 @@
             "unique": false,
             "recommend": false,
             "uuid": "e2203603-afc6-4b9b-add3-a74ebcd0648b",
+            "skipSerialization": false,
             "displayName": "{{ status }}",
             "descriptions": {
                 "singular": "Status"
@@ -591,6 +599,7 @@
             "unique": false,
             "recommend": false,
             "uuid": "c6f49faf-0902-4169-aa44-859326b9b669",
+            "skipSerialization": false,
             "displayName": "{{ attachments }}",
             "descriptions": {
                 "singular": "Attachments"
@@ -634,6 +643,7 @@
             "unique": false,
             "recommend": false,
             "uuid": "86e7b339-db44-403d-83a8-9f055bcdce95",
+            "skipSerialization": false,
             "displayName": "{{ comments }}",
             "descriptions": {
                 "singular": "Comments"
@@ -677,6 +687,7 @@
             "unique": false,
             "recommend": false,
             "uuid": "662a942d-91e7-4336-aee5-4aac09b3c81e",
+            "skipSerialization": false,
             "displayName": "{{ vulnerabilities }}",
             "descriptions": {
                 "singular": "Vulnerabilities"
@@ -720,6 +731,7 @@
             "unique": false,
             "recommend": false,
             "uuid": "b7b010b0-5681-4a9f-b209-dbf68cad0aaf",
+            "skipSerialization": false,
             "displayName": "{{ assets }}",
             "descriptions": {
                 "singular": "Assets"
@@ -763,6 +775,7 @@
             "unique": false,
             "recommend": false,
             "uuid": "10dfab1b-6468-4aac-bec1-6d68803a6584",
+            "skipSerialization": false,
             "displayName": "{{ tasks }}",
             "descriptions": {
                 "singular": "Tasks"
