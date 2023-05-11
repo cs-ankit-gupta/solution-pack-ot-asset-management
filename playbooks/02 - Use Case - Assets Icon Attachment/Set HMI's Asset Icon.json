@@ -1,0 +1,157 @@
+{
+    "@type": "Workflow",
+    "triggerLimit": null,
+    "name": "Set HMI's Asset Icon",
+    "aliasName": null,
+    "tag": null,
+    "description": "Playbook attach the HMI Icon from the Asset Resources to the Asset for the HMI Category.",
+    "isActive": true,
+    "debug": false,
+    "singleRecordExecution": false,
+    "remoteExecutableFlag": false,
+    "parameters": [],
+    "synchronous": false,
+    "collection": "\/api\/3\/workflow_collections\/a8c3d8e3-bf46-4118-8fd8-179396e14340",
+    "versions": [],
+    "triggerStep": "\/api\/3\/workflow_steps\/80f60f69-e7dd-4e0f-a2fc-0957bc485506",
+    "steps": [
+        {
+            "@type": "WorkflowStep",
+            "name": "Find Icon",
+            "description": null,
+            "arguments": {
+                "query": {
+                    "sort": [],
+                    "limit": 30,
+                    "logic": "AND",
+                    "filters": [
+                        {
+                            "type": "primitive",
+                            "field": "type",
+                            "value": "HMI",
+                            "operator": "eq",
+                            "_operator": "eq"
+                        }
+                    ]
+                },
+                "module": "asset_resources?$limit=30",
+                "step_variables": []
+            },
+            "status": null,
+            "top": "165",
+            "left": "125",
+            "stepType": "\/api\/3\/workflow_step_types\/b593663d-7d13-40ce-a3a3-96dece928770",
+            "group": null,
+            "uuid": "6f46b97f-683c-4323-99ff-67914ef40895"
+        },
+        {
+            "@type": "WorkflowStep",
+            "name": "Start",
+            "description": null,
+            "arguments": {
+                "resource": "assets",
+                "resources": [
+                    "assets"
+                ],
+                "step_variables": {
+                    "input": {
+                        "params": [],
+                        "records": [
+                            "{{vars.input.records[0]}}"
+                        ]
+                    }
+                },
+                "fieldbasedtrigger": {
+                    "sort": [],
+                    "limit": 30,
+                    "logic": "AND",
+                    "filters": [
+                        {
+                            "type": "object",
+                            "field": "category",
+                            "value": "\/api\/3\/picklists\/ea256c04-890c-4deb-aac4-c06e43f7b86c",
+                            "_value": {
+                                "@id": "\/api\/3\/picklists\/ea256c04-890c-4deb-aac4-c06e43f7b86c",
+                                "display": "HMI",
+                                "itemValue": "HMI"
+                            },
+                            "operator": "eq"
+                        }
+                    ]
+                }
+            },
+            "status": null,
+            "top": "30",
+            "left": "125",
+            "stepType": "\/api\/3\/workflow_step_types\/ea155646-3821-4542-9702-b246da430a8d",
+            "group": null,
+            "uuid": "80f60f69-e7dd-4e0f-a2fc-0957bc485506"
+        },
+        {
+            "@type": "WorkflowStep",
+            "name": "Update Assets",
+            "description": null,
+            "arguments": {
+                "for_each": {
+                    "item": "{{vars.input.records}}",
+                    "__bulk": true,
+                    "condition": "",
+                    "batch_size": 100
+                },
+                "resource": {
+                    "assetIcon": "{{vars.steps.Find_Icon[0]['@id']}}"
+                },
+                "operation": "Append",
+                "collection": "{{vars.item['@id']}}",
+                "__recommend": [],
+                "collectionType": "\/api\/3\/assets",
+                "fieldOperation": {
+                    "protocol": "Append",
+                    "recordTags": "Append"
+                },
+                "step_variables": []
+            },
+            "status": null,
+            "top": "300",
+            "left": "125",
+            "stepType": "\/api\/3\/workflow_step_types\/b593663d-7d13-40ce-a3a3-96dece928722",
+            "group": null,
+            "uuid": "da23b0e9-e095-4d8c-b2d7-f2bc4969c795"
+        }
+    ],
+    "routes": [
+        {
+            "@type": "WorkflowRoute",
+            "name": "Find Icon -> Update Assets",
+            "targetStep": "\/api\/3\/workflow_steps\/da23b0e9-e095-4d8c-b2d7-f2bc4969c795",
+            "sourceStep": "\/api\/3\/workflow_steps\/6f46b97f-683c-4323-99ff-67914ef40895",
+            "label": null,
+            "isExecuted": false,
+            "group": null,
+            "uuid": "55991b5e-c006-46db-98f1-3669794b840e"
+        },
+        {
+            "@type": "WorkflowRoute",
+            "name": "Start -> Find Icon",
+            "targetStep": "\/api\/3\/workflow_steps\/6f46b97f-683c-4323-99ff-67914ef40895",
+            "sourceStep": "\/api\/3\/workflow_steps\/80f60f69-e7dd-4e0f-a2fc-0957bc485506",
+            "label": null,
+            "isExecuted": false,
+            "group": null,
+            "uuid": "1448395b-6c14-496b-83cc-32113d59f0e5"
+        }
+    ],
+    "groups": [],
+    "priority": "\/api\/3\/picklists\/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+    "uuid": "f97a83d7-4404-4576-9d51-f22f61e84268",
+    "owners": [],
+    "isPrivate": false,
+    "deletedAt": null,
+    "recordTags": [
+        "Asset",
+        "Asset Resources",
+        "HMI",
+        "Icon",
+        "PostCreate"
+    ]
+}
