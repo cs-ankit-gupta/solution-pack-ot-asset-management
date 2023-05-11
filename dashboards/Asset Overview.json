@@ -314,20 +314,22 @@
                                             {
                                                 "field": "recordTags",
                                                 "value": [
-                                                    "\/api\/3\/tags\/MEF"
+                                                    "\/api\/3\/tags\/Most Essential Function (MEF)"
                                                 ],
-                                                "display": null,
+                                                "display": "",
                                                 "operator": "in",
                                                 "type": "array",
                                                 "OPERATOR_KEY": "$",
                                                 "module": "recordTags",
                                                 "template": "tags",
                                                 "previousOperator": "in",
-                                                "previousTemplate": "tags"
+                                                "previousTemplate": "tags",
+                                                "useInOperator": true
+                                                
                                             }
                                         ]
                                     },
-                                    "title": "MEF Assets",
+                                    "title": "Most Essential Function (MEF) Assets",
                                     "enableHorizontalScroll": true
                                 }
                             }
