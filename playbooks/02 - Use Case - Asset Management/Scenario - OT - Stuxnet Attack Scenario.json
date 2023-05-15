@@ -230,8 +230,8 @@
                 "resource": {
                     "ip": "110.132.30.63",
                     "name": "IE11Win7",
-                    "zone": "\/api\/3\/picklists\/1f6a2248-0d8d-4233-9764-5d641a257ba7",
-                    "level": "\/api\/3\/picklists\/3eb967b4-ceca-473b-9a05-f3b8b5dac837",
+                    "zone": "\/api\/3\/picklists\/4104499e-f231-42e3-98f9-888af67e0555",
+                    "level": "\/api\/3\/picklists\/adb317f0-56e4-4ffe-976e-ceb0ac9b6e75",
                     "state": "\/api\/3\/picklists\/b31da3b9-6f87-469e-a1bf-2517c48a7001",
                     "status": "\/api\/3\/picklists\/421c20cd-e63d-4e32-9a25-774b2155cd24",
                     "vendor": "HCL",
@@ -950,8 +950,8 @@
     "recordTags": [
         "Alerts",
         "Assets",
+        "IT OT",
         "Referenced",
-        "Scenario",
-        "IT OT"
+        "Scenario"
     ]
 }
