@@ -1,0 +1,157 @@
+{
+    "@type": "Workflow",
+    "triggerLimit": null,
+    "name": "Set Switch's Asset Icon",
+    "aliasName": null,
+    "tag": null,
+    "description": "Playbook attach the Switch Icon from the Asset Resources to the Asset for the Switch Category.",
+    "isActive": true,
+    "debug": false,
+    "singleRecordExecution": false,
+    "remoteExecutableFlag": false,
+    "parameters": [],
+    "synchronous": false,
+    "collection": "\/api\/3\/workflow_collections\/a8c3d8e3-bf46-4118-8fd8-179396e14340",
+    "versions": [],
+    "triggerStep": "\/api\/3\/workflow_steps\/f2e000d2-d1ac-433f-aff8-6395c73d304e",
+    "steps": [
+        {
+            "@type": "WorkflowStep",
+            "name": "Find Icon",
+            "description": null,
+            "arguments": {
+                "query": {
+                    "sort": [],
+                    "limit": 30,
+                    "logic": "AND",
+                    "filters": [
+                        {
+                            "type": "primitive",
+                            "field": "type",
+                            "value": "Switch",
+                            "operator": "eq",
+                            "_operator": "eq"
+                        }
+                    ]
+                },
+                "module": "asset_resources?$limit=30",
+                "step_variables": []
+            },
+            "status": null,
+            "top": "165",
+            "left": "125",
+            "stepType": "\/api\/3\/workflow_step_types\/b593663d-7d13-40ce-a3a3-96dece928770",
+            "group": null,
+            "uuid": "0e97a6f4-a6aa-490c-87ad-fd5c905ea018"
+        },
+        {
+            "@type": "WorkflowStep",
+            "name": "Start",
+            "description": null,
+            "arguments": {
+                "resource": "assets",
+                "resources": [
+                    "assets"
+                ],
+                "step_variables": {
+                    "input": {
+                        "params": [],
+                        "records": [
+                            "{{vars.input.records[0]}}"
+                        ]
+                    }
+                },
+                "fieldbasedtrigger": {
+                    "sort": [],
+                    "limit": 30,
+                    "logic": "AND",
+                    "filters": [
+                        {
+                            "type": "object",
+                            "field": "category",
+                            "value": "\/api\/3\/picklists\/e231a1fb-166b-40b4-9c9f-1a71d5515db3",
+                            "_value": {
+                                "@id": "\/api\/3\/picklists\/e231a1fb-166b-40b4-9c9f-1a71d5515db3",
+                                "display": "Switch",
+                                "itemValue": "Switch"
+                            },
+                            "operator": "eq"
+                        }
+                    ]
+                }
+            },
+            "status": null,
+            "top": "30",
+            "left": "125",
+            "stepType": "\/api\/3\/workflow_step_types\/ea155646-3821-4542-9702-b246da430a8d",
+            "group": null,
+            "uuid": "f2e000d2-d1ac-433f-aff8-6395c73d304e"
+        },
+        {
+            "@type": "WorkflowStep",
+            "name": "Update Assets",
+            "description": null,
+            "arguments": {
+                "for_each": {
+                    "item": "{{vars.input.records}}",
+                    "__bulk": true,
+                    "condition": "",
+                    "batch_size": 100
+                },
+                "resource": {
+                    "assetIcon": "{{vars.steps.Find_Icon[0]['@id']}}"
+                },
+                "operation": "Append",
+                "collection": "{{vars.item['@id']}}",
+                "__recommend": [],
+                "collectionType": "\/api\/3\/assets",
+                "fieldOperation": {
+                    "protocol": "Append",
+                    "recordTags": "Append"
+                },
+                "step_variables": []
+            },
+            "status": null,
+            "top": "300",
+            "left": "125",
+            "stepType": "\/api\/3\/workflow_step_types\/b593663d-7d13-40ce-a3a3-96dece928722",
+            "group": null,
+            "uuid": "ca1fa92a-faa1-4b0c-9106-932e4ee3fa85"
+        }
+    ],
+    "routes": [
+        {
+            "@type": "WorkflowRoute",
+            "name": "Find Icon -> Update Assets",
+            "targetStep": "\/api\/3\/workflow_steps\/ca1fa92a-faa1-4b0c-9106-932e4ee3fa85",
+            "sourceStep": "\/api\/3\/workflow_steps\/0e97a6f4-a6aa-490c-87ad-fd5c905ea018",
+            "label": null,
+            "isExecuted": false,
+            "group": null,
+            "uuid": "b6fbf99f-b529-415d-b0f9-ed5a1120fd0f"
+        },
+        {
+            "@type": "WorkflowRoute",
+            "name": "Start -> Find Icon",
+            "targetStep": "\/api\/3\/workflow_steps\/0e97a6f4-a6aa-490c-87ad-fd5c905ea018",
+            "sourceStep": "\/api\/3\/workflow_steps\/f2e000d2-d1ac-433f-aff8-6395c73d304e",
+            "label": null,
+            "isExecuted": false,
+            "group": null,
+            "uuid": "6784f866-f87f-4b95-be35-6b2cac47da6f"
+        }
+    ],
+    "groups": [],
+    "priority": "\/api\/3\/picklists\/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+    "uuid": "d2399ebf-4342-4c0a-83e3-1c148aa9f3db",
+    "owners": [],
+    "isPrivate": false,
+    "deletedAt": null,
+    "recordTags": [
+        "Asset",
+        "Asset Resources",
+        "Icon",
+        "PostCreate",
+        "Switch"
+    ]
+}
