@@ -4,7 +4,7 @@
     "name": "Isolate and Comment Assets",
     "aliasName": null,
     "tag": null,
-    "description": "This PB will update the assets as Isolate and add a comment.",
+    "description": "Playbook will update the assets as Isolate and add a comment.",
     "isActive": true,
     "debug": false,
     "singleRecordExecution": false,

@@ -575,7 +575,29 @@
                                                         {
                                                             "type": "mitreAttackSpread-1.0.0",
                                                             "config": {
-                                                                "wid": "5f47d457-4be4-48c1-bb8b-406b81f20eeb"
+                                                                "wid": "5f47d457-4be4-48c1-bb8b-406b81f20eeb",
+                                                                "displayTechniques": false,
+                                                                "displaySubtechniques": false,
+                                                                "hideTactics": false,
+                                                                "hideTechniques": false,
+                                                                "hideParentTactics": false,
+                                                                "filterGroups": false,
+                                                                "enableHeatmap": false,
+                                                                "enableCoverage": true,
+                                                                "toggleDisabledExpand": true,
+                                                                "selectedGroups": [],
+                                                                "alertsQuery": {
+                                                                    "sort": [],
+                                                                    "limit": 30,
+                                                                    "logic": "AND",
+                                                                    "filters": []
+                                                                },
+                                                                "incidentsQuery": {
+                                                                    "sort": [],
+                                                                    "limit": 30,
+                                                                    "logic": "AND",
+                                                                    "filters": []
+                                                                }
                                                             }
                                                         }
                                                     ],
