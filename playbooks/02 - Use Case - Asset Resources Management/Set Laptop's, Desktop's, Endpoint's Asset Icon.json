@@ -154,12 +154,12 @@
     "isPrivate": false,
     "deletedAt": null,
     "recordTags": [
-        "Asset",
-        "Asset Resources",
+        "Laptop",
         "Desktop",
         "Endpoint",
+        "Asset",
+        "Asset Resources",
         "Icon",
-        "Laptop",
         "PostCreate"
     ]
 }

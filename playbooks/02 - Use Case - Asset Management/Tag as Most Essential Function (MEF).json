@@ -17,25 +17,6 @@
     "steps": [
         {
             "@type": "WorkflowStep",
-            "name": "No Opreation",
-            "description": null,
-            "arguments": {
-                "params": [],
-                "version": "3.2.3",
-                "connector": "cyops_utilities",
-                "operation": "no_op",
-                "operationTitle": "Utils: No Operation",
-                "step_variables": []
-            },
-            "status": null,
-            "top": "300",
-            "left": "475",
-            "stepType": "\/api\/3\/workflow_step_types\/0109f35d-090b-4a2b-bd8a-94cbc3508562",
-            "group": null,
-            "uuid": "f6f7d6ab-1d8a-4180-8b72-c42e18931922"
-        },
-        {
-            "@type": "WorkflowStep",
             "name": "Reason",
             "description": null,
             "arguments": {
@@ -83,13 +64,9 @@
                 "response_mapping": {
                     "options": [
                         {
-                            "option": "Mark",
-                            "step_iri": "\/api\/3\/workflow_steps\/d3b7e6b8-0c01-4ef8-8e8a-d14705f5383d"
-                        },
-                        {
-                            "option": "Cancel",
+                            "option": "Mark as MEF",
                             "primary": true,
-                            "step_iri": "\/api\/3\/workflow_steps\/f6f7d6ab-1d8a-4180-8b72-c42e18931922"
+                            "step_iri": "\/api\/3\/workflow_steps\/d3b7e6b8-0c01-4ef8-8e8a-d14705f5383d"
                         }
                     ],
                     "duplicateOption": false
@@ -104,7 +81,7 @@
             },
             "status": null,
             "top": "165",
-            "left": "300",
+            "left": "125",
             "stepType": "\/api\/3\/workflow_step_types\/fc04082a-d7dc-4299-96fb-6837b1baa0fe",
             "group": null,
             "uuid": "c017b63f-fcc4-47c4-b07f-eb433659591c"
@@ -183,7 +160,7 @@
             },
             "status": null,
             "top": "30",
-            "left": "300",
+            "left": "125",
             "stepType": "\/api\/3\/workflow_step_types\/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
             "group": null,
             "uuid": "776fae0b-0bce-459c-bc50-e2a98eceb372"
@@ -192,20 +169,10 @@
     "routes": [
         {
             "@type": "WorkflowRoute",
-            "name": "Reason -> No Opreation",
-            "targetStep": "\/api\/3\/workflow_steps\/f6f7d6ab-1d8a-4180-8b72-c42e18931922",
-            "sourceStep": "\/api\/3\/workflow_steps\/c017b63f-fcc4-47c4-b07f-eb433659591c",
-            "label": "Cancel",
-            "isExecuted": false,
-            "group": null,
-            "uuid": "3226e9aa-432b-4008-a0eb-2a3259be3a4a"
-        },
-        {
-            "@type": "WorkflowRoute",
             "name": "Reason -> Set Tag",
             "targetStep": "\/api\/3\/workflow_steps\/d3b7e6b8-0c01-4ef8-8e8a-d14705f5383d",
             "sourceStep": "\/api\/3\/workflow_steps\/c017b63f-fcc4-47c4-b07f-eb433659591c",
-            "label": "Mark",
+            "label": "Mark as MEF",
             "isExecuted": false,
             "group": null,
             "uuid": "712f59c8-a4fb-4c1d-9d73-c75bc28e9827"

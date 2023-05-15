@@ -54,7 +54,7 @@
     "supportInfo": "support@fortinet.com",
     "iconLarge": null,
     "postInstallConfig": null,
-    "date": "2023-05-11T09:24:43+00:00",
+    "date": "2023-05-15T11:06:56+00:00",
     "contents": {
         "picklistNames": [
             {
@@ -134,7 +134,7 @@
                 "name": "02 - Use Case - Asset Management"
             },
             {
-                "name": "02 - Use Case - Assets Icon Attachment"
+                "name": "02 - Use Case - Asset Resources Management"
             }
         ],
         "globalVariables": [],
