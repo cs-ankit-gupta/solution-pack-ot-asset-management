@@ -50,7 +50,6 @@
                     "sourcePort": "1434",
                     "description": "A machine infected by Stuxnet has attempted to establish a communication with other potentially stuxnet infected machine via a malware-specific RPC-based peer to peer control. If the protocol negotiation is successful, also the other machine is infected by Stuxnet. It is advised to immediately quarantine and clean the Stuxnet infected machine.",
                     "ackSlaStatus": "\/api\/3\/picklists\/72979f64-e8b9-4888-a965-957e0ec24818",
-                    "mitretactics": "\/api\/3\/mitre_tactics\/69da72d2-f550-41c5-ab9e-e8255707f28a",
                     "destinationIp": "110.132.30.63",
                     "mitreattackid": "T0847",
                     "respSlaStatus": "\/api\/3\/picklists\/72979f64-e8b9-4888-a965-957e0ec24818",
@@ -99,7 +98,6 @@
                     "sourcePort": "5234",
                     "description": "A host with a public IP address has communicated with a host with a private IP address, and vice versa. Public IP addresses are typically used by devices that can be accessed via the internet and are not expected to communicate with private networks. Please confirm that this is a legitimate communication.",
                     "ackSlaStatus": "\/api\/3\/picklists\/72979f64-e8b9-4888-a965-957e0ec24818",
-                    "mitretactics": "\/api\/3\/mitre_tactics\/97c8ff73-bd14-4b6c-ac32-3d91d2c41e3f",
                     "destinationIp": "103.224.182.249",
                     "mitreattackid": "T0885",
                     "respSlaStatus": "\/api\/3\/picklists\/72979f64-e8b9-4888-a965-957e0ec24818",
@@ -232,8 +230,8 @@
                 "resource": {
                     "ip": "110.132.30.63",
                     "name": "IE11Win7",
-                    "zone": "\/api\/3\/picklists\/1f6a2248-0d8d-4233-9764-5d641a257ba7",
-                    "level": "\/api\/3\/picklists\/3eb967b4-ceca-473b-9a05-f3b8b5dac837",
+                    "zone": "\/api\/3\/picklists\/4104499e-f231-42e3-98f9-888af67e0555",
+                    "level": "\/api\/3\/picklists\/adb317f0-56e4-4ffe-976e-ceb0ac9b6e75",
                     "state": "\/api\/3\/picklists\/b31da3b9-6f87-469e-a1bf-2517c48a7001",
                     "status": "\/api\/3\/picklists\/421c20cd-e63d-4e32-9a25-774b2155cd24",
                     "vendor": "HCL",
@@ -338,7 +336,6 @@
                     "sourcePort": "5213",
                     "description": "Potentially dangerous STEP7 operation: the STEP7 master or an operator is downloading the software and\/or hardware configuration into a PLC. This operation may be part of regular maintance, but can also be used in a cyber attack.",
                     "ackSlaStatus": "\/api\/3\/picklists\/72979f64-e8b9-4888-a965-957e0ec24818",
-                    "mitretactics": "\/api\/3\/mitre_tactics\/ff048b6c-b872-4218-b68c-3735ebd1f024",
                     "destinationIp": "110.132.25.43",
                     "mitreattackid": "T0843",
                     "respSlaStatus": "\/api\/3\/picklists\/72979f64-e8b9-4888-a965-957e0ec24818",
@@ -385,7 +382,6 @@
                     ],
                     "sourcePort": "4912",
                     "ackSlaStatus": "\/api\/3\/picklists\/72979f64-e8b9-4888-a965-957e0ec24818",
-                    "mitretactics": "\/api\/3\/mitre_tactics\/696af733-728e-49d7-8261-75fdc590f453",
                     "destinationIp": "110.132.30.51",
                     "mitreattackid": "T0846",
                     "respSlaStatus": "\/api\/3\/picklists\/72979f64-e8b9-4888-a965-957e0ec24818",
@@ -954,8 +950,8 @@
     "recordTags": [
         "Alerts",
         "Assets",
+        "IT OT",
         "Referenced",
-        "Scenario",
-        "IT OT"
+        "Scenario"
     ]
 }

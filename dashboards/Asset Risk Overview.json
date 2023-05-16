@@ -22,6 +22,43 @@
                     {
                         "widgets": [
                             {
+                                "type": "mitreAttackSpread-1.0.0",
+                                "config": {
+                                    "wid": "5f47d457-4be4-48c1-bb8b-406b81f20eeb",
+                                    "displayTechniques": false,
+                                    "displaySubtechniques": false,
+                                    "hideTactics": false,
+                                    "hideTechniques": false,
+                                    "hideParentTactics": false,
+                                    "filterGroups": false,
+                                    "enableHeatmap": false,
+                                    "enableCoverage": true,
+                                    "toggleDisabledExpand": true,
+                                    "selectedGroups": [],
+                                    "alertsQuery": {
+                                        "sort": [],
+                                        "limit": 30,
+                                        "logic": "AND",
+                                        "filters": []
+                                    },
+                                    "incidentsQuery": {
+                                        "sort": [],
+                                        "limit": 30,
+                                        "logic": "AND",
+                                        "filters": []
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                ],
+                "wid": "cc654202-8965-4a6f-85c2-a66fff94b080"
+            },
+            {
+                "columns": [
+                    {
+                        "widgets": [
+                            {
                                 "type": "relationshipCount",
                                 "config": {
                                     "wid": "6c21b5ac-df87-43c7-80fd-5eab92479ea5",
@@ -557,42 +594,6 @@
                 "wid": "3d00067f-8495-485e-b90b-de9d434f0362",
                 "collapsible": false,
                 "collapsibleIndex": 0,
-                "_collapsed": false
-            },
-            {
-                "columns": [
-                    {
-                        "widgets": [
-                            {
-                                "type": "rows",
-                                "config": {
-                                    "wid": "3769207a-ef8a-4cd6-bc51-2ae7fed2b76d",
-                                    "rows": [
-                                        {
-                                            "columns": [
-                                                {
-                                                    "widgets": [
-                                                        {
-                                                            "type": "mitreAttackSpread-1.0.0",
-                                                            "config": {
-                                                                "wid": "5f47d457-4be4-48c1-bb8b-406b81f20eeb"
-                                                            }
-                                                        }
-                                                    ],
-                                                    "style": "col-lg-12"
-                                                }
-                                            ],
-                                            "wid": "cf42cde2-a069-465f-b0e4-b285193f7256",
-                                            "_collapsed": false
-                                        }
-                                    ]
-                                }
-                            }
-                        ],
-                        "style": "col-lg-12"
-                    }
-                ],
-                "wid": "f2963dbf-4137-4477-b541-f03221abc1d4",
                 "_collapsed": false
             }
         ],

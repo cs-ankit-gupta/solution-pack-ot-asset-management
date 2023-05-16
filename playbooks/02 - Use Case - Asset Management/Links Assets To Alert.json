@@ -1,0 +1,133 @@
+{
+    "@type": "Workflow",
+    "triggerLimit": null,
+    "name": "Links Assets To Alert",
+    "aliasName": null,
+    "tag": null,
+    "description": "Playbook  correlated Assets on the basis of Source and Destination IP found in Alert.",
+    "isActive": true,
+    "debug": false,
+    "singleRecordExecution": false,
+    "remoteExecutableFlag": false,
+    "parameters": [],
+    "synchronous": false,
+    "collection": "\/api\/3\/workflow_collections\/fb4aa534-4bfc-4196-b509-96ef02fb9270",
+    "versions": [],
+    "triggerStep": "\/api\/3\/workflow_steps\/6c29b7f0-bc5c-4a5f-a11c-59fe67128595",
+    "steps": [
+        {
+            "@type": "WorkflowStep",
+            "name": "Find Assets",
+            "description": null,
+            "arguments": {
+                "arguments": {
+                    "sourceIPAddress": "{{vars.input.records[0].sourceIp}}",
+                    "destinationIPAddress": "{{vars.input.records[0].destinationIp}}"
+                },
+                "apply_async": false,
+                "step_variables": [],
+                "pass_parent_env": false,
+                "pass_input_record": false,
+                "workflowReference": "\/api\/3\/workflows\/9a71aada-d52d-414a-af6a-8e14e3877907"
+            },
+            "status": null,
+            "top": "165",
+            "left": "125",
+            "stepType": "\/api\/3\/workflow_step_types\/74932bdc-b8b6-4d24-88c4-1a4dfbc524f3",
+            "group": null,
+            "uuid": "0ed35b01-73bc-4ba8-8be3-e302d8580c85"
+        },
+        {
+            "@type": "WorkflowStep",
+            "name": "Link Asset To Alert",
+            "description": null,
+            "arguments": {
+                "resource": {
+                    "__link": {
+                        "assets": "{{vars.steps.Find_Assets['sourceAsset'], vars.steps.Find_Assets['destinationAsset']}}"
+                    }
+                },
+                "_showJson": false,
+                "operation": "Append",
+                "collection": "{{vars.input.records[0]['@id']}}",
+                "__recommend": [],
+                "collectionType": "\/api\/3\/alerts",
+                "fieldOperation": {
+                    "recordTags": "Append"
+                },
+                "step_variables": []
+            },
+            "status": null,
+            "top": "300",
+            "left": "125",
+            "stepType": "\/api\/3\/workflow_step_types\/b593663d-7d13-40ce-a3a3-96dece928722",
+            "group": null,
+            "uuid": "21be74e2-762e-4991-9ee1-ad9c5667c5a6"
+        },
+        {
+            "@type": "WorkflowStep",
+            "name": "Start",
+            "description": null,
+            "arguments": {
+                "resource": "alerts",
+                "resources": [
+                    "alerts"
+                ],
+                "step_variables": {
+                    "input": {
+                        "params": [],
+                        "records": [
+                            "{{vars.input.records[0]}}"
+                        ]
+                    }
+                },
+                "fieldbasedtrigger": {
+                    "sort": [],
+                    "limit": 30,
+                    "logic": "AND",
+                    "filters": []
+                }
+            },
+            "status": null,
+            "top": "30",
+            "left": "125",
+            "stepType": "\/api\/3\/workflow_step_types\/ea155646-3821-4542-9702-b246da430a8d",
+            "group": null,
+            "uuid": "6c29b7f0-bc5c-4a5f-a11c-59fe67128595"
+        }
+    ],
+    "routes": [
+        {
+            "@type": "WorkflowRoute",
+            "name": "Find Assets -> Update Alert",
+            "targetStep": "\/api\/3\/workflow_steps\/21be74e2-762e-4991-9ee1-ad9c5667c5a6",
+            "sourceStep": "\/api\/3\/workflow_steps\/0ed35b01-73bc-4ba8-8be3-e302d8580c85",
+            "label": null,
+            "isExecuted": false,
+            "group": null,
+            "uuid": "3dd3c322-be8c-4263-9a05-73ec18fcd083"
+        },
+        {
+            "@type": "WorkflowRoute",
+            "name": "Start -> Find Assets",
+            "targetStep": "\/api\/3\/workflow_steps\/0ed35b01-73bc-4ba8-8be3-e302d8580c85",
+            "sourceStep": "\/api\/3\/workflow_steps\/6c29b7f0-bc5c-4a5f-a11c-59fe67128595",
+            "label": null,
+            "isExecuted": false,
+            "group": null,
+            "uuid": "62979e16-9d74-41dd-8d1e-948d5caf97fe"
+        }
+    ],
+    "groups": [],
+    "priority": "\/api\/3\/picklists\/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+    "uuid": "7e71283d-4d73-46ca-98de-21bb738a0148",
+    "owners": [],
+    "isPrivate": false,
+    "deletedAt": null,
+    "recordTags": [
+        "Alerts",
+        "Assets",
+        "IT OT",
+        "PostCreate"
+    ]
+}
