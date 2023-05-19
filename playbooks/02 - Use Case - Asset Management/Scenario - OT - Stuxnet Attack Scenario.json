@@ -126,24 +126,27 @@
         },
         {
             "@type": "WorkflowStep",
-            "name": "Create EWS 01Q3 Asset",
+            "name": "Create HP PB7181 Asset",
             "description": null,
             "arguments": {
                 "when": "{{vars.steps.Get_T0847_Assets['sourceAsset'] == \"\"}}",
                 "resource": {
                     "ip": "110.132.30.51",
-                    "name": "EWS-01Q3",
+                    "name": "HP - PB7181",
                     "zone": "\/api\/3\/picklists\/1f6a2248-0d8d-4233-9764-5d641a257ba7",
                     "level": "\/api\/3\/picklists\/3eb967b4-ceca-473b-9a05-f3b8b5dac837",
                     "state": "\/api\/3\/picklists\/b31da3b9-6f87-469e-a1bf-2517c48a7001",
                     "status": "\/api\/3\/picklists\/421c20cd-e63d-4e32-9a25-774b2155cd24",
+                    "vendor": "Hewlett Packard(HP)",
+                    "product": "Hewlett Packard(HP) ProBook",
                     "category": "\/api\/3\/picklists\/20fe5586-6c9e-4a4f-ac1a-15df7bbafe0e",
-                    "hostname": "EWS-01Q3",
+                    "hostname": "HP - PB7181",
                     "protocol": [
                         "\/api\/3\/picklists\/24a46b26-3ca3-4455-a5d1-cee4a79d3a59"
                     ],
                     "__replace": "false",
                     "assetType": "\/api\/3\/picklists\/7630b182-4930-4f97-beec-3c3a5372cb3b",
+                    "assetClass": "\/api\/3\/picklists\/00cb224e-4198-4547-bbcb-a90bb9a60806",
                     "macAddress": "00:A0:24:E7:B8:A3",
                     "recordTags": [
                         "\/api\/3\/tags\/Sample",
@@ -179,14 +182,15 @@
                 "when": "{{vars.steps.Get_T0846_Assets['sourceAsset'] == \"\"}}",
                 "resource": {
                     "ip": "110.132.30.72",
-                    "name": "EWS-42E6",
+                    "name": "Dell - 5490-42E6",
                     "zone": "\/api\/3\/picklists\/1f6a2248-0d8d-4233-9764-5d641a257ba7",
                     "level": "\/api\/3\/picklists\/3eb967b4-ceca-473b-9a05-f3b8b5dac837",
                     "state": "\/api\/3\/picklists\/b31da3b9-6f87-469e-a1bf-2517c48a7001",
                     "status": "\/api\/3\/picklists\/421c20cd-e63d-4e32-9a25-774b2155cd24",
-                    "vendor": "Intel",
-                    "category": "\/api\/3\/picklists\/20fe5586-6c9e-4a4f-ac1a-15df7bbafe0e",
-                    "hostname": "EWS-42E6",
+                    "vendor": "Dell",
+                    "product": "Latitude 5490",
+                    "category": "\/api\/3\/picklists\/373f6e62-4229-4fbe-9a68-085ec266ff69",
+                    "hostname": "Dell - 5490-42E6",
                     "protocol": [
                         "\/api\/3\/picklists\/7d8bb656-a176-41ca-ae2e-499691ac7432",
                         "\/api\/3\/picklists\/fb4eaae0-248a-4c0c-ba81-47d5e374f552"
@@ -200,7 +204,7 @@
                         "\/api\/3\/tags\/Sample"
                     ],
                     "criticality": "\/api\/3\/picklists\/f734dfbb-fd61-425e-8a14-ebd560289fac",
-                    "operatingSystem": "\/api\/3\/picklists\/f0fc6b95-965f-4b65-9b3c-bb3c7f790c1d"
+                    "operatingSystem": "\/api\/3\/picklists\/d3cb9dcc-e6e3-4a57-beeb-141d24a39fd7"
                 },
                 "operation": "Overwrite",
                 "collection": "\/api\/3\/upsert\/assets",
@@ -223,20 +227,21 @@
         },
         {
             "@type": "WorkflowStep",
-            "name": "Create IE11Win7 Asset",
+            "name": "Create ThinkCentre M910s 1181 Asset",
             "description": null,
             "arguments": {
                 "when": "{{vars.steps.Get_T0847_Assets['destinationAsset'] == \"\"}}",
                 "resource": {
                     "ip": "110.132.30.63",
-                    "name": "IE11Win7",
+                    "name": "ThinkCentre M910s-1181",
                     "zone": "\/api\/3\/picklists\/4104499e-f231-42e3-98f9-888af67e0555",
                     "level": "\/api\/3\/picklists\/adb317f0-56e4-4ffe-976e-ceb0ac9b6e75",
                     "state": "\/api\/3\/picklists\/b31da3b9-6f87-469e-a1bf-2517c48a7001",
                     "status": "\/api\/3\/picklists\/421c20cd-e63d-4e32-9a25-774b2155cd24",
-                    "vendor": "HCL",
+                    "vendor": "Lenovo",
+                    "product": "ThinkCentre M910s",
                     "category": "\/api\/3\/picklists\/373f6e62-4229-4fbe-9a68-085ec266ff69",
-                    "hostname": "IE11Win7",
+                    "hostname": "ThinkCentre M910s-1181",
                     "protocol": [
                         "\/api\/3\/picklists\/24a46b26-3ca3-4455-a5d1-cee4a79d3a59"
                     ],
@@ -271,21 +276,21 @@
         },
         {
             "@type": "WorkflowStep",
-            "name": "Create PLC 04 S7 400",
+            "name": "Create S7 400 PLC",
             "description": null,
             "arguments": {
                 "when": "{{vars.steps.Get_T0843_Assets['destinationAsset'] == \"\"}}",
                 "resource": {
                     "ip": "110.132.25.43",
-                    "name": "PLC-04-S7-400",
+                    "name": "PLC S7-400-324",
                     "zone": "\/api\/3\/picklists\/66dc774d-1f2b-44c7-b1d3-d17eda9febba",
                     "level": "\/api\/3\/picklists\/adc8d997-3da5-4516-b112-42c6fdb74c3b",
                     "state": "\/api\/3\/picklists\/b31da3b9-6f87-469e-a1bf-2517c48a7001",
                     "status": "\/api\/3\/picklists\/421c20cd-e63d-4e32-9a25-774b2155cd24",
                     "vendor": "Siemens",
+                    "product": "S7 400",
                     "category": "\/api\/3\/picklists\/b7a653a4-4840-44cc-b116-fa618d8ddcd5",
-                    "firmware": "V4.5.2",
-                    "hostname": "PLC-04-S7-400",
+                    "hostname": "PLC S7-400-324",
                     "__replace": "false",
                     "assetType": "\/api\/3\/picklists\/f36137a5-aa8f-4532-aab5-e57a8d7420a1",
                     "assetClass": "\/api\/3\/picklists\/3864918a-79b9-412d-a09e-3f6f13aae2f9",
