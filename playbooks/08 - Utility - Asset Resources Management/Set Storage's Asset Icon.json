@@ -1,10 +1,10 @@
 {
     "@type": "Workflow",
     "triggerLimit": null,
-    "name": "Set PLC's Asset Icon",
+    "name": "Set Storage's Asset Icon",
     "aliasName": null,
     "tag": null,
-    "description": "Playbook attach the PLC Icon from the Asset Resources to the Asset for the PLC Category.",
+    "description": "Playbook attach the Storage Icon from the Asset Resources to the Asset for the Storage Category.",
     "isActive": true,
     "debug": false,
     "singleRecordExecution": false,
@@ -13,11 +13,11 @@
     "synchronous": false,
     "collection": "\/api\/3\/workflow_collections\/a8c3d8e3-bf46-4118-8fd8-179396e14340",
     "versions": [],
-    "triggerStep": "\/api\/3\/workflow_steps\/0d0139cd-c2fd-4bdb-8256-60172cbf1a5a",
+    "triggerStep": "\/api\/3\/workflow_steps\/025be579-0e2e-4e4c-8497-99f796d6c9f0",
     "steps": [
         {
             "@type": "WorkflowStep",
-            "name": "Find Icon",
+            "name": "Find Asset Icon",
             "description": null,
             "arguments": {
                 "query": {
@@ -28,7 +28,7 @@
                         {
                             "type": "primitive",
                             "field": "type",
-                            "value": "PLC",
+                            "value": "Storage",
                             "operator": "eq",
                             "_operator": "eq"
                         }
@@ -42,7 +42,7 @@
             "left": "125",
             "stepType": "\/api\/3\/workflow_step_types\/b593663d-7d13-40ce-a3a3-96dece928770",
             "group": null,
-            "uuid": "adad0857-9bc7-4d5a-a0a5-ebbd1f429cf7"
+            "uuid": "42539ba6-e492-4524-96a7-85092e80023a"
         },
         {
             "@type": "WorkflowStep",
@@ -69,11 +69,11 @@
                         {
                             "type": "object",
                             "field": "category",
-                            "value": "\/api\/3\/picklists\/b7a653a4-4840-44cc-b116-fa618d8ddcd5",
+                            "value": "\/api\/3\/picklists\/b40802a5-8462-49d8-a6f0-7853666a4d3a",
                             "_value": {
-                                "@id": "\/api\/3\/picklists\/b7a653a4-4840-44cc-b116-fa618d8ddcd5",
-                                "display": "PLC",
-                                "itemValue": "PLC"
+                                "@id": "\/api\/3\/picklists\/b40802a5-8462-49d8-a6f0-7853666a4d3a",
+                                "display": "Storage Device",
+                                "itemValue": "Storage Device"
                             },
                             "operator": "eq"
                         }
@@ -85,21 +85,22 @@
             "left": "125",
             "stepType": "\/api\/3\/workflow_step_types\/ea155646-3821-4542-9702-b246da430a8d",
             "group": null,
-            "uuid": "0d0139cd-c2fd-4bdb-8256-60172cbf1a5a"
+            "uuid": "025be579-0e2e-4e4c-8497-99f796d6c9f0"
         },
         {
             "@type": "WorkflowStep",
-            "name": "Update Assets",
+            "name": "Update Asset Icon",
             "description": null,
             "arguments": {
                 "for_each": {
                     "item": "{{vars.input.records}}",
                     "__bulk": true,
+                    "parallel": false,
                     "condition": "",
                     "batch_size": 100
                 },
                 "resource": {
-                    "assetIcon": "{{vars.steps.Find_Icon[0]['@id']}}"
+                    "assetIcon": "{{vars.steps.Find_Asset_Icon[0]['@id']}}"
                 },
                 "operation": "Append",
                 "collection": "{{vars.item['@id']}}",
@@ -116,34 +117,34 @@
             "left": "125",
             "stepType": "\/api\/3\/workflow_step_types\/b593663d-7d13-40ce-a3a3-96dece928722",
             "group": null,
-            "uuid": "14b10851-1925-4293-8499-cd40274acac0"
+            "uuid": "1a038dad-4f00-4816-a2a2-75cadd65df32"
         }
     ],
     "routes": [
         {
             "@type": "WorkflowRoute",
             "name": "Find Icon -> Update Assets",
-            "targetStep": "\/api\/3\/workflow_steps\/14b10851-1925-4293-8499-cd40274acac0",
-            "sourceStep": "\/api\/3\/workflow_steps\/adad0857-9bc7-4d5a-a0a5-ebbd1f429cf7",
+            "targetStep": "\/api\/3\/workflow_steps\/1a038dad-4f00-4816-a2a2-75cadd65df32",
+            "sourceStep": "\/api\/3\/workflow_steps\/42539ba6-e492-4524-96a7-85092e80023a",
             "label": null,
             "isExecuted": false,
             "group": null,
-            "uuid": "33aa7257-dabf-48e0-bd88-35e8d23a8561"
+            "uuid": "c48d617f-7069-4f0f-87d9-48b449afd41f"
         },
         {
             "@type": "WorkflowRoute",
             "name": "Start -> Find Icon",
-            "targetStep": "\/api\/3\/workflow_steps\/adad0857-9bc7-4d5a-a0a5-ebbd1f429cf7",
-            "sourceStep": "\/api\/3\/workflow_steps\/0d0139cd-c2fd-4bdb-8256-60172cbf1a5a",
+            "targetStep": "\/api\/3\/workflow_steps\/42539ba6-e492-4524-96a7-85092e80023a",
+            "sourceStep": "\/api\/3\/workflow_steps\/025be579-0e2e-4e4c-8497-99f796d6c9f0",
             "label": null,
             "isExecuted": false,
             "group": null,
-            "uuid": "cb75b56f-7b6b-43b3-80d5-263c55f40da5"
+            "uuid": "1117aaba-ba8e-49dd-a5f0-33557f3a38c8"
         }
     ],
     "groups": [],
     "priority": "\/api\/3\/picklists\/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
-    "uuid": "c42e9afe-8737-45a9-bf8e-b377e629d22d",
+    "uuid": "228867ac-c35d-45e6-9a68-fe27a8eee995",
     "owners": [],
     "isPrivate": false,
     "deletedAt": null,
@@ -151,7 +152,7 @@
         "Asset",
         "Asset Resources",
         "Icon",
-        "PLC",
-        "PostCreate"
+        "PostCreate",
+        "Storage"
     ]
 }

@@ -1,13 +1,13 @@
 {
     "@context": "\/api\/3\/contexts\/File",
     "@type": "File",
-    "uuid": "97bc2bab-bfbb-4cc6-8aff-a07dcae1db23",
+    "uuid": "2f496635-8ecf-46c8-82c6-4362d682d920",
     "assignee": "",
-    "id": "97bc2bab-bfbb-4cc6-8aff-a07dcae1db23",
+    "id": "2f496635-8ecf-46c8-82c6-4362d682d920",
     "filename": "OT Sample Assets.csv",
     "mimeType": "text\/csv",
-    "uploadDate": 1683796925.638443,
-    "size": 23126,
+    "uploadDate": 1685548396.282827,
+    "size": 25314,
     "thumbnail": null,
     "metadata": []
 }

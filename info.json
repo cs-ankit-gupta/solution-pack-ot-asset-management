@@ -54,7 +54,7 @@
     "supportInfo": "support@fortinet.com",
     "iconLarge": null,
     "postInstallConfig": null,
-    "date": "2023-05-15T12:36:03+00:00",
+    "date": "2023-06-01T10:56:58+00:00",
     "contents": {
         "picklistNames": [
             {
@@ -62,6 +62,9 @@
             },
             {
                 "name": "AssetChangeType"
+            },
+            {
+                "name": "AssetCategory"
             }
         ],
         "modules": {
@@ -116,7 +119,7 @@
                 "name": "02 - Use Case - Asset Management"
             },
             {
-                "name": "02 - Use Case - Asset Resources Management"
+                "name": "08 - Utility - Asset Resources Management"
             }
         ],
         "globalVariables": [],
@@ -172,7 +175,7 @@
             {
                 "name": "Asset Resources",
                 "apiName": "asset_resources",
-                "count": 10
+                "count": 15
             },
             {
                 "name": "Attachments",
