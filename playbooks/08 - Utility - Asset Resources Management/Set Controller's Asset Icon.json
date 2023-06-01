@@ -1,10 +1,10 @@
 {
     "@type": "Workflow",
     "triggerLimit": null,
-    "name": "Set Workstation's Asset Icon",
+    "name": "Set Controller's Asset Icon",
     "aliasName": null,
     "tag": null,
-    "description": "Playbook attach the Workstation Icon from the Asset Resources to the Asset for the Workstation Category.",
+    "description": "Playbook attach the Workstation Icon from the Asset Resources to the Asset for the Controller & Domain Controller Category.",
     "isActive": true,
     "debug": false,
     "singleRecordExecution": false,
@@ -13,11 +13,11 @@
     "synchronous": false,
     "collection": "\/api\/3\/workflow_collections\/a8c3d8e3-bf46-4118-8fd8-179396e14340",
     "versions": [],
-    "triggerStep": "\/api\/3\/workflow_steps\/2e426979-8398-4b5e-8270-884644f15bba",
+    "triggerStep": "\/api\/3\/workflow_steps\/41352ba4-46a9-4968-ab79-fa7a62a40323",
     "steps": [
         {
             "@type": "WorkflowStep",
-            "name": "Find Icon",
+            "name": "Find Asset Icon",
             "description": null,
             "arguments": {
                 "query": {
@@ -28,7 +28,7 @@
                         {
                             "type": "primitive",
                             "field": "type",
-                            "value": "WorkStation",
+                            "value": "Controller",
                             "operator": "eq",
                             "_operator": "eq"
                         }
@@ -42,7 +42,7 @@
             "left": "125",
             "stepType": "\/api\/3\/workflow_step_types\/b593663d-7d13-40ce-a3a3-96dece928770",
             "group": null,
-            "uuid": "0b9d04a6-d1bf-4f87-9326-c708d2fdc366"
+            "uuid": "671cf169-7534-4bfd-bc21-9a6af041ab6f"
         },
         {
             "@type": "WorkflowStep",
@@ -69,13 +69,18 @@
                         {
                             "type": "object",
                             "field": "category",
-                            "value": "\/api\/3\/picklists\/20fe5586-6c9e-4a4f-ac1a-15df7bbafe0e",
-                            "_value": {
-                                "@id": "\/api\/3\/picklists\/20fe5586-6c9e-4a4f-ac1a-15df7bbafe0e",
-                                "display": "Engineering Station",
-                                "itemValue": "Engineering Station"
-                            },
-                            "operator": "eq"
+                            "value": [
+                                "\/api\/3\/picklists\/03138952-93dc-4445-9f7f-6003aa8b4199",
+                                "\/api\/3\/picklists\/5ad133a5-6c33-4de7-acde-ce9ea522e927"
+                            ],
+                            "module": "category",
+                            "display": "Historian",
+                            "operator": "in",
+                            "template": "multiselectpicklist",
+                            "OPERATOR_KEY": "$",
+                            "displayTemplate": "",
+                            "previousOperator": "in",
+                            "previousTemplate": "multiselectpicklist"
                         }
                     ]
                 }
@@ -85,21 +90,22 @@
             "left": "125",
             "stepType": "\/api\/3\/workflow_step_types\/ea155646-3821-4542-9702-b246da430a8d",
             "group": null,
-            "uuid": "2e426979-8398-4b5e-8270-884644f15bba"
+            "uuid": "41352ba4-46a9-4968-ab79-fa7a62a40323"
         },
         {
             "@type": "WorkflowStep",
-            "name": "Update Assets",
+            "name": "Update Asset Icon",
             "description": null,
             "arguments": {
                 "for_each": {
                     "item": "{{vars.input.records}}",
                     "__bulk": true,
+                    "parallel": false,
                     "condition": "",
                     "batch_size": 100
                 },
                 "resource": {
-                    "assetIcon": "{{vars.steps.Find_Icon[0]['@id']}}"
+                    "assetIcon": "{{vars.steps.Find_Asset_Icon[0]['@id']}}"
                 },
                 "operation": "Append",
                 "collection": "{{vars.item['@id']}}",
@@ -116,42 +122,43 @@
             "left": "125",
             "stepType": "\/api\/3\/workflow_step_types\/b593663d-7d13-40ce-a3a3-96dece928722",
             "group": null,
-            "uuid": "37dd1867-5e9c-4bf2-b92b-770954bf9151"
+            "uuid": "9f85e289-14c9-4020-81c1-3068ef2fb1b0"
         }
     ],
     "routes": [
         {
             "@type": "WorkflowRoute",
             "name": "Find Icon -> Update Assets",
-            "targetStep": "\/api\/3\/workflow_steps\/37dd1867-5e9c-4bf2-b92b-770954bf9151",
-            "sourceStep": "\/api\/3\/workflow_steps\/0b9d04a6-d1bf-4f87-9326-c708d2fdc366",
+            "targetStep": "\/api\/3\/workflow_steps\/9f85e289-14c9-4020-81c1-3068ef2fb1b0",
+            "sourceStep": "\/api\/3\/workflow_steps\/671cf169-7534-4bfd-bc21-9a6af041ab6f",
             "label": null,
             "isExecuted": false,
             "group": null,
-            "uuid": "b6d6d059-a60c-4504-af77-07c52cca1cd7"
+            "uuid": "d8ba2bb4-b3c9-43de-bed0-a1355331b242"
         },
         {
             "@type": "WorkflowRoute",
             "name": "Start -> Find Icon",
-            "targetStep": "\/api\/3\/workflow_steps\/0b9d04a6-d1bf-4f87-9326-c708d2fdc366",
-            "sourceStep": "\/api\/3\/workflow_steps\/2e426979-8398-4b5e-8270-884644f15bba",
+            "targetStep": "\/api\/3\/workflow_steps\/671cf169-7534-4bfd-bc21-9a6af041ab6f",
+            "sourceStep": "\/api\/3\/workflow_steps\/41352ba4-46a9-4968-ab79-fa7a62a40323",
             "label": null,
             "isExecuted": false,
             "group": null,
-            "uuid": "00d88f58-4ffe-482e-b5a0-a40c589e4f0e"
+            "uuid": "374ad86c-267a-403d-93f1-2bdbb8e1443a"
         }
     ],
     "groups": [],
     "priority": "\/api\/3\/picklists\/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
-    "uuid": "cdc9a6a4-8104-488a-8d2b-95e953919bc9",
+    "uuid": "aff2e0e9-d1d3-43df-87cb-35f20385ccaf",
     "owners": [],
     "isPrivate": false,
     "deletedAt": null,
     "recordTags": [
+        "PostCreate",
         "Asset",
         "Asset Resources",
-        "Engineering Workstation",
         "Icon",
-        "PostCreate"
+        "Controller",
+        "Domain Controller"
     ]
 }

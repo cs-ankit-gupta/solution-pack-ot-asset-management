@@ -17,7 +17,7 @@
     "steps": [
         {
             "@type": "WorkflowStep",
-            "name": "Find Icon",
+            "name": "Find Asset Icon",
             "description": null,
             "arguments": {
                 "query": {
@@ -98,17 +98,18 @@
         },
         {
             "@type": "WorkflowStep",
-            "name": "Update Assets",
+            "name": "Update Asset Icon",
             "description": null,
             "arguments": {
                 "for_each": {
                     "item": "{{vars.input.records}}",
                     "__bulk": true,
+                    "parallel": false,
                     "condition": "",
                     "batch_size": 100
                 },
                 "resource": {
-                    "assetIcon": "{{vars.steps.Find_Icon[0]['@id']}}"
+                    "assetIcon": "{{vars.steps.Find_Asset_Icon[0]['@id']}}"
                 },
                 "operation": "Append",
                 "collection": "{{vars.item['@id']}}",
