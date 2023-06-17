@@ -1,5 +1,5 @@
 | [Home](../README.md) |
-|--------------------------------------------|
+| -------------------- |
 
 # Usage
 
@@ -13,7 +13,7 @@ Refer to the section `OT - Asset Management` to understand how this solution pac
 
 ### Step to be followed after installing SP:
 
-1. Run the playbook - **MITRE ATT&CK > Fetch Latest Data** on ICS Configuration of MITRE Connector from Playbook Collection - `00 - Use Case - Asset Management`  to get the Tactics, Techniques, Sub-techniques, Mitigations, Groups and Software.
+1. Ingest MITRE **Group**, **Tactics**, **Techniques**, **Sub-techniques**, **Mitigations**, **Software**, and **Mitigation** data using `MITRE ATT&CK` connector on `ICS` configuration.
 
 > **NOTE**: On alert creation, IOCs are enriched, and the alerts are correlated with Techniques, Mitigation, and all other records for the MITRE ATT&CK Id available in the alert.
 
@@ -25,9 +25,9 @@ The simulation mode has some sample data that helps you get a better understandi
 
     - Browse to `Simulations` > `OT - Add Sample Assets` scenario and click **Simulate Scenario**.
 
-    - This scenario adds 83 different sample OT Assets (different Levels, Types etc.) for testing dashboards, use case playbooks, reports and other actions.<br>
+    - This scenario adds 86 different sample OT Assets (different Levels, Types etc.) for testing dashboards, use case playbooks, reports and other actions.<br>
 
-    >**NOTE**: Ensure you run this 'OT - Add Sample Assets' Scenario prior to running the 'OT - Add Sample Alerts', for facilitating the correlations of Alerts and Asset records.
+    >**NOTE**: Ensure you run this **OT - Add Sample Assets** Scenario prior to running the **OT - Add Sample Alerts**, for facilitating the correlations of Alerts and Asset records.
 
 2. **OT - Add Sample Alerts**
 
@@ -35,7 +35,7 @@ The simulation mode has some sample data that helps you get a better understandi
 
     - This scenario adds 12 well populated sample OT Alerts for testing dashboards, use case playbooks, reports and other actions.<br>
 
-    >**NOTE**: Ensure you run the 'OT - Add Sample Assets' Scenario prior to this, for facilitating the correlations of Alerts and Asset records.
+    >**NOTE**: Ensure you run the **OT - Add Sample Assets** Scenario prior to this, for facilitating the correlations of Alerts and Asset records.
 
 3. **OT - Stuxnet Attack Scenario**
 
@@ -50,28 +50,28 @@ The simulation mode has some sample data that helps you get a better understandi
         - STEP7 configuration download command
 
     - If an asset does not already exist, it is created and added to the record with the following hostname:
-        - PLC-04-S7-400
-        - EWS-42E6
-        - IE11Win7
-        - EWS-01Q3
+        - PLC S7-400-324
+        - Dell - 5490-42E6
+        - ThinkCentre M910s-1181
+        - HP - PB7181
 
     - Each alert get associated with assets based on the Source and Destination IP.
 
-    - **Technique**, **Sub-Technique** and **Software** get linked to alerts under the **MITRE ATT&CK Correlations** tab.
+    - **Group**, **Tactics**, **Technique**, **Sub-Technique**, and **Software** get linked to alert under `Correlations` tab of Alert.
+    
+    - **Mitigation** get correlated to alert `Recommended ATT&CK Mitigations` tab.
 
-    - **Mitigation** comes under the **Recommended Mitigation** tab.
+    - Once the alert has been enriched, open the `Stuxnet peer to peer communication attempt` alert and look for a similar alert in the Workspace `Recommendations` tab. 
 
-    - Once the alert has been enriched, open the "Stuxnet peer to peer communication attempt" alert and look for a similar alert in the Workspace `Recommendations` tab. 
+    - Escalate the alert to an incident by checking `Select All` and `Include this record` then running the playbook **Escalate**. Please provide all incident details. (An incident is created with the link available in the alert's comment)
 
-    - Escalate the alert to an incident by checking "Select All" and "Include this record," then running the playbook **Escalate To Incident**. Please provide all incident details. (An incident is created with the link available in the alert's comment)
-
-    - Incident get correlated with all the IOCs, Alerts, Assets, Technique, Mitigation and Software.
+    - Incident get correlated with all the **IOCs**, **Alerts**, **Assets**, **Technique**, **Mitigation**, and **Software**.
 
     - Click on **Quarantine Asset and Raise Ticket** to quarantine assets and raise ticket for assets.
 
     - You can generate report by using **Generate Incident Summary Report**
     
-    - Use the "Setup War Room" button to create a war room. All of the alerts, incidents, affected assets, and artefacts will be in the war room.
+    - Use the `Setup War Room` button to create a war room. All of the alerts, incidents, affected assets, and IOCs will be in the war room.
     
     - Playbooks in the War Room can be used to take action, such as `Isolate Devices From Network`, `Scan All Assets Involved`, and `Update Firewall Policy`.
 
@@ -101,26 +101,3 @@ The simulation mode has some sample data that helps you get a better understandi
 - Once all task get completed record get closed.
 
 - To generate the report, execute **Generate Compliance Report** and report get attached to particular record comments.
-
-## Aseets Icon
-- As illustrated in figure, you can change the Assets Icon by selecting it from the available Icons in the Asset Resources Record.
-![](./res/Asset_Icon_Setting.png)
-
-> **Note**: List or detail views of the various modules are mentioned below.
-- `Asset`: Please download this zip file and import it into your instance if you want to update the [List View](./res/Asset_List_View.zip) List View and [Details View](./res/Asset_Detail_View.zip) of Assets to what is shown below.
-
-| ![](./res/Asset_List_View.png) | ![](./res/Asset_Detail_view.png) |
-|:----------------------------------:|:-------------------------------------:|
-| Aseet List View | Asset Detail View |
-
-- `Alert`: Please download this zip file and import it into your instance if you want to update the [Details View](./res/Alert_Detail_View.zip) of Alert to what is shown below.
-
-| ![](./res/Alert_Detail_View.png) |
-|:----------------------------------:|
-| Alert Detail View |
-
-- `Incident`: Please download this zip file and import it into your instance if you want to update the [Details View](./res/Incident_Detail_View.zip) of Incident to what is shown below.
-
-| ![](./res/Incident_Detail_View.png) |
-|:----------------------------------:|
-| Incident Detail View |
