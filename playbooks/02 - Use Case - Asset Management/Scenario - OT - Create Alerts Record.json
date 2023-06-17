@@ -36,23 +36,48 @@
             "arguments": {
                 "for_each": {
                     "item": "{{vars.data}}",
+                    "__bulk": true,
                     "parallel": false,
-                    "condition": ""
+                    "condition": "",
+                    "batch_size": 100
                 },
-                "arguments": {
-                    "alertRecord": "{{vars.item}}"
+                "resource": {
+                    "name": "{{vars.item['Name']}}",
+                    "type": "{{\"AlertType\" | picklist(vars.item['Type'], \"@id\")}}",
+                    "state": "\/api\/3\/picklists\/a1bac09b-1441-45aa-ad1b-c88744e48e72",
+                    "source": "{{vars.item['Source']}}",
+                    "status": "{{\"AlertStatus\" | picklist(vars.item['Status'], \"@id\")}}",
+                    "severity": "{{\"Severity\" | picklist(vars.item['Severity'], \"@id\")}}",
+                    "sourceId": "{{vars.item['Id']}}",
+                    "sourceIp": "{{vars.item['Source IP']}}",
+                    "__replace": "true",
+                    "recordTags": "{{vars.item['Tags']}}",
+                    "sourcePort": "{{vars.item['Source Port']}}",
+                    "description": "{{vars.item['Description']}}",
+                    "ackSlaStatus": "\/api\/3\/picklists\/72979f64-e8b9-4888-a965-957e0ec24818",
+                    "destinationIp": "{{vars.item['Destination IP']}}",
+                    "mitreattackid": "{{vars.item['MITRE ATT&CK ID']}}",
+                    "respSlaStatus": "\/api\/3\/picklists\/72979f64-e8b9-4888-a965-957e0ec24818",
+                    "priorityWeight": 1,
+                    "escalatedtoincident": "\/api\/3\/picklists\/2128a09c-153d-4db3-985d-de6be33deae5",
+                    "resolvedAutomatedly": false,
+                    "alertRemainingAckSLA": 0
                 },
-                "apply_async": false,
-                "step_variables": [],
-                "pass_input_record": false,
-                "workflowReference": "\/api\/3\/workflows\/50bf3bf4-1280-4b86-be7d-d78dd3a56ce1"
+                "_showJson": false,
+                "operation": "Overwrite",
+                "collection": "\/api\/3\/upsert\/alerts",
+                "__recommend": [],
+                "fieldOperation": {
+                    "recordTags": "Overwrite"
+                },
+                "step_variables": []
             },
             "status": null,
             "top": "570",
             "left": "125",
-            "stepType": "\/api\/3\/workflow_step_types\/74932bdc-b8b6-4d24-88c4-1a4dfbc524f3",
+            "stepType": "\/api\/3\/workflow_step_types\/2597053c-e718-44b4-8394-4d40fe26d357",
             "group": null,
-            "uuid": "dd7e424a-03c3-44fc-8804-9df22742f01a"
+            "uuid": "bddbf060-234e-4217-92cb-15bee08026d9"
         },
         {
             "@type": "WorkflowStep",
@@ -99,7 +124,7 @@
                     "saveAsAttachment": "",
                     "numberOfRowsToSkip": ""
                 },
-                "version": "1.1.0",
+                "version": "1.2.0",
                 "connector": "csv-data-management",
                 "operation": "extract_data_from_csv",
                 "operationTitle": "Extract Data from Single CSV",
@@ -161,13 +186,13 @@
         },
         {
             "@type": "WorkflowRoute",
-            "name": "Create Alerts Record -> Output",
+            "name": "Create Alert -> Output",
             "targetStep": "\/api\/3\/workflow_steps\/72c0d905-ccef-4794-b79c-c9ed6d41bcce",
-            "sourceStep": "\/api\/3\/workflow_steps\/dd7e424a-03c3-44fc-8804-9df22742f01a",
+            "sourceStep": "\/api\/3\/workflow_steps\/bddbf060-234e-4217-92cb-15bee08026d9",
             "label": null,
             "isExecuted": false,
             "group": null,
-            "uuid": "96a07a1b-c5ef-40b4-8b6b-0a0a429fe91f"
+            "uuid": "b07d0d79-e278-467b-a181-c6928fc21cae"
         },
         {
             "@type": "WorkflowRoute",
@@ -181,13 +206,13 @@
         },
         {
             "@type": "WorkflowRoute",
-            "name": "Get Data From CSV File -> Create Alerts Record",
-            "targetStep": "\/api\/3\/workflow_steps\/dd7e424a-03c3-44fc-8804-9df22742f01a",
+            "name": "Get Data From CSV File -> Create Alert",
+            "targetStep": "\/api\/3\/workflow_steps\/bddbf060-234e-4217-92cb-15bee08026d9",
             "sourceStep": "\/api\/3\/workflow_steps\/8a5b0669-3b89-4af2-969f-9910c0214902",
             "label": null,
             "isExecuted": false,
             "group": null,
-            "uuid": "f66276fc-b581-4c05-ab52-ad8f992fc246"
+            "uuid": "17cef1c5-4f60-4be5-942e-e96a1f895100"
         },
         {
             "@type": "WorkflowRoute",
