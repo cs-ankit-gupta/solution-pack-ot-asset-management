@@ -4,7 +4,7 @@
     "name": "Scenario - OT - Create Alerts Record",
     "aliasName": null,
     "tag": null,
-    "description": "Playbook will read a CSV file and create Alerts records",
+    "description": "Playbook reads CSV file and create Alerts records",
     "isActive": true,
     "debug": false,
     "singleRecordExecution": false,
