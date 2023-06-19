@@ -1,5 +1,5 @@
 | [Home](../README.md) |
-|--------------------------------------------|
+| -------------------- |
 
 # Installation
 
@@ -12,12 +12,12 @@
 
 The **OT - Asset Management** solution pack depends on the following solution packs that are installed automatically &ndash; if not already installed.
 
-| Solution Pack Name | Version | Purpose   |
-| :--------------------- | :---------------------| :--------------------------------------- |
-| SOAR Framework | v2.0.1 or later | Required for Alerts, Assets, Incident Response modules | 
-| SOC Simulator | v1.0.1 or later | Required for Scenario Module and SOC Simulator connector |
-| MITRE ATT&CK Enrichment Framework | v2.0.3 or later | Required for MITRE Modules and MITRE connector |
-| Vulnerability Management | v2.0.0 or later | Required for Vulnerabilities and Scans Module |
+| Solution Pack Name                | Version         | Purpose                                                  |
+| :-------------------------------- | :-------------- | :------------------------------------------------------- |
+| SOAR Framework                    | v2.2.0 or later | Required for Alerts, Assets, Incident Response modules   |
+| SOC Simulator                     | v1.0.1 or later | Required for Scenario Module and SOC Simulator connector |
+| MITRE ATT&CK Enrichment Framework | v2.2.0 or later | Required for MITRE Modules and MITRE connector           |
+| Vulnerability Management          | v2.1.0 or later | Required for Vulnerabilities and Scans Module            |
 
 
 # Configuration

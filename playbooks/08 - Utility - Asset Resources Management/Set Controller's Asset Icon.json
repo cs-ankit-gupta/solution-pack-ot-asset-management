@@ -4,7 +4,7 @@
     "name": "Set Controller's Asset Icon",
     "aliasName": null,
     "tag": null,
-    "description": "Playbook attach the Workstation Icon from the Asset Resources to the Asset for the Controller & Domain Controller Category.",
+    "description": "Correlate Controller Icon from the Asset Resources to Asset as of category Controller & Domain Controller.",
     "isActive": true,
     "debug": false,
     "singleRecordExecution": false,

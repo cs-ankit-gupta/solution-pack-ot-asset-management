@@ -4,7 +4,7 @@
     "name": "> Create Assets Record",
     "aliasName": null,
     "tag": null,
-    "description": "This will generate an Asset record.",
+    "description": "Playbook create Asset record.",
     "isActive": true,
     "debug": false,
     "singleRecordExecution": false,

@@ -4,7 +4,7 @@
     "name": "Set Printer's Asset Icon",
     "aliasName": null,
     "tag": null,
-    "description": "Playbook attach the Workstation Icon from the Asset Resources to the Asset for the Printer\n Category.",
+    "description": "Correlate Printer Icon from the Asset Resources to Asset as of category Printer.",
     "isActive": true,
     "debug": false,
     "singleRecordExecution": false,

@@ -4,7 +4,7 @@
     "name": "Set Workstation's Asset Icon",
     "aliasName": null,
     "tag": null,
-    "description": "Playbook attach the Workstation Icon from the Asset Resources to the Asset for the Workstation Category.",
+    "description": "Correlate Workstation Icon from the Asset Resources to Asset as of category Workstation.",
     "isActive": true,
     "debug": false,
     "singleRecordExecution": false,

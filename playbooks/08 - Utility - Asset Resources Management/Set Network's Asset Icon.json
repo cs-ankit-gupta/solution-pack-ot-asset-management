@@ -4,7 +4,7 @@
     "name": "Set Network's Asset Icon",
     "aliasName": null,
     "tag": null,
-    "description": "Playbook attach the Network Icon from the Asset Resources to the Asset for the Network Category.",
+    "description": "Correlate Network Icon from the Asset Resources to Asset as of category Network.",
     "isActive": true,
     "debug": false,
     "singleRecordExecution": false,

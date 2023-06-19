@@ -1,13 +1,13 @@
 {
     "@context": "\/api\/3\/contexts\/File",
     "@type": "File",
-    "uuid": "34c2e8b9-c305-477f-bc60-20ea0a7b0e7b",
+    "uuid": "2d4b6896-53e3-418b-b340-2831295c0947",
     "assignee": "",
-    "id": "34c2e8b9-c305-477f-bc60-20ea0a7b0e7b",
+    "id": "2d4b6896-53e3-418b-b340-2831295c0947",
     "filename": "OT Sample Alert.csv",
     "mimeType": "text\/csv",
-    "uploadDate": 1682408543.719769,
-    "size": 21926,
+    "uploadDate": 1686996743.684192,
+    "size": 6162,
     "thumbnail": null,
     "metadata": []
 }

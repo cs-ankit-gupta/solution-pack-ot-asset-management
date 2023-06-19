@@ -1,7 +1,7 @@
 {
     "name": "oT-AssetManagement",
     "version": "2.0.0",
-    "fsrMinCompatibility": "7.3.0",
+    "fsrMinCompatibility": "7.4.1",
     "featuredTags": [
         {
             "color": "#2d87e3",
@@ -17,7 +17,7 @@
             "name": "sOARFramework",
             "type": "solutionpack",
             "label": "SOAR Framework",
-            "minVersion": "2.0.2"
+            "minVersion": "2.2.0"
         },
         {
             "name": "socSimulator",
@@ -29,13 +29,13 @@
             "name": "mITREATT&CKEnrichmentFramework",
             "type": "solutionpack",
             "label": "MITRE ATT&CK Enrichment Framework",
-            "minVersion": null
+            "minVersion": "2.2.0"
         },
         {
             "name": "vulnerabilityManagement",
             "type": "solutionpack",
             "label": "Vulnerability Management",
-            "minVersion": null
+            "minVersion": "2.1.0"
         }
     ],
     "prerequisite": null,

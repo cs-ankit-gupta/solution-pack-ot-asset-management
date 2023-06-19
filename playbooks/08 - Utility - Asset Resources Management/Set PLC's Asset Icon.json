@@ -4,7 +4,7 @@
     "name": "Set PLC's Asset Icon",
     "aliasName": null,
     "tag": null,
-    "description": "Playbook attach the PLC Icon from the Asset Resources to the Asset for the PLC Category.",
+    "description": "Correlate PLC Icon from the Asset Resources to Asset as of category PLC.",
     "isActive": true,
     "debug": false,
     "singleRecordExecution": false,

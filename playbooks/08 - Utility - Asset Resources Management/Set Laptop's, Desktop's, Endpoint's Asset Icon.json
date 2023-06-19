@@ -4,7 +4,7 @@
     "name": "Set Laptop's, Desktop's, Endpoint's Asset Icon",
     "aliasName": null,
     "tag": null,
-    "description": "Playbook attach the Laptop, Desktop, Endpoint Icon from the Asset Resources to the Asset for the Laptop, Desktop, Endpoint Category.",
+    "description": "Correlate Laptop, Desktop, Endpoint Icon from the Asset Resources to Asset as of category Laptop, Desktop, Endpoint.",
     "isActive": true,
     "debug": false,
     "singleRecordExecution": false,
