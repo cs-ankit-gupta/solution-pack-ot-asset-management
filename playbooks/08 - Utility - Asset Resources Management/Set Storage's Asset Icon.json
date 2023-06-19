@@ -4,7 +4,7 @@
     "name": "Set Storage's Asset Icon",
     "aliasName": null,
     "tag": null,
-    "description": "Playbook attach the Storage Icon from the Asset Resources to the Asset for the Storage Category.",
+    "description": "Correlate Storage Icon from the Asset Resources to Asset as of category Storage.",
     "isActive": true,
     "debug": false,
     "singleRecordExecution": false,

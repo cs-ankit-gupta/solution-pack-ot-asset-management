@@ -4,7 +4,7 @@
     "name": "Set Server's Asset Icon",
     "aliasName": null,
     "tag": null,
-    "description": "Playbook attach the Server Icon from the Asset Resources to the Asset for the Server Category.",
+    "description": "Correlate Server Icon from the Asset Resources to Asset as of category Server.",
     "isActive": true,
     "debug": false,
     "singleRecordExecution": false,

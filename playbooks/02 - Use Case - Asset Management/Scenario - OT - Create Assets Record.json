@@ -129,7 +129,7 @@
         },
         {
             "@type": "WorkflowRoute",
-            "name": "Start -> asd",
+            "name": "Start -> Get Data From CSV File",
             "targetStep": "\/api\/3\/workflow_steps\/ba048146-9dcb-4dfe-9a05-2275648fbd39",
             "sourceStep": "\/api\/3\/workflow_steps\/f0b926e5-9a05-4c2c-a570-95da381d456a",
             "label": null,

@@ -4,7 +4,7 @@
     "name": "Set VOIP Phone's Asset Icon",
     "aliasName": null,
     "tag": null,
-    "description": "Playbook attach the Workstation Icon from the Asset Resources to the Asset for the VOIP Phone\n Category.",
+    "description": "Correlate VOIP Phone Icon from the Asset Resources to Asset as of category VOIP Phone.",
     "isActive": true,
     "debug": false,
     "singleRecordExecution": false,

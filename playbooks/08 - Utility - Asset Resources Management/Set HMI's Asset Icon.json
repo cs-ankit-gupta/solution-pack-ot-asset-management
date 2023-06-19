@@ -4,7 +4,7 @@
     "name": "Set HMI's Asset Icon",
     "aliasName": null,
     "tag": null,
-    "description": "Playbook attach the HMI Icon from the Asset Resources to the Asset for the HMI Category.",
+    "description": "Correlate HMI Icon from the Asset Resources to Asset as of category HMI.",
     "isActive": true,
     "debug": false,
     "singleRecordExecution": false,

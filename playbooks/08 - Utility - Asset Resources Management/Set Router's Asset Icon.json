@@ -4,7 +4,7 @@
     "name": "Set Router's Asset Icon",
     "aliasName": null,
     "tag": null,
-    "description": "Playbook attach the Router Icon from the Asset Resources to the Asset for the Router Category.",
+    "description": "Correlate Router Icon from the Asset Resources to Asset as of category Router.",
     "isActive": true,
     "debug": false,
     "singleRecordExecution": false,

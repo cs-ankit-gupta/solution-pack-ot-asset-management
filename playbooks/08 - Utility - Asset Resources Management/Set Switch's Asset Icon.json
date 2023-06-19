@@ -4,7 +4,7 @@
     "name": "Set Switch's Asset Icon",
     "aliasName": null,
     "tag": null,
-    "description": "Playbook attach the Switch Icon from the Asset Resources to the Asset for the Switch Category.",
+    "description": "Correlate Switch Icon from the Asset Resources to Asset as of category Switch.",
     "isActive": true,
     "debug": false,
     "singleRecordExecution": false,
