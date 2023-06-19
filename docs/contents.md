@@ -33,7 +33,7 @@ The **OT - Asset Management** solution pack contains the following resources.
 
 | Name                  | Description                                                |
 | :-------------------- | :--------------------------------------------------------- |
-| Asset                 | New field `Asset Icon`.                                    |
+| Asset                 | Introduced new field `Asset Icon`.                                    |
 | Asset Resources       | A Module that contains the icons of assets                 |
 | Asset Change Activity | A module that monitors asset changes on various baselines. |
 
