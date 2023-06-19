@@ -3,7 +3,7 @@
         "@type": "Scenario",
         "configuration": null,
         "title": "OT - Add Sample Assets",
-        "description": "This scenario adds 83 different sample OT Assets (different Purdue Levels, Types etc.) for testing dashboards, use case playbooks, reports and other actions. These assets contain, a specific tag called 'Sample' so that they can easily be identified and if required, easily deleted later. The sample data is picked from a CSV file present in the 'OT - Sample Assets CSV' record in the 'Attachments' module - making it easier to modify the sample data as suitable. \n<br>\n\n**NOTE**: *Ensure you run this 'OT - Add Sample Assets' Scenario prior to running the 'OT - Add Sample Alerts', for facilitating the correlations of Alerts and Asset records.*",
+        "description": "This scenario adds 85 different sample OT Assets (different Purdue Levels, Types etc.) for testing dashboards, use case playbooks, reports and other actions. These assets contain, a specific tag called 'Sample' so that they can easily be identified and if required, easily deleted later. The sample data is picked from a CSV file present in the 'OT - Sample Assets CSV' record in the 'Attachments' module - making it easier to modify the sample data as suitable. \n<br>\n\n**NOTE**: *Ensure you run this 'OT - Add Sample Assets' Scenario prior to running the 'OT - Add Sample Alerts', for facilitating the correlations of Alerts and Asset records.*",
         "steps": {
             "Steps": [
                 {
