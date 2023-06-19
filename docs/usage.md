@@ -25,7 +25,7 @@ The simulation mode has some sample data that helps you get a better understandi
 
     - Browse to `Simulations` > `OT - Add Sample Assets` scenario and click **Simulate Scenario**.
 
-    - This scenario adds 85 different sample OT Assets (different Levels, Types etc.) for testing dashboards, use case playbooks, reports and other actions.<br>
+    - This scenario adds 86 different sample OT Assets (different Levels, Types etc.) for testing dashboards, use case playbooks, reports and other actions.<br>
 
     >**NOTE**: Ensure you run this **OT - Add Sample Assets** Scenario prior to running the **OT - Add Sample Alerts**, for facilitating the correlations of Alerts and Asset records.
 
