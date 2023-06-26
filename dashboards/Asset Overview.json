@@ -21,7 +21,7 @@
                     {
                         "widgets": [
                             {
-                                "type": "recordDistribution-1.0.0",
+                                "type": "recordDistribution-1.0.1",
                                 "config": {
                                     "wid": "5c740875-cc59-4dd0-abcb-46509decadcf",
                                     "query": {
@@ -147,13 +147,16 @@
                                         }
                                     ],
                                     "showCorrelation": true,
-                                    "iconField": "assetIcon"
+                                    "iconField": "assetIcon",
+                                    "titleField": "hostname"
                                 }
                             }
-                        ]
+                        ],
+                        "style": "col-lg-12"
                     }
                 ],
-                "wid": "6966de8c-4ed9-4133-a272-e1aec33ec3ff"
+                "wid": "6966de8c-4ed9-4133-a272-e1aec33ec3ff",
+                "_collapsed": false
             },
             {
                 "columns": [
