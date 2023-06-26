@@ -150,6 +150,61 @@
                     {
                         "widgets": [
                             {
+                                "type": "relationshipCount",
+                                "config": {
+                                    "wid": "69ffdb38-bd3d-413d-a303-3df73542b9d1",
+                                    "widgetAlwaysDisplay": true,
+                                    "showTabularData": false,
+                                    "query": {
+                                        "sort": [
+                                            {
+                                                "field": "hostname",
+                                                "direction": "ASC"
+                                            }
+                                        ],
+                                        "limit": 2147483647,
+                                        "logic": "AND",
+                                        "filters": [],
+                                        "aggregates": [
+                                            {
+                                                "operator": "count",
+                                                "alias": "total",
+                                                "field": "cVEs.uuid"
+                                            },
+                                            {
+                                                "operator": "groupby",
+                                                "alias": "hostname",
+                                                "field": "hostname"
+                                            }
+                                        ]
+                                    },
+                                    "mapping": {
+                                        "firstGrouping": "hostname"
+                                    },
+                                    "assignedToSetting": "onlyMe",
+                                    "aggregate": true,
+                                    "title": "Top 10 Devices With Vulnerabilities",
+                                    "chart": "relationshipBar",
+                                    "resource": "assets",
+                                    "primaryDataSourceLabel": "Assets",
+                                    "resourceRelationship": "cVEs",
+                                    "relatedDataSourceLabel": "CVE Count",
+                                    "sortStyle": "DESC",
+                                    "limit": 10
+                                }
+                            }
+                        ],
+                        "style": "col-lg-12"
+                    }
+                ],
+                "wid": "f34d0686-fba1-4415-8779-cb57324db2db",
+                "_collapsed": false
+            },
+            {
+                "columns": [
+                    {
+                        "widgets": [
+                            {
                                 "type": "chart",
                                 "config": {
                                     "wid": "9542b494-a356-4d8f-a043-faeb0178ab64",

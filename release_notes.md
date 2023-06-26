@@ -6,7 +6,10 @@
 - Renamed playbook `Set Assets With MEF Tag` to `Tag as Most Essential Function (MEF)` and added manual input to get reason for tagging asset as Most Essential Function (MEF).
 - Introduced new **Asset Icon** record, `VOIP Phone`, `Gateway`, `Controller`, `Historian`, and `Printer`
 - Introduced new playbook collection `08 - Utility - Asset Resources Management` which correlate **Asset Icon** with **Asset** as per asset category.
-
+- Dashboard:
+  - Configured Record Distribution widget under `Asset Overview` with title as Asset Hostname.
+  - Introduced new widget **Top 10 Devices With Vulnerabilities** under **Asset Risk Overview**
+  
 ## Bug Fixes
     
 - Dashboard:
