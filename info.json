@@ -117,9 +117,6 @@
             },
             {
                 "name": "02 - Use Case - Asset Management"
-            },
-            {
-                "name": "08 - Utility - Asset Resources Management"
             }
         ],
         "globalVariables": [],
