@@ -33,7 +33,7 @@ The **OT - Asset Management** solution pack contains the following resources.
 
 | Name                  | Description                                                |
 | :-------------------- | :--------------------------------------------------------- |
-| Asset                 | Introduced new field `Asset Icon`.                                    |
+| Set Asset Icon        | Introduced new field  `Asset Icon`.                        |
 | Asset Resources       | A Module that contains the icons of assets                 |
 | Asset Change Activity | A module that monitors asset changes on various baselines. |
 
@@ -89,27 +89,6 @@ The **OT - Asset Management** solution pack contains the following resources.
 
 ## Playbook Collection
 
-### 08 - Utility - Asset Resources Management<sup>New<sup>
-
-| Playbook Name                                               | Description                                                                                                                          |
-| :---------------------------------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------- |
-| Set VOIP Phone's Asset Icon<sup>New<sup>                    | Playbook attach the Workstation Icon from the Asset Resources to the Asset for the VOIP Phone                                        |
-| Category.                                                   |
-| Set Workstation's Asset Icon<sup>New<sup>                   | Playbook attach the Workstation Icon from the Asset Resources to the Asset for the Workstation Category.                             |
-| Set Switch's Asset Icon<sup>New<sup>                        | Playbook attach the Switch Icon from the Asset Resources to the Asset for the Switch Category.                                       |
-| Set Storage's Asset Icon<sup>New<sup>                       | Playbook attach the Storage Icon from the Asset Resources to the Asset for the Storage Category.                                     |
-| Set Server's Asset Icon<sup>New<sup>                        | Playbook attach the Server Icon from the Asset Resources to the Asset for the Server Category.                                       |
-| Set Router's Asset Icon<sup>New<sup>                        | Playbook attach the Router Icon from the Asset Resources to the Asset for the Router Category.                                       |
-| Set Printer's Asset Icon<sup>New<sup>                       | Playbook attach the Printer Icon from the Asset Resources to the Asset for the Printer Category.                                     |
-| Set PLC's Asset Icon<sup>New<sup>                           | Playbook attach the PLC Icon from the Asset Resources to the Asset for the PLC Category.                                             |
-| Set Network's Asset Icon<sup>New<sup>                       | Playbook attach the Network Icon from the Asset Resources to the Asset for the Network Category.                                     |
-| Set Laptop's, Desktop's, Endpoint's Asset Icon<sup>New<sup> | Playbook attach the Laptop, Desktop, Endpoint Icon from the Asset Resources to the Asset for the Laptop, Desktop, Endpoint Category. |
-| Set Historian's Asset Icon<sup>New<sup>                     | Playbook attach the Historian Icon from the Asset Resources to the Asset for the Historian Category.                                 |
-| Set HMI's Asset Icon<sup>New<sup>                           | Playbook attach the HMI Icon from the Asset Resources to the Asset for the HMI Category.                                             |
-| Set Gateway's Asset Icon<sup>New<sup>                       | Playbook attach the Gateway Icon from the Asset Resources to the Asset for the Gateway Category.                                     |
-| Set Firewall's Asset Icon<sup>New<sup>                      | Playbook attach the Firewall Icon from the Asset Resources to the Asset for the Firewall Category.                                   |
-| Set Controller's Asset Icon<sup>New<sup>                    | Playbook attach the Firewall Icon from the Asset Resources to the Asset for the Controller Category.                                 |
-
 ### 02 - Use Case - Asset Change Activity
 
 | Playbook Name                         | Description                                                                                        |
@@ -126,10 +105,11 @@ The **OT - Asset Management** solution pack contains the following resources.
 | Generate Asset Change Summary Report  | Generate report by manual trigger in FortiSOAR                                                     |
 | Generate Report                       | Generates Report and Link to Incidents                                                             |
 
-### 02 - Use Case - Asset Management
+### 02 - Use Case - IT OT Asset Management
 
 | Playbook Name                           | Description                                                                                     |
 | :-------------------------------------- | :---------------------------------------------------------------------------------------------- |
+| Set Asset Icon<sup>New<sup>             | Correlates asset with Icon (If found in Asset Resources) as per there category.                 |
 | Scenario - OT - Create Assets Record    | Playbook reads a CSV file and create Assets records.                                            |
 | > Create Assets Record                  | This will generate an Alert record.                                                             |
 | Tag as Most Essential Function (MEF)    | Playbook tags asset as Most Essential Function(MEF)                                             |
