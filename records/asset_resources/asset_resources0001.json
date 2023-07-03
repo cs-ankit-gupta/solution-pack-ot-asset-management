@@ -1,7 +1,7 @@
 [
     {
         "@type": "AssetResource",
-        "description": "This contain the image file for Switch icon.",
+        "description": "Contains the image file for Switch Assets.",
         "icon": "\/api\/3\/files\/943c36ea-fdfd-4c01-8a10-c1f88a103251",
         "type": "Switch",
         "uuid": "28e15657-64f4-47f5-b914-b5e966c19efb",
@@ -16,7 +16,7 @@
     },
     {
         "@type": "AssetResource",
-        "description": "This contain the image file for PLC icon.",
+        "description": "Contains the image file for PLC Assets.",
         "icon": "\/api\/3\/files\/f2f046df-cc5d-4b3f-a460-8f2247715239",
         "type": "PLC",
         "uuid": "31676f5b-73ad-4e40-80e3-52be43b541ac",
@@ -31,7 +31,7 @@
     },
     {
         "@type": "AssetResource",
-        "description": null,
+        "description": "Contains the image file for VOIP Phone Assets.",
         "icon": "\/api\/3\/files\/6a42d6c8-d5ad-469c-abf7-774d8b8306bb",
         "type": "VOIP Phone",
         "uuid": "35b9d61f-065b-498c-b048-1ba14055dc3e",
@@ -46,7 +46,7 @@
     },
     {
         "@type": "AssetResource",
-        "description": null,
+        "description": "Contains the image file for Gateway Assets.",
         "icon": "\/api\/3\/files\/cd913475-a23f-446f-bbf2-652a31a06988",
         "type": "Gateway",
         "uuid": "5626c5b7-4610-4f15-a75d-40917a0c764d",
@@ -61,7 +61,7 @@
     },
     {
         "@type": "AssetResource",
-        "description": "This contain the image file for Firewall icon.",
+        "description": "Contains the image file for Firewall Assets.",
         "icon": "\/api\/3\/files\/585bb52e-881a-4350-a564-687da9b8bac2",
         "type": "Firewall",
         "uuid": "8e141b6f-ede2-4d17-8975-4d6c83ad75bd",
@@ -76,7 +76,7 @@
     },
     {
         "@type": "AssetResource",
-        "description": "This contain the image file for HMI icon.",
+        "description": "Contains the image file for HMI Assets.",
         "icon": "\/api\/3\/files\/fbaf51a6-37a6-4811-a72e-02108f0a7100",
         "type": "HMI",
         "uuid": "9b564710-9946-4bad-b092-085275a655fa",
@@ -91,7 +91,7 @@
     },
     {
         "@type": "AssetResource",
-        "description": "This contain the image file for Laptop, Desktop, Endpoint icon.",
+        "description": "Contains the image file for Endpoint Assets.",
         "icon": "\/api\/3\/files\/80111e60-c57a-436a-a64c-bfaaba8392b2",
         "type": "Endpoint",
         "uuid": "a031110b-d768-40ff-8d5c-ec18e0b9c553",
@@ -108,7 +108,7 @@
     },
     {
         "@type": "AssetResource",
-        "description": null,
+        "description": "Contains the image file for Controller Assets.",
         "icon": "\/api\/3\/files\/0e83c126-b160-4391-97b9-6b37cfed10ed",
         "type": "Controller",
         "uuid": "a5d1f626-ee76-44e2-bac5-49b4b08a7c70",
@@ -124,7 +124,7 @@
     },
     {
         "@type": "AssetResource",
-        "description": "This contain the image file for Server icon.",
+        "description": "Contains the image file for Server Assets.",
         "icon": "\/api\/3\/files\/108bf3e9-6643-4043-8ac0-73e547ee34fd",
         "type": "Server",
         "uuid": "c22ca685-c1fe-4291-821e-8a3b3280e0e4",
@@ -144,7 +144,7 @@
     },
     {
         "@type": "AssetResource",
-        "description": "This contain the image file for Storage icon.",
+        "description": "Contains the image file for Storage Assets.",
         "icon": "\/api\/3\/files\/115272f5-9386-4327-b77d-dcd9f1857c41",
         "type": "Storage",
         "uuid": "c83e686e-30d5-4c25-ba7b-ae723eea9e64",
@@ -159,7 +159,7 @@
     },
     {
         "@type": "AssetResource",
-        "description": "This contain the image file for Engineering Station\/WorkStation icon.",
+        "description": "Contains the image file for WorkStation Assets.",
         "icon": "\/api\/3\/files\/97b6faa6-2a39-495a-b1ca-fbb0e5304a64",
         "type": "WorkStation",
         "uuid": "cd51b55e-8152-4fc8-bd1b-c00444a1e321",
@@ -174,7 +174,7 @@
     },
     {
         "@type": "AssetResource",
-        "description": "This contain the image file for Router icon.",
+        "description": "Contains the image file for Router Assets.",
         "icon": "\/api\/3\/files\/793c5b3e-8b51-4720-ace8-a78e643a2ef2",
         "type": "Router",
         "uuid": "d26f6ff8-34dc-42f2-b65f-ca7cc60a1fa9",
@@ -189,7 +189,7 @@
     },
     {
         "@type": "AssetResource",
-        "description": null,
+        "description": "Contains the image file for Historian Assets.",
         "icon": "\/api\/3\/files\/a055e81a-bcf4-4d82-b96d-3dea4ab29e51",
         "type": "Historian",
         "uuid": "d822eb64-734b-427f-b7a1-d69802ee1527",
@@ -204,7 +204,7 @@
     },
     {
         "@type": "AssetResource",
-        "description": "This contain the image file for Network icon.",
+        "description": "Contains the image file for Network Assets.",
         "icon": "\/api\/3\/files\/c2cb8ad9-86c2-4b1f-a989-58cb71a0ff9f",
         "type": "Network",
         "uuid": "e686e4ef-a65a-449b-8fdd-f3a38bea89be",
@@ -219,7 +219,7 @@
     },
     {
         "@type": "AssetResource",
-        "description": null,
+        "description": "Contains the image file for Printer Assets.",
         "icon": "\/api\/3\/files\/554da7ce-cb8c-4b34-80d8-cd6990a08f99",
         "type": "Printer",
         "uuid": "e7dd0e68-a140-4ac8-a57f-848702139076",
