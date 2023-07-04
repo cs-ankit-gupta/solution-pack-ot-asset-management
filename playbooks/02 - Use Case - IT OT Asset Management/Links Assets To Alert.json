@@ -25,7 +25,9 @@
                     "destinationIPAddress": "{{vars.input.records[0].destinationIp}}"
                 },
                 "apply_async": false,
-                "step_variables": [],
+                "step_variables": {
+                    "assetIRIList": "{% set IRIList = [] %}{% if vars.steps.Find_Assets['sourceAsset'] != \"\" %}{% set _ = IRIList.append(vars.steps.Find_Assets['sourceAsset']) %}{% endif %}{% if vars.steps.Find_Assets['destinationAsset'] != \"\" %}{% set _ = IRIList.append(vars.steps.Find_Assets['destinationAsset']) %}{% endif %}{{IRIList}}"
+                },
                 "pass_parent_env": false,
                 "pass_input_record": false,
                 "workflowReference": "\/api\/3\/workflows\/9a71aada-d52d-414a-af6a-8e14e3877907"
@@ -44,7 +46,7 @@
             "arguments": {
                 "resource": {
                     "__link": {
-                        "assets": "{{vars.steps.Find_Assets['sourceAsset'], vars.steps.Find_Assets['destinationAsset']}}"
+                        "assets": "{{vars.assetIRIList}}"
                     }
                 },
                 "_showJson": false,
