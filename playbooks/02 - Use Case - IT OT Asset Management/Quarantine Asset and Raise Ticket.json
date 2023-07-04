@@ -38,7 +38,15 @@
             "description": null,
             "arguments": {
                 "params": [],
-                "version": "3.2.3",
+                "message": {
+                    "tags": [],
+                    "type": "\/api\/3\/picklists\/ff599189-3eeb-4c86-acb0-a7915e85ac3b",
+                    "tenant": "",
+                    "thread": false,
+                    "content": "<p><strong>'Quarantine Asset and Raise Ticket'<\/strong> playbook triggered and cancelled by <em>{{vars.loggedInUserName}}<\/em>.<\/p>",
+                    "records": "{{vars.input.records[0]['@id']}}"
+                },
+                "version": "3.2.4",
                 "connector": "cyops_utilities",
                 "operation": "no_op",
                 "operationTitle": "Utils: No Operation",
@@ -196,7 +204,7 @@
                     "tags": [],
                     "type": "\/api\/3\/picklists\/ff599189-3eeb-4c86-acb0-a7915e85ac3b",
                     "tenant": "",
-                    "content": "<p>Isolated Following Assets and Raised ServiceNow Ticket : <span class=\"badge badge-pill badge-danger\" style=\"background: #009d00; color: #fff;\">{{vars.result.data.result.number}}<\/span><\/p>\n<p>{% for asset in vars.assetList %}<\/p>\n<ul>\n<li>{{asset.hostname}}<\/li>\n<\/ul>\n<p>{% endfor %}<\/p>",
+                    "content": "<p><span style=\"background-color: orange; color: black; border-radius: 4px; font-size: 5mm;\"><span style=\"font-size: 15px; font-weight: bold; font-family: 'Georgia', monospace;\">\ud83d\udca1Note <br \/><\/span><\/span> Isolated Following Assets and Raised ServiceNow Ticket : <span class=\"badge badge-pill badge-danger\" style=\"background: #009d00; color: #fff;\">{{vars.result.data.result.number}}<\/span><\/p>\n<p>{% for asset in vars.assetList %}<\/p>\n<ul>\n<li><a href=\"\/modules\/assets\/{{asset.uuid}}\" target=\"_blank\" rel=\"noopener\">{{asset.hostname}}<\/a><\/li>\n<\/ul>\n<p>{% endfor %}<\/p>",
                     "records": "{{vars.input.records[0]['@id']}}"
                 },
                 "version": "3.2.0",
