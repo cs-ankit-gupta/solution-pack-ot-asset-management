@@ -1,7 +1,7 @@
 {
     "@context": "\/api\/3\/contexts\/WorkflowCollection",
     "@type": "WorkflowCollection",
-    "name": "02 - Use Case - Asset Management",
+    "name": "02 - Use Case - IT OT Asset Management",
     "description": null,
     "visible": true,
     "image": null,
