@@ -43,6 +43,7 @@
                     "severity": "\/api\/3\/picklists\/58d0753f-f7e4-403b-953c-b0f521eab759",
                     "sourceIp": "110.132.30.51",
                     "__replace": "false",
+                    "assignedTo": "\/api\/3\/people\/3451141c-bac6-467c-8d72-85e0fab569ce",
                     "recordTags": [
                         "\/api\/3\/tags\/Sample",
                         "\/api\/3\/tags\/IT OT"
@@ -91,6 +92,7 @@
                     "severity": "\/api\/3\/picklists\/58d0753f-f7e4-403b-953c-b0f521eab759",
                     "sourceIp": "110.132.30.63",
                     "__replace": "true",
+                    "assignedTo": "\/api\/3\/people\/3451141c-bac6-467c-8d72-85e0fab569ce",
                     "recordTags": [
                         "\/api\/3\/tags\/IT OT",
                         "\/api\/3\/tags\/Sample"
@@ -334,6 +336,7 @@
                     "severity": "\/api\/3\/picklists\/58d0753f-f7e4-403b-953c-b0f521eab759",
                     "sourceIp": "110.132.30.51",
                     "__replace": "false",
+                    "assignedTo": "\/api\/3\/people\/3451141c-bac6-467c-8d72-85e0fab569ce",
                     "recordTags": [
                         "\/api\/3\/tags\/Sample",
                         "\/api\/3\/tags\/IT OT"
@@ -381,6 +384,7 @@
                     "severity": "\/api\/3\/picklists\/58d0753f-f7e4-403b-953c-b0f521eab759",
                     "sourceIp": "110.132.30.72",
                     "__replace": "false",
+                    "assignedTo": "\/api\/3\/people\/3451141c-bac6-467c-8d72-85e0fab569ce",
                     "recordTags": [
                         "\/api\/3\/tags\/Sample",
                         "\/api\/3\/tags\/IT OT"

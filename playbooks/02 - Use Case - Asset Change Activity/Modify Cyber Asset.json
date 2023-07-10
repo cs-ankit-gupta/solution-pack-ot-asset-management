@@ -33,6 +33,7 @@
                     "dueBy": "{{vars.input.records[0].dueDate}}",
                     "assets": "{{vars.assetIRI}}",
                     "status": "\/api\/3\/picklists\/7669725a-28cc-4b19-98a3-9ca71e0f88f4",
+                    "priority": "\/api\/3\/picklists\/539083a6-01f6-4ff9-a588-778cfdad4671",
                     "recordTags": [
                         "\/api\/3\/tags\/AssetChangeActivity"
                     ],
@@ -5277,6 +5278,7 @@
                     "dueBy": "{{vars.input.records[0].dueDate}}",
                     "assets": "{{vars.assetIRI}}",
                     "status": "\/api\/3\/picklists\/7669725a-28cc-4b19-98a3-9ca71e0f88f4",
+                    "priority": "\/api\/3\/picklists\/539083a6-01f6-4ff9-a588-778cfdad4671",
                     "recordTags": [
                         "\/api\/3\/tags\/AssetChangeActivity"
                     ],
@@ -5366,6 +5368,7 @@
                     "dueBy": "{{vars.input.records[0].dueDate}}",
                     "assets": "{{vars.assetIRI}}",
                     "status": "\/api\/3\/picklists\/7669725a-28cc-4b19-98a3-9ca71e0f88f4",
+                    "priority": "\/api\/3\/picklists\/539083a6-01f6-4ff9-a588-778cfdad4671",
                     "recordTags": [
                         "\/api\/3\/tags\/AssetChangeActivity"
                     ],
@@ -5402,6 +5405,7 @@
                     "dueBy": "{{vars.input.records[0].dueDate}}",
                     "assets": "{{vars.assetIRI}}",
                     "status": "\/api\/3\/picklists\/7669725a-28cc-4b19-98a3-9ca71e0f88f4",
+                    "priority": "\/api\/3\/picklists\/539083a6-01f6-4ff9-a588-778cfdad4671",
                     "recordTags": [
                         "\/api\/3\/tags\/AssetChangeActivity"
                     ],
@@ -5579,6 +5583,7 @@
                     "dueBy": "{{vars.input.records[0].dueDate}}",
                     "assets": "{{vars.assetIRI}}",
                     "status": "\/api\/3\/picklists\/7669725a-28cc-4b19-98a3-9ca71e0f88f4",
+                    "priority": "\/api\/3\/picklists\/539083a6-01f6-4ff9-a588-778cfdad4671",
                     "recordTags": [
                         "\/api\/3\/tags\/AssetChangeActivity"
                     ],
@@ -5615,6 +5620,7 @@
                     "dueBy": "{{vars.input.records[0].dueDate}}",
                     "assets": "{{vars.assetIRI}}",
                     "status": "\/api\/3\/picklists\/7669725a-28cc-4b19-98a3-9ca71e0f88f4",
+                    "priority": "\/api\/3\/picklists\/539083a6-01f6-4ff9-a588-778cfdad4671",
                     "recordTags": [
                         "\/api\/3\/tags\/AssetChangeActivity"
                     ],
@@ -5651,6 +5657,7 @@
                     "dueBy": "{{vars.input.records[0].dueDate}}",
                     "assets": "{{vars.assetIRI}}",
                     "status": "\/api\/3\/picklists\/7669725a-28cc-4b19-98a3-9ca71e0f88f4",
+                    "priority": "\/api\/3\/picklists\/539083a6-01f6-4ff9-a588-778cfdad4671",
                     "recordTags": [
                         "\/api\/3\/tags\/AssetChangeActivity"
                     ],

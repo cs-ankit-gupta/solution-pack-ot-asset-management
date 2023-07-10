@@ -79,22 +79,17 @@ The simulation mode has some sample data that helps you get a better understandi
 
 - Browse to `Simulations` > `OT - Add Sample Asset Change Activity Record` scenario and click **Simulate Scenario**.
 
-- Playbook: **Scenario - OT - Asset Change Activity** has two variables `dueDays` and `mediumImpactAsset`. You can populate these variables with your preferred values in the *Configuration* step. 
-    - `dueDays` - Days required to complete change activity.
-    - `mediumImpactAsset` - Impacted Asset hostname.
+    >**NOTE**: Playbook: **Scenario - OT - Asset Change Activity** has variable `dueDays` (*Days required to complete change activity*). You can populate these variables with your preferred values in the *Configuration* step.
 
 - With a given value of due date in `dueDays` two Asset Change Activity entries are made.
-    - Add New Cyber Asset - Intel Core i7-13700K (Asset) 
-    - Medium Impact Baseline Change - Patch For log 4J
-
-- If an asset does not already exist, it is created and added to the record with the following hostname:
-    - Intel Core i7-13700K
+    - Add New Cyber Asset - Siemens S7-400-S621
+    - Medium Impact Baseline Change - Stratix 5950-RW41
 
 - Assets are linked and can be seen in the Assets & Vulnerabilities tab.
 
 - Once the record has been created, execute the **Add Task From Templates** to assign different tasks to different people. 
 
-- New tasks get created once the previous task is completed.
+- New tasks get created as priority `Medium` once the previous task is completed.
 
 - New task can be added by using **Add New Task** playbook.
 
