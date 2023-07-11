@@ -22,7 +22,7 @@
 
 - Changed tag name from `SampleAsset` & `SampleAlert` to `Sample`
 - Added connector `Qualys` in Solution Pack.
-- Under dashbaord **Asset Overview** changed widget name from `MEF Asset` to `Most Essential Function (MEF) Assets`
+- Under dashboard **Asset Overview** changed widget name from `MEF Asset` to `Most Essential Function (MEF) Assets`
 - Renamed playbook `Links MITRE Matrices To Alert` to `Links Assets To Alert` and removed MITRE Module data correlation as implemented same in **MITRE ATT&CK Enrichment Framework v2.2.0**
 
 ## Depreciated
