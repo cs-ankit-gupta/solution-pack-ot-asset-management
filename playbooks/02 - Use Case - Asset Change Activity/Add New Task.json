@@ -960,7 +960,7 @@
                     "tags": [],
                     "type": "\/api\/3\/picklists\/ff599189-3eeb-4c86-acb0-a7915e85ac3b",
                     "tenant": "",
-                    "content": "<p>Added Task <span style=\"background: green; color: #fff;\" class=\"badge badge-pill badge-danger\">{{vars.steps.Add_Task_Details.input.name}} - {{vars.input.records[0].title}}<\/span><\/p>",
+                    "content": "<p>Added Task <a href=\"\/modules\/tasks\/{{vars.steps.Create_Task_and_Correlate.uuid}}\" target=\"_blank\" rel=\"noopener\">{{vars.steps.Create_Task_and_Correlate.name}}<\/a><\/p>",
                     "records": "{{vars.input.records[0]['@id']}}"
                 },
                 "resource": {
