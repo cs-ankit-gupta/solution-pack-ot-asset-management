@@ -24,7 +24,7 @@
                     "tags": [],
                     "type": "\/api\/3\/picklists\/ff599189-3eeb-4c86-acb0-a7915e85ac3b",
                     "tenant": "",
-                    "content": "<p>Added task <a href=\"\/modules\/tasks\/{{vars.steps.Approver_Approval_To_Implement.uuid}}\" target=\"_blank\" rel=\"noopener\">{{vars.input.records[0].title}}<\/a> to <strong>'Approver Approval To Implement'<\/strong> <\/p>",
+                    "content": "<p>Added task <a href=\"\/modules\/tasks\/{{vars.steps.Approver_Approval_To_Implement.uuid}}\" target=\"_blank\" rel=\"noopener\">{{vars.steps.Approver_Approval_To_Implement.name}}<\/a> to <strong>'Approver Approval To Implement'<\/strong> <\/p>",
                     "records": "{{vars.input.records[0]['@id']}}",
                     "parentstepid": "\/api\/3\/workflow_steps\/94327c0d-46c0-4ce6-ad78-729c4247d9db"
                 },
@@ -5257,7 +5257,7 @@
                     "tags": [],
                     "type": "\/api\/3\/picklists\/ff599189-3eeb-4c86-acb0-a7915e85ac3b",
                     "tenant": "",
-                    "content": "<p>Added task <a href=\"\/modules\/tasks\/{{vars.steps.Assignee_Approval_To_Implement.uuid}}\" target=\"_blank\" rel=\"noopener\">{{vars.input.records[0].title}}<\/a> to <strong>'Assignee Approval To Implement'<\/strong> <\/p>",
+                    "content": "<p>Added task <a href=\"\/modules\/tasks\/{{vars.steps.Assignee_Approval_To_Implement.uuid}}\" target=\"_blank\" rel=\"noopener\">{{vars.steps.Assignee_Approval_To_Implement.name}}<\/a> to <strong>'Assignee Approval To Implement'<\/strong> <\/p>",
                     "records": "{{vars.input.records[0]['@id']}}",
                     "parentstepid": "\/api\/3\/workflow_steps\/b4748646-0208-45c2-a1d5-26d7a5e0edc7"
                 },
@@ -5560,7 +5560,7 @@
                     "tags": [],
                     "type": "\/api\/3\/picklists\/ff599189-3eeb-4c86-acb0-a7915e85ac3b",
                     "tenant": "",
-                    "content": "<p>Added task <a href=\"\/modules\/tasks\/{{vars.steps.Identify_Security_Control.uuid}}\" target=\"_blank\" rel=\"noopener\">{{vars.input.records[0].title}}<\/a> to <strong>'Identify Security Control'<\/strong> <\/p>",
+                    "content": "<p>Added task <a href=\"\/modules\/tasks\/{{vars.steps.Identify_Security_Control.uuid}}\" target=\"_blank\" rel=\"noopener\">{{vars.steps.Identify_Security_Control.name}}<\/a> to <strong>'Identify Security Control'<\/strong> <\/p>",
                     "records": "{{vars.input.records[0]['@id']}}"
                 },
                 "resource": {
@@ -5596,7 +5596,7 @@
                     "tags": [],
                     "type": "\/api\/3\/picklists\/ff599189-3eeb-4c86-acb0-a7915e85ac3b",
                     "tenant": "",
-                    "content": "<p>Added task <a href=\"\/modules\/tasks\/{{vars.steps.Implement_Change.uuid}}\" target=\"_blank\" rel=\"noopener\">{{vars.input.records[0].title}}<\/a> to <strong>'Implement Change'<\/strong> <\/p>",
+                    "content": "<p>Added task <a href=\"\/modules\/tasks\/{{vars.steps.Implement_Change.uuid}}\" target=\"_blank\" rel=\"noopener\">{{vars.steps.Implement_Change.name}}<\/a> to <strong>'Implement Change'<\/strong> <\/p>",
                     "records": "{{vars.input.records[0]['@id']}}",
                     "parentstepid": "\/api\/3\/workflow_steps\/ae490276-c33a-4735-80b5-0c834c27f510"
                 },
@@ -5773,7 +5773,7 @@
                     "tags": [],
                     "type": "\/api\/3\/picklists\/ff599189-3eeb-4c86-acb0-a7915e85ac3b",
                     "tenant": "",
-                    "content": "<p>Added task <a href=\"\/modules\/tasks\/{{vars.steps.Update_Baseline.uuid}}\" target=\"_blank\" rel=\"noopener\">{{vars.input.records[0].title}}<\/a> to <strong>'Update Baseline'<\/strong> <\/p>",
+                    "content": "<p>Added task <a href=\"\/modules\/tasks\/{{vars.steps.Update_Baseline.uuid}}\" target=\"_blank\" rel=\"noopener\">{{vars.steps.Update_Baseline.name}}<\/a> to <strong>'Update Baseline'<\/strong> <\/p>",
                     "records": "{{vars.input.records[0]['@id']}}",
                     "parentstepid": "\/api\/3\/workflow_steps\/ae490276-c33a-4735-80b5-0c834c27f510"
                 },
@@ -5810,7 +5810,7 @@
                     "tags": [],
                     "type": "\/api\/3\/picklists\/ff599189-3eeb-4c86-acb0-a7915e85ac3b",
                     "tenant": "",
-                    "content": "<p>Added task <a href=\"\/modules\/tasks\/{{vars.steps.Verify_Security_Controls.uuid}}\" target=\"_blank\" rel=\"noopener\">{{vars.input.records[0].title}}<\/a> to <strong>'Verify Security Controls'<\/strong> <\/p>",
+                    "content": "<p>Added task <a href=\"\/modules\/tasks\/{{vars.steps.Verify_Security_Controls.uuid}}\" target=\"_blank\" rel=\"noopener\">{{vars.steps.Verify_Security_Controls.name}}<\/a> to <strong>'Verify Security Controls'<\/strong> <\/p>",
                     "records": "{{vars.input.records[0]['@id']}}",
                     "parentstepid": "\/api\/3\/workflow_steps\/ae490276-c33a-4735-80b5-0c834c27f510"
                 },
@@ -5847,7 +5847,7 @@
                     "tags": [],
                     "type": "\/api\/3\/picklists\/ff599189-3eeb-4c86-acb0-a7915e85ac3b",
                     "tenant": "",
-                    "content": "<p>Added task <a href=\"\/modules\/tasks\/{{vars.steps.Verify_Software_Source.uuid}}\" target=\"_blank\" rel=\"noopener\">{{vars.input.records[0].title}}<\/a> to <strong>'Verify Software Source'<\/strong> <\/p>",
+                    "content": "<p>Added task <a href=\"\/modules\/tasks\/{{vars.steps.Verify_Software_Source.uuid}}\" target=\"_blank\" rel=\"noopener\">{{vars.steps.Verify_Software_Source.name}}<\/a> to <strong>'Verify Software Source'<\/strong> <\/p>",
                     "records": "{{vars.input.records[0]['@id']}}",
                     "parentstepid": "\/api\/3\/workflow_steps\/b10fe055-8cc1-4163-a11b-5f87a6c9c537"
                 },

@@ -24,7 +24,7 @@
                     "tags": [],
                     "type": "\/api\/3\/picklists\/ff599189-3eeb-4c86-acb0-a7915e85ac3b",
                     "tenant": "",
-                    "content": "<p>Added task <a href=\"\/modules\/tasks\/{{vars.steps.Approver_Approval_To_Implement.uuid}}\" target=\"_blank\" rel=\"noopener\">{{vars.input.records[0].title}}<\/a> to <strong>'Approver Approval To Implement'<\/strong><\/p>",
+                    "content": "<p>Added task <a href=\"\/modules\/tasks\/{{vars.steps.Approver_Approval_To_Implement.uuid}}\" target=\"_blank\" rel=\"noopener\">{{vars.steps.Approver_Approval_To_Implement.name}}<\/a> to <strong>'Approver Approval To Implement'<\/strong><\/p>",
                     "records": "{{vars.input.records[0]['@id']}}",
                     "parentstepid": "\/api\/3\/workflow_steps\/890ce319-249e-477b-9523-1de9ca1c30f7"
                 },
@@ -46,8 +46,8 @@
                 "step_variables": []
             },
             "status": null,
-            "top": "1500",
-            "left": "780",
+            "top": "1520",
+            "left": "820",
             "stepType": "\/api\/3\/workflow_step_types\/dc6ac63d-c5a5-472f-9eb4-6b18473a98b8",
             "group": null,
             "uuid": "a203fe02-2ea7-4ace-85d3-680ee2de15b1"
@@ -5269,7 +5269,7 @@
                     "tags": [],
                     "type": "\/api\/3\/picklists\/ff599189-3eeb-4c86-acb0-a7915e85ac3b",
                     "tenant": "",
-                    "content": "<p>Added task <a href=\"\/modules\/tasks\/{{vars.steps.Assignee_Approval_To_Implement.uuid}}\" target=\"_blank\" rel=\"noopener\">{{vars.input.records[0].title}}<\/a> to <strong>'Assignee Approval To Implement'<\/strong><\/p>",
+                    "content": "<p>Added task <a href=\"\/modules\/tasks\/{{vars.steps.Assignee_Approval_To_Implement.uuid}}\" target=\"_blank\" rel=\"noopener\">{{vars.steps.Assignee_Approval_To_Implement.name}}<\/a> to <strong>'Assignee Approval To Implement'<\/strong><\/p>",
                     "records": "{{vars.input.records[0]['@id']}}",
                     "parentstepid": "\/api\/3\/workflow_steps\/d078e144-56e0-4cfa-bb33-a723aa7f2b0c"
                 },
@@ -5320,8 +5320,8 @@
                 "step_variables": []
             },
             "status": null,
-            "top": "1640",
-            "left": "780",
+            "top": "1660",
+            "left": "820",
             "stepType": "\/api\/3\/workflow_step_types\/2597053c-e718-44b4-8394-4d40fe26d357",
             "group": null,
             "uuid": "2273962c-205a-4f44-98d3-70a49644a5ab"
@@ -5572,7 +5572,7 @@
                     "tags": [],
                     "type": "\/api\/3\/picklists\/ff599189-3eeb-4c86-acb0-a7915e85ac3b",
                     "tenant": "",
-                    "content": "<p>Added task <a href=\"\/modules\/tasks\/{{vars.steps.Identify_Security_Control.uuid}}\" target=\"_blank\" rel=\"noopener\">{{vars.input.records[0].title}}<\/a> to <strong>'Identify Security Control'<\/strong><\/p>",
+                    "content": "<p>Added task <a href=\"\/modules\/tasks\/{{vars.steps.Identify_Security_Control.uuid}}\" rel=\"noopener\" target=\"_blank\" >{{vars.steps.Identify_Security_Control.name}}<\/a> to <strong>'Identify Security Control'<\/strong><\/p>",
                     "records": "{{vars.input.records[0]['@id']}}"
                 },
                 "resource": {
@@ -5608,7 +5608,7 @@
                     "tags": [],
                     "type": "\/api\/3\/picklists\/ff599189-3eeb-4c86-acb0-a7915e85ac3b",
                     "tenant": "",
-                    "content": "<p>Added task <a href=\"\/modules\/tasks\/{{vars.steps.Implement_Change.uuid}}\" target=\"_blank\" rel=\"noopener\">{{vars.input.records[0].title}}<\/a> to <strong>'Implement Change'<\/strong> <\/p>",
+                    "content": "<p>Added task <a href=\"\/modules\/tasks\/{{vars.steps.Implement_Change.uuid}}\" target=\"_blank\" rel=\"noopener\">{{vars.steps.Implement_Change.name}}<\/a> to <strong>'Implement Change'<\/strong><\/p>",
                     "records": "{{vars.input.records[0]['@id']}}",
                     "parentstepid": "\/api\/3\/workflow_steps\/a203fe02-2ea7-4ace-85d3-680ee2de15b1"
                 },
@@ -5785,7 +5785,7 @@
                     "tags": [],
                     "type": "\/api\/3\/picklists\/ff599189-3eeb-4c86-acb0-a7915e85ac3b",
                     "tenant": "",
-                    "content": "<p>Added task <a href=\"\/modules\/tasks\/{{vars.steps.Update_Baseline.uuid}}\" target=\"_blank\" rel=\"noopener\">{{vars.input.records[0].title}}<\/a> to <strong>'Update Baseline'<\/strong> <\/p>",
+                    "content": "<p>Added task <a href=\"\/modules\/tasks\/{{vars.steps.Update_Baseline.uuid}}\" target=\"_blank\" rel=\"noopener\">{{vars.steps.Update_Baseline.name}}<\/a> to <strong>'Update Baseline'<\/strong><\/p>",
                     "records": "{{vars.input.records[0]['@id']}}",
                     "parentstepid": "\/api\/3\/workflow_steps\/a203fe02-2ea7-4ace-85d3-680ee2de15b1"
                 },
@@ -5822,7 +5822,7 @@
                     "tags": [],
                     "type": "\/api\/3\/picklists\/ff599189-3eeb-4c86-acb0-a7915e85ac3b",
                     "tenant": "",
-                    "content": "<p>Added task <a href=\"\/modules\/tasks\/{{vars.steps.Verify_Security_Controls.uuid}}\" target=\"_blank\" rel=\"noopener\">{{vars.input.records[0].title}}<\/a> to <strong>'Verify Security Controls'<\/strong> <\/p>",
+                    "content": "<p>Added task <a href=\"\/modules\/tasks\/{{vars.steps.Verify_Security_Controls.uuid}}\" target=\"_blank\" rel=\"noopener\">{{vars.steps.Verify_Security_Controls.name}}<\/a> to <strong>'Verify Security Controls'<\/strong><\/p>",
                     "records": "{{vars.input.records[0]['@id']}}",
                     "parentstepid": "\/api\/3\/workflow_steps\/a203fe02-2ea7-4ace-85d3-680ee2de15b1"
                 },
@@ -5859,7 +5859,7 @@
                     "tags": [],
                     "type": "\/api\/3\/picklists\/ff599189-3eeb-4c86-acb0-a7915e85ac3b",
                     "tenant": "",
-                    "content": "<p>Added task <a href=\"\/modules\/tasks\/{{vars.steps.Verify_Software_Source.uuid}}\" target=\"_blank\" rel=\"noopener\">{{vars.input.records[0].title}}<\/a> to <strong>'Verify Software Source'<\/strong><\/p>",
+                    "content": "<p>Added task <a href=\"\/modules\/tasks\/{{vars.steps.Verify_Software_Source.uuid}}\" target=\"_blank\" rel=\"noopener\">{{vars.steps.Verify_Software_Source.name}}<\/a> to <strong>'Verify Software Source'<\/strong><\/p>",
                     "records": "{{vars.input.records[0]['@id']}}",
                     "parentstepid": "\/api\/3\/workflow_steps\/5c0f5211-e831-4154-b953-80b9ef18f195"
                 },
