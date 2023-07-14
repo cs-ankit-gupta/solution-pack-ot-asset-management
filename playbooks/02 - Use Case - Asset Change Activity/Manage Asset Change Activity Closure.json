@@ -17,7 +17,7 @@
     "steps": [
         {
             "@type": "WorkflowStep",
-            "name": "Get All Incomplete Task",
+            "name": "Get All Incomplete Tasks",
             "description": null,
             "arguments": {
                 "query": {
@@ -40,7 +40,7 @@
                 "module": "asset_change_activities?$limit=30&$relationships=true&$fsr_max_relation_count=100",
                 "checkboxFields": true,
                 "step_variables": {
-                    "incompleteTask": "{{vars.steps.Get_All_Incomplete_Task[0][\"tasks\"] | json_query(\"[?status != '\/api\/3\/picklists\/343f4b67-e929-4205-bf95-ba5b70545fed']\")}}"
+                    "incompleteTask": "{{vars.steps.Get_All_Incomplete_Tasks[0][\"tasks\"] | json_query(\"[?status != '\/api\/3\/picklists\/343f4b67-e929-4205-bf95-ba5b70545fed']\")}}"
                 }
             },
             "status": null,
@@ -53,7 +53,7 @@
         {
             "@type": "WorkflowStep",
             "name": "Incomplete Task Comment",
-            "description": "Mark Asset Change Activity record as Close and add incomplete task comment",
+            "description": null,
             "arguments": {
                 "message": {
                     "tags": [],
@@ -85,7 +85,7 @@
         },
         {
             "@type": "WorkflowStep",
-            "name": "Is Incomplete Task Exists",
+            "name": "Is Incomplete Tasks Exists",
             "description": null,
             "arguments": {
                 "conditions": [
@@ -193,7 +193,7 @@
     "routes": [
         {
             "@type": "WorkflowRoute",
-            "name": "Get All Incomplete Task -> Is Incomplete Task Exists",
+            "name": "Get All Incomplete Task -> Incomplete Tasks Exists",
             "targetStep": "\/api\/3\/workflow_steps\/110145ac-6461-473f-b3c5-d82ab529d4ce",
             "sourceStep": "\/api\/3\/workflow_steps\/6f263d5c-06e0-47ff-8a3e-99867c8ad347",
             "label": null,
@@ -203,7 +203,7 @@
         },
         {
             "@type": "WorkflowRoute",
-            "name": "Is Incomplete Task Exists -> Copy of Update Asset Change Activity",
+            "name": "Incomplete Tasks Exists -> Update Asset Change Activity",
             "targetStep": "\/api\/3\/workflow_steps\/94da0c6a-52b0-4928-8e51-06a50de8968a",
             "sourceStep": "\/api\/3\/workflow_steps\/110145ac-6461-473f-b3c5-d82ab529d4ce",
             "label": "Yes",
@@ -213,7 +213,7 @@
         },
         {
             "@type": "WorkflowRoute",
-            "name": "Is Incomplete Task Exists -> Update Asset Change Activity",
+            "name": "Incomplete Tasks Exists -> Update Asset Change Activity",
             "targetStep": "\/api\/3\/workflow_steps\/5c7ff996-4f2e-4865-906f-173b691fc4eb",
             "sourceStep": "\/api\/3\/workflow_steps\/110145ac-6461-473f-b3c5-d82ab529d4ce",
             "label": "No",
@@ -223,7 +223,7 @@
         },
         {
             "@type": "WorkflowRoute",
-            "name": "Start -> Get All Open Task",
+            "name": "Start -> Get All Open Tasks",
             "targetStep": "\/api\/3\/workflow_steps\/6f263d5c-06e0-47ff-8a3e-99867c8ad347",
             "sourceStep": "\/api\/3\/workflow_steps\/f6e602b6-109f-4bd8-bf3f-28ce08117592",
             "label": null,
