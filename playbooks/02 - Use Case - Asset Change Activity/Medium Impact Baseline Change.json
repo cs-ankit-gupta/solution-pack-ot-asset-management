@@ -24,7 +24,7 @@
                     "tags": [],
                     "type": "\/api\/3\/picklists\/ff599189-3eeb-4c86-acb0-a7915e85ac3b",
                     "tenant": "",
-                    "content": "<p>Added Task <span class=\"badge badge-pill badge-danger\" style=\"background: green; color: #fff;\">Approver Approval To Implement - {{vars.input.records[0].title}}<\/span><\/p>",
+                    "content": "<p>Added task <a href=\"\/modules\/tasks\/{{vars.steps.Approver_Approval_To_Implement.uuid}}\" target=\"_blank\" rel=\"noopener\">{{vars.steps.Approver_Approval_To_Implement.name}}<\/a> to <strong>'Approver Approval To Implement'<\/strong> <\/p>",
                     "records": "{{vars.input.records[0]['@id']}}",
                     "parentstepid": "\/api\/3\/workflow_steps\/94327c0d-46c0-4ce6-ad78-729c4247d9db"
                 },
@@ -46,8 +46,8 @@
                 "step_variables": []
             },
             "status": null,
-            "top": "1120",
-            "left": "480",
+            "top": "1515",
+            "left": "383",
             "stepType": "\/api\/3\/workflow_step_types\/dc6ac63d-c5a5-472f-9eb4-6b18473a98b8",
             "group": null,
             "uuid": "ae490276-c33a-4735-80b5-0c834c27f510"
@@ -5257,7 +5257,7 @@
                     "tags": [],
                     "type": "\/api\/3\/picklists\/ff599189-3eeb-4c86-acb0-a7915e85ac3b",
                     "tenant": "",
-                    "content": "<p>Added Task <span style=\"background: green; color: #fff;\" class=\"badge badge-pill badge-danger\">Assignee Approval To Implement - {{vars.input.records[0].title}}<\/span><\/p>",
+                    "content": "<p>Added task <a href=\"\/modules\/tasks\/{{vars.steps.Assignee_Approval_To_Implement.uuid}}\" target=\"_blank\" rel=\"noopener\">{{vars.steps.Assignee_Approval_To_Implement.name}}<\/a> to <strong>'Assignee Approval To Implement'<\/strong> <\/p>",
                     "records": "{{vars.input.records[0]['@id']}}",
                     "parentstepid": "\/api\/3\/workflow_steps\/b4748646-0208-45c2-a1d5-26d7a5e0edc7"
                 },
@@ -5279,11 +5279,214 @@
                 "step_variables": []
             },
             "status": null,
-            "top": "840",
-            "left": "125",
+            "top": "1110",
+            "left": "475",
             "stepType": "\/api\/3\/workflow_step_types\/dc6ac63d-c5a5-472f-9eb4-6b18473a98b8",
             "group": null,
             "uuid": "94327c0d-46c0-4ce6-ad78-729c4247d9db"
+        },
+        {
+            "@type": "WorkflowStep",
+            "name": "Insert Comment Approver Approval To Implement Task Complete",
+            "description": null,
+            "arguments": {
+                "resource": {
+                    "type": "\/api\/3\/picklists\/ff599189-3eeb-4c86-acb0-a7915e85ac3b",
+                    "assets": "{{vars.steps.Get_Correlated_Asset[0].assets | json_query('[*][\"@id\"][]')}}",
+                    "people": [],
+                    "content": "<p>Task <a href=\"\/modules\/tasks\/{{vars.steps.Approver_Approval_To_Implement['task_data'].uuid}}\" target=\"_blank\" rel=\"noopener\">{{vars.steps.Approver_Approval_To_Implement['task_data'].name}}<\/a> completed for <strong>'Asset Change Activity' <a href=\"\/modules\/asset_change_activities\/{{vars.input.records[0].uuid}}\" target=\"_blank\" rel=\"noopener\">{{vars.input.records[0].title}}<\/a><\/strong><\/p>",
+                    "__replace": "",
+                    "isImportant": false,
+                    "peopleUpdated": false
+                },
+                "operation": "Overwrite",
+                "collection": "\/api\/3\/comments",
+                "__recommend": [],
+                "fieldOperation": {
+                    "recordTags": "Overwrite"
+                },
+                "step_variables": []
+            },
+            "status": null,
+            "top": "1650",
+            "left": "383",
+            "stepType": "\/api\/3\/workflow_step_types\/2597053c-e718-44b4-8394-4d40fe26d357",
+            "group": null,
+            "uuid": "136ddcd8-b68a-47a2-afd2-a46d7b150c71"
+        },
+        {
+            "@type": "WorkflowStep",
+            "name": "Insert Comment Assignee Approval To Implement Task Complete",
+            "description": null,
+            "arguments": {
+                "resource": {
+                    "type": "\/api\/3\/picklists\/ff599189-3eeb-4c86-acb0-a7915e85ac3b",
+                    "assets": "{{vars.steps.Get_Correlated_Asset[0].assets | json_query('[*][\"@id\"][]')}}",
+                    "people": [],
+                    "content": "<p>Task <a href=\"\/modules\/tasks\/{{vars.steps.Assignee_Approval_To_Implement['task_data'].uuid}}\" target=\"_blank\" rel=\"noopener\">{{vars.steps.Assignee_Approval_To_Implement['task_data'].name}}<\/a> completed for <strong>'Asset Change Activity' <a href=\"\/modules\/asset_change_activities\/{{vars.input.records[0].uuid}}\" target=\"_blank\" rel=\"noopener\">{{vars.input.records[0].title}}<\/a><\/strong><\/p>",
+                    "__replace": "",
+                    "isImportant": false,
+                    "peopleUpdated": false
+                },
+                "operation": "Overwrite",
+                "collection": "\/api\/3\/comments",
+                "__recommend": [],
+                "fieldOperation": {
+                    "recordTags": "Overwrite"
+                },
+                "step_variables": []
+            },
+            "status": null,
+            "top": "1245",
+            "left": "475",
+            "stepType": "\/api\/3\/workflow_step_types\/2597053c-e718-44b4-8394-4d40fe26d357",
+            "group": null,
+            "uuid": "68e94c3a-8f0e-4657-9d45-fdc23e2ac78a"
+        },
+        {
+            "@type": "WorkflowStep",
+            "name": "Insert Comment Identify Security Control Task Complete",
+            "description": null,
+            "arguments": {
+                "resource": {
+                    "type": "\/api\/3\/picklists\/ff599189-3eeb-4c86-acb0-a7915e85ac3b",
+                    "assets": "{{vars.steps.Get_Correlated_Asset[0].assets | json_query('[*][\"@id\"][]')}}",
+                    "people": [],
+                    "content": "<p>Task <a href=\"\/modules\/tasks\/{{vars.steps.Identify_Security_Control['task_data'].uuid}}\" target=\"_blank\" rel=\"noopener\">{{vars.steps.Identify_Security_Control['task_data'].name}}<\/a> completed for <strong>'Asset Change Activity' <a href=\"\/modules\/asset_change_activities\/{{vars.input.records[0].uuid}}\" target=\"_blank\" rel=\"noopener\">{{vars.input.records[0].title}}<\/a><\/strong><\/p>",
+                    "__replace": "",
+                    "isImportant": false,
+                    "peopleUpdated": false
+                },
+                "operation": "Overwrite",
+                "collection": "\/api\/3\/comments",
+                "__recommend": [],
+                "fieldOperation": {
+                    "recordTags": "Overwrite"
+                },
+                "step_variables": []
+            },
+            "status": null,
+            "top": "705",
+            "left": "475",
+            "stepType": "\/api\/3\/workflow_step_types\/2597053c-e718-44b4-8394-4d40fe26d357",
+            "group": null,
+            "uuid": "e469e875-98a0-4b98-b2b4-5b94fe1efb73"
+        },
+        {
+            "@type": "WorkflowStep",
+            "name": "Insert Comment Implement Change Task Complete",
+            "description": null,
+            "arguments": {
+                "resource": {
+                    "type": "\/api\/3\/picklists\/ff599189-3eeb-4c86-acb0-a7915e85ac3b",
+                    "assets": "{{vars.steps.Get_Correlated_Asset[0].assets | json_query('[*][\"@id\"][]')}}",
+                    "people": [],
+                    "content": "<p>Task <a href=\"\/modules\/tasks\/{{vars.steps.Implement_Change['task_data'].uuid}}\" target=\"_blank\" rel=\"noopener\">{{vars.steps.Implement_Change['task_data'].name}}<\/a> completed for <strong>'Asset Change Activity' <a href=\"\/modules\/asset_change_activities\/{{vars.input.records[0].uuid}}\" target=\"_blank\" rel=\"noopener\">{{vars.input.records[0].title}}<\/a><\/strong><\/p>",
+                    "__replace": "",
+                    "isImportant": false,
+                    "peopleUpdated": false
+                },
+                "operation": "Overwrite",
+                "collection": "\/api\/3\/comments",
+                "__recommend": [],
+                "fieldOperation": {
+                    "recordTags": "Overwrite"
+                },
+                "step_variables": []
+            },
+            "status": null,
+            "top": "1920",
+            "left": "475",
+            "stepType": "\/api\/3\/workflow_step_types\/2597053c-e718-44b4-8394-4d40fe26d357",
+            "group": null,
+            "uuid": "c0424398-02e9-487e-b890-7afab8a0e2d8"
+        },
+        {
+            "@type": "WorkflowStep",
+            "name": "Insert Comment Update Baseline Task Complete",
+            "description": null,
+            "arguments": {
+                "resource": {
+                    "type": "\/api\/3\/picklists\/ff599189-3eeb-4c86-acb0-a7915e85ac3b",
+                    "assets": "{{vars.steps.Get_Correlated_Asset[0].assets | json_query('[*][\"@id\"][]')}}",
+                    "people": [],
+                    "content": "<p>Task <a href=\"\/modules\/tasks\/{{vars.steps.Update_Baseline['task_data'].uuid}}\" target=\"_blank\" rel=\"noopener\">{{vars.steps.Update_Baseline['task_data'].name}}<\/a> completed for <strong>'Asset Change Activity' <a href=\"\/modules\/asset_change_activities\/{{vars.input.records[0].uuid}}\" target=\"_blank\" rel=\"noopener\">{{vars.input.records[0].title}}<\/a><\/strong><\/p>",
+                    "__replace": "",
+                    "isImportant": false,
+                    "peopleUpdated": false
+                },
+                "operation": "Overwrite",
+                "collection": "\/api\/3\/comments",
+                "__recommend": [],
+                "fieldOperation": {
+                    "recordTags": "Overwrite"
+                },
+                "step_variables": []
+            },
+            "status": null,
+            "top": "2460",
+            "left": "475",
+            "stepType": "\/api\/3\/workflow_step_types\/2597053c-e718-44b4-8394-4d40fe26d357",
+            "group": null,
+            "uuid": "e70c0639-9b7e-4727-96df-8cf5e9961da6"
+        },
+        {
+            "@type": "WorkflowStep",
+            "name": "Insert Comment Verify Security Controls Task Complete",
+            "description": null,
+            "arguments": {
+                "resource": {
+                    "type": "\/api\/3\/picklists\/ff599189-3eeb-4c86-acb0-a7915e85ac3b",
+                    "assets": "{{vars.steps.Get_Correlated_Asset[0].assets | json_query('[*][\"@id\"][]')}}",
+                    "people": [],
+                    "content": "<p>Task <a href=\"\/modules\/tasks\/{{vars.steps.Verify_Security_Controls['task_data'].uuid}}\" target=\"_blank\" rel=\"noopener\">{{vars.steps.Verify_Security_Controls['task_data'].name}}<\/a> completed for <strong>'Asset Change Activity' <a href=\"\/modules\/asset_change_activities\/{{vars.input.records[0].uuid}}\" target=\"_blank\" rel=\"noopener\">{{vars.input.records[0].title}}<\/a><\/strong><\/p>",
+                    "__replace": "",
+                    "isImportant": false,
+                    "peopleUpdated": false
+                },
+                "operation": "Overwrite",
+                "collection": "\/api\/3\/comments",
+                "__recommend": [],
+                "fieldOperation": {
+                    "recordTags": "Overwrite"
+                },
+                "step_variables": []
+            },
+            "status": null,
+            "top": "2190",
+            "left": "475",
+            "stepType": "\/api\/3\/workflow_step_types\/2597053c-e718-44b4-8394-4d40fe26d357",
+            "group": null,
+            "uuid": "ea355595-c7a3-43c0-95ca-445ffa21d362"
+        },
+        {
+            "@type": "WorkflowStep",
+            "name": "Insert Comment Verify Software Source Task Complete",
+            "description": null,
+            "arguments": {
+                "resource": {
+                    "type": "\/api\/3\/picklists\/ff599189-3eeb-4c86-acb0-a7915e85ac3b",
+                    "assets": "{{vars.steps.Get_Correlated_Asset[0].assets | json_query('[*][\"@id\"][]')}}",
+                    "people": [],
+                    "content": "<p>Task <a href=\"\/modules\/tasks\/{{vars.steps.Verify_Software_Source['task_data'].uuid}}\" target=\"_blank\" rel=\"noopener\">{{vars.steps.Verify_Software_Source['task_data'].name}}<\/a> completed for <strong>'Asset Change Activity' <a href=\"\/modules\/asset_change_activities\/{{vars.input.records[0].uuid}}\" target=\"_blank\" rel=\"noopener\">{{vars.input.records[0].title}}<\/a><\/strong><\/p>",
+                    "__replace": "",
+                    "isImportant": false,
+                    "peopleUpdated": false
+                },
+                "operation": "Overwrite",
+                "collection": "\/api\/3\/comments",
+                "__recommend": [],
+                "fieldOperation": {
+                    "recordTags": "Overwrite"
+                },
+                "step_variables": []
+            },
+            "status": null,
+            "top": "975",
+            "left": "475",
+            "stepType": "\/api\/3\/workflow_step_types\/2597053c-e718-44b4-8394-4d40fe26d357",
+            "group": null,
+            "uuid": "6d3d4d09-af6d-49e3-85e8-aac946167c09"
         },
         {
             "@type": "WorkflowStep",
@@ -5291,7 +5494,15 @@
             "description": null,
             "arguments": {
                 "params": [],
-                "version": "3.2.1",
+                "version": "3.2.4",
+                "message": {
+                    "tags": [],
+                    "type": "\/api\/3\/picklists\/ff599189-3eeb-4c86-acb0-a7915e85ac3b",
+                    "tenant": "",
+                    "thread": false,
+                    "content": "<p><strong>'Add Task from Template'<\/strong> playbook triggered and cancelled by <em>{{vars.loggedInUserName}}<\/em>.<\/p>",
+                    "records": "{{vars.input.records[0]['@id']}}"
+                },
                 "connector": "cyops_utilities",
                 "operation": "no_op",
                 "operationTitle": "Utils: No Operation",
@@ -5299,7 +5510,7 @@
             },
             "status": null,
             "top": "435",
-            "left": "475",
+            "left": "125",
             "stepType": "\/api\/3\/workflow_step_types\/0109f35d-090b-4a2b-bd8a-94cbc3508562",
             "group": null,
             "uuid": "f6fc3f3d-fa02-4943-9c66-0e50cc903a75"
@@ -5329,7 +5540,8 @@
                 "module": "asset_change_activities?$limit=30&$relationships=true&$fsr_max_relation_count=100",
                 "checkboxFields": true,
                 "step_variables": {
-                    "assetIRI": "{{vars.steps.Get_Correlated_Asset[0].assets | json_query('[*][\"@id\"][]')}}"
+                    "assetIRI": "{{vars.steps.Get_Correlated_Asset[0].assets | json_query('[*][\"@id\"][]')}}",
+                    "loggedInUserName": "{{(vars.currentUser | fromIRI).firstname }} {{(vars.currentUser | fromIRI).lastname}}"
                 }
             },
             "status": null,
@@ -5348,7 +5560,7 @@
                     "tags": [],
                     "type": "\/api\/3\/picklists\/ff599189-3eeb-4c86-acb0-a7915e85ac3b",
                     "tenant": "",
-                    "content": "<p>Added Task <span class=\"badge badge-pill badge-danger\" style=\"background: green; color: #fff;\">Identify Security Control - {{vars.input.records[0].title}}<\/span><\/p>",
+                    "content": "<p>Added task <a href=\"\/modules\/tasks\/{{vars.steps.Identify_Security_Control.uuid}}\" target=\"_blank\" rel=\"noopener\">{{vars.steps.Identify_Security_Control.name}}<\/a> to <strong>'Identify Security Control'<\/strong> <\/p>",
                     "records": "{{vars.input.records[0]['@id']}}"
                 },
                 "resource": {
@@ -5370,7 +5582,7 @@
             },
             "status": null,
             "top": "570",
-            "left": "125",
+            "left": "475",
             "stepType": "\/api\/3\/workflow_step_types\/dc6ac63d-c5a5-472f-9eb4-6b18473a98b8",
             "group": null,
             "uuid": "b10fe055-8cc1-4163-a11b-5f87a6c9c537"
@@ -5384,7 +5596,7 @@
                     "tags": [],
                     "type": "\/api\/3\/picklists\/ff599189-3eeb-4c86-acb0-a7915e85ac3b",
                     "tenant": "",
-                    "content": "<p>Added Task <span style=\"background: green; color: #fff;\" class=\"badge badge-pill badge-danger\">Implement Change - {{vars.input.records[0].title}}<\/span><\/p>",
+                    "content": "<p>Added task <a href=\"\/modules\/tasks\/{{vars.steps.Implement_Change.uuid}}\" target=\"_blank\" rel=\"noopener\">{{vars.steps.Implement_Change.name}}<\/a> to <strong>'Implement Change'<\/strong> <\/p>",
                     "records": "{{vars.input.records[0]['@id']}}",
                     "parentstepid": "\/api\/3\/workflow_steps\/ae490276-c33a-4735-80b5-0c834c27f510"
                 },
@@ -5406,8 +5618,8 @@
                 "step_variables": []
             },
             "status": null,
-            "top": "1245",
-            "left": "125",
+            "top": "1785",
+            "left": "475",
             "stepType": "\/api\/3\/workflow_step_types\/dc6ac63d-c5a5-472f-9eb4-6b18473a98b8",
             "group": null,
             "uuid": "683afbc0-4503-4bcf-ba8b-0c925bc9ff6d"
@@ -5433,8 +5645,8 @@
                 ]
             },
             "status": null,
-            "top": "975",
-            "left": "125",
+            "top": "1380",
+            "left": "475",
             "stepType": "\/api\/3\/workflow_step_types\/12254cf5-5db7-4b1a-8cb1-3af081924b28",
             "group": null,
             "uuid": "a57ed38c-696c-4bc9-8ad5-e1e0f66bced2"
@@ -5458,7 +5670,7 @@
             },
             "status": null,
             "top": "435",
-            "left": "125",
+            "left": "475",
             "stepType": "\/api\/3\/workflow_step_types\/b593663d-7d13-40ce-a3a3-96dece928722",
             "group": null,
             "uuid": "3dad4662-b4f5-4438-96ce-94314ff8d22e"
@@ -5482,8 +5694,8 @@
                 "step_variables": []
             },
             "status": null,
-            "top": "1650",
-            "left": "125",
+            "top": "2595",
+            "left": "475",
             "stepType": "\/api\/3\/workflow_step_types\/b593663d-7d13-40ce-a3a3-96dece928722",
             "group": null,
             "uuid": "d2f8b90d-6773-4e7d-ac41-2ee63eb20d84"
@@ -5561,7 +5773,7 @@
                     "tags": [],
                     "type": "\/api\/3\/picklists\/ff599189-3eeb-4c86-acb0-a7915e85ac3b",
                     "tenant": "",
-                    "content": "<p>Added Task <span class=\"badge badge-pill badge-danger\" style=\"background: green; color: #fff;\">Update Baseline - {{vars.input.records[0].title}}<\/span><\/p>",
+                    "content": "<p>Added task <a href=\"\/modules\/tasks\/{{vars.steps.Update_Baseline.uuid}}\" target=\"_blank\" rel=\"noopener\">{{vars.steps.Update_Baseline.name}}<\/a> to <strong>'Update Baseline'<\/strong> <\/p>",
                     "records": "{{vars.input.records[0]['@id']}}",
                     "parentstepid": "\/api\/3\/workflow_steps\/ae490276-c33a-4735-80b5-0c834c27f510"
                 },
@@ -5583,8 +5795,8 @@
                 "step_variables": []
             },
             "status": null,
-            "top": "1515",
-            "left": "125",
+            "top": "2325",
+            "left": "475",
             "stepType": "\/api\/3\/workflow_step_types\/dc6ac63d-c5a5-472f-9eb4-6b18473a98b8",
             "group": null,
             "uuid": "0067b73f-e6e2-4a31-80ac-8c2e8d4f80d8"
@@ -5598,7 +5810,7 @@
                     "tags": [],
                     "type": "\/api\/3\/picklists\/ff599189-3eeb-4c86-acb0-a7915e85ac3b",
                     "tenant": "",
-                    "content": "<p>Added Task <span style=\"background: green; color: #fff;\" class=\"badge badge-pill badge-danger\">Verify Security Controls - {{vars.input.records[0].title}}<\/span><\/p>",
+                    "content": "<p>Added task <a href=\"\/modules\/tasks\/{{vars.steps.Verify_Security_Controls.uuid}}\" target=\"_blank\" rel=\"noopener\">{{vars.steps.Verify_Security_Controls.name}}<\/a> to <strong>'Verify Security Controls'<\/strong> <\/p>",
                     "records": "{{vars.input.records[0]['@id']}}",
                     "parentstepid": "\/api\/3\/workflow_steps\/ae490276-c33a-4735-80b5-0c834c27f510"
                 },
@@ -5620,8 +5832,8 @@
                 "step_variables": []
             },
             "status": null,
-            "top": "1380",
-            "left": "125",
+            "top": "2055",
+            "left": "475",
             "stepType": "\/api\/3\/workflow_step_types\/dc6ac63d-c5a5-472f-9eb4-6b18473a98b8",
             "group": null,
             "uuid": "97ca00d9-53d4-4e6c-ba61-d30857d46f48"
@@ -5635,7 +5847,7 @@
                     "tags": [],
                     "type": "\/api\/3\/picklists\/ff599189-3eeb-4c86-acb0-a7915e85ac3b",
                     "tenant": "",
-                    "content": "<p>Added Task <span style=\"background: green; color: #fff;\" class=\"badge badge-pill badge-danger\">Verify Software Source - {{vars.input.records[0].title}}<\/span><\/p>",
+                    "content": "<p>Added task <a href=\"\/modules\/tasks\/{{vars.steps.Verify_Software_Source.uuid}}\" target=\"_blank\" rel=\"noopener\">{{vars.steps.Verify_Software_Source.name}}<\/a> to <strong>'Verify Software Source'<\/strong> <\/p>",
                     "records": "{{vars.input.records[0]['@id']}}",
                     "parentstepid": "\/api\/3\/workflow_steps\/b10fe055-8cc1-4163-a11b-5f87a6c9c537"
                 },
@@ -5657,8 +5869,8 @@
                 "step_variables": []
             },
             "status": null,
-            "top": "705",
-            "left": "125",
+            "top": "840",
+            "left": "475",
             "stepType": "\/api\/3\/workflow_step_types\/dc6ac63d-c5a5-472f-9eb4-6b18473a98b8",
             "group": null,
             "uuid": "b4748646-0208-45c2-a1d5-26d7a5e0edc7"
@@ -5677,13 +5889,13 @@
         },
         {
             "@type": "WorkflowRoute",
-            "name": "Approver Approval To Implement -> Implement Change",
-            "targetStep": "\/api\/3\/workflow_steps\/683afbc0-4503-4bcf-ba8b-0c925bc9ff6d",
+            "name": "Approver Approval To Implement -> Insert Comment Assignee Approval To Implement Task Complete",
+            "targetStep": "\/api\/3\/workflow_steps\/136ddcd8-b68a-47a2-afd2-a46d7b150c71",
             "sourceStep": "\/api\/3\/workflow_steps\/ae490276-c33a-4735-80b5-0c834c27f510",
             "label": null,
             "isExecuted": false,
             "group": null,
-            "uuid": "f6430490-587a-423a-a88b-ed7e7a8dc0f9"
+            "uuid": "6823d97b-9165-41e1-b4ff-a9004b38b7c7"
         },
         {
             "@type": "WorkflowRoute",
@@ -5697,63 +5909,13 @@
         },
         {
             "@type": "WorkflowRoute",
-            "name": "Assignee Approval To Implement -> Copy of Check Approver 2",
-            "targetStep": "\/api\/3\/workflow_steps\/a57ed38c-696c-4bc9-8ad5-e1e0f66bced2",
+            "name": "Assignee Approval To Implement -> Insert Comment Verify Software Source Task Complete",
+            "targetStep": "\/api\/3\/workflow_steps\/68e94c3a-8f0e-4657-9d45-fdc23e2ac78a",
             "sourceStep": "\/api\/3\/workflow_steps\/94327c0d-46c0-4ce6-ad78-729c4247d9db",
             "label": null,
             "isExecuted": false,
             "group": null,
-            "uuid": "997bd10b-5b3f-491c-84ae-df5541564168"
-        },
-        {
-            "@type": "WorkflowRoute",
-            "name": "Assignee Identify Security Control -> Assignee Verify Software Source",
-            "targetStep": "\/api\/3\/workflow_steps\/b4748646-0208-45c2-a1d5-26d7a5e0edc7",
-            "sourceStep": "\/api\/3\/workflow_steps\/b10fe055-8cc1-4163-a11b-5f87a6c9c537",
-            "label": null,
-            "isExecuted": false,
-            "group": null,
-            "uuid": "36448457-589e-450c-b18b-ada2600cdc9e"
-        },
-        {
-            "@type": "WorkflowRoute",
-            "name": "Assignee Implement Change -> Assignee Verify Security Controls",
-            "targetStep": "\/api\/3\/workflow_steps\/97ca00d9-53d4-4e6c-ba61-d30857d46f48",
-            "sourceStep": "\/api\/3\/workflow_steps\/683afbc0-4503-4bcf-ba8b-0c925bc9ff6d",
-            "label": null,
-            "isExecuted": false,
-            "group": null,
-            "uuid": "242d0551-9e31-409f-ae76-27b939b8123a"
-        },
-        {
-            "@type": "WorkflowRoute",
-            "name": "Assignee Update Baseline -> Activity Completed",
-            "targetStep": "\/api\/3\/workflow_steps\/d2f8b90d-6773-4e7d-ac41-2ee63eb20d84",
-            "sourceStep": "\/api\/3\/workflow_steps\/0067b73f-e6e2-4a31-80ac-8c2e8d4f80d8",
-            "label": null,
-            "isExecuted": false,
-            "group": null,
-            "uuid": "e54c268a-06a4-4dd2-b0d6-7b20c1061993"
-        },
-        {
-            "@type": "WorkflowRoute",
-            "name": "Assignee Verify Security Controls -> Assignee Update Baseline",
-            "targetStep": "\/api\/3\/workflow_steps\/0067b73f-e6e2-4a31-80ac-8c2e8d4f80d8",
-            "sourceStep": "\/api\/3\/workflow_steps\/97ca00d9-53d4-4e6c-ba61-d30857d46f48",
-            "label": null,
-            "isExecuted": false,
-            "group": null,
-            "uuid": "f26f428b-d379-4e96-bad3-2ea04f3f3a9e"
-        },
-        {
-            "@type": "WorkflowRoute",
-            "name": "Assignee Verify Software Source -> Assignee Approval To Implement",
-            "targetStep": "\/api\/3\/workflow_steps\/94327c0d-46c0-4ce6-ad78-729c4247d9db",
-            "sourceStep": "\/api\/3\/workflow_steps\/b4748646-0208-45c2-a1d5-26d7a5e0edc7",
-            "label": null,
-            "isExecuted": false,
-            "group": null,
-            "uuid": "62d43b6c-88e9-4925-9aae-166401af2cc0"
+            "uuid": "790da6c8-cdbc-4d2f-97d3-060cda15ecce"
         },
         {
             "@type": "WorkflowRoute",
@@ -5767,7 +5929,7 @@
         },
         {
             "@type": "WorkflowRoute",
-            "name": "Check Approver 3 -> Copy of Assignee Approval To Implement",
+            "name": "Check Approver 3 -> Assignee Approval To Implement",
             "targetStep": "\/api\/3\/workflow_steps\/ae490276-c33a-4735-80b5-0c834c27f510",
             "sourceStep": "\/api\/3\/workflow_steps\/a57ed38c-696c-4bc9-8ad5-e1e0f66bced2",
             "label": "Yes",
@@ -5777,13 +5939,83 @@
         },
         {
             "@type": "WorkflowRoute",
-            "name": "Copy of Check Approver 2 -> Implement Change",
+            "name": "Insert Comment Approver Approval To Implement Task Complete -> Implement Change",
+            "targetStep": "\/api\/3\/workflow_steps\/683afbc0-4503-4bcf-ba8b-0c925bc9ff6d",
+            "sourceStep": "\/api\/3\/workflow_steps\/136ddcd8-b68a-47a2-afd2-a46d7b150c71",
+            "label": null,
+            "isExecuted": false,
+            "group": null,
+            "uuid": "701641d0-0a90-4d1b-a858-be9fa49af9d6"
+        },
+        {
+            "@type": "WorkflowRoute",
+            "name": "Insert Comment Assignee Approval To Implement Task Complete -> Is Approver Assigned",
+            "targetStep": "\/api\/3\/workflow_steps\/a57ed38c-696c-4bc9-8ad5-e1e0f66bced2",
+            "sourceStep": "\/api\/3\/workflow_steps\/68e94c3a-8f0e-4657-9d45-fdc23e2ac78a",
+            "label": null,
+            "isExecuted": false,
+            "group": null,
+            "uuid": "612d50d0-8082-4c8b-80d4-ae1ba7e6f9c3"
+        },
+        {
+            "@type": "WorkflowRoute",
+            "name": "Insert Comment Identify Security Control Task Complete -> Verify Software Source",
+            "targetStep": "\/api\/3\/workflow_steps\/b4748646-0208-45c2-a1d5-26d7a5e0edc7",
+            "sourceStep": "\/api\/3\/workflow_steps\/e469e875-98a0-4b98-b2b4-5b94fe1efb73",
+            "label": null,
+            "isExecuted": false,
+            "group": null,
+            "uuid": "25a897f2-9f92-4848-ba18-03c71cec3781"
+        },
+        {
+            "@type": "WorkflowRoute",
+            "name": "Insert Comment Verify Software Source Task Complete -> Assignee Approval To Implement",
+            "targetStep": "\/api\/3\/workflow_steps\/94327c0d-46c0-4ce6-ad78-729c4247d9db",
+            "sourceStep": "\/api\/3\/workflow_steps\/6d3d4d09-af6d-49e3-85e8-aac946167c09",
+            "label": null,
+            "isExecuted": false,
+            "group": null,
+            "uuid": "2c7a071e-6a23-41bb-940e-c78ff0f90bcc"
+        },
+        {
+            "@type": "WorkflowRoute",
+            "name": "Check Approver 2 -> Implement Change",
             "targetStep": "\/api\/3\/workflow_steps\/683afbc0-4503-4bcf-ba8b-0c925bc9ff6d",
             "sourceStep": "\/api\/3\/workflow_steps\/a57ed38c-696c-4bc9-8ad5-e1e0f66bced2",
             "label": "No",
             "isExecuted": false,
             "group": null,
             "uuid": "0ecefa1b-9409-48ea-9704-48fd52eaf73e"
+        },
+        {
+            "@type": "WorkflowRoute",
+            "name": "Insert Comment Approver Approval To Implement Task Complete -> Update Baseline",
+            "targetStep": "\/api\/3\/workflow_steps\/0067b73f-e6e2-4a31-80ac-8c2e8d4f80d8",
+            "sourceStep": "\/api\/3\/workflow_steps\/ea355595-c7a3-43c0-95ca-445ffa21d362",
+            "label": null,
+            "isExecuted": false,
+            "group": null,
+            "uuid": "d872e778-c6a6-46fd-a6b6-96d64d93ac8d"
+        },
+        {
+            "@type": "WorkflowRoute",
+            "name": "Insert Comment Approver Approval To Implement Task Complete -> Verify Security Controls",
+            "targetStep": "\/api\/3\/workflow_steps\/97ca00d9-53d4-4e6c-ba61-d30857d46f48",
+            "sourceStep": "\/api\/3\/workflow_steps\/c0424398-02e9-487e-b890-7afab8a0e2d8",
+            "label": null,
+            "isExecuted": false,
+            "group": null,
+            "uuid": "840acadb-c09e-4dba-bdd7-15fe3309a5de"
+        },
+        {
+            "@type": "WorkflowRoute",
+            "name": "Insert Comment Verify Security Controls Task Complete -> Mark Activity Closed",
+            "targetStep": "\/api\/3\/workflow_steps\/d2f8b90d-6773-4e7d-ac41-2ee63eb20d84",
+            "sourceStep": "\/api\/3\/workflow_steps\/e70c0639-9b7e-4727-96df-8cf5e9961da6",
+            "label": null,
+            "isExecuted": false,
+            "group": null,
+            "uuid": "5b892803-76db-42fb-824d-e759717c309b"
         },
         {
             "@type": "WorkflowRoute",
@@ -5797,6 +6029,26 @@
         },
         {
             "@type": "WorkflowRoute",
+            "name": "Identify Security Control -> Insert Comment Identify Security Control Task Complete",
+            "targetStep": "\/api\/3\/workflow_steps\/e469e875-98a0-4b98-b2b4-5b94fe1efb73",
+            "sourceStep": "\/api\/3\/workflow_steps\/b10fe055-8cc1-4163-a11b-5f87a6c9c537",
+            "label": null,
+            "isExecuted": false,
+            "group": null,
+            "uuid": "2aa54114-d25c-4bdc-8e6b-a54f51d4c5bb"
+        },
+        {
+            "@type": "WorkflowRoute",
+            "name": "Implement Change -> Insert Comment Approver Approval To Implement Task Complete",
+            "targetStep": "\/api\/3\/workflow_steps\/c0424398-02e9-487e-b890-7afab8a0e2d8",
+            "sourceStep": "\/api\/3\/workflow_steps\/683afbc0-4503-4bcf-ba8b-0c925bc9ff6d",
+            "label": null,
+            "isExecuted": false,
+            "group": null,
+            "uuid": "2d495b3a-befd-4697-9362-a6c40286f152"
+        },
+        {
+            "@type": "WorkflowRoute",
             "name": "Start -> Get Correlated Asset",
             "targetStep": "\/api\/3\/workflow_steps\/8831d564-5ab7-449e-881e-179e5ee2c12f",
             "sourceStep": "\/api\/3\/workflow_steps\/13e059cc-246a-48b5-bf79-58c646e6d350",
@@ -5804,6 +6056,36 @@
             "isExecuted": false,
             "group": null,
             "uuid": "6da292b3-1215-4d51-8903-8346e683dfe4"
+        },
+        {
+            "@type": "WorkflowRoute",
+            "name": "Update Baseline -> Insert Comment Verify Security Controls Task Complete",
+            "targetStep": "\/api\/3\/workflow_steps\/e70c0639-9b7e-4727-96df-8cf5e9961da6",
+            "sourceStep": "\/api\/3\/workflow_steps\/0067b73f-e6e2-4a31-80ac-8c2e8d4f80d8",
+            "label": null,
+            "isExecuted": false,
+            "group": null,
+            "uuid": "ec00ca66-cf3e-4f6d-88c2-2f6fca200b67"
+        },
+        {
+            "@type": "WorkflowRoute",
+            "name": "Verify Security Controls -> Insert Comment Approver Approval To Implement Task Complete",
+            "targetStep": "\/api\/3\/workflow_steps\/ea355595-c7a3-43c0-95ca-445ffa21d362",
+            "sourceStep": "\/api\/3\/workflow_steps\/97ca00d9-53d4-4e6c-ba61-d30857d46f48",
+            "label": null,
+            "isExecuted": false,
+            "group": null,
+            "uuid": "b6711b49-788c-4445-840a-646eb7f514f7"
+        },
+        {
+            "@type": "WorkflowRoute",
+            "name": "Verify Software Source -> Insert Comment Identify Security Control Task Complete",
+            "targetStep": "\/api\/3\/workflow_steps\/6d3d4d09-af6d-49e3-85e8-aac946167c09",
+            "sourceStep": "\/api\/3\/workflow_steps\/b4748646-0208-45c2-a1d5-26d7a5e0edc7",
+            "label": null,
+            "isExecuted": false,
+            "group": null,
+            "uuid": "cd28f91e-4dc8-4086-be77-3c07039d4a00"
         }
     ],
     "groups": [],
@@ -5813,9 +6095,9 @@
     "isPrivate": false,
     "deletedAt": null,
     "recordTags": [
-        "ManualTrigger",
         "Asset Change Activity",
-        "Medium Impact Baseline Change",
-        "IT OT"
+        "IT OT",
+        "ManualTrigger",
+        "Medium Impact Baseline Change"
     ]
 }

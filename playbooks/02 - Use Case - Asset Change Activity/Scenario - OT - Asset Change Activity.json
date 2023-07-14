@@ -17,7 +17,7 @@
     "steps": [
         {
             "@type": "WorkflowStep",
-            "name": "Add New Asset",
+            "name": "Add New Cyber Asset",
             "description": null,
             "arguments": {
                 "resource": {
@@ -164,7 +164,7 @@
                     "product": "Stratix 5950",
                     "category": "\/api\/3\/picklists\/e231a1fb-166b-40b4-9c9f-1a71d5515db3",
                     "hostname": "Stratix 5950-RW41",
-                    "__replace": "false",
+                    "__replace": "true",
                     "assetType": "\/api\/3\/picklists\/7630b182-4930-4f97-beec-3c3a5372cb3b",
                     "assetClass": "\/api\/3\/picklists\/00cb224e-4198-4547-bbcb-a90bb9a60806",
                     "macAddress": "00:12:D1:7F:01:47",
