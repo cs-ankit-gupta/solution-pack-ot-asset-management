@@ -5287,8 +5287,8 @@
         },
         {
             "@type": "WorkflowStep",
-            "name": "Comment Approver Approval To Implement Task Complete",
-            "description": null,
+            "name": "Approver Approval To Implement Task Complete",
+            "description": "Comments on asset as Approver Approval To Implement task completed",
             "arguments": {
                 "resource": {
                     "type": "\/api\/3\/picklists\/ff599189-3eeb-4c86-acb0-a7915e85ac3b",
@@ -5316,8 +5316,8 @@
         },
         {
             "@type": "WorkflowStep",
-            "name": "Comment Assignee Approval To Implement Task Complete",
-            "description": null,
+            "name": "Assignee Approval To Implement Task Complete",
+            "description": "Comments on asset as Assignee Approval To Implement task completed",
             "arguments": {
                 "resource": {
                     "type": "\/api\/3\/picklists\/ff599189-3eeb-4c86-acb0-a7915e85ac3b",
@@ -5345,8 +5345,8 @@
         },
         {
             "@type": "WorkflowStep",
-            "name": "Comment Identify Security Control Task Complete",
-            "description": null,
+            "name": "Identify Security Control Task Complete",
+            "description": "Comments on asset as Identify Security Control task completed",
             "arguments": {
                 "resource": {
                     "type": "\/api\/3\/picklists\/ff599189-3eeb-4c86-acb0-a7915e85ac3b",
@@ -5374,8 +5374,8 @@
         },
         {
             "@type": "WorkflowStep",
-            "name": "Comment Implement Change Task Complete",
-            "description": null,
+            "name": "Implement Change Task Complete",
+            "description": "Comments on asset as Implement Change task completed",
             "arguments": {
                 "resource": {
                     "type": "\/api\/3\/picklists\/ff599189-3eeb-4c86-acb0-a7915e85ac3b",
@@ -5403,8 +5403,8 @@
         },
         {
             "@type": "WorkflowStep",
-            "name": "Comment Update Baseline Task Complete",
-            "description": null,
+            "name": "Update Baseline Task Complete",
+            "description": "Comments on asset as Update Baseline task completed",
             "arguments": {
                 "resource": {
                     "type": "\/api\/3\/picklists\/ff599189-3eeb-4c86-acb0-a7915e85ac3b",
@@ -5432,8 +5432,8 @@
         },
         {
             "@type": "WorkflowStep",
-            "name": "Comment Verify Security Controls Task Complete",
-            "description": null,
+            "name": "Verify Security Controls Task Complete",
+            "description": "Comments on asset as Verify Security Controls task completed",
             "arguments": {
                 "resource": {
                     "type": "\/api\/3\/picklists\/ff599189-3eeb-4c86-acb0-a7915e85ac3b",
@@ -5461,8 +5461,8 @@
         },
         {
             "@type": "WorkflowStep",
-            "name": "Comment Verify Software Source Task Complete",
-            "description": null,
+            "name": "Verify Software Source Task Complete",
+            "description": "Comments on asset as Verify Software Source task completed",
             "arguments": {
                 "resource": {
                     "type": "\/api\/3\/picklists\/ff599189-3eeb-4c86-acb0-a7915e85ac3b",
@@ -5889,7 +5889,7 @@
         },
         {
             "@type": "WorkflowRoute",
-            "name": "Approver Approval To Implement -> Copy of Comment Assignee Approval To Implement Task Complete",
+            "name": "Approver Approval To Implement -> Assignee Approval To Implement Task Complete",
             "targetStep": "\/api\/3\/workflow_steps\/136ddcd8-b68a-47a2-afd2-a46d7b150c71",
             "sourceStep": "\/api\/3\/workflow_steps\/ae490276-c33a-4735-80b5-0c834c27f510",
             "label": null,
@@ -5909,7 +5909,7 @@
         },
         {
             "@type": "WorkflowRoute",
-            "name": "Assignee Approval To Implement -> Copy of Comment Verify Software Source Task Complete",
+            "name": "Assignee Approval To Implement -> Verify Software Source Task Complete",
             "targetStep": "\/api\/3\/workflow_steps\/68e94c3a-8f0e-4657-9d45-fdc23e2ac78a",
             "sourceStep": "\/api\/3\/workflow_steps\/94327c0d-46c0-4ce6-ad78-729c4247d9db",
             "label": null,
@@ -5929,7 +5929,7 @@
         },
         {
             "@type": "WorkflowRoute",
-            "name": "Check Approver 3 -> Copy of Assignee Approval To Implement",
+            "name": "Check Approver 3 -> Assignee Approval To Implement",
             "targetStep": "\/api\/3\/workflow_steps\/ae490276-c33a-4735-80b5-0c834c27f510",
             "sourceStep": "\/api\/3\/workflow_steps\/a57ed38c-696c-4bc9-8ad5-e1e0f66bced2",
             "label": "Yes",
@@ -5939,7 +5939,7 @@
         },
         {
             "@type": "WorkflowRoute",
-            "name": "Comment Approver Approval To Implement Task Complete -> Implement Change",
+            "name": "Approver Approval To Implement Task Complete -> Implement Change",
             "targetStep": "\/api\/3\/workflow_steps\/683afbc0-4503-4bcf-ba8b-0c925bc9ff6d",
             "sourceStep": "\/api\/3\/workflow_steps\/136ddcd8-b68a-47a2-afd2-a46d7b150c71",
             "label": null,
@@ -5949,7 +5949,7 @@
         },
         {
             "@type": "WorkflowRoute",
-            "name": "Comment Assignee Approval To Implement Task Complete -> Is Approver Assigned",
+            "name": "Assignee Approval To Implement Task Complete -> Is Approver Assigned",
             "targetStep": "\/api\/3\/workflow_steps\/a57ed38c-696c-4bc9-8ad5-e1e0f66bced2",
             "sourceStep": "\/api\/3\/workflow_steps\/68e94c3a-8f0e-4657-9d45-fdc23e2ac78a",
             "label": null,
@@ -5959,7 +5959,7 @@
         },
         {
             "@type": "WorkflowRoute",
-            "name": "Comment Identify Security Control Task Complete -> Verify Software Source",
+            "name": "Identify Security Control Task Complete -> Verify Software Source",
             "targetStep": "\/api\/3\/workflow_steps\/b4748646-0208-45c2-a1d5-26d7a5e0edc7",
             "sourceStep": "\/api\/3\/workflow_steps\/e469e875-98a0-4b98-b2b4-5b94fe1efb73",
             "label": null,
@@ -5969,7 +5969,7 @@
         },
         {
             "@type": "WorkflowRoute",
-            "name": "Comment Verify Software Source Task Complete -> Assignee Approval To Implement",
+            "name": "Verify Software Source Task Complete -> Assignee Approval To Implement",
             "targetStep": "\/api\/3\/workflow_steps\/94327c0d-46c0-4ce6-ad78-729c4247d9db",
             "sourceStep": "\/api\/3\/workflow_steps\/6d3d4d09-af6d-49e3-85e8-aac946167c09",
             "label": null,
@@ -5979,7 +5979,7 @@
         },
         {
             "@type": "WorkflowRoute",
-            "name": "Copy of Check Approver 2 -> Implement Change",
+            "name": "Check Approver 2 -> Implement Change",
             "targetStep": "\/api\/3\/workflow_steps\/683afbc0-4503-4bcf-ba8b-0c925bc9ff6d",
             "sourceStep": "\/api\/3\/workflow_steps\/a57ed38c-696c-4bc9-8ad5-e1e0f66bced2",
             "label": "No",
@@ -5989,7 +5989,7 @@
         },
         {
             "@type": "WorkflowRoute",
-            "name": "Copy of Comment Approver Approval To Implement Task Complete -> Update Baseline",
+            "name": "Approver Approval To Implement Task Complete -> Update Baseline",
             "targetStep": "\/api\/3\/workflow_steps\/0067b73f-e6e2-4a31-80ac-8c2e8d4f80d8",
             "sourceStep": "\/api\/3\/workflow_steps\/ea355595-c7a3-43c0-95ca-445ffa21d362",
             "label": null,
@@ -5999,7 +5999,7 @@
         },
         {
             "@type": "WorkflowRoute",
-            "name": "Copy of Comment Approver Approval To Implement Task Complete -> Verify Security Controls",
+            "name": "Approver Approval To Implement Task Complete -> Verify Security Controls",
             "targetStep": "\/api\/3\/workflow_steps\/97ca00d9-53d4-4e6c-ba61-d30857d46f48",
             "sourceStep": "\/api\/3\/workflow_steps\/c0424398-02e9-487e-b890-7afab8a0e2d8",
             "label": null,
@@ -6009,7 +6009,7 @@
         },
         {
             "@type": "WorkflowRoute",
-            "name": "Copy of Comment Verify Security Controls Task Complete -> Mark Activity Closed",
+            "name": "Verify Security Controls Task Complete -> Mark Activity Closed",
             "targetStep": "\/api\/3\/workflow_steps\/d2f8b90d-6773-4e7d-ac41-2ee63eb20d84",
             "sourceStep": "\/api\/3\/workflow_steps\/e70c0639-9b7e-4727-96df-8cf5e9961da6",
             "label": null,
@@ -6029,7 +6029,7 @@
         },
         {
             "@type": "WorkflowRoute",
-            "name": "Identify Security Control -> Comment Identify Security Control Task Complete",
+            "name": "Identify Security Control -> Identify Security Control Task Complete",
             "targetStep": "\/api\/3\/workflow_steps\/e469e875-98a0-4b98-b2b4-5b94fe1efb73",
             "sourceStep": "\/api\/3\/workflow_steps\/b10fe055-8cc1-4163-a11b-5f87a6c9c537",
             "label": null,
@@ -6039,7 +6039,7 @@
         },
         {
             "@type": "WorkflowRoute",
-            "name": "Implement Change -> Copy of Comment Approver Approval To Implement Task Complete",
+            "name": "Implement Change -> Approver Approval To Implement Task Complete",
             "targetStep": "\/api\/3\/workflow_steps\/c0424398-02e9-487e-b890-7afab8a0e2d8",
             "sourceStep": "\/api\/3\/workflow_steps\/683afbc0-4503-4bcf-ba8b-0c925bc9ff6d",
             "label": null,
@@ -6059,7 +6059,7 @@
         },
         {
             "@type": "WorkflowRoute",
-            "name": "Update Baseline -> Copy of Comment Verify Security Controls Task Complete",
+            "name": "Update Baseline -> Verify Security Controls Task Complete",
             "targetStep": "\/api\/3\/workflow_steps\/e70c0639-9b7e-4727-96df-8cf5e9961da6",
             "sourceStep": "\/api\/3\/workflow_steps\/0067b73f-e6e2-4a31-80ac-8c2e8d4f80d8",
             "label": null,
@@ -6069,7 +6069,7 @@
         },
         {
             "@type": "WorkflowRoute",
-            "name": "Verify Security Controls -> Copy of Comment Approver Approval To Implement Task Complete",
+            "name": "Verify Security Controls -> Approver Approval To Implement Task Complete",
             "targetStep": "\/api\/3\/workflow_steps\/ea355595-c7a3-43c0-95ca-445ffa21d362",
             "sourceStep": "\/api\/3\/workflow_steps\/97ca00d9-53d4-4e6c-ba61-d30857d46f48",
             "label": null,
@@ -6079,7 +6079,7 @@
         },
         {
             "@type": "WorkflowRoute",
-            "name": "Verify Software Source -> Copy of Comment Identify Security Control Task Complete",
+            "name": "Verify Software Source -> Identify Security Control Task Complete",
             "targetStep": "\/api\/3\/workflow_steps\/6d3d4d09-af6d-49e3-85e8-aac946167c09",
             "sourceStep": "\/api\/3\/workflow_steps\/b4748646-0208-45c2-a1d5-26d7a5e0edc7",
             "label": null,
