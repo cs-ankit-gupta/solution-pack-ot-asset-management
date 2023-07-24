@@ -39,11 +39,11 @@ The **OT - Asset Management** solution pack contains the following resources.
 
 ## Picklist
 
-| Name            |
-| :-------------- |
-| ActivityStatus  |
-| AssetChangeType |
-| AssetCategory   |
+| Name            | Description                                |
+| :-------------- | :----------------------------------------- |
+| ActivityStatus  | Contains the Asset Change Activity status. |
+| AssetChangeType | Contains the Asset Change Activity type.   |
+| AssetCategory   | Contains the OT related assets values.     |
 
 ## Report
 
