@@ -38,14 +38,6 @@
             "description": null,
             "arguments": {
                 "params": [],
-                "message": {
-                    "tags": [],
-                    "type": "\/api\/3\/picklists\/ff599189-3eeb-4c86-acb0-a7915e85ac3b",
-                    "tenant": "",
-                    "thread": false,
-                    "content": "<p><strong>'Quarantine Asset and Raise Ticket'<\/strong> playbook triggered and cancelled by <em>{{vars.loggedInUserName}}<\/em>.<\/p>",
-                    "records": "{{vars.input.records[0]['@id']}}"
-                },
                 "version": "3.2.4",
                 "connector": "cyops_utilities",
                 "operation": "no_op",
