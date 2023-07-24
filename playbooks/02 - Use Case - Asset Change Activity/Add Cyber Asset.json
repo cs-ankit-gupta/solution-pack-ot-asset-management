@@ -46,8 +46,8 @@
                 "step_variables": []
             },
             "status": null,
-            "top": "1520",
-            "left": "820",
+            "top": "1515",
+            "left": "568",
             "stepType": "\/api\/3\/workflow_step_types\/dc6ac63d-c5a5-472f-9eb4-6b18473a98b8",
             "group": null,
             "uuid": "a203fe02-2ea7-4ace-85d3-680ee2de15b1"
@@ -5507,14 +5507,6 @@
             "arguments": {
                 "params": [],
                 "version": "3.2.4",
-                "message": {
-                    "tags": [],
-                    "type": "\/api\/3\/picklists\/ff599189-3eeb-4c86-acb0-a7915e85ac3b",
-                    "tenant": "",
-                    "thread": false,
-                    "content": "<p><strong>'Add Task from Template'<\/strong> playbook triggered and cancelled by <em>{{vars.loggedInUserName}}<\/em>.<\/p>",
-                    "records": "{{vars.input.records[0]['@id']}}"
-                },
                 "connector": "cyops_utilities",
                 "operation": "no_op",
                 "operationTitle": "Utils: No Operation",
@@ -5552,8 +5544,7 @@
                 "module": "asset_change_activities?$limit=30&$relationships=true&$fsr_max_relation_count=100",
                 "checkboxFields": true,
                 "step_variables": {
-                    "assetIRI": "{{vars.steps.Get_Correlated_Asset[0].assets | json_query('[*][\"@id\"][]')}}",
-                    "loggedInUserName": "{{(vars.currentUser | fromIRI).firstname }} {{(vars.currentUser | fromIRI).lastname}}"
+                    "assetIRI": "{{vars.steps.Get_Correlated_Asset[0].assets | json_query('[*][\"@id\"][]')}}"
                 }
             },
             "status": null,
