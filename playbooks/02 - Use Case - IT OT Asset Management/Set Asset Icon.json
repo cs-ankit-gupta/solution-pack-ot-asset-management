@@ -133,6 +133,7 @@
         "Asset",
         "Asset Resources",
         "Icon",
-        "IT OT"
+        "IT OT",
+        "PostCreate"
     ]
 }
