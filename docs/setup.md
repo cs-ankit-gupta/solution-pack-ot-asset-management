@@ -4,7 +4,7 @@
 # Installation
 
 1. To install a solution pack, click **Content Hub** > **Discover**.
-2. From the list of solution pack that appears, search for and select **OT - Asset Management**.
+2. Search for and select **OT - Asset Management** from the list of solution pack that appears.
 3. Click the **OT - Asset Management** solution pack card.
 4. Click **Install** on the lower part of the screen to begin the installation.
 
@@ -19,13 +19,25 @@ The **OT - Asset Management** solution pack depends on the following solution pa
 | MITRE ATT&CK Enrichment Framework | v2.2.0 or later | Required for MITRE Modules and MITRE connector           |
 | Vulnerability Management          | v2.1.0 or later | Required for Vulnerabilities and Scans Module            |
 
+## After Installation
+
+1. Ingest MITRE ATT&CK's **Group**, **Tactics**, **Techniques**, **Sub-techniques**, **Mitigations**, **Software**, and **Mitigation** data using the *MITRE ATT&CK* connector
+
+> **NOTE**: On alert creation, IOCs are enriched, and the alerts are correlated with Techniques and Mitigation for all records where the MITRE ATT&CK ID is associated with an alert.
 
 # Configuration
 
-For optimal performance of **OT - Asset Management** solution pack, you can install and configure the connectors that help with the following:
+For optimal performance of the **OT - Asset Management** solution pack, you can install and configure the following connectors:
 
->* **CSV Data Management** connectors to read CSV File. To configure and use the CSV Data Management connector, refer to [Configuring CSV Data Management](https://docs.fortinet.com/document/fortisoar/1.1.0/csv-data-management/346/csv-data-management-v1-1-0)
->* **Fortinet FortiEDR** connectors to Isolate collectors. To configure and use the Fortinet FortiEDR connector, refer to [Configuring Fortinet FortiEDR](https://docs.fortinet.com/document/fortisoar/1.3.0/fortinet-fortiedr/161/fortinet-fortiedr-v1-3-0)
->* **Fortinet FortiGate** connectors to Quarantine hosts, Update Policy. To configure and use the Fortinet FortiGate connector, refer to [Configuring Fortinet FortiGate](https://docs.fortinet.com/document/fortisoar/5.2.1/fortinet-fortigate/425/fortinet-fortigate-v5-2-1)
->* **ServiceNow** connectors to raise tickets. To configure and use the ServiceNow connector, refer to [Configuring ServiceNow](https://docs.fortinet.com/document/fortisoar/3.2.0/servicenow/384/servicenow-v3-2-0)
->* **Qualys** connectors to get scanned host list. To configure and use the Qualys connector, refer to [Configuring Qualys](https://docs.fortinet.com/document/fortisoar/1.0.1/qualys/1/qualys-v1-0-1)
+- **CSV Data Management** connectors to read CSV File. To configure and use the CSV Data Management connector, refer to [Configuring CSV Data Management](https://docs.fortinet.com/fortisoar/connectors/csvdatamngtnew)
+
+- **Fortinet FortiEDR** connectors to Isolate collectors. To configure and use the Fortinet FortiEDR connector, refer to [Configuring Fortinet FortiEDR](https://docs.fortinet.com/fortisoar/connectors/fortiedr)
+
+- **Fortinet FortiGate** connectors to Quarantine hosts, Update Policy. To configure and use the Fortinet FortiGate connector, refer to [Configuring Fortinet FortiGate](https://docs.fortinet.com/fortisoar/connectors/fortigate_firewall)
+
+- **ServiceNow** connectors to raise tickets. To configure and use the ServiceNow connector, refer to [Configuring ServiceNow](https://docs.fortinet.com/fortisoar/connectors/servicenow-v2-0-1)
+
+- **Qualys** connectors to get scanned host list. To configure and use the Qualys connector, refer to [Configuring Qualys](https://docs.fortinet.com/fortisoar/connectors/qualys)
+
+| [Usage](./usage.md) | [Contents](./contents.md) |
+|---------------------|---------------------------|

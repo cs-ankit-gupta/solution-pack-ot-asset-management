@@ -43,7 +43,7 @@ The **OT - Asset Management** solution pack contains the following resources.
 | :-------------- | :----------------------------------------- |
 | ActivityStatus  | Contains the Asset Change Activity status. |
 | AssetChangeType | Contains the Asset Change Activity type.   |
-| AssetCategory   | Contains the OT related assets values.     |
+| AssetCategory   | Contains the OT-related asset values.      |
 
 ## Report
 
@@ -64,8 +64,8 @@ The **OT - Asset Management** solution pack contains the following resources.
 | :------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | OT - Add Sample Assets                       | This scenario adds 86 different samples of OT Assets (different Purdue Levels, Types, etc.) for testing dashboards, use case playbooks, reports, and other actions. |
 | OT - Add Sample Alerts                       | This scenario adds 12 well-populated samples OT Alerts for testing dashboards, use case playbooks, reports, and other actions.                                      |
-| OT - Stuxnet Attack Scenario                 | This scenario recreates the Stuxnet attack in form of a series of point alerts received by FortiSOAR from FortISIEM.                                                |
-| OT - Add Sample Asset Change Activity Record | This scenario generates a sample Asset Change Activity record each, for type "Add New Asset" and "Medium Impact Baseline Change" type of activities.                |
+| OT - Stuxnet Attack Scenario                 | This scenario recreates the Stuxnet attack in the form of a series of point alerts received by FortiSOAR from FortiSIEM.                                            |
+| OT - Add Sample Asset Change Activity Record | This scenario generates a sample Asset Change Activity record each, for type *Add New Asset* and *Medium Impact Baseline Change* type of activities.                |
 
 ## Asset Resources Record Set
 
@@ -89,7 +89,8 @@ The **OT - Asset Management** solution pack contains the following resources.
 
 ## Playbook Collection
 
-### 02 - Use Case - Asset Change Activity
+| 02 - Use Case - Asset Change Activity |
+|:--------------------------------------|
 
 | Playbook Name                         | Description                                                                                        |
 | :------------------------------------ | :------------------------------------------------------------------------------------------------- |
@@ -101,32 +102,37 @@ The **OT - Asset Management** solution pack contains the following resources.
 | Replace Cyber Asset                   | Baseline Change Workflow for Replace Cyber Assets                                                  |
 | Modify Cyber Asset                    | Baseline Change Workflow for Modify Cyber Asset                                                    |
 | Add New Task                          | New task for Asset Change Activity                                                                 |
-| Manage Asset Change Activity Closure  | Update the "Closed On" field with the current date and time if the status is Closed.               |
+| Manage Asset Change Activity Closure  | Update the *Closed On* field with the current date and time if the status is Closed.               |
 | Generate Asset Change Summary Report  | Generate report by manual trigger in FortiSOAR                                                     |
 | Generate Report                       | Generates Report and Link to Incidents                                                             |
 
-### 02 - Use Case - IT OT Asset Management
+| 02 - Use Case - IT OT Asset Management |
+|:---------------------------------------|
 
 | Playbook Name                           | Description                                                                                     |
-| :-------------------------------------- | :---------------------------------------------------------------------------------------------- |
-| Set Asset Icon<sup>New<sup>             | Correlates asset with Icon (If found in Asset Resources) as per there category.                 |
-| Scenario - OT - Create Assets Record    | Playbook reads a CSV file and create Assets records.                                            |
+|:----------------------------------------|:------------------------------------------------------------------------------------------------|
+| Set Asset Icon<sup>New<sup>             | Correlates asset with Icon (If found in Asset Resources) as per their category.                 |
+| Scenario - OT - Create Assets Record    | Playbook reads a CSV file and creates Assets records.                                           |
 | > Create Assets Record                  | This will generate an Alert record.                                                             |
 | Tag as Most Essential Function (MEF)    | Playbook tags asset as Most Essential Function(MEF)                                             |
-| Scenario - OT - Create Alerts Record    | Playbook reads CSV file and create Alerts records.                                              |
+| Scenario - OT - Create Alerts Record    | Playbook reads CSV file and creates Alerts records.                                             |
 | Scenario - OT - Stuxnet Attack Scenario | Generate Alert for Stuxnet worm that targets Siemens S7 PLCs connected to Engineering Stations. |
 | Links Assets To Alert                   | Playbook correlates Assets on the basis of Source and Destination IP found in Alert.            |
 | Find Assets Related To Alert            | Finds the asset based on the IP address provided.                                               |
 | Quarantine Asset and Raise Ticket       | Playbook quarantine assets in FortiEDR and raise ticket in Service Now.                         |
 | Isolate and Comment Assets              | Playbook update the assets as Isolate and add a comment.                                        |
 | Update Firewall Policy                  | Update Firewall Policies To Restrict Communications.                                            |
-| Scan All Assets Involved                | Initiate a quick scan on all assets related to the incident.                                    |
+| Scan All Assets Involved                | Initiate a quick scan of all assets related to the incident.                                    |
 | Isolate Devices From Network            | Isolate Selected Devices From Network Based On Criticality and Risk.                            |
 
 ## System View
+
 | Name                             |
 | :------------------------------- |
 | Navigation Structure - Resources |
 
 
 >**Warning:** We recommend that you clone these playbooks before customizing to avoid loss of information while upgrading the solution pack.
+
+| [Installation](./setup.md#installation) | [Configuration](./setup.md#configuration) | [Usage](./usage.md) |
+|-----------------------------------------|-------------------------------------------|---------------------|
