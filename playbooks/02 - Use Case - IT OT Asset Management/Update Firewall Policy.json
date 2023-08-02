@@ -139,6 +139,7 @@
         "Isolate",
         "Policy",
         "IT OT",
-        "FortiGate"
+        "FortiGate",
+        "ManualTrigger"
     ]
 }
