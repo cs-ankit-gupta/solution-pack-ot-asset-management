@@ -46,7 +46,7 @@
             },
             "status": null,
             "top": "435",
-            "left": "475",
+            "left": "125",
             "stepType": "\/api\/3\/workflow_step_types\/0109f35d-090b-4a2b-bd8a-94cbc3508562",
             "group": null,
             "uuid": "55d5a05f-708c-4112-9d3a-6a436c5c3067"
@@ -60,7 +60,7 @@
             },
             "status": null,
             "top": "570",
-            "left": "125",
+            "left": "475",
             "stepType": "\/api\/3\/workflow_step_types\/04d0cf46-b6a8-42c4-8683-60a7eaa69e8f",
             "group": null,
             "uuid": "2c25298f-7204-488b-9f95-ceb46f18e708"
@@ -85,7 +85,7 @@
             },
             "status": null,
             "top": "705",
-            "left": "125",
+            "left": "475",
             "stepType": "\/api\/3\/workflow_step_types\/74932bdc-b8b6-4d24-88c4-1a4dfbc524f3",
             "group": null,
             "uuid": "32b3d1b9-cb80-427e-8655-6b24ebdfddac"
@@ -98,7 +98,7 @@
                 "type": "DecisionBased",
                 "input": {
                     "schema": {
-                        "title": "Assets discovered in alerts:",
+                        "title": "Assets Discovered In Alerts",
                         "description": "{% for item in vars.assetList %}\n{% set criticality = (item.criticality | fromIRI) %}\n<h5><li>{{ item.name }} : {{ (item.level | fromIRI).itemValue }} : {{ (item.zone | fromIRI).itemValue }} : <span style=\"color:{{criticality.color}}\">{{ criticality.itemValue }}<\/span><\/li><\/h5>\n{% endfor %}",
                         "inputVariables": []
                     }
@@ -165,7 +165,7 @@
             },
             "status": null,
             "top": "435",
-            "left": "125",
+            "left": "475",
             "stepType": "\/api\/3\/workflow_step_types\/0bfed618-0316-11e7-93ae-92361f002671",
             "group": null,
             "uuid": "53b26070-caf2-4315-86f5-30e6736f0e4a"
@@ -196,7 +196,7 @@
                     "tags": [],
                     "type": "\/api\/3\/picklists\/ff599189-3eeb-4c86-acb0-a7915e85ac3b",
                     "tenant": "",
-                    "content": "<p><span style=\"background-color: orange; color: black; border-radius: 4px; font-size: 5mm;\"><span style=\"font-size: 15px; font-weight: bold; font-family: 'Georgia', monospace;\">\ud83d\udca1Note <br \/><\/span><\/span> Isolated Following Assets and Raised ServiceNow Ticket : <span class=\"badge badge-pill badge-danger\" style=\"background: #009d00; color: #fff;\">{{vars.result.data.result.number}}<\/span><\/p>\n<p>{% for asset in vars.assetList %}<\/p>\n<ul>\n<li><a href=\"\/modules\/assets\/{{asset.uuid}}\" target=\"_blank\" rel=\"noopener\">{{asset.hostname}}<\/a><\/li>\n<\/ul>\n<p>{% endfor %}<\/p>",
+                    "content": "<p><span style=\"background-color: orange; color: black; border-radius: 4px; font-size: 5mm;\"><span style=\"font-size: 15px; font-weight: bold; font-family: 'Georgia', monospace;\">\ud83d\udca1Note <br \/><\/span><\/span> Isolated the following assets on Fortinet FortiEDR and raised a ticket in ServiceNow to take further action: <span class=\"badge badge-pill badge-danger\" style=\"background: #009d00; color: #fff;\">{{vars.result.data.result.number}}<\/span><\/p>\n<p>{% for asset in vars.assetList %}<\/p>\n<ul>\n<li><a href=\"\/modules\/assets\/{{asset.uuid}}\" target=\"_blank\" rel=\"noopener\">{{asset.hostname}}<\/a><\/li>\n<\/ul>\n<p>{% endfor %}<\/p>",
                     "records": "{{vars.input.records[0]['@id']}}"
                 },
                 "version": "3.2.0",
@@ -209,7 +209,7 @@
             },
             "status": null,
             "top": "840",
-            "left": "125",
+            "left": "475",
             "stepType": "\/api\/3\/workflow_step_types\/0bfed618-0316-11e7-93ae-92361f002671",
             "group": null,
             "uuid": "1979a115-5fc9-4d48-a46f-c0cf2e2c5b90"
