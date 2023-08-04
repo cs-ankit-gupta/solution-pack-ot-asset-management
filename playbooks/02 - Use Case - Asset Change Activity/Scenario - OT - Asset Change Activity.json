@@ -65,7 +65,7 @@
             "description": null,
             "arguments": {
                 "resource": {
-                    "title": "Add New Cyber Asset - Siemens S7-400-S621",
+                    "title": "Add Cyber Asset - Siemens S7-400-S621",
                     "status": "\/api\/3\/picklists\/5f43696e-b2ad-4f03-8092-8fcdef2ef76d",
                     "dueDate": "{{arrow.get(arrow.utcnow().shift(days=+vars.dueDays)).int_timestamp}}",
                     "__replace": "",
