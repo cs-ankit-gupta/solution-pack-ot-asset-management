@@ -65,7 +65,7 @@
     {
         "@type": "Scenario",
         "configuration": null,
-        "title": "OT - Add Sample Asset Change Activity Record",
+        "title": "OT - Asset Change Activity Scenario",
         "description": "This scenario generates sample Asset Change Activity record each, for type \"Add New Asset\" and \"Medium Impact Baseline Change\" type of activities. These sample records can be useful to demonstrate and test the process of managing an Asset Change Activity, associated with this solution pack. These sample Asset Change Activity records have a tag, \"Sample\" for easy identification. \n",
         "steps": {
             "Steps": [
