@@ -5,14 +5,6 @@
 
 The **OT - Asset Management** solution pack contains the following resources.
 
-## Dashboards
-
-| Name                           | Description                                                                                                                |
-| :----------------------------- | :------------------------------------------------------------------------------------------------------------------------- |
-| Asset Change Activity Tracking | Track the activity over asset change                                                                                       |
-| Asset Overview                 | This dashboard displays Assets By Level, By Zone, By Vendor By Category, By Level By State, By Type, By Vendor, By MEF Tag |
-| Asset Risk Overview            | Displays the alerts over assets By Zone, By Criticality, and Recent Alerts                                                 |
-
 ## Connectors
 
 | Name                | Version        | Description                                                                                                                                                                                                                                                |
@@ -29,13 +21,70 @@ The **OT - Asset Management** solution pack contains the following resources.
 | :------------------ | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | Record Distribution | Ability to visualize items/records and their correlations in different levels based on a given grouping context. A very good example of the widget's utility is the OT view, where assets are visualized across different Purdue Levels and highlight any existing relations with other assets at different levels. |
  
-## Module Schema
+## Roles
 
-| Name                  | Description                                                |
-| :-------------------- | :--------------------------------------------------------- |
-| Set Asset Icon        | Introduced new field  `Asset Icon`.                        |
-| Asset Resources       | A Module that contains the icons of assets                 |
-| Asset Change Activity | A module that monitors asset changes on various baselines. |
+| Name                       | Description                                                                                                                         |
+|:---------------------------|:------------------------------------------------------------------------------------------------------------------------------------|
+| Full App Permissions       | *Create*, *Read*, *Update*, and *Delete* permission for module **Asset Resources** and **Asset Change Activity**                    |
+| SOC Manager <sup>New</sup> | *Create*, *Read*, *Update*, and *Delete* permission for module **Asset Resources** and **Asset Change Activity**                    |
+| SOC Analyst <sup>New</sup> | *Read* permission for module **Asset Resources**; *Create*, *Read*, and *Update* permission for module **Asset Change Activity**    |
+
+## Dashboards
+
+| Name                           | Description                                                                                                                |
+| :----------------------------- | :------------------------------------------------------------------------------------------------------------------------- |
+| Asset Change Activity Tracking | Track the activity over asset change                                                                                       |
+| Asset Overview                 | This dashboard displays Assets By Level, By Zone, By Vendor By Category, By Level By State, By Type, By Vendor, By MEF Tag |
+| Asset Risk Overview            | Displays the alerts over assets By Zone, By Criticality, and Recent Alerts                                                 |
+
+## Reports
+
+| Name                                 | Description                                   |
+| :----------------------------------- | :-------------------------------------------- |
+| Asset Change Activity Summary Report | Provide the report over asset change activity |
+
+## System View
+
+| Name                        |
+| :-------------------------- |
+| Navigation Menu - Resources |
+
+## Module Schemas
+
+| Name                  | Description                                                                     |
+|:----------------------|:--------------------------------------------------------------------------------|
+| Asset                 | A new field `Asset Icon` under the **Asset Resources** module of type *Lookup*. |
+| Asset Resources       | A Module that contains the icons of assets                                      |
+| Asset Change Activity | A module that monitors asset changes on various baselines.                      |
+
+## Scenario Record Set
+
+| Name                                | Description                                                                                                                                                                                                                                              |
+|:------------------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| OT - Add Sample Assets              | Generates 87 IT/OT assets as per the Purdue model based on various criticality levels, types, and other asset categorizations as sample data.                                                                                                            |
+| OT - Add Sample Alerts              | Generates 12 well-populated alerts associated with assets, generated in the *OT - Add Sample Assets* scenario, as sample data.                                                                                                                           |
+| OT - Stuxnet Attack Scenario        | Demonstrates the *Stuxnet Incident* to observe how FortiSOAR&trade; behaves when encountering a real cyber attack. Although Stuxnet is a dated piece of malware, it represents the complexity of real targeted attacks and is infamous for many reasons. |
+| OT - Asset Change Activity Scenario | Demonstrates the process of conducting an *Asset Change Activity* for an asset. The sample Asset Change Activity records have a tag, `Sample`, for easy identification.                                                                                  |
+
+## Asset Resources Record Set
+
+| Name                      | Description                        |
+|:--------------------------|:-----------------------------------|
+| PLC                       | PLC icon                           |
+| WorkStation               | WorkStation icon                   |
+| Laptop, Desktop, Endpoint | Laptop, Desktop, and Endpoint icon |
+| Switch                    | Switch icon                        |
+| Server                    | Server icon                        |
+| Network                   | Network icon                       |
+| Router                    | Router icon                        |
+| HMI                       | HMI icon                           |
+| Firewall                  | Firewall icon                      |
+| Storage<sup>New<sup>      | Storage icon                       |
+| VOIP Phone<sup>New<sup>   | VOIP Phone icon                    |
+| Gateway<sup>New<sup>      | Gateway icon                       |
+| Controller<sup>New<sup>   | Controller icon                    |
+| Historian<sup>New<sup>    | Historian icon                     |
+| Printer<sup>New<sup>      | Printer icon                       |
 
 ## Picklist
 
@@ -44,48 +93,6 @@ The **OT - Asset Management** solution pack contains the following resources.
 | ActivityStatus  | Contains the Asset Change Activity status. |
 | AssetChangeType | Contains the Asset Change Activity type.   |
 | AssetCategory   | Contains the OT-related asset values.      |
-
-## Report
-
-| Name                                 | Description                                   |
-| :----------------------------------- | :-------------------------------------------- |
-| Asset Change Activity Summary Report | Provide the report over asset change activity |
-
-
-## Roles
-
-| Name                 | Description                                                                       |
-| :------------------- | :-------------------------------------------------------------------------------- |
-| Full App Permissions | Full App Permissions for module **Asset Resources** and **Asset Change Activity** |
-
-## Scenario Record Set
-
-| Name                                         | Description                                                                                                                                                         |
-| :------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| OT - Add Sample Assets                       | This scenario adds 86 different samples of OT Assets (different Purdue Levels, Types, etc.) for testing dashboards, use case playbooks, reports, and other actions. |
-| OT - Add Sample Alerts                       | This scenario adds 12 well-populated samples OT Alerts for testing dashboards, use case playbooks, reports, and other actions.                                      |
-| OT - Stuxnet Attack Scenario                 | This scenario recreates the Stuxnet attack in the form of a series of point alerts received by FortiSOAR from FortiSIEM.                                            |
-| OT - Add Sample Asset Change Activity Record | This scenario generates a sample Asset Change Activity record each, for type *Add New Asset* and *Medium Impact Baseline Change* type of activities.                |
-
-## Asset Resources Record Set
-
-| Name                      | Description                                                          |
-| :------------------------ | :------------------------------------------------------------------- |
-| PLC                       | This contains the image file for the PLC icon.                       |
-| WorkStation               | This contains the image file for the WorkStation icon.               |
-| Laptop, Desktop, Endpoint | This contains the image file for Laptop, Desktop, and Endpoint icon. |
-| Switch                    | This contains the image file for the Switch icon.                    |
-| Server                    | This contains the image file for the Server icon.                    |
-| Network                   | This contains the image file for the Network icon.                   |
-| Router                    | This contains the image file for the Router icon.                    |
-| HMI                       | This contains the image file for the HMI icon.                       |
-| Firewall                  | This contains the image file for the Firewall icon.                  |
-| Storage<sup>New<sup>      | This contains the image file for the Storage icon.                   |
-| VOIP Phone<sup>New<sup>   | This contains the image file for the VOIP Phone icon.                |
-| Gateway<sup>New<sup>      | This contains the image file for the Gateway icon.                   |
-| Controller<sup>New<sup>   | This contains the image file for the Controller icon.                |
-| Historian<sup>New<sup>    | This contains the image file for the Historian icon.                 |
-| Printer<sup>New<sup>      | This contains the image file for the Printer icon.                   |
 
 ## Playbook Collection
 
@@ -124,13 +131,6 @@ The **OT - Asset Management** solution pack contains the following resources.
 | Update Firewall Policy                  | Update Firewall Policies To Restrict Communications.                                            |
 | Scan All Assets Involved                | Initiate a quick scan of all assets related to the incident.                                    |
 | Isolate Devices From Network            | Isolate Selected Devices From Network Based On Criticality and Risk.                            |
-
-## System View
-
-| Name                             |
-| :------------------------------- |
-| Navigation Structure - Resources |
-
 
 >**Warning:** We recommend that you clone these playbooks before customizing to avoid loss of information while upgrading the solution pack.
 

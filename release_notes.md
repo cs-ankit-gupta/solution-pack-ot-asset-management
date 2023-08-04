@@ -1,6 +1,6 @@
 # What's New
 
-> The minimum compatibility of this solution pack with FortiSOAR&trade; has been enhanced to FortiSOAR v7.4.1 and later.
+> The compatibility of this solution pack has been enhanced to FortiSOAR v7.4.1 and later.
 
 ## Playbook Enhancements
 
@@ -35,11 +35,15 @@
   
 ## Other Enhancements
 
-- The tag names `SampleAsset` and `SampleAlert` have been renamed to `Sample` to simplify alert listing using tags.
+- The tag names `SampleAsset` and `SampleAlert` have been renamed to `Sample` for easy identification.
 
 ## Bug Fixes
     
-- Dashboards **Asset Change Activity Tracking**, **Asset Overview**, and **Asset Risk Overview** now come pre-assigned to relevant roles.
+- Users with any of the following roles can now access and manage the dashboards **Asset Change Activity Tracking**, **Asset Overview**, and **Asset Risk Overview**:
+
+    - Full App Permission
+    - SOC Manager
+    - SOC Analyst
 
 - Following playbook collection names were changed to be inline with other playbook collections in FortiSOAR&trade;:
     - **00 - Use Case - Asset Change Activity** renamed to **02 - Use Case - Asset Change Activity**.
@@ -82,4 +86,4 @@
     - **Alert - Escalate to Incident (Link Relations)**
     - **Alert - Escalate To Incident (No Trigger)**
 
-- The widget **MITRE** under the dashboard **Asset Risk Overview** is now deprecated as it is now a part of **MITRE ATT&CK Enrichment Framework** v2.2.0 and later.
+- The widget **MITRE** under the dashboard **Asset Risk Overview** is now deprecated as it is now a part of [**MITRE ATT&CK Enrichment Framework**](https://fortisoar.contenthub.fortinet.com//detail.html?entity=mITREATT%26CKEnrichmentFramework&version=2.2.0&type=solutionpack) v2.2.0 and later.

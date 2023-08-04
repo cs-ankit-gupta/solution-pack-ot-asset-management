@@ -4,7 +4,7 @@
 # Installation
 
 1. To install a solution pack, click **Content Hub** > **Discover**.
-2. Search for and select **OT - Asset Management** from the list of solution pack that appears.
+2. Search and select **OT - Asset Management** from the list of solution pack that appears.
 3. Click the **OT - Asset Management** solution pack card.
 4. Click **Install** on the lower part of the screen to begin the installation.
 
@@ -21,9 +21,14 @@ The **OT - Asset Management** solution pack depends on the following solution pa
 
 ## After Installation
 
-1. Ingest MITRE ATT&CK's **Group**, **Tactics**, **Techniques**, **Sub-techniques**, **Mitigations**, **Software**, and **Mitigation** data using the *MITRE ATT&CK* connector
+Ingest MITRE ATT&CK's **Group**, **Tactics**, **Techniques**, **Sub-techniques**, **Software**, and **Mitigation** data using the *MITRE ATT&CK* connector
 
-> **NOTE**: On alert creation, IOCs are enriched, and the alerts are correlated with Techniques and Mitigation for all records where the MITRE ATT&CK ID is associated with an alert.
+<table>
+    <tr>
+        <td><strong>NOTE</strong></td>
+        <td>On alert creation, IOCs are enriched, and the alerts are correlated with MITRE ATT&CK data for all records where the MITRE ATT&CK ID is associated with an alert.</td>
+    </tr>
+</table>
 
 # Configuration
 
