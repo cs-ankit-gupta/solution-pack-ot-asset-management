@@ -3,30 +3,38 @@
         "@type": "Attachment",
         "name": "OT - Sample Assets CSV",
         "description": null,
-        "file": "\/api\/3\/files\/71fafca2-4217-41f9-895c-3e6224f44a02",
+        "file": "\/api\/3\/files\/31492394-c4d4-4b32-be9e-b5048dfc9070",
         "type": null,
         "uuid": "27e7ad03-7746-46c4-9580-81b9842cbe91",
         "createUser": "\/api\/3\/people\/3451141c-bac6-467c-8d72-85e0fab569ce",
         "createDate": 1675767317.65046,
         "modifyUser": "\/api\/3\/people\/3451141c-bac6-467c-8d72-85e0fab569ce",
-        "modifyDate": 1676454506.950893,
-        "id": 1,
-        "recordTags": [],
+        "modifyDate": 1690538858.335277,
+        "id": 5,
+        "recordTags": [
+            "Assets",
+            "IT OT",
+            "Sample"
+        ],
         "assignee": ""
     },
     {
         "@type": "Attachment",
         "name": "OT - Sample Alerts CSV",
         "description": "",
-        "file": "\/api\/3\/files\/de937949-8079-40f1-afa8-6228ab114c45",
+        "file": "\/api\/3\/files\/2d4b6896-53e3-418b-b340-2831295c0947",
         "type": null,
         "uuid": "32fc291a-9afe-46b2-8f67-3b4d4837e2d7",
         "createUser": "\/api\/3\/people\/3451141c-bac6-467c-8d72-85e0fab569ce",
         "createDate": 1675767334.320994,
         "modifyUser": "\/api\/3\/people\/3451141c-bac6-467c-8d72-85e0fab569ce",
-        "modifyDate": 1676454602.793917,
+        "modifyDate": 1686996744.243799,
         "id": 2,
-        "recordTags": [],
+        "recordTags": [
+            "Alerts",
+            "IT OT",
+            "Sample"
+        ],
         "assignee": ""
     }
 ]

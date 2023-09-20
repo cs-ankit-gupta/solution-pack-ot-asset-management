@@ -1,0 +1,307 @@
+{
+    "@type": "Workflow",
+    "triggerLimit": null,
+    "name": "Scenario - OT - Asset Change Activity",
+    "aliasName": null,
+    "tag": null,
+    "description": "Generate an Asset Change Activity record for type Add New Asset and Medium Impact Baseline Change.",
+    "isActive": true,
+    "debug": false,
+    "singleRecordExecution": false,
+    "remoteExecutableFlag": false,
+    "parameters": [],
+    "synchronous": false,
+    "collection": "\/api\/3\/workflow_collections\/0dc98705-9053-4d76-8a44-b73cf7f06666",
+    "versions": [],
+    "triggerStep": "\/api\/3\/workflow_steps\/b3f56374-2cdb-4aaa-abcc-038887918ce1",
+    "steps": [
+        {
+            "@type": "WorkflowStep",
+            "name": "Add New Cyber Asset",
+            "description": null,
+            "arguments": {
+                "resource": {
+                    "ip": "101.10.60.125",
+                    "name": "Siemens S7-400-S621",
+                    "zone": "\/api\/3\/picklists\/1f6a2248-0d8d-4233-9764-5d641a257ba7",
+                    "level": "\/api\/3\/picklists\/adc8d997-3da5-4516-b112-42c6fdb74c3b",
+                    "state": "\/api\/3\/picklists\/b31da3b9-6f87-469e-a1bf-2517c48a7001",
+                    "status": "\/api\/3\/picklists\/421c20cd-e63d-4e32-9a25-774b2155cd24",
+                    "vendor": "Siemens",
+                    "product": "S7-400",
+                    "category": "\/api\/3\/picklists\/b7a653a4-4840-44cc-b116-fa618d8ddcd5",
+                    "hostname": "Siemens S7-400-S621",
+                    "__replace": "true",
+                    "assetType": "\/api\/3\/picklists\/f36137a5-aa8f-4532-aab5-e57a8d7420a1",
+                    "assetClass": "\/api\/3\/picklists\/00cb224e-4198-4547-bbcb-a90bb9a60806",
+                    "macAddress": "00:12:A1:7F:F1:42",
+                    "recordTags": [
+                        "\/api\/3\/tags\/Sample"
+                    ],
+                    "criticality": "\/api\/3\/picklists\/f734dfbb-fd61-425e-8a14-ebd560289fac",
+                    "assetChangeActivities": "{{vars.steps.Asset_Change_Activity_Add_New_Asset['@id']}}"
+                },
+                "operation": "Overwrite",
+                "collection": "\/api\/3\/upsert\/assets",
+                "__recommend": [],
+                "fieldOperation": {
+                    "protocol": "Overwrite",
+                    "recordTags": "Overwrite"
+                },
+                "step_variables": {
+                    "__dummy": "{{vars.recordIRI.append(vars.result['@id'])}}"
+                }
+            },
+            "status": null,
+            "top": "435",
+            "left": "125",
+            "stepType": "\/api\/3\/workflow_step_types\/2597053c-e718-44b4-8394-4d40fe26d357",
+            "group": null,
+            "uuid": "88e679c4-1578-448b-8d91-f5a929ee9937"
+        },
+        {
+            "@type": "WorkflowStep",
+            "name": "Asset Change Activity_Add New Asset",
+            "description": null,
+            "arguments": {
+                "resource": {
+                    "title": "Add Cyber Asset - Siemens S7-400-S621",
+                    "status": "\/api\/3\/picklists\/5f43696e-b2ad-4f03-8092-8fcdef2ef76d",
+                    "dueDate": "{{arrow.get(arrow.utcnow().shift(days=+vars.dueDays)).int_timestamp}}",
+                    "__replace": "",
+                    "assignedTo": "\/api\/3\/people\/3451141c-bac6-467c-8d72-85e0fab569ce",
+                    "recordTags": [
+                        "\/api\/3\/tags\/Add Cyber Asset",
+                        "\/api\/3\/tags\/IT OT",
+                        "\/api\/3\/tags\/Sample"
+                    ],
+                    "description": "Siemens S7-400 is a high-end Programmable Logic Controller (PLC) model from Siemens' SIMATIC S7 series. It is designed for demanding industrial automation applications that require a high level of performance, reliability, and flexibility",
+                    "justification": "Added new Siemens PLC because of its Scalability, Performance, Redundancy and High Availability",
+                    "assetChangeType": "\/api\/3\/picklists\/8aaa06ca-9b13-405a-96d2-29381246d748"
+                },
+                "operation": "Overwrite",
+                "collection": "\/api\/3\/asset_change_activities",
+                "__recommend": [],
+                "fieldOperation": {
+                    "recordTags": "Overwrite"
+                },
+                "step_variables": {
+                    "__dummy": "{{vars.recordIRI.append(vars.result['@id'])}}"
+                }
+            },
+            "status": null,
+            "top": "300",
+            "left": "125",
+            "stepType": "\/api\/3\/workflow_step_types\/2597053c-e718-44b4-8394-4d40fe26d357",
+            "group": null,
+            "uuid": "699e1aac-ecbc-45b7-a66b-dbe8fc95b4a1"
+        },
+        {
+            "@type": "WorkflowStep",
+            "name": "Asset Change Activity_Medium Impact Baseline Change",
+            "description": null,
+            "arguments": {
+                "resource": {
+                    "title": "Medium Impact Baseline Change - Stratix 5950-RW41",
+                    "status": "\/api\/3\/picklists\/5f43696e-b2ad-4f03-8092-8fcdef2ef76d",
+                    "dueDate": "{{arrow.get(arrow.utcnow().shift(days=+vars.dueDays)).int_timestamp}}",
+                    "__replace": "",
+                    "assignedTo": "\/api\/3\/people\/3451141c-bac6-467c-8d72-85e0fab569ce",
+                    "recordTags": [
+                        "\/api\/3\/tags\/Medium Impact Baseline Change",
+                        "\/api\/3\/tags\/IT OT",
+                        "\/api\/3\/tags\/Sample"
+                    ],
+                    "description": "The Stratix 5950 is a network switch manufactured by Rockwell Automation under the Allen-Bradley brand. It is designed specifically for industrial Ethernet applications and is part of the Stratix line of industrial switches. The Stratix 5950 offers advanced functionality and features to support high-performance and reliable network communication in industrial automation environments",
+                    "justification": "Network Resiliency - Medium Impact Baseline Change - Stratix 5950-RW41 ",
+                    "assetChangeType": "\/api\/3\/picklists\/94965daf-7707-4b41-8fc5-302d5db4ee6c"
+                },
+                "operation": "Overwrite",
+                "collection": "\/api\/3\/asset_change_activities",
+                "__recommend": [],
+                "fieldOperation": {
+                    "recordTags": "Overwrite"
+                },
+                "step_variables": {
+                    "__dummy": "{{vars.recordIRI.append(vars.result['@id'])}}"
+                }
+            },
+            "status": null,
+            "top": "570",
+            "left": "125",
+            "stepType": "\/api\/3\/workflow_step_types\/2597053c-e718-44b4-8394-4d40fe26d357",
+            "group": null,
+            "uuid": "1b3309cf-7eeb-45c5-950a-8560300488bd"
+        },
+        {
+            "@type": "WorkflowStep",
+            "name": "Configuration",
+            "description": null,
+            "arguments": {
+                "dueDays": "2",
+                "recordIRI": "[]"
+            },
+            "status": null,
+            "top": "165",
+            "left": "125",
+            "stepType": "\/api\/3\/workflow_step_types\/04d0cf46-b6a8-42c4-8683-60a7eaa69e8f",
+            "group": null,
+            "uuid": "c859dbdb-6539-463b-9e22-a35f71c15e3e"
+        },
+        {
+            "@type": "WorkflowStep",
+            "name": "Medium Impact Baseline Change Asset",
+            "description": null,
+            "arguments": {
+                "resource": {
+                    "ip": "101.10.60.124",
+                    "name": "Stratix 5950-RW41",
+                    "zone": "\/api\/3\/picklists\/1f6a2248-0d8d-4233-9764-5d641a257ba7",
+                    "level": "\/api\/3\/picklists\/2c1b93fc-05dd-4aba-a9d4-6a41dd453cf8",
+                    "state": "\/api\/3\/picklists\/b31da3b9-6f87-469e-a1bf-2517c48a7001",
+                    "status": "\/api\/3\/picklists\/421c20cd-e63d-4e32-9a25-774b2155cd24",
+                    "vendor": "Rockwell Automation",
+                    "product": "Stratix 5950",
+                    "category": "\/api\/3\/picklists\/e231a1fb-166b-40b4-9c9f-1a71d5515db3",
+                    "hostname": "Stratix 5950-RW41",
+                    "__replace": "true",
+                    "assetType": "\/api\/3\/picklists\/7630b182-4930-4f97-beec-3c3a5372cb3b",
+                    "assetClass": "\/api\/3\/picklists\/00cb224e-4198-4547-bbcb-a90bb9a60806",
+                    "macAddress": "00:12:D1:7F:01:47",
+                    "recordTags": [
+                        "\/api\/3\/tags\/Medium Impact Baseline Change",
+                        "\/api\/3\/tags\/Sample",
+                        "\/api\/3\/tags\/IT OT"
+                    ],
+                    "criticality": "\/api\/3\/picklists\/f734dfbb-fd61-425e-8a14-ebd560289fac",
+                    "assetChangeActivities": "{{vars.steps.Asset_Change_Activity_Medium_Impact_Baseline_Change['@id']}}"
+                },
+                "operation": "Overwrite",
+                "collection": "\/api\/3\/upsert\/assets",
+                "__recommend": [],
+                "fieldOperation": {
+                    "protocol": "Overwrite",
+                    "recordTags": "Overwrite"
+                },
+                "step_variables": {
+                    "__dummy": "{{vars.recordIRI.append(vars.result['@id'])}}",
+                    "mediumAsset": "{% set data = [] %}{% set _ = data.append(vars.result) %}{{data}}"
+                }
+            },
+            "status": null,
+            "top": "705",
+            "left": "125",
+            "stepType": "\/api\/3\/workflow_step_types\/2597053c-e718-44b4-8394-4d40fe26d357",
+            "group": null,
+            "uuid": "b5356aef-68e6-4386-991d-b5dc432e5fb7"
+        },
+        {
+            "@type": "WorkflowStep",
+            "name": "Output",
+            "description": null,
+            "arguments": {
+                "@id": "{{vars.recordIRI}}"
+            },
+            "status": null,
+            "top": "840",
+            "left": "125",
+            "stepType": "\/api\/3\/workflow_step_types\/04d0cf46-b6a8-42c4-8683-60a7eaa69e8f",
+            "group": null,
+            "uuid": "6ece692c-6253-43b5-93c7-aa50759f365f"
+        },
+        {
+            "@type": "WorkflowStep",
+            "name": "Start",
+            "description": null,
+            "arguments": {
+                "step_variables": {
+                    "input": {
+                        "params": []
+                    }
+                }
+            },
+            "status": null,
+            "top": "30",
+            "left": "125",
+            "stepType": "\/api\/3\/workflow_step_types\/b348f017-9a94-471f-87f8-ce88b6a7ad62",
+            "group": null,
+            "uuid": "b3f56374-2cdb-4aaa-abcc-038887918ce1"
+        }
+    ],
+    "routes": [
+        {
+            "@type": "WorkflowRoute",
+            "name": "Add New Asset -> New Asset",
+            "targetStep": "\/api\/3\/workflow_steps\/88e679c4-1578-448b-8d91-f5a929ee9937",
+            "sourceStep": "\/api\/3\/workflow_steps\/699e1aac-ecbc-45b7-a66b-dbe8fc95b4a1",
+            "label": null,
+            "isExecuted": false,
+            "group": null,
+            "uuid": "83d384d3-d8d0-4717-a0ae-cdd4795bf87f"
+        },
+        {
+            "@type": "WorkflowRoute",
+            "name": "Asset Change Activity_Medium Impact Baseline Change -> Medium Impact Baseline Change Asset",
+            "targetStep": "\/api\/3\/workflow_steps\/b5356aef-68e6-4386-991d-b5dc432e5fb7",
+            "sourceStep": "\/api\/3\/workflow_steps\/1b3309cf-7eeb-45c5-950a-8560300488bd",
+            "label": null,
+            "isExecuted": false,
+            "group": null,
+            "uuid": "015cfb6b-b381-4863-8ea6-4f6ffd4c1a72"
+        },
+        {
+            "@type": "WorkflowRoute",
+            "name": "Configuration -> Create Asset Change Activity Record",
+            "targetStep": "\/api\/3\/workflow_steps\/699e1aac-ecbc-45b7-a66b-dbe8fc95b4a1",
+            "sourceStep": "\/api\/3\/workflow_steps\/c859dbdb-6539-463b-9e22-a35f71c15e3e",
+            "label": null,
+            "isExecuted": false,
+            "group": null,
+            "uuid": "58de5626-25d5-41ca-bb6c-8ef1219b80aa"
+        },
+        {
+            "@type": "WorkflowRoute",
+            "name": "Medium Impact Baseline Change Asset -> Output",
+            "targetStep": "\/api\/3\/workflow_steps\/6ece692c-6253-43b5-93c7-aa50759f365f",
+            "sourceStep": "\/api\/3\/workflow_steps\/b5356aef-68e6-4386-991d-b5dc432e5fb7",
+            "label": null,
+            "isExecuted": false,
+            "group": null,
+            "uuid": "2fb77598-d9c7-4490-8b49-db8e8faf74d6"
+        },
+        {
+            "@type": "WorkflowRoute",
+            "name": "New Asset -> Copy of Asset Change Activity Add New Asset",
+            "targetStep": "\/api\/3\/workflow_steps\/1b3309cf-7eeb-45c5-950a-8560300488bd",
+            "sourceStep": "\/api\/3\/workflow_steps\/88e679c4-1578-448b-8d91-f5a929ee9937",
+            "label": null,
+            "isExecuted": false,
+            "group": null,
+            "uuid": "2975a1fe-3432-4f09-ad43-1101e4e8067a"
+        },
+        {
+            "@type": "WorkflowRoute",
+            "name": "Start -> Configuration",
+            "targetStep": "\/api\/3\/workflow_steps\/c859dbdb-6539-463b-9e22-a35f71c15e3e",
+            "sourceStep": "\/api\/3\/workflow_steps\/b3f56374-2cdb-4aaa-abcc-038887918ce1",
+            "label": null,
+            "isExecuted": false,
+            "group": null,
+            "uuid": "b3124d6d-b206-4234-b239-f8a0d2f80bfd"
+        }
+    ],
+    "groups": [],
+    "priority": "\/api\/3\/picklists\/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+    "uuid": "4961c806-88bf-42f7-b3cd-150a1f2713d2",
+    "owners": [],
+    "isPrivate": false,
+    "deletedAt": null,
+    "recordTags": [
+        "Assets",
+        "Add Cyber Asset",
+        "Asset Change Activity",
+        "Medium Impact Baseline Change",
+        "IT OT",
+        "Scenario"
+    ]
+}

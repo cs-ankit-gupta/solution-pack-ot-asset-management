@@ -1,0 +1,139 @@
+{
+    "@type": "Workflow",
+    "triggerLimit": null,
+    "name": "Set Asset Icon",
+    "aliasName": null,
+    "tag": null,
+    "description": "Correlates asset with Icon (If found in Asset Resources) as per there category.",
+    "isActive": true,
+    "debug": false,
+    "singleRecordExecution": false,
+    "remoteExecutableFlag": false,
+    "parameters": [],
+    "synchronous": false,
+    "collection": "\/api\/3\/workflow_collections\/fb4aa534-4bfc-4196-b509-96ef02fb9270",
+    "versions": [],
+    "triggerStep": "\/api\/3\/workflow_steps\/61f83741-3690-4667-9ea5-42a9a3d7051f",
+    "steps": [
+        {
+            "@type": "WorkflowStep",
+            "name": "Get Asset Icon",
+            "description": null,
+            "arguments": {
+                "query": {
+                    "sort": [],
+                    "limit": 30,
+                    "logic": "AND",
+                    "filters": [
+                        {
+                            "type": "array",
+                            "field": "recordTags",
+                            "value": "{{vars.input.records[0].category.itemValue | replace('\/', ' ')}}",
+                            "_value": "{{vars.input.records[0].category.itemValue | replace('\/', ' ')}}",
+                            "operator": "in"
+                        }
+                    ]
+                },
+                "module": "asset_resources?$limit=30",
+                "step_variables": []
+            },
+            "status": null,
+            "top": "165",
+            "left": "125",
+            "stepType": "\/api\/3\/workflow_step_types\/b593663d-7d13-40ce-a3a3-96dece928770",
+            "group": null,
+            "uuid": "469447b3-e632-4261-9659-f339c089e1b8"
+        },
+        {
+            "@type": "WorkflowStep",
+            "name": "Start",
+            "description": null,
+            "arguments": {
+                "resource": "assets",
+                "resources": [
+                    "assets"
+                ],
+                "step_variables": {
+                    "input": {
+                        "params": [],
+                        "records": [
+                            "{{vars.input.records[0]}}"
+                        ]
+                    }
+                },
+                "fieldbasedtrigger": {
+                    "sort": [],
+                    "limit": 30,
+                    "logic": "AND",
+                    "filters": []
+                }
+            },
+            "status": null,
+            "top": "30",
+            "left": "125",
+            "stepType": "\/api\/3\/workflow_step_types\/ea155646-3821-4542-9702-b246da430a8d",
+            "group": null,
+            "uuid": "61f83741-3690-4667-9ea5-42a9a3d7051f"
+        },
+        {
+            "@type": "WorkflowStep",
+            "name": "Update Asset with Icon",
+            "description": null,
+            "arguments": {
+                "when": "{{vars.steps.Get_Asset_Icon | length > 0}}",
+                "resource": {
+                    "assetIcon": "{{vars.steps.Get_Asset_Icon[0]['@id']}}"
+                },
+                "operation": "Append",
+                "collection": "{{vars.input.records[0]['@id']}}",
+                "__recommend": [],
+                "collectionType": "\/api\/3\/assets",
+                "fieldOperation": {
+                    "recordTags": "Append"
+                },
+                "step_variables": []
+            },
+            "status": null,
+            "top": "300",
+            "left": "125",
+            "stepType": "\/api\/3\/workflow_step_types\/b593663d-7d13-40ce-a3a3-96dece928722",
+            "group": null,
+            "uuid": "8d19bb46-e027-4c55-b55a-614814c6cc17"
+        }
+    ],
+    "routes": [
+        {
+            "@type": "WorkflowRoute",
+            "name": "Get Asset Icon -> Update Asset with Icon",
+            "targetStep": "\/api\/3\/workflow_steps\/8d19bb46-e027-4c55-b55a-614814c6cc17",
+            "sourceStep": "\/api\/3\/workflow_steps\/469447b3-e632-4261-9659-f339c089e1b8",
+            "label": null,
+            "isExecuted": false,
+            "group": null,
+            "uuid": "d2830297-42a3-4e39-b37c-fad48c1d322b"
+        },
+        {
+            "@type": "WorkflowRoute",
+            "name": "Start -> Find Printer Icon",
+            "targetStep": "\/api\/3\/workflow_steps\/469447b3-e632-4261-9659-f339c089e1b8",
+            "sourceStep": "\/api\/3\/workflow_steps\/61f83741-3690-4667-9ea5-42a9a3d7051f",
+            "label": null,
+            "isExecuted": false,
+            "group": null,
+            "uuid": "30e15859-6c47-4c8e-8f41-9e706dd880c9"
+        }
+    ],
+    "groups": [],
+    "priority": "\/api\/3\/picklists\/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+    "uuid": "d64948b5-7075-4cea-b0cb-171acf9eeedd",
+    "owners": [],
+    "isPrivate": false,
+    "deletedAt": null,
+    "recordTags": [
+        "Asset",
+        "Asset Resources",
+        "Icon",
+        "IT OT",
+        "PostCreate"
+    ]
+}

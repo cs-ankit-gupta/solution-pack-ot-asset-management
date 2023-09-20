@@ -198,7 +198,7 @@
       {
         "@id": "/api/3/picklists/869b70eb-e3c7-4c36-989d-58edf0c9f1d8",
         "@type": "Picklist",
-        "itemValue": "OPC-Server",
+        "itemValue": "OPC Server",
         "orderIndex": 32,
         "color": null,
         "icon": null,
@@ -254,7 +254,27 @@
         "icon": null,
         "listName": "/api/3/picklist_names/0042bf40-d0e6-4324-ab84-0c7b0703f681",
         "uuid": "9487292e-5061-4cbb-b078-62f2ecedffc8"
-      }
+        },
+        {
+            "@id": "\/api\/3\/picklists\/0e9cd412-66a1-49ed-8f98-11fab108f6d5",
+            "@type": "Picklist",
+            "itemValue": "Printer",
+            "orderIndex": 9,
+            "color": null,
+            "icon": null,
+            "listName": "\/api\/3\/picklist_names\/0042bf40-d0e6-4324-ab84-0c7b0703f681",
+            "uuid": "0e9cd412-66a1-49ed-8f98-11fab108f6d5"
+        },
+        {
+            "@id": "\/api\/3\/picklists\/8d702d9a-0c1d-4380-9c5e-64b5e1f5ab13",
+            "@type": "Picklist",
+            "itemValue": "VOIP Phone",
+            "orderIndex": 8,
+            "color": null,
+            "icon": null,
+            "listName": "\/api\/3\/picklist_names\/0042bf40-d0e6-4324-ab84-0c7b0703f681",
+            "uuid": "8d702d9a-0c1d-4380-9c5e-64b5e1f5ab13"
+        }
     ],
     "uuid": "0042bf40-d0e6-4324-ab84-0c7b0703f681"
-  }
+}

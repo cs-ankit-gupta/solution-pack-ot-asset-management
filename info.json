@@ -1,14 +1,7 @@
 {
     "name": "oT-AssetManagement",
-    "version": "1.0.0",
-    "fsrMinCompatibility": "7.2.0",
-    "featuredTags": [
-        {
-            "color": "#2d87e3",
-            "tag": "preview"
-        }
-    ],
-    "featured": true,
+    "version": "2.0.0",
+    "fsrMinCompatibility": "7.4.1",
     "type": "solutionpack",
     "local": true,
     "label": "OT - Asset Management",
@@ -17,7 +10,7 @@
             "name": "sOARFramework",
             "type": "solutionpack",
             "label": "SOAR Framework",
-            "minVersion": "2.0.2"
+            "minVersion": "2.2.0"
         },
         {
             "name": "socSimulator",
@@ -29,19 +22,19 @@
             "name": "mITREATT&CKEnrichmentFramework",
             "type": "solutionpack",
             "label": "MITRE ATT&CK Enrichment Framework",
-            "minVersion": null
+            "minVersion": "2.2.0"
         },
         {
             "name": "vulnerabilityManagement",
             "type": "solutionpack",
             "label": "Vulnerability Management",
-            "minVersion": null
+            "minVersion": "2.1.0"
         }
     ],
     "prerequisite": null,
     "publisher": "Fortinet",
-    "description": "Solution Pack manages assets in both the OT and IT domains. It provides a way of dealing with asset baseline changes.",
-    "help": "https://github.com/fortinet-fortisoar/solution-pack-ot-asset-management/blob/release/1.0.0/README.md",
+    "description": "OT Asset Management solution pack manages assets in both the operational technology (OT) and information and technology (IT) domains. It provides a method for dealing with asset baseline changes.",
+    "help": "https://github.com/fortinet-fortisoar/solution-pack-ot-asset-management/blob/release/2.0.0/README.md",
     "category": [
         "Monitoring",
         "Vulnerability Management",
@@ -53,35 +46,18 @@
     ],
     "supportInfo": "support@fortinet.com",
     "iconLarge": null,
-    "postInstallConfig": {
-        "enabled": false
-    },
-    "date": "2023-02-17T09:59:27+00:00",
+    "postInstallConfig": null,
+    "date": "2023-07-27T06:47:19+00:00",
     "contents": {
         "picklistNames": [
             {
                 "name": "ActivityStatus"
             },
             {
-                "name": "AssetCategory"
-            },
-            {
                 "name": "AssetChangeType"
             },
             {
-                "name": "AssetLevel"
-            },
-            {
-                "name": "AssetProtocol"
-            },
-            {
-                "name": "AssetType"
-            },
-            {
-                "name": "AssetZone"
-            },
-            {
-                "name": "VulnerabilityRiskStatus"
+                "name": "AssetCategory"
             }
         ],
         "modules": {
@@ -93,7 +69,7 @@
                 "name": "Asset Resources",
                 "apiName": "asset_resources"
             },
-            "": {
+            "assets": {
                 "name": "Assets",
                 "apiName": "assets"
             }
@@ -125,15 +101,21 @@
         },
         "roles": [
             {
+                "name": "SOC Manager"
+            },
+            {
                 "name": "Full App Permissions"
+            },
+            {
+                "name": "SOC Analyst"
             }
         ],
         "playbooks": [
             {
-                "name": "00 - Use Case - Asset Change Activity"
+                "name": "02 - Use Case - Asset Change Activity"
             },
             {
-                "name": "00 - Use Case - Asset Management"
+                "name": "02 - Use Case - IT OT Asset Management"
             }
         ],
         "globalVariables": [],
@@ -167,6 +149,10 @@
                 "apiName": "fortigate-firewall"
             },
             {
+                "name": "Qualys",
+                "apiName": "qualys"
+            },
+            {
                 "name": "ServiceNow",
                 "apiName": "servicenow"
             }
@@ -185,7 +171,7 @@
             {
                 "name": "Asset Resources",
                 "apiName": "asset_resources",
-                "count": 10
+                "count": 15
             },
             {
                 "name": "Attachments",

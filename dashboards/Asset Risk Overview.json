@@ -5,7 +5,11 @@
     "displayName": "Asset Risk Overview",
     "type": "rows",
     "templateType": "dashboard",
-    "roles": [],
+    "roles": [
+        "\/api\/3\/roles\/21d7a7c6-9d68-438f-b732-e8950c5f745b",
+        "\/api\/3\/roles\/7b56d139-7ee6-455e-8658-35727e202b8a",
+        "\/api\/3\/roles\/09346f6b-c52e-49c0-9ea5-eb5df2b0fa88"
+    ],
     "parentTemplateId": null,
     "config": {
         "rows": [
@@ -143,6 +147,61 @@
                     {
                         "widgets": [
                             {
+                                "type": "relationshipCount",
+                                "config": {
+                                    "wid": "69ffdb38-bd3d-413d-a303-3df73542b9d1",
+                                    "widgetAlwaysDisplay": true,
+                                    "showTabularData": false,
+                                    "query": {
+                                        "sort": [
+                                            {
+                                                "field": "hostname",
+                                                "direction": "ASC"
+                                            }
+                                        ],
+                                        "limit": 2147483647,
+                                        "logic": "AND",
+                                        "filters": [],
+                                        "aggregates": [
+                                            {
+                                                "operator": "count",
+                                                "alias": "total",
+                                                "field": "cVEs.uuid"
+                                            },
+                                            {
+                                                "operator": "groupby",
+                                                "alias": "hostname",
+                                                "field": "hostname"
+                                            }
+                                        ]
+                                    },
+                                    "mapping": {
+                                        "firstGrouping": "hostname"
+                                    },
+                                    "assignedToSetting": "onlyMe",
+                                    "aggregate": true,
+                                    "title": "Top 10 Devices With Vulnerabilities",
+                                    "chart": "relationshipBar",
+                                    "resource": "assets",
+                                    "primaryDataSourceLabel": "Assets",
+                                    "resourceRelationship": "cVEs",
+                                    "relatedDataSourceLabel": "CVE Count",
+                                    "sortStyle": "DESC",
+                                    "limit": 10
+                                }
+                            }
+                        ],
+                        "style": "col-lg-12"
+                    }
+                ],
+                "wid": "f34d0686-fba1-4415-8779-cb57324db2db",
+                "_collapsed": false
+            },
+            {
+                "columns": [
+                    {
+                        "widgets": [
+                            {
                                 "type": "chart",
                                 "config": {
                                     "wid": "9542b494-a356-4d8f-a043-faeb0178ab64",
@@ -241,6 +300,33 @@
                                                 "_operator": "isnull",
                                                 "value": "false",
                                                 "type": "primitive"
+                                            },
+                                            {
+                                                "logic": "OR",
+                                                "filters": [
+                                                    {
+                                                        "field": "assets.criticality",
+                                                        "operator": "eq",
+                                                        "value": "\/api\/3\/picklists\/873268b5-6751-4eac-a61c-0295f68baa9e",
+                                                        "_value": {
+                                                            "display": "Critical",
+                                                            "itemValue": "Critical",
+                                                            "@id": "\/api\/3\/picklists\/873268b5-6751-4eac-a61c-0295f68baa9e"
+                                                        },
+                                                        "type": "object"
+                                                    },
+                                                    {
+                                                        "field": "assets.criticality",
+                                                        "operator": "eq",
+                                                        "value": "\/api\/3\/picklists\/306b3eaf-f97e-4903-b416-049a40c3bef1",
+                                                        "_value": {
+                                                            "display": "Very Critical",
+                                                            "itemValue": "Very Critical",
+                                                            "@id": "\/api\/3\/picklists\/306b3eaf-f97e-4903-b416-049a40c3bef1"
+                                                        },
+                                                        "type": "object"
+                                                    }
+                                                ]
                                             }
                                         ]
                                     },
@@ -522,42 +608,6 @@
                 "wid": "3d00067f-8495-485e-b90b-de9d434f0362",
                 "collapsible": false,
                 "collapsibleIndex": 0,
-                "_collapsed": false
-            },
-            {
-                "columns": [
-                    {
-                        "widgets": [
-                            {
-                                "type": "rows",
-                                "config": {
-                                    "wid": "3769207a-ef8a-4cd6-bc51-2ae7fed2b76d",
-                                    "rows": [
-                                        {
-                                            "columns": [
-                                                {
-                                                    "widgets": [
-                                                        {
-                                                            "type": "mitreAttackSpread-1.0.0",
-                                                            "config": {
-                                                                "wid": "5f47d457-4be4-48c1-bb8b-406b81f20eeb"
-                                                            }
-                                                        }
-                                                    ],
-                                                    "style": "col-lg-12"
-                                                }
-                                            ],
-                                            "wid": "cf42cde2-a069-465f-b0e4-b285193f7256",
-                                            "_collapsed": false
-                                        }
-                                    ]
-                                }
-                            }
-                        ],
-                        "style": "col-lg-12"
-                    }
-                ],
-                "wid": "f2963dbf-4137-4477-b541-f03221abc1d4",
                 "_collapsed": false
             }
         ],

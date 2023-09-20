@@ -1,0 +1,157 @@
+{
+    "@type": "Workflow",
+    "triggerLimit": null,
+    "name": "Find Assets Related To Alert",
+    "aliasName": null,
+    "tag": null,
+    "description": "Finds the asset based on the IP address provided.",
+    "isActive": true,
+    "debug": false,
+    "singleRecordExecution": false,
+    "remoteExecutableFlag": false,
+    "parameters": [
+        "sourceIPAddress",
+        "destinationIPAddress"
+    ],
+    "synchronous": false,
+    "collection": "\/api\/3\/workflow_collections\/fb4aa534-4bfc-4196-b509-96ef02fb9270",
+    "versions": [],
+    "triggerStep": "\/api\/3\/workflow_steps\/e97fa1d4-6c88-4e44-9c6a-84be3856b6e6",
+    "steps": [
+        {
+            "@type": "WorkflowStep",
+            "name": "Find Destination Asset",
+            "description": null,
+            "arguments": {
+                "query": {
+                    "sort": [],
+                    "limit": 30,
+                    "logic": "AND",
+                    "filters": [
+                        {
+                            "type": "primitive",
+                            "field": "ip",
+                            "value": "{{vars.input.params.destinationIPAddress}}",
+                            "operator": "eq",
+                            "_operator": "eq"
+                        }
+                    ]
+                },
+                "module": "assets?$limit=30",
+                "step_variables": []
+            },
+            "status": null,
+            "top": "300",
+            "left": "125",
+            "stepType": "\/api\/3\/workflow_step_types\/b593663d-7d13-40ce-a3a3-96dece928770",
+            "group": null,
+            "uuid": "69579354-1616-4139-8881-eda98d65a856"
+        },
+        {
+            "@type": "WorkflowStep",
+            "name": "Find Source Asset",
+            "description": null,
+            "arguments": {
+                "query": {
+                    "sort": [],
+                    "limit": 30,
+                    "logic": "AND",
+                    "filters": [
+                        {
+                            "type": "primitive",
+                            "field": "ip",
+                            "value": "{{vars.input.params.sourceIPAddress}}",
+                            "operator": "eq",
+                            "_operator": "eq"
+                        }
+                    ]
+                },
+                "module": "assets?$limit=30",
+                "step_variables": []
+            },
+            "status": null,
+            "top": "165",
+            "left": "125",
+            "stepType": "\/api\/3\/workflow_step_types\/b593663d-7d13-40ce-a3a3-96dece928770",
+            "group": null,
+            "uuid": "9ece3af4-de58-4ca8-b3a3-758551abfe84"
+        },
+        {
+            "@type": "WorkflowStep",
+            "name": "Output",
+            "description": null,
+            "arguments": {
+                "sourceAsset": "{{vars.steps.Find_Source_Asset[0]['@id']}}",
+                "destinationAsset": "{{vars.steps.Find_Destination_Asset[0]['@id']}}"
+            },
+            "status": null,
+            "top": "435",
+            "left": "125",
+            "stepType": "\/api\/3\/workflow_step_types\/04d0cf46-b6a8-42c4-8683-60a7eaa69e8f",
+            "group": null,
+            "uuid": "eacd414e-835d-4db0-b9e7-3302a88c6ae6"
+        },
+        {
+            "@type": "WorkflowStep",
+            "name": "Start",
+            "description": null,
+            "arguments": {
+                "step_variables": {
+                    "input": {
+                        "params": []
+                    }
+                }
+            },
+            "status": null,
+            "top": "30",
+            "left": "125",
+            "stepType": "\/api\/3\/workflow_step_types\/b348f017-9a94-471f-87f8-ce88b6a7ad62",
+            "group": null,
+            "uuid": "e97fa1d4-6c88-4e44-9c6a-84be3856b6e6"
+        }
+    ],
+    "routes": [
+        {
+            "@type": "WorkflowRoute",
+            "name": "Find Destination Asset -> Output",
+            "targetStep": "\/api\/3\/workflow_steps\/eacd414e-835d-4db0-b9e7-3302a88c6ae6",
+            "sourceStep": "\/api\/3\/workflow_steps\/69579354-1616-4139-8881-eda98d65a856",
+            "label": null,
+            "isExecuted": false,
+            "group": null,
+            "uuid": "011a3e45-de65-48a0-be9a-7d9a59474897"
+        },
+        {
+            "@type": "WorkflowRoute",
+            "name": "Find Source Asset -> Copy of Find Source Asset",
+            "targetStep": "\/api\/3\/workflow_steps\/69579354-1616-4139-8881-eda98d65a856",
+            "sourceStep": "\/api\/3\/workflow_steps\/9ece3af4-de58-4ca8-b3a3-758551abfe84",
+            "label": null,
+            "isExecuted": false,
+            "group": null,
+            "uuid": "d35b549a-52fe-488b-a14f-fae08b96ee2e"
+        },
+        {
+            "@type": "WorkflowRoute",
+            "name": "Start -> Find Source",
+            "targetStep": "\/api\/3\/workflow_steps\/9ece3af4-de58-4ca8-b3a3-758551abfe84",
+            "sourceStep": "\/api\/3\/workflow_steps\/e97fa1d4-6c88-4e44-9c6a-84be3856b6e6",
+            "label": null,
+            "isExecuted": false,
+            "group": null,
+            "uuid": "4b3b4a2e-0c22-443d-bc8e-d32d844cca52"
+        }
+    ],
+    "groups": [],
+    "priority": "\/api\/3\/picklists\/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+    "uuid": "9a71aada-d52d-414a-af6a-8e14e3877907",
+    "owners": [],
+    "isPrivate": false,
+    "deletedAt": null,
+    "recordTags": [
+        "IP Address",
+        "Assets",
+        "Referenced",
+        "IT OT"
+    ]
+}
