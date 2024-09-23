@@ -4,6 +4,7 @@
     "fsrMinCompatibility": "7.4.1",
     "type": "solutionpack",
     "local": true,
+    "certified": "true",
     "label": "OT - Asset Management",
     "dependencies": [
         {
